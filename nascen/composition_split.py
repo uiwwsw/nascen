@@ -36,6 +36,20 @@ def training_problems(size: int, seed: int) -> list[Problem]:
     return problems
 
 
+def coverage_first_problems(size: int, seed: int) -> list[Problem]:
+    """Spend the same case budget on distinct rule/state pairs first."""
+    rng = Random(seed)
+    width = len(STATES)
+    order = rng.sample(range(size), size)
+    state_orders = [rng.sample(range(width), width) for _ in order]
+    count = min(CASE_BUDGET, size * width)
+    atomic = [Problem(state_orders[i % size][i // size], (order[i % size],)) for i in range(count)]
+    if count == CASE_BUDGET:
+        return atomic
+    mixed = [problem for problem in training_problems(size, seed) if len(problem.rules) > 1]
+    return atomic + mixed[:CASE_BUDGET - count]
+
+
 def necessary(rules: list[Principle], problem: Problem, outcome: int) -> bool:
     return all(
         trace(rules, Problem(problem.state, problem.rules[:index] + problem.rules[index + 1:]))[-1] != outcome

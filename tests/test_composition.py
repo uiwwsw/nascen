@@ -4,7 +4,9 @@ from unittest.mock import patch
 import torch
 
 from nascen.composition import grade, verified_cohort
-from nascen.composition_split import CASE_BUDGET, DEPTHS, crosses_groups, examination, necessary, training_problems
+from nascen.composition_split import (
+    CASE_BUDGET, DEPTHS, coverage_first_problems, crosses_groups, examination, necessary, training_problems,
+)
 from nascen.composition_student import TransitionStudent, decode_tables, execute, fit, predict
 from nascen.composition_teacher import DATASET, program_table, verify, verified_table
 from nascen.composition_world import SCALES, STATES, Problem, digest, library, trace
@@ -54,10 +56,13 @@ class CompositionTests(unittest.TestCase):
     def test_training_and_exam_share_rules_but_never_a_cross_group_pair(self):
         world = library()
         for size in SCALES:
-            train = training_problems(size, 11)
-            self.assertEqual(len(set(train)), CASE_BUDGET)
-            self.assertEqual({rule for problem in train for rule in problem.rules}, set(range(size)))
-            self.assertTrue(all(not crosses_groups(problem.rules) for problem in train))
+            for generate in (training_problems, coverage_first_problems):
+                train = generate(size, 11)
+                self.assertEqual(len(set(train)), CASE_BUDGET)
+                self.assertEqual({rule for problem in train for rule in problem.rules}, set(range(size)))
+                self.assertTrue(all(not crosses_groups(problem.rules) for problem in train))
+            self.assertEqual(sum(len(p.rules) == 1 for p in coverage_first_problems(size, 11)),
+                             min(CASE_BUDGET, size * len(STATES)))
             exam = examination(world, size, count=8)
             self.assertEqual(len(exam), 8 * len(DEPTHS))
             for left, right in exam:

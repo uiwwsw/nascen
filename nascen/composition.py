@@ -1,4 +1,4 @@
-"""Experiment 006: learn and combine independently verified principles."""
+"""Learn and combine independently verified principles in Experiment 006."""
 
 import argparse
 from collections.abc import Callable
@@ -10,14 +10,15 @@ from time import perf_counter, perf_counter_ns, process_time
 
 import torch
 
-from .composition_split import CASE_BUDGET, DEPTHS, PAIRS_PER_DEPTH, examination, training_problems
+from .composition_split import CASE_BUDGET, DEPTHS, PAIRS_PER_DEPTH, coverage_first_problems, examination, training_problems
 from .composition_student import EPOCHS, TransitionStudent, decode_tables, execute, fit, predict
 from .composition_teacher import DATASET, verify
 from .composition_world import SCALES, STATES, Principle, Problem, annotations_size, digest, library, trace
 from .distillation import SEEDS, write_json
 
 Predictor = Callable[[list[Problem]], list[tuple[int, ...]]]
-COMPARISONS = ("examples", "learned_principles", "stored_principles")
+CASE_ARMS = {"examples": training_problems, "examples_coverage_first": coverage_first_problems}
+COMPARISONS = (*CASE_ARMS, "learned_principles", "stored_principles")
 
 
 def encode(problem: Problem) -> list:
@@ -67,9 +68,11 @@ def grade(rules: list[Principle], problems: list[Problem], infer: Predictor, mea
     return result
 
 
-def case_lessons(rules: list[Principle], seed: int) -> tuple[list[Problem], torch.Tensor, dict]:
+def case_lessons(
+    rules: list[Principle], seed: int, generate: Callable[[int, int], list[Problem]],
+) -> tuple[list[Problem], torch.Tensor, dict]:
     wall, cpu = perf_counter(), process_time()
-    train = training_problems(len(rules), seed)
+    train = generate(len(rules), seed)
     answers = [trace(rules, problem)[-1] for problem in train]
     serialized = [[*encode(problem), answer] for problem, answer in zip(train, answers, strict=True)]
     return train, torch.tensor(answers), {
@@ -119,16 +122,19 @@ def run_scale(rules: list[Principle], tables: list[str], audit: dict, seeds: tup
     results["stored_principles"].append(stored_result)
 
     for seed in seeds:
-        training, labels, cost = case_lessons(rules, seed)
-        for arm, supervision, cases in (("examples", labels, training), ("learned_principles", compiled, None)):
-            row, infer = run_student(seed, size, exam, rules, supervision, cases, measure)
-            if arm == "examples":
-                row["case_supervision"] = cost if measure else {
-                    key: value for key, value in cost.items() if not key.startswith("preparation_")
-                }
+        for arm, generate in CASE_ARMS.items():
+            training, labels, cost = case_lessons(rules, seed, generate)
+            row, infer = run_student(seed, size, exam, rules, labels, training, measure)
+            row["case_supervision"] = cost if measure else {
+                key: value for key, value in cost.items() if not key.startswith("preparation_")
+            }
             if anchors is not None:
                 row["anchors"] = grade(rules, anchors, infer, measure)
             results[arm].append(row)
+        row, infer = run_student(seed, size, exam, rules, compiled, None, measure)
+        if anchors is not None:
+            row["anchors"] = grade(rules, anchors, infer, measure)
+        results["learned_principles"].append(row)
 
     report = {
         "principles": size, "exam_questions": len(exam), "pairs_per_depth": pairs,
@@ -145,8 +151,11 @@ def run_scale(rules: list[Principle], tables: list[str], audit: dict, seeds: tup
         report["stored_index_cpu_seconds"] = stored_cpu
         teacher_overhead = audit["teacher_wall_seconds"] + audit["verification_wall_seconds"] + stored_wall
         report["median_ready_wall_seconds"] = {
-            "examples": median(row["case_supervision"]["preparation_wall_seconds"] + row["fit_wall_seconds"]
-                               for row in results["examples"]),
+            **{
+                arm: median(row["case_supervision"]["preparation_wall_seconds"] + row["fit_wall_seconds"]
+                            for row in results[arm])
+                for arm in CASE_ARMS
+            },
             "learned_principles": teacher_overhead + prepare_wall
                                   + median(row["fit_wall_seconds"] for row in results["learned_principles"]),
             "stored_principles": teacher_overhead,

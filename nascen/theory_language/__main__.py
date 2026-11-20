@@ -1,4 +1,4 @@
-"""Prepare, train, evaluate or benchmark the LTM transition engine."""
+"""Prepare, train, evaluate or benchmark Nascen's transition learner."""
 
 import argparse
 from dataclasses import asdict
@@ -168,7 +168,7 @@ def main():
                     options[i] for options, i in zip(args.option, choices["query"], strict=True)
                 ]}
     except (OSError, ValueError, TypeError, KeyError, RuntimeError) as error:
-        parser.exit(1, f"LTM theory language: {error}\n")
+        parser.exit(1, f"Nascen theory language: {error}\n")
     print(json.dumps(result, ensure_ascii=False, indent=2, allow_nan=False))
 
 

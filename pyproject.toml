@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "nascen"
 dynamic = ["version"]
-description = "Nascen's Large Theory Model research on sentence-level learning and principle transfer."
+description = "A personal experiment in learning state changes and principles from language."
 readme = "README.md"
 license = "Apache-2.0"
 requires-python = ">=3.12,<3.15"

@@ -1,12 +1,12 @@
-# LTM · Large Theory Model
+# Nascen
 
-Nascen은 **더 적은 학습 데이터와 토큰으로 문맥을 이해하고, 배운 원리를 처음 보는 상황에 적용할 수 있는지** 연구하는 오픈소스 프로젝트입니다. LTM에서 이론은 여러 사례를 설명하는 관계와 함께, 그 관계가 성립하는 조건과 예외를 뜻합니다.
+Nascen은 문장으로 표현한 경험에서 배운 원리가 새로운 상황에서도 통하는지 시험하는 **개인 실험 프로젝트**입니다.
 
 [![CI](https://github.com/uiwwsw/nascen/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/uiwwsw/nascen/actions/workflows/ci.yml) [![License](https://img.shields.io/badge/license-Apache--2.0-285d48)](LICENSE)
 
 ## 연구 방향
 
-Meta의 Large Concept Model(LCM)은 문장을 벡터로 표현하고, 앞선 문장들의 의미에서 이어질 문장의 의미를 예측합니다. LTM은 이 접근을 바탕으로 문장 사이의 인과관계와 원리의 적용 조건을 함께 학습합니다. 예를 들어 물체를 밀었다는 사실에 더해, 가한 힘이 저항을 넘었는지에 따라 결과가 어떻게 달라지는지 배웁니다. [LCM 논문](https://arxiv.org/abs/2412.08821)
+Meta의 Large Concept Model(LCM)이 쓰는 문장 단위 예측과, KAIST 연구팀의 NEO가 관찰에서 변화의 원리를 찾아 조합하는 접근을 한 모델에서 연결해 보는 것이 목표입니다. 예를 들어 물체를 밀었다는 문장과 움직였다는 문장을 연결하고, 어떤 조건에서 결과가 바뀌는지 배울 수 있는지 살핍니다. [Meta LCM](https://arxiv.org/abs/2412.08821) · [KAIST NEO](https://arxiv.org/abs/2605.03413)
 
 사람이 문맥을 이해할 때 보이는 능력 가운데 세 가지를 시험합니다. 표현이 바뀌어도 같은 의미를 파악하는지, 조건이 뒤집히면 판단을 바꾸는지, 배운 원리를 낯선 상황에 적용하고 조합할 수 있는지 살핍니다. 시험에서는 학습에 없던 상황을 통째로 보류하고, 학생에게는 원문과 후보 문장을 제공합니다.
 
@@ -62,9 +62,9 @@ python -m nascen train --steps 50
 python -m nascen knowledge
 ```
 
-[LTM의 한국어 시험 재현](docs/experiment-007.md#재현) · [이전 실험과 실행 옵션](docs/experiments.md) · [Apache-2.0](LICENSE)
+[한국어 시험 재현](docs/experiment-007.md#재현) · [이전 실험과 실행 옵션](docs/experiments.md) · [Apache-2.0](LICENSE)
 
 ## 관련 연구
 
-- Distilling Step-by-Step은 교사의 설명을 추가 학습 신호로 사용해 일부 자연어 처리 벤치마크에서 데이터 효율을 높였습니다. LTM은 조건과 예외를 담은 설명이 새로운 상황에 전이되는지 따로 측정합니다. [Distilling Step-by-Step](https://aclanthology.org/2023.findings-acl.507/)
+- Distilling Step-by-Step은 교사의 설명을 추가 학습 신호로 사용해 일부 자연어 처리 벤치마크에서 데이터 효율을 높였습니다. Nascen의 한국어 실험에서는 원리 설명을 추가했을 때 새로운 상황에서의 예측이 달라지는지 측정합니다. [Distilling Step-by-Step](https://aclanthology.org/2023.findings-acl.507/)
 - 초기 환경 실험과 연결되는 연구에는 물리 법칙 발견, 인과구조를 학습하기 위한 실험 선택, 훈련 중 데이터 선별이 있습니다. [AI-Newton](https://journals.aps.org/prresearch/abstract/10.1103/dvvc-4rsr) · [Tong & Koller](https://ijcai.org/proceedings/2001/118) · [Data Agent](https://proceedings.mlr.press/v306/yang26bq.html)

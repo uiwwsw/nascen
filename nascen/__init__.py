@@ -1,3 +1,3 @@
-"""Nascen, an experience-driven learning lab."""
+"""Nascen's Large Theory Model research toolkit."""
 
 __version__ = "0.3.0"

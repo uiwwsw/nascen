@@ -1,0 +1,4064 @@
+{
+  "experiment": "007 — Korean sentence semantics and principles",
+  "schema": 1,
+  "dataset": "semantic-ko-v1",
+  "training_sha256": "cd8f18ac41a93758f33609fa3de5e95e7dfed3d6d66a42eeb35aa1a047e52da0",
+  "exam_sha256": "2ce54636955ff4efe954833cb7220404baa9614d95d4e6af6d7209a9d74d0f17",
+  "lessons_sha256": "8362337f599da51d11af8dd7791db0f31e2f77d0b929b02374d9df4d3de270bf",
+  "principle_review_sha256": "3187368298c34d1741b92838028f472f7d4320738837aca919db270dd8797d77",
+  "exam_questions": 28,
+  "exam_groups": 14,
+  "chance_accuracy": 0.4642857142857143,
+  "exam_inputs": "raw Korean context and unlabelled candidate continuations",
+  "student_inference_dependencies": "student weights and its frozen sentence encoder",
+  "epochs": 100,
+  "seeds": [
+    11,
+    22,
+    42
+  ],
+  "teacher": {
+    "model": "Qwen3-4B-Q4_K_M sha256=7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+    "seed": 42,
+    "kind": "local_model"
+  },
+  "teacher_prompt": "ko-semantic-v5",
+  "teacher_prompt_sha256": "58ff6851ef460e379715782254989847788b79c8ea0baeeae23ebc0e21cdb2c2",
+  "principle_references_sha256": "06e1d89e9b53562efb18684ba84dc44d4b8f50fa83abfaff3564ef79c36d8eb0",
+  "rule_program_sha256": "bb8d0f581864d0955fd8d3fac8693c8baf3df714ca538730e6b259c4f63eb7d7",
+  "teacher_cost": {
+    "A": {
+      "requests": 2,
+      "wall_seconds": 10.99140579199593,
+      "prompt_tokens": 976,
+      "completion_tokens": 247
+    },
+    "B": {
+      "requests": 2,
+      "wall_seconds": 10.99140579199593,
+      "prompt_tokens": 976,
+      "completion_tokens": 247
+    },
+    "C": {
+      "requests": 6,
+      "wall_seconds": 34.28444645899435,
+      "prompt_tokens": 2302,
+      "completion_tokens": 699
+    },
+    "D": {
+      "requests": 4,
+      "wall_seconds": 23.293040666998422,
+      "prompt_tokens": 1326,
+      "completion_tokens": 452
+    }
+  },
+  "encoder": {
+    "A": {
+      "model": "hashed Korean character and word n-grams",
+      "parameters": 0,
+      "pretraining_cost": 0,
+      "cached_train_cpu_seconds": 0.029954000000000036,
+      "cached_exam_cpu_seconds": 0.023846000000000256,
+      "unique_training_sentences": 149,
+      "unique_exam_sentences": 104
+    },
+    "B/C/D": {
+      "model": "intfloat/multilingual-e5-small",
+      "reference_revision": "fd1525a9fd15316a2d503bf26ab031a61d056e98",
+      "files_sha256": {
+        "config.json": "69137736cab8b8903a07fe8afaafdda25aac55415a12a55d1bffa9f581abf959",
+        "model.safetensors": "1a55775f53449dac10a2bcbc312469fac40b96d53198c407081a831f81c98477",
+        "tokenizer.json": "0b44a9d7b51c3c62626640cda0e2c2f70fdacdc25bbbd68038369d14ebdf4c39",
+        "tokenizer_config.json": "a1d6bc8734a6f635dc158508bef000f8e2e5a759c7d92f984b2c86e5ff53425b",
+        "special_tokens_map.json": "d05497f1da52c5e09554c0cd874037a083e1dc1b9cfd48034d1c717f1afc07a7",
+        "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865"
+      },
+      "parameters": 117653760,
+      "frozen": true,
+      "pretraining_cost": null,
+      "cached_train_cpu_seconds": 0.4997029999999998,
+      "cached_exam_cpu_seconds": 0.3237570000000001,
+      "unique_training_sentences": 169,
+      "unique_exam_sentences": 104,
+      "load_cpu_seconds": 2.0185079999999997
+    }
+  },
+  "environment": {
+    "python": "3.14.3",
+    "torch": "2.12.0",
+    "arch": "arm64"
+  },
+  "relation_audit": {
+    "reviewed": 14,
+    "errors": 3,
+    "error_rate": 0.21428571428571427,
+    "rows": [
+      {
+        "id": "rel-00",
+        "reference": "equivalent",
+        "teacher": "equivalent"
+      },
+      {
+        "id": "rel-01",
+        "reference": "equivalent",
+        "teacher": "related"
+      },
+      {
+        "id": "rel-02",
+        "reference": "related",
+        "teacher": "exception"
+      },
+      {
+        "id": "rel-03",
+        "reference": "related",
+        "teacher": "related"
+      },
+      {
+        "id": "rel-04",
+        "reference": "contradiction",
+        "teacher": "contradiction"
+      },
+      {
+        "id": "rel-05",
+        "reference": "contradiction",
+        "teacher": "contradiction"
+      },
+      {
+        "id": "rel-06",
+        "reference": "entailment",
+        "teacher": "entailment"
+      },
+      {
+        "id": "rel-07",
+        "reference": "entailment",
+        "teacher": "entailment"
+      },
+      {
+        "id": "rel-08",
+        "reference": "cause",
+        "teacher": "cause"
+      },
+      {
+        "id": "rel-09",
+        "reference": "cause",
+        "teacher": "cause"
+      },
+      {
+        "id": "rel-10",
+        "reference": "condition",
+        "teacher": "condition"
+      },
+      {
+        "id": "rel-11",
+        "reference": "condition",
+        "teacher": "condition"
+      },
+      {
+        "id": "rel-12",
+        "reference": "exception",
+        "teacher": "exception"
+      },
+      {
+        "id": "rel-13",
+        "reference": "exception",
+        "teacher": "contradiction"
+      }
+    ]
+  },
+  "principle_review": {
+    "push": {
+      "accepted": true,
+      "reason": "설명은 저항을 넘는지 여부를 올바르게 구분한다. 두 번째 조건 절은 등호를 빠뜨렸다. 학습 사례는 힘이 저항보다 큰 경우와 작은 경우를 다룬다."
+    },
+    "latch": {
+      "accepted": true,
+      "reason": "당기는 동작을 유지하며 걸쇠가 풀린 경우와 걸린 경우의 결과를 올바르게 구분한다."
+    },
+    "consent": {
+      "accepted": true,
+      "reason": "물건 주인의 명시적 허락 여부와 사전 확인의 필요성을 올바르게 구분한다."
+    },
+    "scope": {
+      "accepted": true,
+      "reason": "일부 문장의 조사가 어색하지만 이미 얻은 허락의 범위 안과 밖의 결과를 올바르게 구분한다."
+    }
+  },
+  "summary": [
+    {
+      "arm": "D",
+      "budget_groups_per_rule": null,
+      "training_scenes": 0,
+      "training_payload_bytes": 2581,
+      "trained_parameters": 0,
+      "metrics": {
+        "accuracy": 0.17857142857142858,
+        "coverage": 0.25,
+        "paraphrase": 0.25,
+        "exception": 0.25,
+        "transfer": 0,
+        "composition": 0.25,
+        "composition_physical": 0.5,
+        "composition_social": 0,
+        "paraphrase_both_correct": 0,
+        "exception_both_correct": 0
+      },
+      "seed_accuracies": [
+        0.17857142857142858
+      ],
+      "mean_train_cpu_seconds": 0
+    },
+    {
+      "arm": "A",
+      "budget_groups_per_rule": 1,
+      "training_scenes": 8,
+      "training_payload_bytes": 3626,
+      "trained_parameters": 52759,
+      "metrics": {
+        "accuracy": 0.4880952380952381,
+        "coverage": 1,
+        "paraphrase": 0.5,
+        "exception": 0.5833333333333334,
+        "transfer": 0.3333333333333333,
+        "composition": 0.5416666666666666,
+        "composition_physical": 0.3333333333333333,
+        "composition_social": 0.75,
+        "paraphrase_both_correct": 0,
+        "exception_both_correct": 0.16666666666666666
+      },
+      "seed_accuracies": [
+        0.5714285714285714,
+        0.5357142857142857,
+        0.35714285714285715
+      ],
+      "mean_train_cpu_seconds": 0.09852799999999995
+    },
+    {
+      "arm": "B",
+      "budget_groups_per_rule": 1,
+      "training_scenes": 8,
+      "training_payload_bytes": 3626,
+      "trained_parameters": 52759,
+      "metrics": {
+        "accuracy": 0.35714285714285715,
+        "coverage": 1,
+        "paraphrase": 0.25,
+        "exception": 0.5,
+        "transfer": 0.20833333333333334,
+        "composition": 0.4166666666666667,
+        "composition_physical": 0.3333333333333333,
+        "composition_social": 0.5,
+        "paraphrase_both_correct": 0.16666666666666666,
+        "exception_both_correct": 0.08333333333333333
+      },
+      "seed_accuracies": [
+        0.32142857142857145,
+        0.4642857142857143,
+        0.2857142857142857
+      ],
+      "mean_train_cpu_seconds": 0.09467366666666639
+    },
+    {
+      "arm": "C",
+      "budget_groups_per_rule": 1,
+      "training_scenes": 8,
+      "training_payload_bytes": 5378,
+      "trained_parameters": 52759,
+      "metrics": {
+        "accuracy": 0.39285714285714285,
+        "coverage": 1,
+        "paraphrase": 0.5,
+        "exception": 0.5,
+        "transfer": 0.2916666666666667,
+        "composition": 0.3333333333333333,
+        "composition_physical": 0.25,
+        "composition_social": 0.4166666666666667,
+        "paraphrase_both_correct": 0.3333333333333333,
+        "exception_both_correct": 0
+      },
+      "seed_accuracies": [
+        0.39285714285714285,
+        0.42857142857142855,
+        0.35714285714285715
+      ],
+      "mean_train_cpu_seconds": 0.1696749999999998
+    },
+    {
+      "arm": "A",
+      "budget_groups_per_rule": 2,
+      "training_scenes": 16,
+      "training_payload_bytes": 5552,
+      "trained_parameters": 52759,
+      "metrics": {
+        "accuracy": 0.5238095238095238,
+        "coverage": 1,
+        "paraphrase": 0.5833333333333334,
+        "exception": 0.5416666666666666,
+        "transfer": 0.5416666666666666,
+        "composition": 0.4583333333333333,
+        "composition_physical": 0.4166666666666667,
+        "composition_social": 0.5,
+        "paraphrase_both_correct": 0.5,
+        "exception_both_correct": 0.16666666666666666
+      },
+      "seed_accuracies": [
+        0.5357142857142857,
+        0.4642857142857143,
+        0.5714285714285714
+      ],
+      "mean_train_cpu_seconds": 0.09759366666666658
+    },
+    {
+      "arm": "B",
+      "budget_groups_per_rule": 2,
+      "training_scenes": 16,
+      "training_payload_bytes": 5552,
+      "trained_parameters": 52759,
+      "metrics": {
+        "accuracy": 0.30952380952380953,
+        "coverage": 1,
+        "paraphrase": 0.16666666666666666,
+        "exception": 0.4583333333333333,
+        "transfer": 0.20833333333333334,
+        "composition": 0.3333333333333333,
+        "composition_physical": 0.16666666666666666,
+        "composition_social": 0.5,
+        "paraphrase_both_correct": 0,
+        "exception_both_correct": 0
+      },
+      "seed_accuracies": [
+        0.35714285714285715,
+        0.35714285714285715,
+        0.21428571428571427
+      ],
+      "mean_train_cpu_seconds": 0.09387066666666666
+    },
+    {
+      "arm": "C",
+      "budget_groups_per_rule": 2,
+      "training_scenes": 16,
+      "training_payload_bytes": 7370,
+      "trained_parameters": 52759,
+      "metrics": {
+        "accuracy": 0.44047619047619047,
+        "coverage": 1,
+        "paraphrase": 0.4166666666666667,
+        "exception": 0.5,
+        "transfer": 0.4166666666666667,
+        "composition": 0.4166666666666667,
+        "composition_physical": 0.3333333333333333,
+        "composition_social": 0.5,
+        "paraphrase_both_correct": 0.3333333333333333,
+        "exception_both_correct": 0
+      },
+      "seed_accuracies": [
+        0.39285714285714285,
+        0.4642857142857143,
+        0.4642857142857143
+      ],
+      "mean_train_cpu_seconds": 0.16485366666666668
+    },
+    {
+      "arm": "A",
+      "budget_groups_per_rule": 3,
+      "training_scenes": 24,
+      "training_payload_bytes": 7445,
+      "trained_parameters": 52759,
+      "metrics": {
+        "accuracy": 0.5357142857142857,
+        "coverage": 1,
+        "paraphrase": 0.75,
+        "exception": 0.5416666666666666,
+        "transfer": 0.5416666666666666,
+        "composition": 0.4166666666666667,
+        "composition_physical": 0.3333333333333333,
+        "composition_social": 0.5,
+        "paraphrase_both_correct": 0.5,
+        "exception_both_correct": 0.08333333333333333
+      },
+      "seed_accuracies": [
+        0.5357142857142857,
+        0.5357142857142857,
+        0.5357142857142857
+      ],
+      "mean_train_cpu_seconds": 0.09692100000000003
+    },
+    {
+      "arm": "B",
+      "budget_groups_per_rule": 3,
+      "training_scenes": 24,
+      "training_payload_bytes": 7445,
+      "trained_parameters": 52759,
+      "metrics": {
+        "accuracy": 0.47619047619047616,
+        "coverage": 1,
+        "paraphrase": 0.6666666666666666,
+        "exception": 0.625,
+        "transfer": 0.4166666666666667,
+        "composition": 0.2916666666666667,
+        "composition_physical": 0.25,
+        "composition_social": 0.3333333333333333,
+        "paraphrase_both_correct": 0.3333333333333333,
+        "exception_both_correct": 0.25
+      },
+      "seed_accuracies": [
+        0.42857142857142855,
+        0.5357142857142857,
+        0.4642857142857143
+      ],
+      "mean_train_cpu_seconds": 0.09607133333333362
+    },
+    {
+      "arm": "C",
+      "budget_groups_per_rule": 3,
+      "training_scenes": 24,
+      "training_payload_bytes": 9329,
+      "trained_parameters": 52759,
+      "metrics": {
+        "accuracy": 0.4761904761904762,
+        "coverage": 1,
+        "paraphrase": 0.6666666666666666,
+        "exception": 0.5,
+        "transfer": 0.375,
+        "composition": 0.4583333333333333,
+        "composition_physical": 0.4166666666666667,
+        "composition_social": 0.5,
+        "paraphrase_both_correct": 0.3333333333333333,
+        "exception_both_correct": 0
+      },
+      "seed_accuracies": [
+        0.4642857142857143,
+        0.4642857142857143,
+        0.5
+      ],
+      "mean_train_cpu_seconds": 0.17077399999999976
+    },
+    {
+      "arm": "A",
+      "budget_groups_per_rule": 4,
+      "training_scenes": 32,
+      "training_payload_bytes": 9359,
+      "trained_parameters": 52759,
+      "metrics": {
+        "accuracy": 0.6071428571428572,
+        "coverage": 1,
+        "paraphrase": 0.9166666666666666,
+        "exception": 0.5833333333333334,
+        "transfer": 0.625,
+        "composition": 0.4583333333333333,
+        "composition_physical": 0.4166666666666667,
+        "composition_social": 0.5,
+        "paraphrase_both_correct": 0.8333333333333334,
+        "exception_both_correct": 0.16666666666666666
+      },
+      "seed_accuracies": [
+        0.5357142857142857,
+        0.6428571428571429,
+        0.6428571428571429
+      ],
+      "mean_train_cpu_seconds": 0.10302966666666673
+    },
+    {
+      "arm": "B",
+      "budget_groups_per_rule": 4,
+      "training_scenes": 32,
+      "training_payload_bytes": 9359,
+      "trained_parameters": 52759,
+      "metrics": {
+        "accuracy": 0.5714285714285714,
+        "coverage": 1,
+        "paraphrase": 0.75,
+        "exception": 0.5833333333333334,
+        "transfer": 0.7083333333333334,
+        "composition": 0.3333333333333333,
+        "composition_physical": 0.4166666666666667,
+        "composition_social": 0.25,
+        "paraphrase_both_correct": 0.5,
+        "exception_both_correct": 0.25
+      },
+      "seed_accuracies": [
+        0.5,
+        0.5714285714285714,
+        0.6428571428571429
+      ],
+      "mean_train_cpu_seconds": 0.10198599999999984
+    },
+    {
+      "arm": "C",
+      "budget_groups_per_rule": 4,
+      "training_scenes": 32,
+      "training_payload_bytes": 11309,
+      "trained_parameters": 52759,
+      "metrics": {
+        "accuracy": 0.4761904761904762,
+        "coverage": 1,
+        "paraphrase": 0.75,
+        "exception": 0.5416666666666666,
+        "transfer": 0.4583333333333333,
+        "composition": 0.2916666666666667,
+        "composition_physical": 0.08333333333333333,
+        "composition_social": 0.5,
+        "paraphrase_both_correct": 0.5,
+        "exception_both_correct": 0.08333333333333333
+      },
+      "seed_accuracies": [
+        0.4642857142857143,
+        0.4642857142857143,
+        0.5
+      ],
+      "mean_train_cpu_seconds": 0.18051733333333284
+    }
+  ],
+  "trials": [
+    {
+      "arm": "D",
+      "budget_groups_per_rule": null,
+      "seed": null,
+      "training_scenes": 0,
+      "principle_bytes": 1685,
+      "training_payload_bytes": 2581,
+      "trained_parameters": 0,
+      "train_cpu_seconds": 0,
+      "exam_cpu_seconds": 0.0005560000000000009,
+      "metrics": {
+        "accuracy": 0.17857142857142858,
+        "coverage": 0.25,
+        "paraphrase": 0.25,
+        "exception": 0.25,
+        "transfer": 0,
+        "composition": 0.25,
+        "composition_physical": 0.5,
+        "composition_social": 0,
+        "paraphrase_both_correct": 0,
+        "exception_both_correct": 0
+      },
+      "failures": [
+        {
+          "id": "barrel-1",
+          "predicted": null
+        },
+        {
+          "id": "marker-0",
+          "predicted": null
+        },
+        {
+          "id": "marker-1",
+          "predicted": null
+        },
+        {
+          "id": "pallet-0",
+          "predicted": null
+        },
+        {
+          "id": "locker-1",
+          "predicted": null
+        },
+        {
+          "id": "gloves-0",
+          "predicted": null
+        },
+        {
+          "id": "gloves-1",
+          "predicted": null
+        },
+        {
+          "id": "radio-0",
+          "predicted": null
+        },
+        {
+          "id": "radio-1",
+          "predicted": null
+        },
+        {
+          "id": "statue-0",
+          "predicted": null
+        },
+        {
+          "id": "statue-1",
+          "predicted": null
+        },
+        {
+          "id": "case-0",
+          "predicted": null
+        },
+        {
+          "id": "case-1",
+          "predicted": null
+        },
+        {
+          "id": "microphone-0",
+          "predicted": null
+        },
+        {
+          "id": "microphone-1",
+          "predicted": null
+        },
+        {
+          "id": "key-0",
+          "predicted": null
+        },
+        {
+          "id": "key-1",
+          "predicted": null
+        },
+        {
+          "id": "stage-cover-1",
+          "predicted": 3
+        },
+        {
+          "id": "portable-locker-0",
+          "predicted": 3
+        },
+        {
+          "id": "projector-0",
+          "predicted": null
+        },
+        {
+          "id": "projector-1",
+          "predicted": null
+        },
+        {
+          "id": "speaker-0",
+          "predicted": null
+        },
+        {
+          "id": "speaker-1",
+          "predicted": null
+        }
+      ]
+    },
+    {
+      "arm": "A",
+      "budget_groups_per_rule": 1,
+      "seed": 11,
+      "training_scenes": 8,
+      "principle_bytes": 0,
+      "training_payload_bytes": 3626,
+      "trained_parameters": 52759,
+      "train_cpu_seconds": 0.10517999999999983,
+      "exam_cpu_seconds": 0.0025999999999997137,
+      "metrics": {
+        "accuracy": 0.5714285714285714,
+        "coverage": 1,
+        "paraphrase": 0.5,
+        "exception": 0.625,
+        "transfer": 0.375,
+        "composition": 0.75,
+        "composition_physical": 0.5,
+        "composition_social": 1,
+        "paraphrase_both_correct": 0,
+        "exception_both_correct": 0.25
+      },
+      "failures": [
+        {
+          "id": "barrel-1",
+          "predicted": 1
+        },
+        {
+          "id": "marker-0",
+          "predicted": 1
+        },
+        {
+          "id": "pallet-1",
+          "predicted": 0
+        },
+        {
+          "id": "locker-1",
+          "predicted": 1
+        },
+        {
+          "id": "radio-1",
+          "predicted": 0
+        },
+        {
+          "id": "statue-0",
+          "predicted": 1
+        },
+        {
+          "id": "statue-1",
+          "predicted": 1
+        },
+        {
+          "id": "case-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-1",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-0",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-0",
+          "predicted": 0
+        },
+        {
+          "id": "portable-locker-1",
+          "predicted": 2
+        }
+      ]
+    },
+    {
+      "arm": "A",
+      "budget_groups_per_rule": 1,
+      "seed": 22,
+      "training_scenes": 8,
+      "principle_bytes": 0,
+      "training_payload_bytes": 3626,
+      "trained_parameters": 52759,
+      "train_cpu_seconds": 0.09505000000000008,
+      "exam_cpu_seconds": 0.002759000000000178,
+      "metrics": {
+        "accuracy": 0.5357142857142857,
+        "coverage": 1,
+        "paraphrase": 0.5,
+        "exception": 0.625,
+        "transfer": 0.375,
+        "composition": 0.625,
+        "composition_physical": 0.5,
+        "composition_social": 0.75,
+        "paraphrase_both_correct": 0,
+        "exception_both_correct": 0.25
+      },
+      "failures": [
+        {
+          "id": "barrel-1",
+          "predicted": 1
+        },
+        {
+          "id": "marker-0",
+          "predicted": 1
+        },
+        {
+          "id": "pallet-1",
+          "predicted": 0
+        },
+        {
+          "id": "locker-0",
+          "predicted": 0
+        },
+        {
+          "id": "radio-1",
+          "predicted": 0
+        },
+        {
+          "id": "statue-0",
+          "predicted": 1
+        },
+        {
+          "id": "statue-1",
+          "predicted": 1
+        },
+        {
+          "id": "case-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-1",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-0",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-0",
+          "predicted": 0
+        },
+        {
+          "id": "portable-locker-1",
+          "predicted": 2
+        },
+        {
+          "id": "projector-0",
+          "predicted": 1
+        }
+      ]
+    },
+    {
+      "arm": "A",
+      "budget_groups_per_rule": 1,
+      "seed": 42,
+      "training_scenes": 8,
+      "principle_bytes": 0,
+      "training_payload_bytes": 3626,
+      "trained_parameters": 52759,
+      "train_cpu_seconds": 0.09535399999999994,
+      "exam_cpu_seconds": 0.002874999999999961,
+      "metrics": {
+        "accuracy": 0.35714285714285715,
+        "coverage": 1,
+        "paraphrase": 0.5,
+        "exception": 0.5,
+        "transfer": 0.25,
+        "composition": 0.25,
+        "composition_physical": 0,
+        "composition_social": 0.5,
+        "paraphrase_both_correct": 0,
+        "exception_both_correct": 0
+      },
+      "failures": [
+        {
+          "id": "barrel-1",
+          "predicted": 1
+        },
+        {
+          "id": "marker-0",
+          "predicted": 1
+        },
+        {
+          "id": "pallet-1",
+          "predicted": 0
+        },
+        {
+          "id": "locker-1",
+          "predicted": 1
+        },
+        {
+          "id": "gloves-1",
+          "predicted": 0
+        },
+        {
+          "id": "radio-1",
+          "predicted": 0
+        },
+        {
+          "id": "statue-0",
+          "predicted": 1
+        },
+        {
+          "id": "statue-1",
+          "predicted": 1
+        },
+        {
+          "id": "case-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-1",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-0",
+          "predicted": 1
+        },
+        {
+          "id": "key-1",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-0",
+          "predicted": 0
+        },
+        {
+          "id": "stage-cover-1",
+          "predicted": 0
+        },
+        {
+          "id": "portable-locker-0",
+          "predicted": 3
+        },
+        {
+          "id": "portable-locker-1",
+          "predicted": 2
+        },
+        {
+          "id": "projector-0",
+          "predicted": 1
+        },
+        {
+          "id": "speaker-1",
+          "predicted": 1
+        }
+      ]
+    },
+    {
+      "arm": "B",
+      "budget_groups_per_rule": 1,
+      "seed": 11,
+      "training_scenes": 8,
+      "principle_bytes": 0,
+      "training_payload_bytes": 3626,
+      "trained_parameters": 52759,
+      "train_cpu_seconds": 0.09402400000000011,
+      "exam_cpu_seconds": 0.002572000000000685,
+      "metrics": {
+        "accuracy": 0.32142857142857145,
+        "coverage": 1,
+        "paraphrase": 0.25,
+        "exception": 0.375,
+        "transfer": 0.125,
+        "composition": 0.5,
+        "composition_physical": 0.5,
+        "composition_social": 0.5,
+        "paraphrase_both_correct": 0,
+        "exception_both_correct": 0
+      },
+      "failures": [
+        {
+          "id": "barrel-0",
+          "predicted": 0
+        },
+        {
+          "id": "barrel-1",
+          "predicted": 1
+        },
+        {
+          "id": "marker-1",
+          "predicted": 1
+        },
+        {
+          "id": "pallet-0",
+          "predicted": 1
+        },
+        {
+          "id": "locker-1",
+          "predicted": 1
+        },
+        {
+          "id": "gloves-0",
+          "predicted": 0
+        },
+        {
+          "id": "gloves-1",
+          "predicted": 0
+        },
+        {
+          "id": "radio-1",
+          "predicted": 0
+        },
+        {
+          "id": "statue-0",
+          "predicted": 1
+        },
+        {
+          "id": "statue-1",
+          "predicted": 1
+        },
+        {
+          "id": "case-1",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-0",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-1",
+          "predicted": 1
+        },
+        {
+          "id": "key-0",
+          "predicted": 0
+        },
+        {
+          "id": "key-1",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-1",
+          "predicted": 0
+        },
+        {
+          "id": "portable-locker-0",
+          "predicted": 3
+        },
+        {
+          "id": "projector-1",
+          "predicted": 0
+        },
+        {
+          "id": "speaker-0",
+          "predicted": 1
+        }
+      ]
+    },
+    {
+      "arm": "B",
+      "budget_groups_per_rule": 1,
+      "seed": 22,
+      "training_scenes": 8,
+      "principle_bytes": 0,
+      "training_payload_bytes": 3626,
+      "trained_parameters": 52759,
+      "train_cpu_seconds": 0.09569799999999962,
+      "exam_cpu_seconds": 0.0026200000000002888,
+      "metrics": {
+        "accuracy": 0.4642857142857143,
+        "coverage": 1,
+        "paraphrase": 0.5,
+        "exception": 0.625,
+        "transfer": 0.375,
+        "composition": 0.375,
+        "composition_physical": 0.25,
+        "composition_social": 0.5,
+        "paraphrase_both_correct": 0.5,
+        "exception_both_correct": 0.25
+      },
+      "failures": [
+        {
+          "id": "barrel-0",
+          "predicted": 0
+        },
+        {
+          "id": "barrel-1",
+          "predicted": 1
+        },
+        {
+          "id": "pallet-0",
+          "predicted": 1
+        },
+        {
+          "id": "locker-0",
+          "predicted": 0
+        },
+        {
+          "id": "radio-1",
+          "predicted": 0
+        },
+        {
+          "id": "statue-1",
+          "predicted": 1
+        },
+        {
+          "id": "case-1",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-0",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-1",
+          "predicted": 1
+        },
+        {
+          "id": "key-0",
+          "predicted": 0
+        },
+        {
+          "id": "stage-cover-0",
+          "predicted": 0
+        },
+        {
+          "id": "stage-cover-1",
+          "predicted": 0
+        },
+        {
+          "id": "portable-locker-0",
+          "predicted": 3
+        },
+        {
+          "id": "projector-1",
+          "predicted": 0
+        },
+        {
+          "id": "speaker-0",
+          "predicted": 1
+        }
+      ]
+    },
+    {
+      "arm": "B",
+      "budget_groups_per_rule": 1,
+      "seed": 42,
+      "training_scenes": 8,
+      "principle_bytes": 0,
+      "training_payload_bytes": 3626,
+      "trained_parameters": 52759,
+      "train_cpu_seconds": 0.09429899999999947,
+      "exam_cpu_seconds": 0.002650999999999293,
+      "metrics": {
+        "accuracy": 0.2857142857142857,
+        "coverage": 1,
+        "paraphrase": 0,
+        "exception": 0.5,
+        "transfer": 0.125,
+        "composition": 0.375,
+        "composition_physical": 0.25,
+        "composition_social": 0.5,
+        "paraphrase_both_correct": 0,
+        "exception_both_correct": 0
+      },
+      "failures": [
+        {
+          "id": "barrel-0",
+          "predicted": 0
+        },
+        {
+          "id": "barrel-1",
+          "predicted": 1
+        },
+        {
+          "id": "marker-0",
+          "predicted": 1
+        },
+        {
+          "id": "marker-1",
+          "predicted": 1
+        },
+        {
+          "id": "pallet-0",
+          "predicted": 1
+        },
+        {
+          "id": "locker-1",
+          "predicted": 1
+        },
+        {
+          "id": "gloves-0",
+          "predicted": 0
+        },
+        {
+          "id": "radio-0",
+          "predicted": 1
+        },
+        {
+          "id": "statue-0",
+          "predicted": 1
+        },
+        {
+          "id": "statue-1",
+          "predicted": 1
+        },
+        {
+          "id": "case-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-1",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-0",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-1",
+          "predicted": 1
+        },
+        {
+          "id": "key-1",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-0",
+          "predicted": 0
+        },
+        {
+          "id": "stage-cover-1",
+          "predicted": 0
+        },
+        {
+          "id": "portable-locker-0",
+          "predicted": 3
+        },
+        {
+          "id": "speaker-0",
+          "predicted": 1
+        },
+        {
+          "id": "speaker-1",
+          "predicted": 1
+        }
+      ]
+    },
+    {
+      "arm": "C",
+      "budget_groups_per_rule": 1,
+      "seed": 11,
+      "training_scenes": 8,
+      "principle_bytes": 1752,
+      "training_payload_bytes": 5378,
+      "trained_parameters": 52759,
+      "train_cpu_seconds": 0.16901800000000033,
+      "exam_cpu_seconds": 0.0025649999999997064,
+      "metrics": {
+        "accuracy": 0.39285714285714285,
+        "coverage": 1,
+        "paraphrase": 0.5,
+        "exception": 0.5,
+        "transfer": 0.25,
+        "composition": 0.375,
+        "composition_physical": 0.25,
+        "composition_social": 0.5,
+        "paraphrase_both_correct": 0,
+        "exception_both_correct": 0
+      },
+      "failures": [
+        {
+          "id": "barrel-1",
+          "predicted": 1
+        },
+        {
+          "id": "marker-0",
+          "predicted": 1
+        },
+        {
+          "id": "pallet-0",
+          "predicted": 1
+        },
+        {
+          "id": "locker-1",
+          "predicted": 1
+        },
+        {
+          "id": "gloves-0",
+          "predicted": 0
+        },
+        {
+          "id": "radio-1",
+          "predicted": 0
+        },
+        {
+          "id": "statue-1",
+          "predicted": 1
+        },
+        {
+          "id": "case-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-1",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-1",
+          "predicted": 1
+        },
+        {
+          "id": "key-0",
+          "predicted": 0
+        },
+        {
+          "id": "key-1",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-0",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-1",
+          "predicted": 3
+        },
+        {
+          "id": "portable-locker-0",
+          "predicted": 1
+        },
+        {
+          "id": "projector-1",
+          "predicted": 0
+        },
+        {
+          "id": "speaker-1",
+          "predicted": 1
+        }
+      ]
+    },
+    {
+      "arm": "C",
+      "budget_groups_per_rule": 1,
+      "seed": 22,
+      "training_scenes": 8,
+      "principle_bytes": 1752,
+      "training_payload_bytes": 5378,
+      "trained_parameters": 52759,
+      "train_cpu_seconds": 0.1700399999999993,
+      "exam_cpu_seconds": 0.0026200000000002888,
+      "metrics": {
+        "accuracy": 0.42857142857142855,
+        "coverage": 1,
+        "paraphrase": 0.5,
+        "exception": 0.5,
+        "transfer": 0.375,
+        "composition": 0.375,
+        "composition_physical": 0.25,
+        "composition_social": 0.5,
+        "paraphrase_both_correct": 0.5,
+        "exception_both_correct": 0
+      },
+      "failures": [
+        {
+          "id": "barrel-0",
+          "predicted": 0
+        },
+        {
+          "id": "barrel-1",
+          "predicted": 1
+        },
+        {
+          "id": "pallet-0",
+          "predicted": 1
+        },
+        {
+          "id": "locker-0",
+          "predicted": 0
+        },
+        {
+          "id": "gloves-0",
+          "predicted": 0
+        },
+        {
+          "id": "radio-1",
+          "predicted": 0
+        },
+        {
+          "id": "case-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-1",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-1",
+          "predicted": 1
+        },
+        {
+          "id": "key-0",
+          "predicted": 0
+        },
+        {
+          "id": "key-1",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-0",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-1",
+          "predicted": 3
+        },
+        {
+          "id": "portable-locker-0",
+          "predicted": 1
+        },
+        {
+          "id": "projector-1",
+          "predicted": 0
+        },
+        {
+          "id": "speaker-0",
+          "predicted": 1
+        }
+      ]
+    },
+    {
+      "arm": "C",
+      "budget_groups_per_rule": 1,
+      "seed": 42,
+      "training_scenes": 8,
+      "principle_bytes": 1752,
+      "training_payload_bytes": 5378,
+      "trained_parameters": 52759,
+      "train_cpu_seconds": 0.16996699999999976,
+      "exam_cpu_seconds": 0.002663000000000082,
+      "metrics": {
+        "accuracy": 0.35714285714285715,
+        "coverage": 1,
+        "paraphrase": 0.5,
+        "exception": 0.5,
+        "transfer": 0.25,
+        "composition": 0.25,
+        "composition_physical": 0.25,
+        "composition_social": 0.25,
+        "paraphrase_both_correct": 0.5,
+        "exception_both_correct": 0
+      },
+      "failures": [
+        {
+          "id": "barrel-0",
+          "predicted": 0
+        },
+        {
+          "id": "barrel-1",
+          "predicted": 1
+        },
+        {
+          "id": "pallet-1",
+          "predicted": 0
+        },
+        {
+          "id": "locker-0",
+          "predicted": 0
+        },
+        {
+          "id": "gloves-0",
+          "predicted": 0
+        },
+        {
+          "id": "radio-1",
+          "predicted": 0
+        },
+        {
+          "id": "case-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-1",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-0",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-1",
+          "predicted": 1
+        },
+        {
+          "id": "key-0",
+          "predicted": 0
+        },
+        {
+          "id": "key-1",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-0",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-1",
+          "predicted": 3
+        },
+        {
+          "id": "portable-locker-0",
+          "predicted": 1
+        },
+        {
+          "id": "projector-1",
+          "predicted": 0
+        },
+        {
+          "id": "speaker-0",
+          "predicted": 1
+        },
+        {
+          "id": "speaker-1",
+          "predicted": 1
+        }
+      ]
+    },
+    {
+      "arm": "A",
+      "budget_groups_per_rule": 2,
+      "seed": 11,
+      "training_scenes": 16,
+      "principle_bytes": 0,
+      "training_payload_bytes": 5552,
+      "trained_parameters": 52759,
+      "train_cpu_seconds": 0.0967349999999998,
+      "exam_cpu_seconds": 0.0026700000000001722,
+      "metrics": {
+        "accuracy": 0.5357142857142857,
+        "coverage": 1,
+        "paraphrase": 0.75,
+        "exception": 0.5,
+        "transfer": 0.5,
+        "composition": 0.5,
+        "composition_physical": 0.5,
+        "composition_social": 0.5,
+        "paraphrase_both_correct": 0.5,
+        "exception_both_correct": 0.25
+      },
+      "failures": [
+        {
+          "id": "barrel-0",
+          "predicted": 0
+        },
+        {
+          "id": "pallet-1",
+          "predicted": 0
+        },
+        {
+          "id": "locker-0",
+          "predicted": 0
+        },
+        {
+          "id": "locker-1",
+          "predicted": 1
+        },
+        {
+          "id": "radio-1",
+          "predicted": 0
+        },
+        {
+          "id": "statue-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-1",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-1",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-1",
+          "predicted": 0
+        },
+        {
+          "id": "portable-locker-1",
+          "predicted": 2
+        },
+        {
+          "id": "projector-0",
+          "predicted": 1
+        },
+        {
+          "id": "speaker-1",
+          "predicted": 1
+        }
+      ]
+    },
+    {
+      "arm": "A",
+      "budget_groups_per_rule": 2,
+      "seed": 22,
+      "training_scenes": 16,
+      "principle_bytes": 0,
+      "training_payload_bytes": 5552,
+      "trained_parameters": 52759,
+      "train_cpu_seconds": 0.10080199999999984,
+      "exam_cpu_seconds": 0.0025770000000004956,
+      "metrics": {
+        "accuracy": 0.4642857142857143,
+        "coverage": 1,
+        "paraphrase": 0.5,
+        "exception": 0.5,
+        "transfer": 0.5,
+        "composition": 0.375,
+        "composition_physical": 0.25,
+        "composition_social": 0.5,
+        "paraphrase_both_correct": 0.5,
+        "exception_both_correct": 0
+      },
+      "failures": [
+        {
+          "id": "barrel-0",
+          "predicted": 0
+        },
+        {
+          "id": "barrel-1",
+          "predicted": 1
+        },
+        {
+          "id": "pallet-1",
+          "predicted": 0
+        },
+        {
+          "id": "locker-0",
+          "predicted": 0
+        },
+        {
+          "id": "gloves-1",
+          "predicted": 0
+        },
+        {
+          "id": "radio-1",
+          "predicted": 0
+        },
+        {
+          "id": "statue-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-1",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-1",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-0",
+          "predicted": 0
+        },
+        {
+          "id": "stage-cover-1",
+          "predicted": 0
+        },
+        {
+          "id": "portable-locker-1",
+          "predicted": 2
+        },
+        {
+          "id": "projector-0",
+          "predicted": 1
+        },
+        {
+          "id": "speaker-1",
+          "predicted": 1
+        }
+      ]
+    },
+    {
+      "arm": "A",
+      "budget_groups_per_rule": 2,
+      "seed": 42,
+      "training_scenes": 16,
+      "principle_bytes": 0,
+      "training_payload_bytes": 5552,
+      "trained_parameters": 52759,
+      "train_cpu_seconds": 0.0952440000000001,
+      "exam_cpu_seconds": 0.0025329999999996744,
+      "metrics": {
+        "accuracy": 0.5714285714285714,
+        "coverage": 1,
+        "paraphrase": 0.5,
+        "exception": 0.625,
+        "transfer": 0.625,
+        "composition": 0.5,
+        "composition_physical": 0.5,
+        "composition_social": 0.5,
+        "paraphrase_both_correct": 0.5,
+        "exception_both_correct": 0.25
+      },
+      "failures": [
+        {
+          "id": "barrel-0",
+          "predicted": 0
+        },
+        {
+          "id": "barrel-1",
+          "predicted": 1
+        },
+        {
+          "id": "pallet-1",
+          "predicted": 0
+        },
+        {
+          "id": "locker-1",
+          "predicted": 1
+        },
+        {
+          "id": "radio-1",
+          "predicted": 0
+        },
+        {
+          "id": "case-1",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-1",
+          "predicted": 1
+        },
+        {
+          "id": "key-1",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-0",
+          "predicted": 0
+        },
+        {
+          "id": "portable-locker-1",
+          "predicted": 2
+        },
+        {
+          "id": "projector-0",
+          "predicted": 1
+        },
+        {
+          "id": "speaker-1",
+          "predicted": 1
+        }
+      ]
+    },
+    {
+      "arm": "B",
+      "budget_groups_per_rule": 2,
+      "seed": 11,
+      "training_scenes": 16,
+      "principle_bytes": 0,
+      "training_payload_bytes": 5552,
+      "trained_parameters": 52759,
+      "train_cpu_seconds": 0.09251699999999996,
+      "exam_cpu_seconds": 0.002635000000000609,
+      "metrics": {
+        "accuracy": 0.35714285714285715,
+        "coverage": 1,
+        "paraphrase": 0.5,
+        "exception": 0.5,
+        "transfer": 0.125,
+        "composition": 0.375,
+        "composition_physical": 0.25,
+        "composition_social": 0.5,
+        "paraphrase_both_correct": 0,
+        "exception_both_correct": 0
+      },
+      "failures": [
+        {
+          "id": "barrel-1",
+          "predicted": 1
+        },
+        {
+          "id": "marker-0",
+          "predicted": 1
+        },
+        {
+          "id": "pallet-0",
+          "predicted": 1
+        },
+        {
+          "id": "locker-0",
+          "predicted": 0
+        },
+        {
+          "id": "gloves-1",
+          "predicted": 0
+        },
+        {
+          "id": "radio-1",
+          "predicted": 0
+        },
+        {
+          "id": "statue-1",
+          "predicted": 1
+        },
+        {
+          "id": "case-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-1",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-0",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-1",
+          "predicted": 1
+        },
+        {
+          "id": "key-0",
+          "predicted": 0
+        },
+        {
+          "id": "key-1",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-0",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-1",
+          "predicted": 2
+        },
+        {
+          "id": "portable-locker-0",
+          "predicted": 1
+        },
+        {
+          "id": "projector-1",
+          "predicted": 0
+        },
+        {
+          "id": "speaker-0",
+          "predicted": 1
+        }
+      ]
+    },
+    {
+      "arm": "B",
+      "budget_groups_per_rule": 2,
+      "seed": 22,
+      "training_scenes": 16,
+      "principle_bytes": 0,
+      "training_payload_bytes": 5552,
+      "trained_parameters": 52759,
+      "train_cpu_seconds": 0.09554300000000016,
+      "exam_cpu_seconds": 0.002597999999999878,
+      "metrics": {
+        "accuracy": 0.35714285714285715,
+        "coverage": 1,
+        "paraphrase": 0,
+        "exception": 0.5,
+        "transfer": 0.375,
+        "composition": 0.375,
+        "composition_physical": 0.25,
+        "composition_social": 0.5,
+        "paraphrase_both_correct": 0,
+        "exception_both_correct": 0
+      },
+      "failures": [
+        {
+          "id": "barrel-0",
+          "predicted": 0
+        },
+        {
+          "id": "barrel-1",
+          "predicted": 1
+        },
+        {
+          "id": "marker-0",
+          "predicted": 1
+        },
+        {
+          "id": "marker-1",
+          "predicted": 1
+        },
+        {
+          "id": "pallet-1",
+          "predicted": 0
+        },
+        {
+          "id": "locker-0",
+          "predicted": 0
+        },
+        {
+          "id": "gloves-0",
+          "predicted": 0
+        },
+        {
+          "id": "radio-1",
+          "predicted": 0
+        },
+        {
+          "id": "case-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-1",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-0",
+          "predicted": 1
+        },
+        {
+          "id": "key-0",
+          "predicted": 0
+        },
+        {
+          "id": "key-1",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-0",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-1",
+          "predicted": 2
+        },
+        {
+          "id": "portable-locker-0",
+          "predicted": 1
+        },
+        {
+          "id": "projector-1",
+          "predicted": 0
+        },
+        {
+          "id": "speaker-0",
+          "predicted": 1
+        }
+      ]
+    },
+    {
+      "arm": "B",
+      "budget_groups_per_rule": 2,
+      "seed": 42,
+      "training_scenes": 16,
+      "principle_bytes": 0,
+      "training_payload_bytes": 5552,
+      "trained_parameters": 52759,
+      "train_cpu_seconds": 0.09355199999999986,
+      "exam_cpu_seconds": 0.0025680000000001257,
+      "metrics": {
+        "accuracy": 0.21428571428571427,
+        "coverage": 1,
+        "paraphrase": 0,
+        "exception": 0.375,
+        "transfer": 0.125,
+        "composition": 0.25,
+        "composition_physical": 0,
+        "composition_social": 0.5,
+        "paraphrase_both_correct": 0,
+        "exception_both_correct": 0
+      },
+      "failures": [
+        {
+          "id": "barrel-0",
+          "predicted": 0
+        },
+        {
+          "id": "barrel-1",
+          "predicted": 1
+        },
+        {
+          "id": "marker-0",
+          "predicted": 1
+        },
+        {
+          "id": "marker-1",
+          "predicted": 1
+        },
+        {
+          "id": "pallet-1",
+          "predicted": 0
+        },
+        {
+          "id": "locker-0",
+          "predicted": 0
+        },
+        {
+          "id": "gloves-0",
+          "predicted": 0
+        },
+        {
+          "id": "gloves-1",
+          "predicted": 0
+        },
+        {
+          "id": "radio-1",
+          "predicted": 0
+        },
+        {
+          "id": "statue-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-1",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-0",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-1",
+          "predicted": 1
+        },
+        {
+          "id": "key-0",
+          "predicted": 0
+        },
+        {
+          "id": "key-1",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-0",
+          "predicted": 2
+        },
+        {
+          "id": "stage-cover-1",
+          "predicted": 2
+        },
+        {
+          "id": "portable-locker-0",
+          "predicted": 1
+        },
+        {
+          "id": "portable-locker-1",
+          "predicted": 0
+        },
+        {
+          "id": "projector-1",
+          "predicted": 0
+        },
+        {
+          "id": "speaker-0",
+          "predicted": 1
+        }
+      ]
+    },
+    {
+      "arm": "C",
+      "budget_groups_per_rule": 2,
+      "seed": 11,
+      "training_scenes": 16,
+      "principle_bytes": 1818,
+      "training_payload_bytes": 7370,
+      "trained_parameters": 52759,
+      "train_cpu_seconds": 0.16596999999999973,
+      "exam_cpu_seconds": 0.0025650000000005946,
+      "metrics": {
+        "accuracy": 0.39285714285714285,
+        "coverage": 1,
+        "paraphrase": 0,
+        "exception": 0.5,
+        "transfer": 0.375,
+        "composition": 0.5,
+        "composition_physical": 0.5,
+        "composition_social": 0.5,
+        "paraphrase_both_correct": 0,
+        "exception_both_correct": 0
+      },
+      "failures": [
+        {
+          "id": "barrel-0",
+          "predicted": 0
+        },
+        {
+          "id": "barrel-1",
+          "predicted": 1
+        },
+        {
+          "id": "marker-0",
+          "predicted": 1
+        },
+        {
+          "id": "marker-1",
+          "predicted": 1
+        },
+        {
+          "id": "pallet-1",
+          "predicted": 0
+        },
+        {
+          "id": "locker-1",
+          "predicted": 1
+        },
+        {
+          "id": "gloves-1",
+          "predicted": 0
+        },
+        {
+          "id": "radio-1",
+          "predicted": 0
+        },
+        {
+          "id": "statue-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-1",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-1",
+          "predicted": 1
+        },
+        {
+          "id": "key-1",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-0",
+          "predicted": 0
+        },
+        {
+          "id": "stage-cover-1",
+          "predicted": 0
+        },
+        {
+          "id": "projector-1",
+          "predicted": 0
+        },
+        {
+          "id": "speaker-0",
+          "predicted": 1
+        }
+      ]
+    },
+    {
+      "arm": "C",
+      "budget_groups_per_rule": 2,
+      "seed": 22,
+      "training_scenes": 16,
+      "principle_bytes": 1818,
+      "training_payload_bytes": 7370,
+      "trained_parameters": 52759,
+      "train_cpu_seconds": 0.16477300000000028,
+      "exam_cpu_seconds": 0.0026120000000000587,
+      "metrics": {
+        "accuracy": 0.4642857142857143,
+        "coverage": 1,
+        "paraphrase": 0.75,
+        "exception": 0.5,
+        "transfer": 0.375,
+        "composition": 0.375,
+        "composition_physical": 0.25,
+        "composition_social": 0.5,
+        "paraphrase_both_correct": 0.5,
+        "exception_both_correct": 0
+      },
+      "failures": [
+        {
+          "id": "barrel-1",
+          "predicted": 1
+        },
+        {
+          "id": "pallet-1",
+          "predicted": 0
+        },
+        {
+          "id": "locker-0",
+          "predicted": 0
+        },
+        {
+          "id": "gloves-0",
+          "predicted": 0
+        },
+        {
+          "id": "radio-1",
+          "predicted": 0
+        },
+        {
+          "id": "statue-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-1",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-1",
+          "predicted": 1
+        },
+        {
+          "id": "key-1",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-0",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-1",
+          "predicted": 2
+        },
+        {
+          "id": "portable-locker-0",
+          "predicted": 1
+        },
+        {
+          "id": "projector-1",
+          "predicted": 0
+        },
+        {
+          "id": "speaker-0",
+          "predicted": 1
+        }
+      ]
+    },
+    {
+      "arm": "C",
+      "budget_groups_per_rule": 2,
+      "seed": 42,
+      "training_scenes": 16,
+      "principle_bytes": 1818,
+      "training_payload_bytes": 7370,
+      "trained_parameters": 52759,
+      "train_cpu_seconds": 0.16381800000000002,
+      "exam_cpu_seconds": 0.002538999999999625,
+      "metrics": {
+        "accuracy": 0.4642857142857143,
+        "coverage": 1,
+        "paraphrase": 0.5,
+        "exception": 0.5,
+        "transfer": 0.5,
+        "composition": 0.375,
+        "composition_physical": 0.25,
+        "composition_social": 0.5,
+        "paraphrase_both_correct": 0.5,
+        "exception_both_correct": 0
+      },
+      "failures": [
+        {
+          "id": "barrel-0",
+          "predicted": 0
+        },
+        {
+          "id": "barrel-1",
+          "predicted": 1
+        },
+        {
+          "id": "pallet-1",
+          "predicted": 0
+        },
+        {
+          "id": "locker-0",
+          "predicted": 0
+        },
+        {
+          "id": "gloves-0",
+          "predicted": 0
+        },
+        {
+          "id": "radio-1",
+          "predicted": 0
+        },
+        {
+          "id": "statue-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-1",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-1",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-0",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-1",
+          "predicted": 3
+        },
+        {
+          "id": "portable-locker-0",
+          "predicted": 1
+        },
+        {
+          "id": "projector-1",
+          "predicted": 0
+        },
+        {
+          "id": "speaker-0",
+          "predicted": 1
+        }
+      ]
+    },
+    {
+      "arm": "A",
+      "budget_groups_per_rule": 3,
+      "seed": 11,
+      "training_scenes": 24,
+      "principle_bytes": 0,
+      "training_payload_bytes": 7445,
+      "trained_parameters": 52759,
+      "train_cpu_seconds": 0.09750800000000037,
+      "exam_cpu_seconds": 0.002531000000000283,
+      "metrics": {
+        "accuracy": 0.5357142857142857,
+        "coverage": 1,
+        "paraphrase": 0.75,
+        "exception": 0.5,
+        "transfer": 0.5,
+        "composition": 0.5,
+        "composition_physical": 0.5,
+        "composition_social": 0.5,
+        "paraphrase_both_correct": 0.5,
+        "exception_both_correct": 0
+      },
+      "failures": [
+        {
+          "id": "barrel-1",
+          "predicted": 1
+        },
+        {
+          "id": "pallet-0",
+          "predicted": 1
+        },
+        {
+          "id": "locker-1",
+          "predicted": 1
+        },
+        {
+          "id": "gloves-1",
+          "predicted": 0
+        },
+        {
+          "id": "radio-1",
+          "predicted": 0
+        },
+        {
+          "id": "statue-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-1",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-1",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-1",
+          "predicted": 0
+        },
+        {
+          "id": "portable-locker-1",
+          "predicted": 2
+        },
+        {
+          "id": "projector-0",
+          "predicted": 1
+        },
+        {
+          "id": "speaker-1",
+          "predicted": 1
+        }
+      ]
+    },
+    {
+      "arm": "A",
+      "budget_groups_per_rule": 3,
+      "seed": 22,
+      "training_scenes": 24,
+      "principle_bytes": 0,
+      "training_payload_bytes": 7445,
+      "trained_parameters": 52759,
+      "train_cpu_seconds": 0.09609299999999976,
+      "exam_cpu_seconds": 0.002523000000000053,
+      "metrics": {
+        "accuracy": 0.5357142857142857,
+        "coverage": 1,
+        "paraphrase": 0.75,
+        "exception": 0.5,
+        "transfer": 0.625,
+        "composition": 0.375,
+        "composition_physical": 0.25,
+        "composition_social": 0.5,
+        "paraphrase_both_correct": 0.5,
+        "exception_both_correct": 0
+      },
+      "failures": [
+        {
+          "id": "barrel-1",
+          "predicted": 1
+        },
+        {
+          "id": "pallet-0",
+          "predicted": 1
+        },
+        {
+          "id": "locker-1",
+          "predicted": 1
+        },
+        {
+          "id": "gloves-1",
+          "predicted": 0
+        },
+        {
+          "id": "radio-1",
+          "predicted": 0
+        },
+        {
+          "id": "statue-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-1",
+          "predicted": 1
+        },
+        {
+          "id": "key-0",
+          "predicted": 0
+        },
+        {
+          "id": "stage-cover-1",
+          "predicted": 0
+        },
+        {
+          "id": "portable-locker-0",
+          "predicted": 3
+        },
+        {
+          "id": "portable-locker-1",
+          "predicted": 2
+        },
+        {
+          "id": "projector-0",
+          "predicted": 1
+        },
+        {
+          "id": "speaker-1",
+          "predicted": 1
+        }
+      ]
+    },
+    {
+      "arm": "A",
+      "budget_groups_per_rule": 3,
+      "seed": 42,
+      "training_scenes": 24,
+      "principle_bytes": 0,
+      "training_payload_bytes": 7445,
+      "trained_parameters": 52759,
+      "train_cpu_seconds": 0.09716199999999997,
+      "exam_cpu_seconds": 0.0025940000000002073,
+      "metrics": {
+        "accuracy": 0.5357142857142857,
+        "coverage": 1,
+        "paraphrase": 0.75,
+        "exception": 0.625,
+        "transfer": 0.5,
+        "composition": 0.375,
+        "composition_physical": 0.25,
+        "composition_social": 0.5,
+        "paraphrase_both_correct": 0.5,
+        "exception_both_correct": 0.25
+      },
+      "failures": [
+        {
+          "id": "barrel-1",
+          "predicted": 1
+        },
+        {
+          "id": "pallet-0",
+          "predicted": 1
+        },
+        {
+          "id": "locker-1",
+          "predicted": 1
+        },
+        {
+          "id": "radio-1",
+          "predicted": 0
+        },
+        {
+          "id": "statue-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-1",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-1",
+          "predicted": 1
+        },
+        {
+          "id": "key-1",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-1",
+          "predicted": 0
+        },
+        {
+          "id": "portable-locker-0",
+          "predicted": 3
+        },
+        {
+          "id": "portable-locker-1",
+          "predicted": 2
+        },
+        {
+          "id": "projector-0",
+          "predicted": 1
+        },
+        {
+          "id": "speaker-1",
+          "predicted": 1
+        }
+      ]
+    },
+    {
+      "arm": "B",
+      "budget_groups_per_rule": 3,
+      "seed": 11,
+      "training_scenes": 24,
+      "principle_bytes": 0,
+      "training_payload_bytes": 7445,
+      "trained_parameters": 52759,
+      "train_cpu_seconds": 0.09637399999999996,
+      "exam_cpu_seconds": 0.0025210000000006616,
+      "metrics": {
+        "accuracy": 0.42857142857142855,
+        "coverage": 1,
+        "paraphrase": 0.75,
+        "exception": 0.5,
+        "transfer": 0.5,
+        "composition": 0.125,
+        "composition_physical": 0,
+        "composition_social": 0.25,
+        "paraphrase_both_correct": 0.5,
+        "exception_both_correct": 0
+      },
+      "failures": [
+        {
+          "id": "barrel-1",
+          "predicted": 1
+        },
+        {
+          "id": "pallet-0",
+          "predicted": 1
+        },
+        {
+          "id": "locker-1",
+          "predicted": 1
+        },
+        {
+          "id": "gloves-1",
+          "predicted": 0
+        },
+        {
+          "id": "radio-1",
+          "predicted": 0
+        },
+        {
+          "id": "statue-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-1",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-0",
+          "predicted": 1
+        },
+        {
+          "id": "key-1",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-0",
+          "predicted": 0
+        },
+        {
+          "id": "stage-cover-1",
+          "predicted": 2
+        },
+        {
+          "id": "portable-locker-0",
+          "predicted": 3
+        },
+        {
+          "id": "portable-locker-1",
+          "predicted": 1
+        },
+        {
+          "id": "projector-1",
+          "predicted": 0
+        },
+        {
+          "id": "speaker-0",
+          "predicted": 1
+        },
+        {
+          "id": "speaker-1",
+          "predicted": 1
+        }
+      ]
+    },
+    {
+      "arm": "B",
+      "budget_groups_per_rule": 3,
+      "seed": 22,
+      "training_scenes": 24,
+      "principle_bytes": 0,
+      "training_payload_bytes": 7445,
+      "trained_parameters": 52759,
+      "train_cpu_seconds": 0.0954240000000004,
+      "exam_cpu_seconds": 0.0025300000000001432,
+      "metrics": {
+        "accuracy": 0.5357142857142857,
+        "coverage": 1,
+        "paraphrase": 0.75,
+        "exception": 0.625,
+        "transfer": 0.375,
+        "composition": 0.5,
+        "composition_physical": 0.5,
+        "composition_social": 0.5,
+        "paraphrase_both_correct": 0.5,
+        "exception_both_correct": 0.25
+      },
+      "failures": [
+        {
+          "id": "barrel-1",
+          "predicted": 1
+        },
+        {
+          "id": "pallet-0",
+          "predicted": 1
+        },
+        {
+          "id": "locker-0",
+          "predicted": 0
+        },
+        {
+          "id": "radio-1",
+          "predicted": 0
+        },
+        {
+          "id": "case-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-1",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-0",
+          "predicted": 1
+        },
+        {
+          "id": "key-0",
+          "predicted": 0
+        },
+        {
+          "id": "key-1",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-0",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-1",
+          "predicted": 2
+        },
+        {
+          "id": "projector-1",
+          "predicted": 0
+        },
+        {
+          "id": "speaker-1",
+          "predicted": 1
+        }
+      ]
+    },
+    {
+      "arm": "B",
+      "budget_groups_per_rule": 3,
+      "seed": 42,
+      "training_scenes": 24,
+      "principle_bytes": 0,
+      "training_payload_bytes": 7445,
+      "trained_parameters": 52759,
+      "train_cpu_seconds": 0.0964160000000005,
+      "exam_cpu_seconds": 0.0025839999999996976,
+      "metrics": {
+        "accuracy": 0.4642857142857143,
+        "coverage": 1,
+        "paraphrase": 0.5,
+        "exception": 0.75,
+        "transfer": 0.375,
+        "composition": 0.25,
+        "composition_physical": 0.25,
+        "composition_social": 0.25,
+        "paraphrase_both_correct": 0,
+        "exception_both_correct": 0.5
+      },
+      "failures": [
+        {
+          "id": "barrel-1",
+          "predicted": 1
+        },
+        {
+          "id": "marker-0",
+          "predicted": 1
+        },
+        {
+          "id": "locker-1",
+          "predicted": 1
+        },
+        {
+          "id": "radio-1",
+          "predicted": 0
+        },
+        {
+          "id": "case-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-1",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-0",
+          "predicted": 1
+        },
+        {
+          "id": "key-0",
+          "predicted": 0
+        },
+        {
+          "id": "key-1",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-0",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-1",
+          "predicted": 2
+        },
+        {
+          "id": "portable-locker-1",
+          "predicted": 2
+        },
+        {
+          "id": "projector-1",
+          "predicted": 0
+        },
+        {
+          "id": "speaker-0",
+          "predicted": 1
+        },
+        {
+          "id": "speaker-1",
+          "predicted": 1
+        }
+      ]
+    },
+    {
+      "arm": "C",
+      "budget_groups_per_rule": 3,
+      "seed": 11,
+      "training_scenes": 24,
+      "principle_bytes": 1884,
+      "training_payload_bytes": 9329,
+      "trained_parameters": 52759,
+      "train_cpu_seconds": 0.1701939999999995,
+      "exam_cpu_seconds": 0.002532000000000423,
+      "metrics": {
+        "accuracy": 0.4642857142857143,
+        "coverage": 1,
+        "paraphrase": 0.5,
+        "exception": 0.5,
+        "transfer": 0.375,
+        "composition": 0.5,
+        "composition_physical": 0.5,
+        "composition_social": 0.5,
+        "paraphrase_both_correct": 0,
+        "exception_both_correct": 0
+      },
+      "failures": [
+        {
+          "id": "barrel-1",
+          "predicted": 1
+        },
+        {
+          "id": "marker-0",
+          "predicted": 1
+        },
+        {
+          "id": "pallet-1",
+          "predicted": 0
+        },
+        {
+          "id": "locker-1",
+          "predicted": 1
+        },
+        {
+          "id": "gloves-1",
+          "predicted": 0
+        },
+        {
+          "id": "radio-1",
+          "predicted": 0
+        },
+        {
+          "id": "statue-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-1",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-0",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-1",
+          "predicted": 1
+        },
+        {
+          "id": "key-1",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-1",
+          "predicted": 0
+        },
+        {
+          "id": "portable-locker-1",
+          "predicted": 1
+        },
+        {
+          "id": "projector-1",
+          "predicted": 0
+        },
+        {
+          "id": "speaker-1",
+          "predicted": 1
+        }
+      ]
+    },
+    {
+      "arm": "C",
+      "budget_groups_per_rule": 3,
+      "seed": 22,
+      "training_scenes": 24,
+      "principle_bytes": 1884,
+      "training_payload_bytes": 9329,
+      "trained_parameters": 52759,
+      "train_cpu_seconds": 0.17026399999999953,
+      "exam_cpu_seconds": 0.0025900000000005363,
+      "metrics": {
+        "accuracy": 0.4642857142857143,
+        "coverage": 1,
+        "paraphrase": 0.75,
+        "exception": 0.5,
+        "transfer": 0.375,
+        "composition": 0.375,
+        "composition_physical": 0.25,
+        "composition_social": 0.5,
+        "paraphrase_both_correct": 0.5,
+        "exception_both_correct": 0
+      },
+      "failures": [
+        {
+          "id": "barrel-1",
+          "predicted": 1
+        },
+        {
+          "id": "pallet-0",
+          "predicted": 1
+        },
+        {
+          "id": "locker-1",
+          "predicted": 1
+        },
+        {
+          "id": "gloves-0",
+          "predicted": 0
+        },
+        {
+          "id": "radio-1",
+          "predicted": 0
+        },
+        {
+          "id": "statue-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-1",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-1",
+          "predicted": 1
+        },
+        {
+          "id": "key-1",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-0",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-1",
+          "predicted": 0
+        },
+        {
+          "id": "portable-locker-1",
+          "predicted": 1
+        },
+        {
+          "id": "projector-1",
+          "predicted": 0
+        },
+        {
+          "id": "speaker-1",
+          "predicted": 1
+        }
+      ]
+    },
+    {
+      "arm": "C",
+      "budget_groups_per_rule": 3,
+      "seed": 42,
+      "training_scenes": 24,
+      "principle_bytes": 1884,
+      "training_payload_bytes": 9329,
+      "trained_parameters": 52759,
+      "train_cpu_seconds": 0.17186400000000024,
+      "exam_cpu_seconds": 0.002552000000000554,
+      "metrics": {
+        "accuracy": 0.5,
+        "coverage": 1,
+        "paraphrase": 0.75,
+        "exception": 0.5,
+        "transfer": 0.375,
+        "composition": 0.5,
+        "composition_physical": 0.5,
+        "composition_social": 0.5,
+        "paraphrase_both_correct": 0.5,
+        "exception_both_correct": 0
+      },
+      "failures": [
+        {
+          "id": "barrel-1",
+          "predicted": 1
+        },
+        {
+          "id": "pallet-0",
+          "predicted": 1
+        },
+        {
+          "id": "locker-1",
+          "predicted": 1
+        },
+        {
+          "id": "gloves-1",
+          "predicted": 0
+        },
+        {
+          "id": "radio-1",
+          "predicted": 0
+        },
+        {
+          "id": "statue-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-1",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-0",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-1",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-1",
+          "predicted": 0
+        },
+        {
+          "id": "portable-locker-1",
+          "predicted": 1
+        },
+        {
+          "id": "projector-1",
+          "predicted": 0
+        },
+        {
+          "id": "speaker-1",
+          "predicted": 1
+        }
+      ]
+    },
+    {
+      "arm": "A",
+      "budget_groups_per_rule": 4,
+      "seed": 11,
+      "training_scenes": 32,
+      "principle_bytes": 0,
+      "training_payload_bytes": 9359,
+      "trained_parameters": 52759,
+      "train_cpu_seconds": 0.10426599999999997,
+      "exam_cpu_seconds": 0.002682000000000073,
+      "metrics": {
+        "accuracy": 0.5357142857142857,
+        "coverage": 1,
+        "paraphrase": 0.75,
+        "exception": 0.5,
+        "transfer": 0.625,
+        "composition": 0.375,
+        "composition_physical": 0.25,
+        "composition_social": 0.5,
+        "paraphrase_both_correct": 0.5,
+        "exception_both_correct": 0
+      },
+      "failures": [
+        {
+          "id": "barrel-1",
+          "predicted": 1
+        },
+        {
+          "id": "pallet-0",
+          "predicted": 1
+        },
+        {
+          "id": "locker-1",
+          "predicted": 1
+        },
+        {
+          "id": "gloves-1",
+          "predicted": 0
+        },
+        {
+          "id": "radio-1",
+          "predicted": 0
+        },
+        {
+          "id": "statue-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-1",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-1",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-1",
+          "predicted": 0
+        },
+        {
+          "id": "portable-locker-0",
+          "predicted": 3
+        },
+        {
+          "id": "portable-locker-1",
+          "predicted": 2
+        },
+        {
+          "id": "projector-0",
+          "predicted": 1
+        },
+        {
+          "id": "speaker-1",
+          "predicted": 1
+        }
+      ]
+    },
+    {
+      "arm": "A",
+      "budget_groups_per_rule": 4,
+      "seed": 22,
+      "training_scenes": 32,
+      "principle_bytes": 0,
+      "training_payload_bytes": 9359,
+      "trained_parameters": 52759,
+      "train_cpu_seconds": 0.10295200000000015,
+      "exam_cpu_seconds": 0.002549999999999386,
+      "metrics": {
+        "accuracy": 0.6428571428571429,
+        "coverage": 1,
+        "paraphrase": 1,
+        "exception": 0.625,
+        "transfer": 0.625,
+        "composition": 0.5,
+        "composition_physical": 0.5,
+        "composition_social": 0.5,
+        "paraphrase_both_correct": 1,
+        "exception_both_correct": 0.25
+      },
+      "failures": [
+        {
+          "id": "pallet-0",
+          "predicted": 1
+        },
+        {
+          "id": "locker-1",
+          "predicted": 1
+        },
+        {
+          "id": "radio-1",
+          "predicted": 0
+        },
+        {
+          "id": "case-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-1",
+          "predicted": 1
+        },
+        {
+          "id": "key-1",
+          "predicted": 1
+        },
+        {
+          "id": "portable-locker-0",
+          "predicted": 3
+        },
+        {
+          "id": "portable-locker-1",
+          "predicted": 2
+        },
+        {
+          "id": "projector-0",
+          "predicted": 1
+        },
+        {
+          "id": "speaker-1",
+          "predicted": 1
+        }
+      ]
+    },
+    {
+      "arm": "A",
+      "budget_groups_per_rule": 4,
+      "seed": 42,
+      "training_scenes": 32,
+      "principle_bytes": 0,
+      "training_payload_bytes": 9359,
+      "trained_parameters": 52759,
+      "train_cpu_seconds": 0.10187100000000004,
+      "exam_cpu_seconds": 0.002666999999999753,
+      "metrics": {
+        "accuracy": 0.6428571428571429,
+        "coverage": 1,
+        "paraphrase": 1,
+        "exception": 0.625,
+        "transfer": 0.625,
+        "composition": 0.5,
+        "composition_physical": 0.5,
+        "composition_social": 0.5,
+        "paraphrase_both_correct": 1,
+        "exception_both_correct": 0.25
+      },
+      "failures": [
+        {
+          "id": "pallet-0",
+          "predicted": 1
+        },
+        {
+          "id": "locker-1",
+          "predicted": 1
+        },
+        {
+          "id": "radio-1",
+          "predicted": 0
+        },
+        {
+          "id": "case-1",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-1",
+          "predicted": 1
+        },
+        {
+          "id": "key-1",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-1",
+          "predicted": 0
+        },
+        {
+          "id": "portable-locker-1",
+          "predicted": 2
+        },
+        {
+          "id": "projector-0",
+          "predicted": 1
+        },
+        {
+          "id": "speaker-1",
+          "predicted": 1
+        }
+      ]
+    },
+    {
+      "arm": "B",
+      "budget_groups_per_rule": 4,
+      "seed": 11,
+      "training_scenes": 32,
+      "principle_bytes": 0,
+      "training_payload_bytes": 9359,
+      "trained_parameters": 52759,
+      "train_cpu_seconds": 0.10161900000000035,
+      "exam_cpu_seconds": 0.0025610000000000355,
+      "metrics": {
+        "accuracy": 0.5,
+        "coverage": 1,
+        "paraphrase": 0.75,
+        "exception": 0.5,
+        "transfer": 0.625,
+        "composition": 0.25,
+        "composition_physical": 0.25,
+        "composition_social": 0.25,
+        "paraphrase_both_correct": 0.5,
+        "exception_both_correct": 0.25
+      },
+      "failures": [
+        {
+          "id": "barrel-1",
+          "predicted": 1
+        },
+        {
+          "id": "pallet-0",
+          "predicted": 1
+        },
+        {
+          "id": "locker-0",
+          "predicted": 0
+        },
+        {
+          "id": "locker-1",
+          "predicted": 1
+        },
+        {
+          "id": "radio-1",
+          "predicted": 0
+        },
+        {
+          "id": "statue-1",
+          "predicted": 1
+        },
+        {
+          "id": "case-1",
+          "predicted": 1
+        },
+        {
+          "id": "key-0",
+          "predicted": 0
+        },
+        {
+          "id": "stage-cover-0",
+          "predicted": 0
+        },
+        {
+          "id": "portable-locker-0",
+          "predicted": 1
+        },
+        {
+          "id": "portable-locker-1",
+          "predicted": 1
+        },
+        {
+          "id": "projector-1",
+          "predicted": 0
+        },
+        {
+          "id": "speaker-0",
+          "predicted": 1
+        },
+        {
+          "id": "speaker-1",
+          "predicted": 1
+        }
+      ]
+    },
+    {
+      "arm": "B",
+      "budget_groups_per_rule": 4,
+      "seed": 22,
+      "training_scenes": 32,
+      "principle_bytes": 0,
+      "training_payload_bytes": 9359,
+      "trained_parameters": 52759,
+      "train_cpu_seconds": 0.10163999999999973,
+      "exam_cpu_seconds": 0.0025959999999995986,
+      "metrics": {
+        "accuracy": 0.5714285714285714,
+        "coverage": 1,
+        "paraphrase": 0.75,
+        "exception": 0.5,
+        "transfer": 0.75,
+        "composition": 0.375,
+        "composition_physical": 0.5,
+        "composition_social": 0.25,
+        "paraphrase_both_correct": 0.5,
+        "exception_both_correct": 0
+      },
+      "failures": [
+        {
+          "id": "barrel-1",
+          "predicted": 1
+        },
+        {
+          "id": "pallet-0",
+          "predicted": 1
+        },
+        {
+          "id": "locker-0",
+          "predicted": 0
+        },
+        {
+          "id": "gloves-0",
+          "predicted": 0
+        },
+        {
+          "id": "radio-1",
+          "predicted": 0
+        },
+        {
+          "id": "case-1",
+          "predicted": 1
+        },
+        {
+          "id": "key-0",
+          "predicted": 0
+        },
+        {
+          "id": "stage-cover-0",
+          "predicted": 0
+        },
+        {
+          "id": "portable-locker-1",
+          "predicted": 0
+        },
+        {
+          "id": "projector-1",
+          "predicted": 0
+        },
+        {
+          "id": "speaker-0",
+          "predicted": 1
+        },
+        {
+          "id": "speaker-1",
+          "predicted": 1
+        }
+      ]
+    },
+    {
+      "arm": "B",
+      "budget_groups_per_rule": 4,
+      "seed": 42,
+      "training_scenes": 32,
+      "principle_bytes": 0,
+      "training_payload_bytes": 9359,
+      "trained_parameters": 52759,
+      "train_cpu_seconds": 0.10269899999999943,
+      "exam_cpu_seconds": 0.002550999999999526,
+      "metrics": {
+        "accuracy": 0.6428571428571429,
+        "coverage": 1,
+        "paraphrase": 0.75,
+        "exception": 0.75,
+        "transfer": 0.75,
+        "composition": 0.375,
+        "composition_physical": 0.5,
+        "composition_social": 0.25,
+        "paraphrase_both_correct": 0.5,
+        "exception_both_correct": 0.5
+      },
+      "failures": [
+        {
+          "id": "barrel-1",
+          "predicted": 1
+        },
+        {
+          "id": "pallet-0",
+          "predicted": 1
+        },
+        {
+          "id": "radio-1",
+          "predicted": 0
+        },
+        {
+          "id": "case-1",
+          "predicted": 1
+        },
+        {
+          "id": "key-0",
+          "predicted": 0
+        },
+        {
+          "id": "stage-cover-0",
+          "predicted": 0
+        },
+        {
+          "id": "portable-locker-1",
+          "predicted": 2
+        },
+        {
+          "id": "projector-1",
+          "predicted": 0
+        },
+        {
+          "id": "speaker-0",
+          "predicted": 1
+        },
+        {
+          "id": "speaker-1",
+          "predicted": 1
+        }
+      ]
+    },
+    {
+      "arm": "C",
+      "budget_groups_per_rule": 4,
+      "seed": 11,
+      "training_scenes": 32,
+      "principle_bytes": 1950,
+      "training_payload_bytes": 11309,
+      "trained_parameters": 52759,
+      "train_cpu_seconds": 0.1807249999999998,
+      "exam_cpu_seconds": 0.0025409999999999044,
+      "metrics": {
+        "accuracy": 0.4642857142857143,
+        "coverage": 1,
+        "paraphrase": 0.75,
+        "exception": 0.625,
+        "transfer": 0.375,
+        "composition": 0.25,
+        "composition_physical": 0,
+        "composition_social": 0.5,
+        "paraphrase_both_correct": 0.5,
+        "exception_both_correct": 0.25
+      },
+      "failures": [
+        {
+          "id": "barrel-1",
+          "predicted": 1
+        },
+        {
+          "id": "pallet-1",
+          "predicted": 0
+        },
+        {
+          "id": "locker-1",
+          "predicted": 1
+        },
+        {
+          "id": "radio-1",
+          "predicted": 0
+        },
+        {
+          "id": "statue-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-1",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-1",
+          "predicted": 1
+        },
+        {
+          "id": "key-0",
+          "predicted": 0
+        },
+        {
+          "id": "stage-cover-0",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-1",
+          "predicted": 3
+        },
+        {
+          "id": "portable-locker-0",
+          "predicted": 1
+        },
+        {
+          "id": "portable-locker-1",
+          "predicted": 0
+        },
+        {
+          "id": "projector-1",
+          "predicted": 0
+        },
+        {
+          "id": "speaker-1",
+          "predicted": 1
+        }
+      ]
+    },
+    {
+      "arm": "C",
+      "budget_groups_per_rule": 4,
+      "seed": 22,
+      "training_scenes": 32,
+      "principle_bytes": 1950,
+      "training_payload_bytes": 11309,
+      "trained_parameters": 52759,
+      "train_cpu_seconds": 0.17808199999999985,
+      "exam_cpu_seconds": 0.0025610000000000355,
+      "metrics": {
+        "accuracy": 0.4642857142857143,
+        "coverage": 1,
+        "paraphrase": 0.75,
+        "exception": 0.5,
+        "transfer": 0.5,
+        "composition": 0.25,
+        "composition_physical": 0,
+        "composition_social": 0.5,
+        "paraphrase_both_correct": 0.5,
+        "exception_both_correct": 0
+      },
+      "failures": [
+        {
+          "id": "barrel-1",
+          "predicted": 1
+        },
+        {
+          "id": "pallet-0",
+          "predicted": 1
+        },
+        {
+          "id": "locker-0",
+          "predicted": 0
+        },
+        {
+          "id": "gloves-0",
+          "predicted": 0
+        },
+        {
+          "id": "radio-1",
+          "predicted": 0
+        },
+        {
+          "id": "case-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-1",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-1",
+          "predicted": 1
+        },
+        {
+          "id": "key-0",
+          "predicted": 0
+        },
+        {
+          "id": "stage-cover-0",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-1",
+          "predicted": 3
+        },
+        {
+          "id": "portable-locker-0",
+          "predicted": 1
+        },
+        {
+          "id": "portable-locker-1",
+          "predicted": 0
+        },
+        {
+          "id": "projector-1",
+          "predicted": 0
+        },
+        {
+          "id": "speaker-1",
+          "predicted": 1
+        }
+      ]
+    },
+    {
+      "arm": "C",
+      "budget_groups_per_rule": 4,
+      "seed": 42,
+      "training_scenes": 32,
+      "principle_bytes": 1950,
+      "training_payload_bytes": 11309,
+      "trained_parameters": 52759,
+      "train_cpu_seconds": 0.18274499999999883,
+      "exam_cpu_seconds": 0.0025089999999998724,
+      "metrics": {
+        "accuracy": 0.5,
+        "coverage": 1,
+        "paraphrase": 0.75,
+        "exception": 0.5,
+        "transfer": 0.5,
+        "composition": 0.375,
+        "composition_physical": 0.25,
+        "composition_social": 0.5,
+        "paraphrase_both_correct": 0.5,
+        "exception_both_correct": 0
+      },
+      "failures": [
+        {
+          "id": "barrel-1",
+          "predicted": 1
+        },
+        {
+          "id": "pallet-0",
+          "predicted": 1
+        },
+        {
+          "id": "locker-1",
+          "predicted": 1
+        },
+        {
+          "id": "gloves-1",
+          "predicted": 0
+        },
+        {
+          "id": "radio-1",
+          "predicted": 0
+        },
+        {
+          "id": "case-0",
+          "predicted": 1
+        },
+        {
+          "id": "case-1",
+          "predicted": 1
+        },
+        {
+          "id": "microphone-1",
+          "predicted": 1
+        },
+        {
+          "id": "key-0",
+          "predicted": 0
+        },
+        {
+          "id": "stage-cover-0",
+          "predicted": 1
+        },
+        {
+          "id": "stage-cover-1",
+          "predicted": 0
+        },
+        {
+          "id": "portable-locker-1",
+          "predicted": 2
+        },
+        {
+          "id": "projector-1",
+          "predicted": 0
+        },
+        {
+          "id": "speaker-1",
+          "predicted": 1
+        }
+      ]
+    }
+  ],
+  "answer_key": [
+    {
+      "id": "barrel-0",
+      "topic": "physical",
+      "skill": "paraphrase",
+      "context": [
+        "빈 통이 고무판 위에 놓여 있다.",
+        "준이 저항보다 큰 힘을 옆으로 주었다."
+      ],
+      "options": [
+        "빈 통은 꼼짝하지 않았다.",
+        "빈 통이 옆으로 이동했다."
+      ],
+      "expected": 1
+    },
+    {
+      "id": "barrel-1",
+      "topic": "physical",
+      "skill": "paraphrase",
+      "context": [
+        "고무판 위에는 빈 통이 놓여 있다.",
+        "준이 통을 옆으로 밀되 고무판이 버티는 것보다 더 강하게 밀었다."
+      ],
+      "options": [
+        "결국 통의 위치가 달라졌다.",
+        "결국 통은 처음 위치에 있었다."
+      ],
+      "expected": 0
+    },
+    {
+      "id": "marker-0",
+      "topic": "social",
+      "skill": "paraphrase",
+      "context": [
+        "소희는 가은의 형광펜이 필요했다.",
+        "가은은 자기 형광펜을 빌려도 좋다고 직접 답했다."
+      ],
+      "options": [
+        "소희는 그 형광펜을 이용해도 된다.",
+        "소희는 가은에게 먼저 동의를 요청해야 한다."
+      ],
+      "expected": 0
+    },
+    {
+      "id": "marker-1",
+      "topic": "social",
+      "skill": "paraphrase",
+      "context": [
+        "형광펜이 필요해진 소희가 가은에게 연락했다.",
+        "가은은 소희에게 자기 것을 가져다 쓰라고 했다."
+      ],
+      "options": [
+        "소희는 받은 허락대로 형광펜을 써도 된다.",
+        "소희는 아무 허락도 없어 기다려야 한다."
+      ],
+      "expected": 0
+    },
+    {
+      "id": "pallet-0",
+      "topic": "physical",
+      "skill": "exception",
+      "context": [
+        "실내에 작은 받침판이 있다.",
+        "받침판을 밀자 바닥이 버티는 힘보다 미는 힘이 더 컸다."
+      ],
+      "options": [
+        "받침판이 옆으로 밀렸다.",
+        "받침판이 같은 자리에 남았다."
+      ],
+      "expected": 0
+    },
+    {
+      "id": "pallet-1",
+      "topic": "physical",
+      "skill": "exception",
+      "context": [
+        "실내에 작은 받침판이 있다.",
+        "받침판을 밀자 바닥이 버티는 힘보다 미는 힘이 더 작았다."
+      ],
+      "options": [
+        "받침판이 옆으로 밀렸다.",
+        "받침판이 같은 자리에 남았다."
+      ],
+      "expected": 1
+    },
+    {
+      "id": "locker-0",
+      "topic": "physical",
+      "skill": "exception",
+      "context": [
+        "보관함의 문은 빗장으로 잠겨 있다.",
+        "빗장을 빼고 문을 당겼다."
+      ],
+      "options": [
+        "보관함은 잠긴 채였다.",
+        "보관함이 열렸다."
+      ],
+      "expected": 1
+    },
+    {
+      "id": "locker-1",
+      "topic": "physical",
+      "skill": "exception",
+      "context": [
+        "보관함의 문은 빗장으로 잠겨 있다.",
+        "빗장을 뺀 적 없이 문을 당겼다."
+      ],
+      "options": [
+        "보관함은 잠긴 채였다.",
+        "보관함이 열렸다."
+      ],
+      "expected": 0
+    },
+    {
+      "id": "gloves-0",
+      "topic": "social",
+      "skill": "exception",
+      "context": [
+        "은지는 윤아의 장갑을 빌리려 한다.",
+        "윤아가 장갑을 빌리는 데 동의했다."
+      ],
+      "options": [
+        "은지는 주인의 허락을 기다린다.",
+        "은지는 장갑을 빌릴 수 있다."
+      ],
+      "expected": 1
+    },
+    {
+      "id": "gloves-1",
+      "topic": "social",
+      "skill": "exception",
+      "context": [
+        "은지는 윤아의 장갑을 빌리려 한다.",
+        "윤아가 장갑을 빌리는 데 동의하지 않았다."
+      ],
+      "options": [
+        "은지는 장갑을 빌릴 수 있다.",
+        "은지는 주인의 허락을 기다린다."
+      ],
+      "expected": 1
+    },
+    {
+      "id": "radio-0",
+      "topic": "social",
+      "skill": "exception",
+      "context": [
+        "빌린 무전기는 건물 안에서만 쓰도록 허락받았다.",
+        "정우는 건물 안에서 연락에 쓰려고 한다."
+      ],
+      "options": [
+        "정우는 받은 허락으로 무전을 해도 된다.",
+        "정우는 무전하기 전에 범위를 다시 확인해야 한다."
+      ],
+      "expected": 0
+    },
+    {
+      "id": "radio-1",
+      "topic": "social",
+      "skill": "exception",
+      "context": [
+        "빌린 무전기는 건물 안에서만 쓰도록 허락받았다.",
+        "정우는 건물 밖에서 연락에 쓰려고 한다."
+      ],
+      "options": [
+        "정우는 받은 허락으로 무전을 해도 된다.",
+        "정우는 무전하기 전에 범위를 다시 확인해야 한다."
+      ],
+      "expected": 1
+    },
+    {
+      "id": "statue-0",
+      "topic": "physical",
+      "skill": "transfer",
+      "context": [
+        "미술관 직원이 전시용 조각을 받침대 위에서 옮기려 했다.",
+        "옆으로 힘을 주었으나 받침대가 조각을 붙드는 힘이 더 셌다."
+      ],
+      "options": [
+        "조각은 받침대 위 같은 곳에 있었다.",
+        "조각이 받침대 위에서 옆으로 이동했다."
+      ],
+      "expected": 0
+    },
+    {
+      "id": "statue-1",
+      "topic": "physical",
+      "skill": "transfer",
+      "context": [
+        "무대에 바위를 흉내 낸 모형이 서 있다.",
+        "스태프가 마룻바닥의 저항을 넘길 힘을 주어 옆으로 밀었다."
+      ],
+      "options": [
+        "무대 소품이 원래 자리에서 벗어났다.",
+        "무대 소품의 자리가 그대로였다."
+      ],
+      "expected": 0
+    },
+    {
+      "id": "case-0",
+      "topic": "physical",
+      "skill": "transfer",
+      "context": [
+        "악기 케이스를 고정하던 금속 고리가 풀려 있었다.",
+        "연주자가 케이스의 덮개를 위쪽으로 당겼다."
+      ],
+      "options": [
+        "케이스가 열려 악기를 꺼낼 수 있었다.",
+        "케이스가 계속 닫혀 있었다."
+      ],
+      "expected": 0
+    },
+    {
+      "id": "case-1",
+      "topic": "physical",
+      "skill": "transfer",
+      "context": [
+        "공구통의 멈춤쇠가 뚜껑을 잡고 있었다.",
+        "정비사가 손잡이를 끌어올렸다."
+      ],
+      "options": [
+        "공구통의 덮개가 들리지 않았다.",
+        "공구통 안이 드러났다."
+      ],
+      "expected": 0
+    },
+    {
+      "id": "microphone-0",
+      "topic": "social",
+      "skill": "transfer",
+      "context": [
+        "진행자는 다른 동아리의 마이크를 쓰려고 한다.",
+        "장비 담당자가 써도 좋다는 뜻을 분명히 밝혔다."
+      ],
+      "options": [
+        "진행자는 마이크를 이용할 수 있다.",
+        "진행자는 이용 여부를 확인할 때까지 기다려야 한다."
+      ],
+      "expected": 0
+    },
+    {
+      "id": "microphone-1",
+      "topic": "social",
+      "skill": "transfer",
+      "context": [
+        "연주자는 다른 팀의 보면대를 가져가려 한다.",
+        "주인이 이를 승인했다는 말은 어디에도 없었다."
+      ],
+      "options": [
+        "연주자는 승인 여부를 주인에게 먼저 확인해야 한다.",
+        "연주자는 바로 보면대를 가져가도 된다."
+      ],
+      "expected": 0
+    },
+    {
+      "id": "key-0",
+      "topic": "social",
+      "skill": "transfer",
+      "context": [
+        "동료가 창고 문을 열 용도로만 열쇠를 빌려줬다.",
+        "아람은 그 열쇠로 사무실 문을 열려고 한다."
+      ],
+      "options": [
+        "아람은 창고용 허락을 사무실에도 적용해도 된다.",
+        "아람은 다른 문을 열기 전에 별도로 승인받아야 한다."
+      ],
+      "expected": 1
+    },
+    {
+      "id": "key-1",
+      "topic": "social",
+      "skill": "transfer",
+      "context": [
+        "소품 담당자가 장식용 천을 무대에서 쓰도록 빌려줬다.",
+        "연출자는 그대로 무대에서 장식용으로 쓰려 한다."
+      ],
+      "options": [
+        "연출자는 기존 합의의 범위에서 천을 사용할 수 있다.",
+        "연출자는 같은 용도여도 다시 승인받아야 한다."
+      ],
+      "expected": 0
+    },
+    {
+      "id": "stage-cover-0",
+      "topic": "physical",
+      "skill": "composition",
+      "context": [
+        "걸쇠가 풀린 무대 장비 덮개를 당겼다.",
+        "덮개 옆의 상자를 밀 때 바닥의 저항보다 큰 힘을 썼다."
+      ],
+      "options": [
+        "덮개는 열렸지만 상자는 기존 자리에 있었다.",
+        "덮개는 닫혀 있었고 상자는 기존 자리에 있었다.",
+        "덮개는 닫혀 있었지만 상자의 위치가 달라졌다.",
+        "덮개가 열렸고 상자의 위치가 달라졌다."
+      ],
+      "expected": 3
+    },
+    {
+      "id": "stage-cover-1",
+      "topic": "physical",
+      "skill": "composition",
+      "context": [
+        "걸쇠가 풀린 무대 장비 덮개를 당겼다.",
+        "덮개 옆의 상자를 밀 때 바닥의 저항보다 작은 힘을 썼다."
+      ],
+      "options": [
+        "덮개가 열렸고 상자는 다른 위치로 갔다.",
+        "덮개가 열렸지만 상자는 기존 자리에 있었다.",
+        "덮개는 닫혀 있었지만 상자는 다른 위치로 갔다.",
+        "덮개는 닫혀 있었고 상자는 기존 자리에 있었다."
+      ],
+      "expected": 1
+    },
+    {
+      "id": "portable-locker-0",
+      "topic": "physical",
+      "skill": "composition",
+      "context": [
+        "보관함을 미는 힘이 바닥의 저항보다 작았다.",
+        "이어서 빗장을 풀고 보관함 문을 당겼다."
+      ],
+      "options": [
+        "보관함이 다른 자리로 갔지만 문은 닫혀 있었다.",
+        "보관함은 그 자리에 있었고 문은 닫혀 있었다.",
+        "보관함은 그 자리에 있었지만 문은 열렸다.",
+        "보관함이 다른 자리로 갔고 문도 열렸다."
+      ],
+      "expected": 2
+    },
+    {
+      "id": "portable-locker-1",
+      "topic": "physical",
+      "skill": "composition",
+      "context": [
+        "보관함을 바닥의 저항보다 큰 힘으로 밀었다.",
+        "이어서 빗장을 풀지 않고 보관함 문을 당겼다."
+      ],
+      "options": [
+        "보관함은 그 자리에 있었고 문은 닫혀 있었다.",
+        "보관함은 옮겨졌고 문도 열렸다.",
+        "보관함은 그 자리에 있었고 문이 열렸다.",
+        "보관함은 옮겨졌고 문은 닫혀 있었다."
+      ],
+      "expected": 3
+    },
+    {
+      "id": "projector-0",
+      "topic": "social",
+      "skill": "composition",
+      "context": [
+        "비품 담당자는 강의실에서만 쓰는 조건으로 빔프로젝터 대여에 동의했다.",
+        "준호는 강의실에서 발표를 하려 한다."
+      ],
+      "options": [
+        "준호는 이미 허락받아 이번 발표에 사용할 수 있다.",
+        "준호는 사용 장소에 관해 별도 동의를 구해야 한다."
+      ],
+      "expected": 0
+    },
+    {
+      "id": "projector-1",
+      "topic": "social",
+      "skill": "composition",
+      "context": [
+        "비품 담당자는 강의실에서만 쓰는 조건으로 빔프로젝터 대여에 동의했다.",
+        "준호는 운동장에서 상영회를 하려 한다."
+      ],
+      "options": [
+        "준호는 이미 허락받아 운동장에서 사용할 수 있다.",
+        "준호는 운동장에서 사용하기 전에 추가 동의를 받아야 한다."
+      ],
+      "expected": 1
+    },
+    {
+      "id": "speaker-0",
+      "topic": "social",
+      "skill": "composition",
+      "context": [
+        "스피커는 연습 때만 쓰기로 했지만 주인이 아직 대여를 승인하지 않았다.",
+        "세진은 연습 중에 스피커를 써 보려 한다."
+      ],
+      "options": [
+        "세진은 연습에 쓰는 경우에도 주인에게 먼저 허락을 받아야 한다.",
+        "세진은 용도가 연습이어서 바로 쓸 수 있다."
+      ],
+      "expected": 0
+    },
+    {
+      "id": "speaker-1",
+      "topic": "social",
+      "skill": "composition",
+      "context": [
+        "스피커 주인이 연습 때만 대여에 동의했다.",
+        "세진은 연습에만 스피커를 쓰려 한다."
+      ],
+      "options": [
+        "세진은 약속한 대로 스피커를 사용할 수 있다.",
+        "세진은 같은 연습이라도 일단 새 허락을 받아야 한다."
+      ],
+      "expected": 0
+    }
+  ]
+}

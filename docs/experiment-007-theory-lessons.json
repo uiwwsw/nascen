@@ -1,0 +1,122 @@
+{
+  "dataset": "theory-ko-v1",
+  "prompt_version": "theory-teacher-ko-v2",
+  "prompt_sha256": "2b2052a6ad53f24567f431ef2246108248857f46f4b9f3a55f55c1a62916aca4",
+  "training_material_sha256": "e9d76a067e76f18bc515e11a3d226cb24274d6435056c899e0d2cd73af2f3e25",
+  "teacher": {
+    "model": "Qwen3-4B-Q4_K_M sha256=7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+    "seed": 42
+  },
+  "lessons": {
+    "force": {
+      "event": "물체를 세게 민다.",
+      "cause": "길이 열려 있으면 강한 밀기가 새 움직임을 만든다.",
+      "conditions": "길이 열려 있고 물체를 세게 미다.",
+      "exception": "길이 닫혀 있거나 세게 밀지 않으면 새 움직임이 생기지 않으며 이전 상태를 유지한다.",
+      "principle": "이 실험의 트랙에서 길이 열려 있으면 강하게 밀어 물체를 움직일 수 있다. 밀지 않거나 길이 막혀 있으면 새 움직임은 생기지 않는다."
+    },
+    "barrier": {
+      "event": "이동 경로에 장애물을 놓거나 치운다.",
+      "cause": "장애물을 치우면 길이 열리고 놓으면 길이 막힌다.",
+      "conditions": "장애물 배치는 길의 상태와 물체의 움직임에 영향을 준다.",
+      "exception": "장애물을 놓으면 이미 움직이던 물체는 멈춘다. 치우기만 하면 움직임은 그대로다.",
+      "principle": "장애물을 치우면 길이 열린다. 반대로 이동 경로에 장애물을 놓으면 길이 막히고 움직이던 물체는 멈춘다."
+    },
+    "advance": {
+      "event": "실험 시간을 한 단계 진행한다.",
+      "cause": "열린 길에서 움직이던 물체가 목표선까지 간다.",
+      "conditions": "목표선에 새로 도달하려면 길이 열려 있고 물체가 움직이고 있어야 한다.",
+      "exception": "길이 막혔거나 물체가 멈춰 있으면 새 도착이 없다. 이전 도착 기록은 유지되고 물체는 멈춘다.",
+      "principle": "시간이 지나면 열린 길에서 움직이던 물체만 목표선에 새로 도달한다. 이미 기록한 도착은 유지되며 이 단계가 끝나면 물체는 멈춘다."
+    },
+    "permission": {
+      "event": "소유자 또는 관계없는 동료가 사용을 승인한다.",
+      "cause": "소유자의 승인만 물건의 사용 허락으로 기록된다.",
+      "conditions": "승인한 사람이 물건의 소유자여야 한다.",
+      "exception": "소유자가 아닌 사람의 승인은 이전 허락 상태를 바꾸지 않는다.",
+      "principle": "소유자가 승인하면 물건 사용 허락이 생긴다. 다른 사람의 동의는 기존 허락을 바꾸지 않는다."
+    },
+    "time": {
+      "event": "현재 또는 이미 끝난 비상상황을 보고한다.",
+      "cause": "현재 진행 중인 비상상황을 긴급 상태로 기록한다.",
+      "conditions": "비상상황이 지금 발생해야 긴급 상태가 된다.",
+      "exception": "이미 끝난 비상상황을 보고하면 지금의 긴급 상태를 해제한다.",
+      "principle": "지금 일어나고 있는 비상상황만 긴급 상태로 인정한다. 이미 끝난 비상상황은 현재 긴급 상태를 해제한다."
+    },
+    "use": {
+      "event": "참가자가 특정 용도로 훈련 자원을 사용하려 한다.",
+      "cause": "정해진 범위 안에서 소유자의 허락이나 현재 비상상황이 있으면 새 사용이 기록된다.",
+      "conditions": "허용 범위 안의 요청이어야 하며, 소유자 승인과 현재 비상상황 중 적어도 하나가 필요하다.",
+      "exception": "범위 밖의 요청, 또는 승인과 비상상황이 모두 없는 요청으로는 새 사용이 기록되지 않는다.",
+      "principle": "이 모의 훈련에서는 주인의 승인이 있거나 현재 비상상황이면 허용 범위 안에서 자원을 사용할 수 있다. 범위를 벗어나면 새 사용은 일어나지 않는다."
+    }
+  },
+  "cost": {
+    "force": {
+      "wall_seconds": 11.386693041997205,
+      "usage": {
+        "completion_tokens": 160,
+        "prompt_tokens": 479,
+        "total_tokens": 639,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    "barrier": {
+      "wall_seconds": 11.53881291700236,
+      "usage": {
+        "completion_tokens": 177,
+        "prompt_tokens": 491,
+        "total_tokens": 668,
+        "prompt_tokens_details": {
+          "cached_tokens": 101
+        }
+      }
+    },
+    "advance": {
+      "wall_seconds": 11.827807624998968,
+      "usage": {
+        "completion_tokens": 180,
+        "prompt_tokens": 489,
+        "total_tokens": 669,
+        "prompt_tokens_details": {
+          "cached_tokens": 101
+        }
+      }
+    },
+    "permission": {
+      "wall_seconds": 9.696697999999742,
+      "usage": {
+        "completion_tokens": 141,
+        "prompt_tokens": 468,
+        "total_tokens": 609,
+        "prompt_tokens_details": {
+          "cached_tokens": 101
+        }
+      }
+    },
+    "time": {
+      "wall_seconds": 10.275237333000405,
+      "usage": {
+        "completion_tokens": 145,
+        "prompt_tokens": 479,
+        "total_tokens": 624,
+        "prompt_tokens_details": {
+          "cached_tokens": 101
+        }
+      }
+    },
+    "use": {
+      "wall_seconds": 13.517566125003214,
+      "usage": {
+        "completion_tokens": 202,
+        "prompt_tokens": 542,
+        "total_tokens": 744,
+        "prompt_tokens_details": {
+          "cached_tokens": 101
+        }
+      }
+    }
+  }
+}

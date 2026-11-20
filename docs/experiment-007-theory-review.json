@@ -1,0 +1,49 @@
+{
+  "collection_sha256": "2cd42942f6e80682348475fea8cf0c1d6a8b1904301dd9ad62b934b22bdf0f3b",
+  "method": "학습 환경의 독립적인 기준 설명과 대조해 조건, 귀결, 예외를 검토했다.",
+  "principles": {
+    "force": {
+      "accepted": true,
+      "reason": "열린 길과 강한 밀기 조건, 이전 움직임 유지가 맞다."
+    },
+    "barrier": {
+      "accepted": true,
+      "reason": "길의 가림·개방과 장애물에 따른 정지를 모두 담았다."
+    },
+    "advance": {
+      "accepted": true,
+      "reason": "기존 도착 기록, 새 도착 조건, 단계 종료 뒤 정지를 모두 담았다."
+    },
+    "permission": {
+      "accepted": true,
+      "reason": "소유자의 승인과 동료의 승인이 미치는 영향을 구분한다."
+    },
+    "time": {
+      "accepted": true,
+      "reason": "현재 비상과 이미 끝난 비상의 차이를 보존한다."
+    },
+    "use": {
+      "accepted": true,
+      "reason": "허용 범위와 소유자 승인 또는 현재 비상의 논리 관계를 모두 담았다."
+    }
+  },
+  "pilot": {
+    "collection_sha256": "97a21c44ff2b3a741942050dabc879ae8c4459d9ce6e9c4cbab528f22cb65e6c",
+    "prompt_version": "theory-teacher-ko-v1",
+    "cost": {
+      "requests": 6,
+      "wall_seconds": 60.151695208012825,
+      "prompt_tokens": 2420,
+      "completion_tokens": 972
+    },
+    "accepted": 0,
+    "rejected": {
+      "force": "모든 힘으로 일반화하고 새 움직임이 없는 경우를 정지로 표현했다.",
+      "barrier": "정지한 물체 앞의 장애물을 치워도 길이 열리지 않는다는 잘못된 조건을 넣었다.",
+      "advance": "목표선에 도착한 경우에도 단계가 끝나면 정지한다는 조건을 빠뜨렸다.",
+      "permission": "사용 요청자가 소유자와 관계가 있어야 한다는 제약을 추가했다.",
+      "time": "자원 사용 기록이 있어야 긴급 상태라는 조건을 추가했다.",
+      "use": "승인 또는 비상상황이 있어도 범위를 벗어나면 사용이 성립하지 않는다는 예외를 누락했다."
+    }
+  }
+}

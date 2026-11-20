@@ -15,14 +15,15 @@ DEFAULT_SEED = 42
 DEFAULT_PORT = 8766
 BATCH_SIZE = 5
 
-TEACHING_RULES = """You are a teacher for a fictional lending exercise. Use this stipulated exercise code.
+LENDING_CODE = """You are a teacher for a fictional lending exercise. Use this stipulated exercise code.
 Apply the first matching rule:
 1. If the owner explicitly consented, use allow and permission.
 2. If the owner explicitly refused, use decline and refusal.
 3. If the owner can be asked, or there is no imminent serious harm, use ask and ask_owner.
 4. Otherwise, if an equally effective authorized alternative exists, use decline and safer_option.
 5. Otherwise, if the proposed use goes beyond the immediate need, use decline and over_scope.
-6. Otherwise, use allow and urgent_exception.
+6. Otherwise, use allow and urgent_exception."""
+TEACHING_RULES = LENDING_CODE + """
 For each training question, give a decision, its principle, and a one-sentence explanation that cites
 the decisive facts. Return only the JSON object. Preserve every supplied ID exactly once."""
 
@@ -77,14 +78,24 @@ def local_lessons(questions: list[Question], port: int, seed: int) -> list[Lesso
 
 
 def request_lessons(ids: list[str], instructions: str, examples: list[dict], port: int, seed: int) -> list[Lesson]:
+    answer, _ = request_json(instructions, examples, lesson_schema(ids), port, seed, max_tokens=850)
+    lessons = [Lesson(**row) for row in answer["lessons"]]
+    if len(lessons) != len(ids) or {lesson.id for lesson in lessons} != set(ids):
+        raise ValueError("The teacher response omitted or repeated a training ID.")
+    by_id = {lesson.id: lesson for lesson in lessons}
+    return [by_id[identifier] for identifier in ids]
+
+
+def request_json(instructions: str, material: list | dict, schema: dict, port: int, seed: int, *,
+                 max_tokens: int) -> tuple[dict, dict]:
     request = {
         "messages": [
             {"role": "system", "content": instructions},
-            {"role": "user", "content": json.dumps(examples)},
+            {"role": "user", "content": json.dumps(material)},
         ],
-        "response_format": {"type": "json_schema", "schema": lesson_schema(ids)},
+        "response_format": {"type": "json_schema", "schema": schema},
         "chat_template_kwargs": {"enable_thinking": False},
-        "temperature": 0, "max_tokens": 850, "seed": seed,
+        "temperature": 0, "max_tokens": max_tokens, "seed": seed,
     }
     opener = build_opener(ProxyHandler({}), NoRedirect())
     with opener.open(Request(
@@ -95,11 +106,7 @@ def request_lessons(ids: list[str], instructions: str, examples: list[dict], por
     choice = payload["choices"][0]
     if choice.get("finish_reason") == "length":
         raise ValueError("The teacher did not finish its response.")
-    lessons = [Lesson(**row) for row in json.loads(choice["message"]["content"])["lessons"]]
-    if len(lessons) != len(ids) or {lesson.id for lesson in lessons} != set(ids):
-        raise ValueError("The teacher response omitted or repeated a training ID.")
-    by_id = {lesson.id: lesson for lesson in lessons}
-    return [by_id[identifier] for identifier in ids]
+    return json.loads(choice["message"]["content"]), payload.get("usage", {})
 
 
 def fixture_lessons(questions: list[Question]) -> list[Lesson]:

@@ -95,9 +95,13 @@ def fit(arm: str, seed: int, inputs: torch.Tensor, decisions: torch.Tensor, prin
         loss.backward()
         optimizer.step()
 
+    return student_checkpoint(student, arm, seed, len(inputs), with_principles)
+
+
+def student_checkpoint(student: Student, arm: str, seed: int, examples: int, with_principles: bool) -> dict:
     return {
-        "arm": arm, "seed": seed, "width": width, "trains_principle": with_principles,
-        "training_examples": len(inputs),
+        "arm": arm, "seed": seed, "width": student.hidden[0].in_features, "trains_principle": with_principles,
+        "training_examples": examples,
         "trainable_parameters": sum(weight.numel() for weight in student.parameters()),
         "weights": {key: weight.tolist() for key, weight in student.state_dict().items()},
     }

@@ -1,0 +1,4642 @@
+{
+  "experiment": "003 — Generalization by Wording and Condition",
+  "nascen_version": "0.3.0",
+  "dataset": "lending-v1",
+  "teacher": {
+    "kind": "local_model",
+    "model": "Qwen/Qwen3-4B-GGUF@bc640142c66e1fdd12af0bd68f40445458f3869b Q4_K_M; llama.cpp b12556"
+  },
+  "lesson_sha256": "518c581f32a8d1ad2bba5b4b89e6373337b69ed489cf6fa38cb1050f14ee0129",
+  "split_seed": 42,
+  "student_seeds": [
+    11,
+    22,
+    42
+  ],
+  "epochs": 180,
+  "teacher_available_to_exam": false,
+  "environment": {
+    "python": "3.14.3",
+    "torch": "2.12.0",
+    "arch": "arm64"
+  },
+  "surface": {
+    "questions": 50,
+    "training_used": [
+      "lesson-000",
+      "lesson-003",
+      "lesson-007",
+      "lesson-010",
+      "lesson-013",
+      "lesson-015",
+      "lesson-017",
+      "lesson-021",
+      "lesson-029",
+      "lesson-030",
+      "lesson-031",
+      "lesson-035",
+      "lesson-040",
+      "lesson-042",
+      "lesson-045",
+      "lesson-049",
+      "lesson-050",
+      "lesson-052",
+      "lesson-055",
+      "lesson-057",
+      "lesson-060",
+      "lesson-061",
+      "lesson-062",
+      "lesson-063",
+      "lesson-065",
+      "lesson-067",
+      "lesson-068",
+      "lesson-073",
+      "lesson-075",
+      "lesson-076",
+      "lesson-080",
+      "lesson-090",
+      "lesson-092"
+    ],
+    "cases": [
+      {
+        "setting": "studio",
+        "owner": "refused",
+        "urgent": false,
+        "alternative": false,
+        "limited": false,
+        "expected_decision": "decline",
+        "expected_principle": "refusal"
+      },
+      {
+        "setting": "studio",
+        "owner": "refused",
+        "urgent": true,
+        "alternative": false,
+        "limited": false,
+        "expected_decision": "decline",
+        "expected_principle": "refusal"
+      },
+      {
+        "setting": "workshop",
+        "owner": "unavailable",
+        "urgent": false,
+        "alternative": true,
+        "limited": true,
+        "expected_decision": "ask",
+        "expected_principle": "ask_owner"
+      },
+      {
+        "setting": "workshop",
+        "owner": "unavailable",
+        "urgent": true,
+        "alternative": true,
+        "limited": true,
+        "expected_decision": "decline",
+        "expected_principle": "safer_option"
+      },
+      {
+        "setting": "campsite",
+        "owner": "unavailable",
+        "urgent": false,
+        "alternative": true,
+        "limited": false,
+        "expected_decision": "ask",
+        "expected_principle": "ask_owner"
+      },
+      {
+        "setting": "campsite",
+        "owner": "unavailable",
+        "urgent": true,
+        "alternative": true,
+        "limited": false,
+        "expected_decision": "decline",
+        "expected_principle": "safer_option"
+      },
+      {
+        "setting": "theater",
+        "owner": "agreed",
+        "urgent": false,
+        "alternative": false,
+        "limited": true,
+        "expected_decision": "allow",
+        "expected_principle": "permission"
+      },
+      {
+        "setting": "theater",
+        "owner": "agreed",
+        "urgent": true,
+        "alternative": false,
+        "limited": true,
+        "expected_decision": "allow",
+        "expected_principle": "permission"
+      },
+      {
+        "setting": "theater",
+        "owner": "unavailable",
+        "urgent": false,
+        "alternative": false,
+        "limited": true,
+        "expected_decision": "ask",
+        "expected_principle": "ask_owner"
+      },
+      {
+        "setting": "theater",
+        "owner": "unavailable",
+        "urgent": true,
+        "alternative": false,
+        "limited": true,
+        "expected_decision": "allow",
+        "expected_principle": "urgent_exception"
+      },
+      {
+        "setting": "boathouse",
+        "owner": "reachable",
+        "urgent": false,
+        "alternative": false,
+        "limited": false,
+        "expected_decision": "ask",
+        "expected_principle": "ask_owner"
+      },
+      {
+        "setting": "boathouse",
+        "owner": "reachable",
+        "urgent": true,
+        "alternative": false,
+        "limited": false,
+        "expected_decision": "ask",
+        "expected_principle": "ask_owner"
+      },
+      {
+        "setting": "workshop",
+        "owner": "agreed",
+        "urgent": false,
+        "alternative": false,
+        "limited": false,
+        "expected_decision": "allow",
+        "expected_principle": "permission"
+      },
+      {
+        "setting": "workshop",
+        "owner": "agreed",
+        "urgent": true,
+        "alternative": false,
+        "limited": false,
+        "expected_decision": "allow",
+        "expected_principle": "permission"
+      },
+      {
+        "setting": "studio",
+        "owner": "agreed",
+        "urgent": false,
+        "alternative": true,
+        "limited": false,
+        "expected_decision": "allow",
+        "expected_principle": "permission"
+      },
+      {
+        "setting": "studio",
+        "owner": "agreed",
+        "urgent": true,
+        "alternative": true,
+        "limited": false,
+        "expected_decision": "allow",
+        "expected_principle": "permission"
+      },
+      {
+        "setting": "theater",
+        "owner": "refused",
+        "urgent": false,
+        "alternative": true,
+        "limited": false,
+        "expected_decision": "decline",
+        "expected_principle": "refusal"
+      },
+      {
+        "setting": "theater",
+        "owner": "refused",
+        "urgent": true,
+        "alternative": true,
+        "limited": false,
+        "expected_decision": "decline",
+        "expected_principle": "refusal"
+      },
+      {
+        "setting": "campsite",
+        "owner": "reachable",
+        "urgent": false,
+        "alternative": false,
+        "limited": true,
+        "expected_decision": "ask",
+        "expected_principle": "ask_owner"
+      },
+      {
+        "setting": "campsite",
+        "owner": "reachable",
+        "urgent": true,
+        "alternative": false,
+        "limited": true,
+        "expected_decision": "ask",
+        "expected_principle": "ask_owner"
+      },
+      {
+        "setting": "clubhouse",
+        "owner": "agreed",
+        "urgent": false,
+        "alternative": true,
+        "limited": true,
+        "expected_decision": "allow",
+        "expected_principle": "permission"
+      },
+      {
+        "setting": "clubhouse",
+        "owner": "agreed",
+        "urgent": true,
+        "alternative": true,
+        "limited": true,
+        "expected_decision": "allow",
+        "expected_principle": "permission"
+      },
+      {
+        "setting": "boathouse",
+        "owner": "refused",
+        "urgent": false,
+        "alternative": true,
+        "limited": false,
+        "expected_decision": "decline",
+        "expected_principle": "refusal"
+      },
+      {
+        "setting": "boathouse",
+        "owner": "refused",
+        "urgent": true,
+        "alternative": true,
+        "limited": false,
+        "expected_decision": "decline",
+        "expected_principle": "refusal"
+      },
+      {
+        "setting": "clubhouse",
+        "owner": "refused",
+        "urgent": false,
+        "alternative": false,
+        "limited": true,
+        "expected_decision": "decline",
+        "expected_principle": "refusal"
+      },
+      {
+        "setting": "clubhouse",
+        "owner": "refused",
+        "urgent": true,
+        "alternative": false,
+        "limited": true,
+        "expected_decision": "decline",
+        "expected_principle": "refusal"
+      },
+      {
+        "setting": "boathouse",
+        "owner": "agreed",
+        "urgent": false,
+        "alternative": false,
+        "limited": true,
+        "expected_decision": "allow",
+        "expected_principle": "permission"
+      },
+      {
+        "setting": "boathouse",
+        "owner": "agreed",
+        "urgent": true,
+        "alternative": false,
+        "limited": true,
+        "expected_decision": "allow",
+        "expected_principle": "permission"
+      },
+      {
+        "setting": "boathouse",
+        "owner": "unavailable",
+        "urgent": false,
+        "alternative": false,
+        "limited": true,
+        "expected_decision": "ask",
+        "expected_principle": "ask_owner"
+      },
+      {
+        "setting": "boathouse",
+        "owner": "unavailable",
+        "urgent": true,
+        "alternative": false,
+        "limited": true,
+        "expected_decision": "allow",
+        "expected_principle": "urgent_exception"
+      },
+      {
+        "setting": "workshop",
+        "owner": "unavailable",
+        "urgent": false,
+        "alternative": false,
+        "limited": false,
+        "expected_decision": "ask",
+        "expected_principle": "ask_owner"
+      },
+      {
+        "setting": "workshop",
+        "owner": "unavailable",
+        "urgent": true,
+        "alternative": false,
+        "limited": false,
+        "expected_decision": "decline",
+        "expected_principle": "over_scope"
+      },
+      {
+        "setting": "campsite",
+        "owner": "refused",
+        "urgent": false,
+        "alternative": false,
+        "limited": false,
+        "expected_decision": "decline",
+        "expected_principle": "refusal"
+      },
+      {
+        "setting": "campsite",
+        "owner": "refused",
+        "urgent": true,
+        "alternative": false,
+        "limited": false,
+        "expected_decision": "decline",
+        "expected_principle": "refusal"
+      },
+      {
+        "setting": "clubhouse",
+        "owner": "unavailable",
+        "urgent": false,
+        "alternative": true,
+        "limited": true,
+        "expected_decision": "ask",
+        "expected_principle": "ask_owner"
+      },
+      {
+        "setting": "clubhouse",
+        "owner": "unavailable",
+        "urgent": true,
+        "alternative": true,
+        "limited": true,
+        "expected_decision": "decline",
+        "expected_principle": "safer_option"
+      },
+      {
+        "setting": "theater",
+        "owner": "reachable",
+        "urgent": false,
+        "alternative": true,
+        "limited": true,
+        "expected_decision": "ask",
+        "expected_principle": "ask_owner"
+      },
+      {
+        "setting": "theater",
+        "owner": "reachable",
+        "urgent": true,
+        "alternative": true,
+        "limited": true,
+        "expected_decision": "ask",
+        "expected_principle": "ask_owner"
+      },
+      {
+        "setting": "clubhouse",
+        "owner": "reachable",
+        "urgent": false,
+        "alternative": true,
+        "limited": false,
+        "expected_decision": "ask",
+        "expected_principle": "ask_owner"
+      },
+      {
+        "setting": "clubhouse",
+        "owner": "reachable",
+        "urgent": true,
+        "alternative": true,
+        "limited": false,
+        "expected_decision": "ask",
+        "expected_principle": "ask_owner"
+      },
+      {
+        "setting": "boathouse",
+        "owner": "reachable",
+        "urgent": false,
+        "alternative": true,
+        "limited": true,
+        "expected_decision": "ask",
+        "expected_principle": "ask_owner"
+      },
+      {
+        "setting": "boathouse",
+        "owner": "reachable",
+        "urgent": true,
+        "alternative": true,
+        "limited": true,
+        "expected_decision": "ask",
+        "expected_principle": "ask_owner"
+      },
+      {
+        "setting": "studio",
+        "owner": "reachable",
+        "urgent": false,
+        "alternative": false,
+        "limited": true,
+        "expected_decision": "ask",
+        "expected_principle": "ask_owner"
+      },
+      {
+        "setting": "studio",
+        "owner": "reachable",
+        "urgent": true,
+        "alternative": false,
+        "limited": true,
+        "expected_decision": "ask",
+        "expected_principle": "ask_owner"
+      },
+      {
+        "setting": "studio",
+        "owner": "unavailable",
+        "urgent": false,
+        "alternative": true,
+        "limited": false,
+        "expected_decision": "ask",
+        "expected_principle": "ask_owner"
+      },
+      {
+        "setting": "studio",
+        "owner": "unavailable",
+        "urgent": true,
+        "alternative": true,
+        "limited": false,
+        "expected_decision": "decline",
+        "expected_principle": "safer_option"
+      },
+      {
+        "setting": "campsite",
+        "owner": "agreed",
+        "urgent": false,
+        "alternative": true,
+        "limited": false,
+        "expected_decision": "allow",
+        "expected_principle": "permission"
+      },
+      {
+        "setting": "campsite",
+        "owner": "agreed",
+        "urgent": true,
+        "alternative": true,
+        "limited": false,
+        "expected_decision": "allow",
+        "expected_principle": "permission"
+      },
+      {
+        "setting": "clubhouse",
+        "owner": "unavailable",
+        "urgent": false,
+        "alternative": false,
+        "limited": false,
+        "expected_decision": "ask",
+        "expected_principle": "ask_owner"
+      },
+      {
+        "setting": "clubhouse",
+        "owner": "unavailable",
+        "urgent": true,
+        "alternative": false,
+        "limited": false,
+        "expected_decision": "decline",
+        "expected_principle": "over_scope"
+      }
+    ],
+    "arms": {
+      "supported_text": {
+        "texts": [
+          "This is a lending scenario at the studio. The owner already said no. There is no immediate danger. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the studio. The owner already said no. Someone faces immediate serious harm. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the workshop. The owner cannot respond in time. There is no immediate danger. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the workshop. The owner cannot respond in time. Someone faces immediate serious harm. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the campsite. The owner cannot respond in time. There is no immediate danger. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the campsite. The owner cannot respond in time. Someone faces immediate serious harm. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the theater. The owner already gave permission. There is no immediate danger. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the theater. The owner already gave permission. Someone faces immediate serious harm. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the theater. The owner cannot respond in time. There is no immediate danger. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the theater. The owner cannot respond in time. Someone faces immediate serious harm. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the boathouse. The owner can be asked and has given no answer. There is no immediate danger. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the boathouse. The owner can be asked and has given no answer. Someone faces immediate serious harm. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the workshop. The owner already gave permission. There is no immediate danger. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the workshop. The owner already gave permission. Someone faces immediate serious harm. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the studio. The owner already gave permission. There is no immediate danger. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the studio. The owner already gave permission. Someone faces immediate serious harm. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the theater. The owner already said no. There is no immediate danger. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the theater. The owner already said no. Someone faces immediate serious harm. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the campsite. The owner can be asked and has given no answer. There is no immediate danger. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the campsite. The owner can be asked and has given no answer. Someone faces immediate serious harm. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the clubhouse. The owner already gave permission. There is no immediate danger. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the clubhouse. The owner already gave permission. Someone faces immediate serious harm. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the boathouse. The owner already said no. There is no immediate danger. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the boathouse. The owner already said no. Someone faces immediate serious harm. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the clubhouse. The owner already said no. There is no immediate danger. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the clubhouse. The owner already said no. Someone faces immediate serious harm. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the boathouse. The owner already gave permission. There is no immediate danger. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the boathouse. The owner already gave permission. Someone faces immediate serious harm. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the boathouse. The owner cannot respond in time. There is no immediate danger. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the boathouse. The owner cannot respond in time. Someone faces immediate serious harm. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the workshop. The owner cannot respond in time. There is no immediate danger. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the workshop. The owner cannot respond in time. Someone faces immediate serious harm. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the campsite. The owner already said no. There is no immediate danger. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the campsite. The owner already said no. Someone faces immediate serious harm. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the clubhouse. The owner cannot respond in time. There is no immediate danger. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the clubhouse. The owner cannot respond in time. Someone faces immediate serious harm. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the theater. The owner can be asked and has given no answer. There is no immediate danger. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the theater. The owner can be asked and has given no answer. Someone faces immediate serious harm. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the clubhouse. The owner can be asked and has given no answer. There is no immediate danger. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the clubhouse. The owner can be asked and has given no answer. Someone faces immediate serious harm. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the boathouse. The owner can be asked and has given no answer. There is no immediate danger. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the boathouse. The owner can be asked and has given no answer. Someone faces immediate serious harm. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the studio. The owner can be asked and has given no answer. There is no immediate danger. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the studio. The owner can be asked and has given no answer. Someone faces immediate serious harm. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the studio. The owner cannot respond in time. There is no immediate danger. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the studio. The owner cannot respond in time. Someone faces immediate serious harm. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the campsite. The owner already gave permission. There is no immediate danger. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the campsite. The owner already gave permission. Someone faces immediate serious harm. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the clubhouse. The owner cannot respond in time. There is no immediate danger. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the clubhouse. The owner cannot respond in time. Someone faces immediate serious harm. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+        ],
+        "trials": [
+          {
+            "seed": 11,
+            "questions": 50,
+            "answered": 50,
+            "fact_accuracy": 1,
+            "decision_accuracy": 0.78,
+            "joint_accuracy": 0.76,
+            "predictions": [
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "allow",
+                "principle": "refusal"
+              },
+              {
+                "decision": "allow",
+                "principle": "urgent_exception"
+              },
+              {
+                "decision": "decline",
+                "principle": "safer_option"
+              },
+              {
+                "decision": "decline",
+                "principle": "safer_option"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "urgent_exception"
+              },
+              {
+                "decision": "decline",
+                "principle": "urgent_exception"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "urgent_exception"
+              },
+              {
+                "decision": "allow",
+                "principle": "over_scope"
+              },
+              {
+                "decision": "decline",
+                "principle": "over_scope"
+              },
+              {
+                "decision": "decline",
+                "principle": "over_scope"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "allow",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "allow",
+                "principle": "urgent_exception"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "decline",
+                "principle": "safer_option"
+              },
+              {
+                "decision": "decline",
+                "principle": "safer_option"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "decline",
+                "principle": "over_scope"
+              },
+              {
+                "decision": "decline",
+                "principle": "over_scope"
+              }
+            ]
+          },
+          {
+            "seed": 22,
+            "questions": 50,
+            "answered": 50,
+            "fact_accuracy": 1,
+            "decision_accuracy": 0.82,
+            "joint_accuracy": 0.78,
+            "predictions": [
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "allow",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "ask",
+                "principle": "safer_option"
+              },
+              {
+                "decision": "decline",
+                "principle": "safer_option"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "decline",
+                "principle": "permission"
+              },
+              {
+                "decision": "decline",
+                "principle": "over_scope"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "over_scope"
+              },
+              {
+                "decision": "decline",
+                "principle": "over_scope"
+              },
+              {
+                "decision": "decline",
+                "principle": "over_scope"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "allow",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "decline",
+                "principle": "safer_option"
+              },
+              {
+                "decision": "decline",
+                "principle": "safer_option"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "decline",
+                "principle": "over_scope"
+              },
+              {
+                "decision": "decline",
+                "principle": "over_scope"
+              }
+            ]
+          },
+          {
+            "seed": 42,
+            "questions": 50,
+            "answered": 50,
+            "fact_accuracy": 1,
+            "decision_accuracy": 0.8,
+            "joint_accuracy": 0.8,
+            "predictions": [
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "allow",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "decline",
+                "principle": "safer_option"
+              },
+              {
+                "decision": "decline",
+                "principle": "safer_option"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "over_scope"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "urgent_exception"
+              },
+              {
+                "decision": "allow",
+                "principle": "urgent_exception"
+              },
+              {
+                "decision": "decline",
+                "principle": "over_scope"
+              },
+              {
+                "decision": "decline",
+                "principle": "over_scope"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "allow",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "decline",
+                "principle": "safer_option"
+              },
+              {
+                "decision": "decline",
+                "principle": "safer_option"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "decline",
+                "principle": "over_scope"
+              },
+              {
+                "decision": "decline",
+                "principle": "over_scope"
+              }
+            ]
+          }
+        ]
+      },
+      "new_urgency_wording": {
+        "texts": [
+          "This is a lending scenario at the studio. The owner already said no. Nobody would be in immediate danger if they waited. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the studio. The owner already said no. Someone could suffer serious harm right now. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the workshop. The owner cannot respond in time. Nobody would be in immediate danger if they waited. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the workshop. The owner cannot respond in time. Someone could suffer serious harm right now. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the campsite. The owner cannot respond in time. Nobody would be in immediate danger if they waited. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the campsite. The owner cannot respond in time. Someone could suffer serious harm right now. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the theater. The owner already gave permission. Nobody would be in immediate danger if they waited. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the theater. The owner already gave permission. Someone could suffer serious harm right now. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the theater. The owner cannot respond in time. Nobody would be in immediate danger if they waited. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the theater. The owner cannot respond in time. Someone could suffer serious harm right now. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the boathouse. The owner can be asked and has given no answer. Nobody would be in immediate danger if they waited. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the boathouse. The owner can be asked and has given no answer. Someone could suffer serious harm right now. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the workshop. The owner already gave permission. Nobody would be in immediate danger if they waited. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the workshop. The owner already gave permission. Someone could suffer serious harm right now. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the studio. The owner already gave permission. Nobody would be in immediate danger if they waited. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the studio. The owner already gave permission. Someone could suffer serious harm right now. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the theater. The owner already said no. Nobody would be in immediate danger if they waited. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the theater. The owner already said no. Someone could suffer serious harm right now. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the campsite. The owner can be asked and has given no answer. Nobody would be in immediate danger if they waited. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the campsite. The owner can be asked and has given no answer. Someone could suffer serious harm right now. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the clubhouse. The owner already gave permission. Nobody would be in immediate danger if they waited. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the clubhouse. The owner already gave permission. Someone could suffer serious harm right now. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the boathouse. The owner already said no. Nobody would be in immediate danger if they waited. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the boathouse. The owner already said no. Someone could suffer serious harm right now. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the clubhouse. The owner already said no. Nobody would be in immediate danger if they waited. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the clubhouse. The owner already said no. Someone could suffer serious harm right now. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the boathouse. The owner already gave permission. Nobody would be in immediate danger if they waited. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the boathouse. The owner already gave permission. Someone could suffer serious harm right now. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the boathouse. The owner cannot respond in time. Nobody would be in immediate danger if they waited. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the boathouse. The owner cannot respond in time. Someone could suffer serious harm right now. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the workshop. The owner cannot respond in time. Nobody would be in immediate danger if they waited. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the workshop. The owner cannot respond in time. Someone could suffer serious harm right now. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the campsite. The owner already said no. Nobody would be in immediate danger if they waited. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the campsite. The owner already said no. Someone could suffer serious harm right now. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the clubhouse. The owner cannot respond in time. Nobody would be in immediate danger if they waited. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the clubhouse. The owner cannot respond in time. Someone could suffer serious harm right now. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the theater. The owner can be asked and has given no answer. Nobody would be in immediate danger if they waited. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the theater. The owner can be asked and has given no answer. Someone could suffer serious harm right now. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the clubhouse. The owner can be asked and has given no answer. Nobody would be in immediate danger if they waited. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the clubhouse. The owner can be asked and has given no answer. Someone could suffer serious harm right now. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the boathouse. The owner can be asked and has given no answer. Nobody would be in immediate danger if they waited. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the boathouse. The owner can be asked and has given no answer. Someone could suffer serious harm right now. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the studio. The owner can be asked and has given no answer. Nobody would be in immediate danger if they waited. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the studio. The owner can be asked and has given no answer. Someone could suffer serious harm right now. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the studio. The owner cannot respond in time. Nobody would be in immediate danger if they waited. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the studio. The owner cannot respond in time. Someone could suffer serious harm right now. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the campsite. The owner already gave permission. Nobody would be in immediate danger if they waited. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the campsite. The owner already gave permission. Someone could suffer serious harm right now. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the clubhouse. The owner cannot respond in time. Nobody would be in immediate danger if they waited. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?",
+          "This is a lending scenario at the clubhouse. The owner cannot respond in time. Someone could suffer serious harm right now. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+        ],
+        "trials": [
+          {
+            "seed": 11,
+            "questions": 50,
+            "answered": 0,
+            "fact_accuracy": 0,
+            "decision_accuracy": 0,
+            "joint_accuracy": 0,
+            "predictions": [
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              }
+            ]
+          },
+          {
+            "seed": 22,
+            "questions": 50,
+            "answered": 0,
+            "fact_accuracy": 0,
+            "decision_accuracy": 0,
+            "joint_accuracy": 0,
+            "predictions": [
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              }
+            ]
+          },
+          {
+            "seed": 42,
+            "questions": 50,
+            "answered": 0,
+            "fact_accuracy": 0,
+            "decision_accuracy": 0,
+            "joint_accuracy": 0,
+            "predictions": [
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              }
+            ]
+          }
+        ]
+      },
+      "new_narrative": {
+        "texts": [
+          "A player at the studio wants to borrow an item, and the owner turned down the request. It is safe to wait. No permitted substitute can get the same result. They want to use it for additional purposes, too. What should they do?",
+          "A player at the studio wants to borrow an item, and the owner turned down the request. Waiting could result in serious harm right away. No permitted substitute can get the same result. They want to use it for additional purposes, too. What should they do?",
+          "A player at the workshop wants to borrow an item, and there is no time to reach the owner. It is safe to wait. They can use a permitted substitute that works just as well. They would use it only for what is immediately needed. What should they do?",
+          "A player at the workshop wants to borrow an item, and there is no time to reach the owner. Waiting could result in serious harm right away. They can use a permitted substitute that works just as well. They would use it only for what is immediately needed. What should they do?",
+          "A player at the campsite wants to borrow an item, and there is no time to reach the owner. It is safe to wait. They can use a permitted substitute that works just as well. They want to use it for additional purposes, too. What should they do?",
+          "A player at the campsite wants to borrow an item, and there is no time to reach the owner. Waiting could result in serious harm right away. They can use a permitted substitute that works just as well. They want to use it for additional purposes, too. What should they do?",
+          "A player at the theater wants to borrow an item, and the owner said they could use the item. It is safe to wait. No permitted substitute can get the same result. They would use it only for what is immediately needed. What should they do?",
+          "A player at the theater wants to borrow an item, and the owner said they could use the item. Waiting could result in serious harm right away. No permitted substitute can get the same result. They would use it only for what is immediately needed. What should they do?",
+          "A player at the theater wants to borrow an item, and there is no time to reach the owner. It is safe to wait. No permitted substitute can get the same result. They would use it only for what is immediately needed. What should they do?",
+          "A player at the theater wants to borrow an item, and there is no time to reach the owner. Waiting could result in serious harm right away. No permitted substitute can get the same result. They would use it only for what is immediately needed. What should they do?",
+          "A player at the boathouse wants to borrow an item, and they could ask the owner, who has yet to say yes or no. It is safe to wait. No permitted substitute can get the same result. They want to use it for additional purposes, too. What should they do?",
+          "A player at the boathouse wants to borrow an item, and they could ask the owner, who has yet to say yes or no. Waiting could result in serious harm right away. No permitted substitute can get the same result. They want to use it for additional purposes, too. What should they do?",
+          "A player at the workshop wants to borrow an item, and the owner said they could use the item. It is safe to wait. No permitted substitute can get the same result. They want to use it for additional purposes, too. What should they do?",
+          "A player at the workshop wants to borrow an item, and the owner said they could use the item. Waiting could result in serious harm right away. No permitted substitute can get the same result. They want to use it for additional purposes, too. What should they do?",
+          "A player at the studio wants to borrow an item, and the owner said they could use the item. It is safe to wait. They can use a permitted substitute that works just as well. They want to use it for additional purposes, too. What should they do?",
+          "A player at the studio wants to borrow an item, and the owner said they could use the item. Waiting could result in serious harm right away. They can use a permitted substitute that works just as well. They want to use it for additional purposes, too. What should they do?",
+          "A player at the theater wants to borrow an item, and the owner turned down the request. It is safe to wait. They can use a permitted substitute that works just as well. They want to use it for additional purposes, too. What should they do?",
+          "A player at the theater wants to borrow an item, and the owner turned down the request. Waiting could result in serious harm right away. They can use a permitted substitute that works just as well. They want to use it for additional purposes, too. What should they do?",
+          "A player at the campsite wants to borrow an item, and they could ask the owner, who has yet to say yes or no. It is safe to wait. No permitted substitute can get the same result. They would use it only for what is immediately needed. What should they do?",
+          "A player at the campsite wants to borrow an item, and they could ask the owner, who has yet to say yes or no. Waiting could result in serious harm right away. No permitted substitute can get the same result. They would use it only for what is immediately needed. What should they do?",
+          "A player at the clubhouse wants to borrow an item, and the owner said they could use the item. It is safe to wait. They can use a permitted substitute that works just as well. They would use it only for what is immediately needed. What should they do?",
+          "A player at the clubhouse wants to borrow an item, and the owner said they could use the item. Waiting could result in serious harm right away. They can use a permitted substitute that works just as well. They would use it only for what is immediately needed. What should they do?",
+          "A player at the boathouse wants to borrow an item, and the owner turned down the request. It is safe to wait. They can use a permitted substitute that works just as well. They want to use it for additional purposes, too. What should they do?",
+          "A player at the boathouse wants to borrow an item, and the owner turned down the request. Waiting could result in serious harm right away. They can use a permitted substitute that works just as well. They want to use it for additional purposes, too. What should they do?",
+          "A player at the clubhouse wants to borrow an item, and the owner turned down the request. It is safe to wait. No permitted substitute can get the same result. They would use it only for what is immediately needed. What should they do?",
+          "A player at the clubhouse wants to borrow an item, and the owner turned down the request. Waiting could result in serious harm right away. No permitted substitute can get the same result. They would use it only for what is immediately needed. What should they do?",
+          "A player at the boathouse wants to borrow an item, and the owner said they could use the item. It is safe to wait. No permitted substitute can get the same result. They would use it only for what is immediately needed. What should they do?",
+          "A player at the boathouse wants to borrow an item, and the owner said they could use the item. Waiting could result in serious harm right away. No permitted substitute can get the same result. They would use it only for what is immediately needed. What should they do?",
+          "A player at the boathouse wants to borrow an item, and there is no time to reach the owner. It is safe to wait. No permitted substitute can get the same result. They would use it only for what is immediately needed. What should they do?",
+          "A player at the boathouse wants to borrow an item, and there is no time to reach the owner. Waiting could result in serious harm right away. No permitted substitute can get the same result. They would use it only for what is immediately needed. What should they do?",
+          "A player at the workshop wants to borrow an item, and there is no time to reach the owner. It is safe to wait. No permitted substitute can get the same result. They want to use it for additional purposes, too. What should they do?",
+          "A player at the workshop wants to borrow an item, and there is no time to reach the owner. Waiting could result in serious harm right away. No permitted substitute can get the same result. They want to use it for additional purposes, too. What should they do?",
+          "A player at the campsite wants to borrow an item, and the owner turned down the request. It is safe to wait. No permitted substitute can get the same result. They want to use it for additional purposes, too. What should they do?",
+          "A player at the campsite wants to borrow an item, and the owner turned down the request. Waiting could result in serious harm right away. No permitted substitute can get the same result. They want to use it for additional purposes, too. What should they do?",
+          "A player at the clubhouse wants to borrow an item, and there is no time to reach the owner. It is safe to wait. They can use a permitted substitute that works just as well. They would use it only for what is immediately needed. What should they do?",
+          "A player at the clubhouse wants to borrow an item, and there is no time to reach the owner. Waiting could result in serious harm right away. They can use a permitted substitute that works just as well. They would use it only for what is immediately needed. What should they do?",
+          "A player at the theater wants to borrow an item, and they could ask the owner, who has yet to say yes or no. It is safe to wait. They can use a permitted substitute that works just as well. They would use it only for what is immediately needed. What should they do?",
+          "A player at the theater wants to borrow an item, and they could ask the owner, who has yet to say yes or no. Waiting could result in serious harm right away. They can use a permitted substitute that works just as well. They would use it only for what is immediately needed. What should they do?",
+          "A player at the clubhouse wants to borrow an item, and they could ask the owner, who has yet to say yes or no. It is safe to wait. They can use a permitted substitute that works just as well. They want to use it for additional purposes, too. What should they do?",
+          "A player at the clubhouse wants to borrow an item, and they could ask the owner, who has yet to say yes or no. Waiting could result in serious harm right away. They can use a permitted substitute that works just as well. They want to use it for additional purposes, too. What should they do?",
+          "A player at the boathouse wants to borrow an item, and they could ask the owner, who has yet to say yes or no. It is safe to wait. They can use a permitted substitute that works just as well. They would use it only for what is immediately needed. What should they do?",
+          "A player at the boathouse wants to borrow an item, and they could ask the owner, who has yet to say yes or no. Waiting could result in serious harm right away. They can use a permitted substitute that works just as well. They would use it only for what is immediately needed. What should they do?",
+          "A player at the studio wants to borrow an item, and they could ask the owner, who has yet to say yes or no. It is safe to wait. No permitted substitute can get the same result. They would use it only for what is immediately needed. What should they do?",
+          "A player at the studio wants to borrow an item, and they could ask the owner, who has yet to say yes or no. Waiting could result in serious harm right away. No permitted substitute can get the same result. They would use it only for what is immediately needed. What should they do?",
+          "A player at the studio wants to borrow an item, and there is no time to reach the owner. It is safe to wait. They can use a permitted substitute that works just as well. They want to use it for additional purposes, too. What should they do?",
+          "A player at the studio wants to borrow an item, and there is no time to reach the owner. Waiting could result in serious harm right away. They can use a permitted substitute that works just as well. They want to use it for additional purposes, too. What should they do?",
+          "A player at the campsite wants to borrow an item, and the owner said they could use the item. It is safe to wait. They can use a permitted substitute that works just as well. They want to use it for additional purposes, too. What should they do?",
+          "A player at the campsite wants to borrow an item, and the owner said they could use the item. Waiting could result in serious harm right away. They can use a permitted substitute that works just as well. They want to use it for additional purposes, too. What should they do?",
+          "A player at the clubhouse wants to borrow an item, and there is no time to reach the owner. It is safe to wait. No permitted substitute can get the same result. They want to use it for additional purposes, too. What should they do?",
+          "A player at the clubhouse wants to borrow an item, and there is no time to reach the owner. Waiting could result in serious harm right away. No permitted substitute can get the same result. They want to use it for additional purposes, too. What should they do?"
+        ],
+        "trials": [
+          {
+            "seed": 11,
+            "questions": 50,
+            "answered": 0,
+            "fact_accuracy": 0,
+            "decision_accuracy": 0,
+            "joint_accuracy": 0,
+            "predictions": [
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              }
+            ]
+          },
+          {
+            "seed": 22,
+            "questions": 50,
+            "answered": 0,
+            "fact_accuracy": 0,
+            "decision_accuracy": 0,
+            "joint_accuracy": 0,
+            "predictions": [
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              }
+            ]
+          },
+          {
+            "seed": 42,
+            "questions": 50,
+            "answered": 0,
+            "fact_accuracy": 0,
+            "decision_accuracy": 0,
+            "joint_accuracy": 0,
+            "predictions": [
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              },
+              {
+                "decision": null,
+                "principle": null
+              }
+            ]
+          }
+        ]
+      },
+      "structured_diagnostic": {
+        "trials": [
+          {
+            "seed": 11,
+            "questions": 50,
+            "answered": 50,
+            "fact_accuracy": 1,
+            "decision_accuracy": 0.78,
+            "joint_accuracy": 0.76,
+            "predictions": [
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "allow",
+                "principle": "refusal"
+              },
+              {
+                "decision": "allow",
+                "principle": "urgent_exception"
+              },
+              {
+                "decision": "decline",
+                "principle": "safer_option"
+              },
+              {
+                "decision": "decline",
+                "principle": "safer_option"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "urgent_exception"
+              },
+              {
+                "decision": "decline",
+                "principle": "urgent_exception"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "urgent_exception"
+              },
+              {
+                "decision": "allow",
+                "principle": "over_scope"
+              },
+              {
+                "decision": "decline",
+                "principle": "over_scope"
+              },
+              {
+                "decision": "decline",
+                "principle": "over_scope"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "allow",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "allow",
+                "principle": "urgent_exception"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "decline",
+                "principle": "safer_option"
+              },
+              {
+                "decision": "decline",
+                "principle": "safer_option"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "decline",
+                "principle": "over_scope"
+              },
+              {
+                "decision": "decline",
+                "principle": "over_scope"
+              }
+            ]
+          },
+          {
+            "seed": 22,
+            "questions": 50,
+            "answered": 50,
+            "fact_accuracy": 1,
+            "decision_accuracy": 0.82,
+            "joint_accuracy": 0.78,
+            "predictions": [
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "allow",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "ask",
+                "principle": "safer_option"
+              },
+              {
+                "decision": "decline",
+                "principle": "safer_option"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "decline",
+                "principle": "permission"
+              },
+              {
+                "decision": "decline",
+                "principle": "over_scope"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "over_scope"
+              },
+              {
+                "decision": "decline",
+                "principle": "over_scope"
+              },
+              {
+                "decision": "decline",
+                "principle": "over_scope"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "allow",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "decline",
+                "principle": "safer_option"
+              },
+              {
+                "decision": "decline",
+                "principle": "safer_option"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "decline",
+                "principle": "over_scope"
+              },
+              {
+                "decision": "decline",
+                "principle": "over_scope"
+              }
+            ]
+          },
+          {
+            "seed": 42,
+            "questions": 50,
+            "answered": 50,
+            "fact_accuracy": 1,
+            "decision_accuracy": 0.8,
+            "joint_accuracy": 0.8,
+            "predictions": [
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "allow",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "decline",
+                "principle": "safer_option"
+              },
+              {
+                "decision": "decline",
+                "principle": "safer_option"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "over_scope"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "urgent_exception"
+              },
+              {
+                "decision": "allow",
+                "principle": "urgent_exception"
+              },
+              {
+                "decision": "decline",
+                "principle": "over_scope"
+              },
+              {
+                "decision": "decline",
+                "principle": "over_scope"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "decline",
+                "principle": "refusal"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "allow",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "ask",
+                "principle": "ask_owner"
+              },
+              {
+                "decision": "decline",
+                "principle": "safer_option"
+              },
+              {
+                "decision": "decline",
+                "principle": "safer_option"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "allow",
+                "principle": "permission"
+              },
+              {
+                "decision": "decline",
+                "principle": "over_scope"
+              },
+              {
+                "decision": "decline",
+                "principle": "over_scope"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "summary": [
+      {
+        "input": "supported_text",
+        "answered": 50,
+        "fact_accuracy": 1,
+        "decision_accuracy": 0.8,
+        "joint_accuracy": 0.78
+      },
+      {
+        "input": "new_urgency_wording",
+        "answered": 0,
+        "fact_accuracy": 0,
+        "decision_accuracy": 0,
+        "joint_accuracy": 0
+      },
+      {
+        "input": "new_narrative",
+        "answered": 0,
+        "fact_accuracy": 0,
+        "decision_accuracy": 0,
+        "joint_accuracy": 0
+      },
+      {
+        "input": "structured_diagnostic",
+        "answered": 50,
+        "fact_accuracy": 1,
+        "decision_accuracy": 0.8,
+        "joint_accuracy": 0.78
+      }
+    ]
+  },
+  "conditional_summary": {
+    "decision_accuracy": 0.19444444444444445,
+    "joint_accuracy": 0.041666666666666664,
+    "pair_accuracy": 0.027777777777777776,
+    "decision_change_rate": 0.16666666666666666,
+    "pairs_per_seed": 24
+  },
+  "conditional": [
+    {
+      "condition": {
+        "alternative": false,
+        "limited": false
+      },
+      "excluded_lessons": [
+        "lesson-017",
+        "lesson-024",
+        "lesson-031",
+        "lesson-035",
+        "lesson-048",
+        "lesson-069",
+        "lesson-074",
+        "lesson-096"
+      ],
+      "training_used": [
+        "lesson-000",
+        "lesson-003",
+        "lesson-007",
+        "lesson-010",
+        "lesson-013",
+        "lesson-015",
+        "lesson-021",
+        "lesson-029",
+        "lesson-030",
+        "lesson-040",
+        "lesson-042",
+        "lesson-045",
+        "lesson-049",
+        "lesson-050",
+        "lesson-052",
+        "lesson-055",
+        "lesson-057",
+        "lesson-060",
+        "lesson-061",
+        "lesson-062",
+        "lesson-063",
+        "lesson-065",
+        "lesson-067",
+        "lesson-068",
+        "lesson-073",
+        "lesson-075",
+        "lesson-076",
+        "lesson-080",
+        "lesson-090",
+        "lesson-092"
+      ],
+      "cases": [
+        {
+          "setting": "workshop",
+          "owner": "unavailable",
+          "urgent": false,
+          "alternative": false,
+          "limited": false,
+          "expected_decision": "ask",
+          "expected_principle": "ask_owner"
+        },
+        {
+          "setting": "workshop",
+          "owner": "unavailable",
+          "urgent": true,
+          "alternative": false,
+          "limited": false,
+          "expected_decision": "decline",
+          "expected_principle": "over_scope"
+        },
+        {
+          "setting": "campsite",
+          "owner": "unavailable",
+          "urgent": false,
+          "alternative": false,
+          "limited": false,
+          "expected_decision": "ask",
+          "expected_principle": "ask_owner"
+        },
+        {
+          "setting": "campsite",
+          "owner": "unavailable",
+          "urgent": true,
+          "alternative": false,
+          "limited": false,
+          "expected_decision": "decline",
+          "expected_principle": "over_scope"
+        },
+        {
+          "setting": "theater",
+          "owner": "unavailable",
+          "urgent": false,
+          "alternative": false,
+          "limited": false,
+          "expected_decision": "ask",
+          "expected_principle": "ask_owner"
+        },
+        {
+          "setting": "theater",
+          "owner": "unavailable",
+          "urgent": true,
+          "alternative": false,
+          "limited": false,
+          "expected_decision": "decline",
+          "expected_principle": "over_scope"
+        },
+        {
+          "setting": "clubhouse",
+          "owner": "unavailable",
+          "urgent": false,
+          "alternative": false,
+          "limited": false,
+          "expected_decision": "ask",
+          "expected_principle": "ask_owner"
+        },
+        {
+          "setting": "clubhouse",
+          "owner": "unavailable",
+          "urgent": true,
+          "alternative": false,
+          "limited": false,
+          "expected_decision": "decline",
+          "expected_principle": "over_scope"
+        },
+        {
+          "setting": "studio",
+          "owner": "unavailable",
+          "urgent": false,
+          "alternative": false,
+          "limited": false,
+          "expected_decision": "ask",
+          "expected_principle": "ask_owner"
+        },
+        {
+          "setting": "studio",
+          "owner": "unavailable",
+          "urgent": true,
+          "alternative": false,
+          "limited": false,
+          "expected_decision": "decline",
+          "expected_principle": "over_scope"
+        },
+        {
+          "setting": "boathouse",
+          "owner": "unavailable",
+          "urgent": false,
+          "alternative": false,
+          "limited": false,
+          "expected_decision": "ask",
+          "expected_principle": "ask_owner"
+        },
+        {
+          "setting": "boathouse",
+          "owner": "unavailable",
+          "urgent": true,
+          "alternative": false,
+          "limited": false,
+          "expected_decision": "decline",
+          "expected_principle": "over_scope"
+        }
+      ],
+      "expected_principles_without_examples": [
+        "over_scope"
+      ],
+      "trials": [
+        {
+          "seed": 11,
+          "questions": 12,
+          "answered": 12,
+          "fact_accuracy": 1,
+          "decision_accuracy": 0.08333333333333333,
+          "joint_accuracy": 0,
+          "predictions": [
+            {
+              "decision": "allow",
+              "principle": "safer_option"
+            },
+            {
+              "decision": "allow",
+              "principle": "safer_option"
+            },
+            {
+              "decision": "decline",
+              "principle": "safer_option"
+            },
+            {
+              "decision": "allow",
+              "principle": "safer_option"
+            },
+            {
+              "decision": "decline",
+              "principle": "safer_option"
+            },
+            {
+              "decision": "decline",
+              "principle": "safer_option"
+            },
+            {
+              "decision": "allow",
+              "principle": "safer_option"
+            },
+            {
+              "decision": "allow",
+              "principle": "safer_option"
+            },
+            {
+              "decision": "allow",
+              "principle": "urgent_exception"
+            },
+            {
+              "decision": "allow",
+              "principle": "urgent_exception"
+            },
+            {
+              "decision": "decline",
+              "principle": "safer_option"
+            },
+            {
+              "decision": "allow",
+              "principle": "safer_option"
+            }
+          ],
+          "pair_accuracy": 0,
+          "decision_change_rate": 0.3333333333333333
+        },
+        {
+          "seed": 22,
+          "questions": 12,
+          "answered": 12,
+          "fact_accuracy": 1,
+          "decision_accuracy": 0.08333333333333333,
+          "joint_accuracy": 0,
+          "predictions": [
+            {
+              "decision": "allow",
+              "principle": "safer_option"
+            },
+            {
+              "decision": "allow",
+              "principle": "safer_option"
+            },
+            {
+              "decision": "allow",
+              "principle": "safer_option"
+            },
+            {
+              "decision": "allow",
+              "principle": "safer_option"
+            },
+            {
+              "decision": "decline",
+              "principle": "safer_option"
+            },
+            {
+              "decision": "decline",
+              "principle": "safer_option"
+            },
+            {
+              "decision": "allow",
+              "principle": "safer_option"
+            },
+            {
+              "decision": "allow",
+              "principle": "urgent_exception"
+            },
+            {
+              "decision": "allow",
+              "principle": "urgent_exception"
+            },
+            {
+              "decision": "allow",
+              "principle": "urgent_exception"
+            },
+            {
+              "decision": "decline",
+              "principle": "safer_option"
+            },
+            {
+              "decision": "allow",
+              "principle": "safer_option"
+            }
+          ],
+          "pair_accuracy": 0,
+          "decision_change_rate": 0.16666666666666666
+        },
+        {
+          "seed": 42,
+          "questions": 12,
+          "answered": 12,
+          "fact_accuracy": 1,
+          "decision_accuracy": 0.16666666666666666,
+          "joint_accuracy": 0,
+          "predictions": [
+            {
+              "decision": "decline",
+              "principle": "safer_option"
+            },
+            {
+              "decision": "allow",
+              "principle": "urgent_exception"
+            },
+            {
+              "decision": "decline",
+              "principle": "safer_option"
+            },
+            {
+              "decision": "allow",
+              "principle": "urgent_exception"
+            },
+            {
+              "decision": "decline",
+              "principle": "safer_option"
+            },
+            {
+              "decision": "decline",
+              "principle": "safer_option"
+            },
+            {
+              "decision": "decline",
+              "principle": "safer_option"
+            },
+            {
+              "decision": "allow",
+              "principle": "safer_option"
+            },
+            {
+              "decision": "allow",
+              "principle": "urgent_exception"
+            },
+            {
+              "decision": "allow",
+              "principle": "urgent_exception"
+            },
+            {
+              "decision": "decline",
+              "principle": "safer_option"
+            },
+            {
+              "decision": "decline",
+              "principle": "safer_option"
+            }
+          ],
+          "pair_accuracy": 0,
+          "decision_change_rate": 0.5
+        }
+      ],
+      "summary": {
+        "decision_accuracy": 0.1111111111111111,
+        "joint_accuracy": 0,
+        "pair_accuracy": 0,
+        "decision_change_rate": 0.3333333333333333
+      }
+    },
+    {
+      "condition": {
+        "alternative": false,
+        "limited": true
+      },
+      "excluded_lessons": [
+        "lesson-002",
+        "lesson-005",
+        "lesson-007",
+        "lesson-023",
+        "lesson-036",
+        "lesson-041",
+        "lesson-071"
+      ],
+      "training_used": [
+        "lesson-000",
+        "lesson-003",
+        "lesson-010",
+        "lesson-013",
+        "lesson-015",
+        "lesson-017",
+        "lesson-021",
+        "lesson-029",
+        "lesson-030",
+        "lesson-031",
+        "lesson-035",
+        "lesson-040",
+        "lesson-042",
+        "lesson-045",
+        "lesson-049",
+        "lesson-050",
+        "lesson-052",
+        "lesson-055",
+        "lesson-057",
+        "lesson-060",
+        "lesson-061",
+        "lesson-062",
+        "lesson-063",
+        "lesson-065",
+        "lesson-067",
+        "lesson-068",
+        "lesson-073",
+        "lesson-075",
+        "lesson-076",
+        "lesson-080",
+        "lesson-090",
+        "lesson-092"
+      ],
+      "cases": [
+        {
+          "setting": "workshop",
+          "owner": "unavailable",
+          "urgent": false,
+          "alternative": false,
+          "limited": true,
+          "expected_decision": "ask",
+          "expected_principle": "ask_owner"
+        },
+        {
+          "setting": "workshop",
+          "owner": "unavailable",
+          "urgent": true,
+          "alternative": false,
+          "limited": true,
+          "expected_decision": "allow",
+          "expected_principle": "urgent_exception"
+        },
+        {
+          "setting": "campsite",
+          "owner": "unavailable",
+          "urgent": false,
+          "alternative": false,
+          "limited": true,
+          "expected_decision": "ask",
+          "expected_principle": "ask_owner"
+        },
+        {
+          "setting": "campsite",
+          "owner": "unavailable",
+          "urgent": true,
+          "alternative": false,
+          "limited": true,
+          "expected_decision": "allow",
+          "expected_principle": "urgent_exception"
+        },
+        {
+          "setting": "theater",
+          "owner": "unavailable",
+          "urgent": false,
+          "alternative": false,
+          "limited": true,
+          "expected_decision": "ask",
+          "expected_principle": "ask_owner"
+        },
+        {
+          "setting": "theater",
+          "owner": "unavailable",
+          "urgent": true,
+          "alternative": false,
+          "limited": true,
+          "expected_decision": "allow",
+          "expected_principle": "urgent_exception"
+        },
+        {
+          "setting": "clubhouse",
+          "owner": "unavailable",
+          "urgent": false,
+          "alternative": false,
+          "limited": true,
+          "expected_decision": "ask",
+          "expected_principle": "ask_owner"
+        },
+        {
+          "setting": "clubhouse",
+          "owner": "unavailable",
+          "urgent": true,
+          "alternative": false,
+          "limited": true,
+          "expected_decision": "allow",
+          "expected_principle": "urgent_exception"
+        },
+        {
+          "setting": "studio",
+          "owner": "unavailable",
+          "urgent": false,
+          "alternative": false,
+          "limited": true,
+          "expected_decision": "ask",
+          "expected_principle": "ask_owner"
+        },
+        {
+          "setting": "studio",
+          "owner": "unavailable",
+          "urgent": true,
+          "alternative": false,
+          "limited": true,
+          "expected_decision": "allow",
+          "expected_principle": "urgent_exception"
+        },
+        {
+          "setting": "boathouse",
+          "owner": "unavailable",
+          "urgent": false,
+          "alternative": false,
+          "limited": true,
+          "expected_decision": "ask",
+          "expected_principle": "ask_owner"
+        },
+        {
+          "setting": "boathouse",
+          "owner": "unavailable",
+          "urgent": true,
+          "alternative": false,
+          "limited": true,
+          "expected_decision": "allow",
+          "expected_principle": "urgent_exception"
+        }
+      ],
+      "expected_principles_without_examples": [
+        "urgent_exception"
+      ],
+      "trials": [
+        {
+          "seed": 11,
+          "questions": 12,
+          "answered": 12,
+          "fact_accuracy": 1,
+          "decision_accuracy": 0,
+          "joint_accuracy": 0,
+          "predictions": [
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            }
+          ],
+          "pair_accuracy": 0,
+          "decision_change_rate": 0
+        },
+        {
+          "seed": 22,
+          "questions": 12,
+          "answered": 12,
+          "fact_accuracy": 1,
+          "decision_accuracy": 0,
+          "joint_accuracy": 0,
+          "predictions": [
+            {
+              "decision": "decline",
+              "principle": "refusal"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "ask_owner"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            }
+          ],
+          "pair_accuracy": 0,
+          "decision_change_rate": 0
+        },
+        {
+          "seed": 42,
+          "questions": 12,
+          "answered": 12,
+          "fact_accuracy": 1,
+          "decision_accuracy": 0,
+          "joint_accuracy": 0,
+          "predictions": [
+            {
+              "decision": "decline",
+              "principle": "refusal"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "refusal"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "refusal"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            }
+          ],
+          "pair_accuracy": 0,
+          "decision_change_rate": 0
+        }
+      ],
+      "summary": {
+        "decision_accuracy": 0,
+        "joint_accuracy": 0,
+        "pair_accuracy": 0,
+        "decision_change_rate": 0
+      }
+    },
+    {
+      "condition": {
+        "alternative": true,
+        "limited": false
+      },
+      "excluded_lessons": [
+        "lesson-009",
+        "lesson-019",
+        "lesson-032",
+        "lesson-040",
+        "lesson-086",
+        "lesson-093"
+      ],
+      "training_used": [
+        "lesson-000",
+        "lesson-003",
+        "lesson-007",
+        "lesson-010",
+        "lesson-013",
+        "lesson-015",
+        "lesson-017",
+        "lesson-021",
+        "lesson-029",
+        "lesson-030",
+        "lesson-031",
+        "lesson-035",
+        "lesson-042",
+        "lesson-045",
+        "lesson-049",
+        "lesson-050",
+        "lesson-052",
+        "lesson-055",
+        "lesson-057",
+        "lesson-060",
+        "lesson-061",
+        "lesson-062",
+        "lesson-063",
+        "lesson-065",
+        "lesson-067",
+        "lesson-068",
+        "lesson-073",
+        "lesson-075",
+        "lesson-076",
+        "lesson-080",
+        "lesson-090",
+        "lesson-092"
+      ],
+      "cases": [
+        {
+          "setting": "workshop",
+          "owner": "unavailable",
+          "urgent": false,
+          "alternative": true,
+          "limited": false,
+          "expected_decision": "ask",
+          "expected_principle": "ask_owner"
+        },
+        {
+          "setting": "workshop",
+          "owner": "unavailable",
+          "urgent": true,
+          "alternative": true,
+          "limited": false,
+          "expected_decision": "decline",
+          "expected_principle": "safer_option"
+        },
+        {
+          "setting": "campsite",
+          "owner": "unavailable",
+          "urgent": false,
+          "alternative": true,
+          "limited": false,
+          "expected_decision": "ask",
+          "expected_principle": "ask_owner"
+        },
+        {
+          "setting": "campsite",
+          "owner": "unavailable",
+          "urgent": true,
+          "alternative": true,
+          "limited": false,
+          "expected_decision": "decline",
+          "expected_principle": "safer_option"
+        },
+        {
+          "setting": "theater",
+          "owner": "unavailable",
+          "urgent": false,
+          "alternative": true,
+          "limited": false,
+          "expected_decision": "ask",
+          "expected_principle": "ask_owner"
+        },
+        {
+          "setting": "theater",
+          "owner": "unavailable",
+          "urgent": true,
+          "alternative": true,
+          "limited": false,
+          "expected_decision": "decline",
+          "expected_principle": "safer_option"
+        },
+        {
+          "setting": "clubhouse",
+          "owner": "unavailable",
+          "urgent": false,
+          "alternative": true,
+          "limited": false,
+          "expected_decision": "ask",
+          "expected_principle": "ask_owner"
+        },
+        {
+          "setting": "clubhouse",
+          "owner": "unavailable",
+          "urgent": true,
+          "alternative": true,
+          "limited": false,
+          "expected_decision": "decline",
+          "expected_principle": "safer_option"
+        },
+        {
+          "setting": "studio",
+          "owner": "unavailable",
+          "urgent": false,
+          "alternative": true,
+          "limited": false,
+          "expected_decision": "ask",
+          "expected_principle": "ask_owner"
+        },
+        {
+          "setting": "studio",
+          "owner": "unavailable",
+          "urgent": true,
+          "alternative": true,
+          "limited": false,
+          "expected_decision": "decline",
+          "expected_principle": "safer_option"
+        },
+        {
+          "setting": "boathouse",
+          "owner": "unavailable",
+          "urgent": false,
+          "alternative": true,
+          "limited": false,
+          "expected_decision": "ask",
+          "expected_principle": "ask_owner"
+        },
+        {
+          "setting": "boathouse",
+          "owner": "unavailable",
+          "urgent": true,
+          "alternative": true,
+          "limited": false,
+          "expected_decision": "decline",
+          "expected_principle": "safer_option"
+        }
+      ],
+      "expected_principles_without_examples": [
+        "safer_option"
+      ],
+      "trials": [
+        {
+          "seed": 11,
+          "questions": 12,
+          "answered": 12,
+          "fact_accuracy": 1,
+          "decision_accuracy": 0.5,
+          "joint_accuracy": 0,
+          "predictions": [
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            }
+          ],
+          "pair_accuracy": 0,
+          "decision_change_rate": 0
+        },
+        {
+          "seed": 22,
+          "questions": 12,
+          "answered": 12,
+          "fact_accuracy": 1,
+          "decision_accuracy": 0.5833333333333334,
+          "joint_accuracy": 0.08333333333333333,
+          "predictions": [
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "ask",
+              "principle": "ask_owner"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            }
+          ],
+          "pair_accuracy": 0.16666666666666666,
+          "decision_change_rate": 0.16666666666666666
+        },
+        {
+          "seed": 42,
+          "questions": 12,
+          "answered": 12,
+          "fact_accuracy": 1,
+          "decision_accuracy": 0.5833333333333334,
+          "joint_accuracy": 0.08333333333333333,
+          "predictions": [
+            {
+              "decision": "decline",
+              "principle": "refusal"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "ask",
+              "principle": "ask_owner"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            },
+            {
+              "decision": "decline",
+              "principle": "over_scope"
+            }
+          ],
+          "pair_accuracy": 0.16666666666666666,
+          "decision_change_rate": 0.16666666666666666
+        }
+      ],
+      "summary": {
+        "decision_accuracy": 0.5555555555555556,
+        "joint_accuracy": 0.05555555555555555,
+        "pair_accuracy": 0.1111111111111111,
+        "decision_change_rate": 0.1111111111111111
+      }
+    },
+    {
+      "condition": {
+        "alternative": true,
+        "limited": true
+      },
+      "excluded_lessons": [
+        "lesson-006",
+        "lesson-008",
+        "lesson-016",
+        "lesson-043",
+        "lesson-054",
+        "lesson-077"
+      ],
+      "training_used": [
+        "lesson-000",
+        "lesson-003",
+        "lesson-007",
+        "lesson-010",
+        "lesson-013",
+        "lesson-015",
+        "lesson-017",
+        "lesson-021",
+        "lesson-029",
+        "lesson-030",
+        "lesson-031",
+        "lesson-035",
+        "lesson-040",
+        "lesson-042",
+        "lesson-045",
+        "lesson-049",
+        "lesson-050",
+        "lesson-052",
+        "lesson-055",
+        "lesson-057",
+        "lesson-060",
+        "lesson-061",
+        "lesson-062",
+        "lesson-063",
+        "lesson-065",
+        "lesson-067",
+        "lesson-068",
+        "lesson-073",
+        "lesson-075",
+        "lesson-076",
+        "lesson-080",
+        "lesson-090",
+        "lesson-092"
+      ],
+      "cases": [
+        {
+          "setting": "workshop",
+          "owner": "unavailable",
+          "urgent": false,
+          "alternative": true,
+          "limited": true,
+          "expected_decision": "ask",
+          "expected_principle": "ask_owner"
+        },
+        {
+          "setting": "workshop",
+          "owner": "unavailable",
+          "urgent": true,
+          "alternative": true,
+          "limited": true,
+          "expected_decision": "decline",
+          "expected_principle": "safer_option"
+        },
+        {
+          "setting": "campsite",
+          "owner": "unavailable",
+          "urgent": false,
+          "alternative": true,
+          "limited": true,
+          "expected_decision": "ask",
+          "expected_principle": "ask_owner"
+        },
+        {
+          "setting": "campsite",
+          "owner": "unavailable",
+          "urgent": true,
+          "alternative": true,
+          "limited": true,
+          "expected_decision": "decline",
+          "expected_principle": "safer_option"
+        },
+        {
+          "setting": "theater",
+          "owner": "unavailable",
+          "urgent": false,
+          "alternative": true,
+          "limited": true,
+          "expected_decision": "ask",
+          "expected_principle": "ask_owner"
+        },
+        {
+          "setting": "theater",
+          "owner": "unavailable",
+          "urgent": true,
+          "alternative": true,
+          "limited": true,
+          "expected_decision": "decline",
+          "expected_principle": "safer_option"
+        },
+        {
+          "setting": "clubhouse",
+          "owner": "unavailable",
+          "urgent": false,
+          "alternative": true,
+          "limited": true,
+          "expected_decision": "ask",
+          "expected_principle": "ask_owner"
+        },
+        {
+          "setting": "clubhouse",
+          "owner": "unavailable",
+          "urgent": true,
+          "alternative": true,
+          "limited": true,
+          "expected_decision": "decline",
+          "expected_principle": "safer_option"
+        },
+        {
+          "setting": "studio",
+          "owner": "unavailable",
+          "urgent": false,
+          "alternative": true,
+          "limited": true,
+          "expected_decision": "ask",
+          "expected_principle": "ask_owner"
+        },
+        {
+          "setting": "studio",
+          "owner": "unavailable",
+          "urgent": true,
+          "alternative": true,
+          "limited": true,
+          "expected_decision": "decline",
+          "expected_principle": "safer_option"
+        },
+        {
+          "setting": "boathouse",
+          "owner": "unavailable",
+          "urgent": false,
+          "alternative": true,
+          "limited": true,
+          "expected_decision": "ask",
+          "expected_principle": "ask_owner"
+        },
+        {
+          "setting": "boathouse",
+          "owner": "unavailable",
+          "urgent": true,
+          "alternative": true,
+          "limited": true,
+          "expected_decision": "decline",
+          "expected_principle": "safer_option"
+        }
+      ],
+      "expected_principles_without_examples": [],
+      "trials": [
+        {
+          "seed": 11,
+          "questions": 12,
+          "answered": 12,
+          "fact_accuracy": 1,
+          "decision_accuracy": 0,
+          "joint_accuracy": 0,
+          "predictions": [
+            {
+              "decision": "allow",
+              "principle": "refusal"
+            },
+            {
+              "decision": "allow",
+              "principle": "urgent_exception"
+            },
+            {
+              "decision": "allow",
+              "principle": "permission"
+            },
+            {
+              "decision": "allow",
+              "principle": "safer_option"
+            },
+            {
+              "decision": "allow",
+              "principle": "safer_option"
+            },
+            {
+              "decision": "allow",
+              "principle": "safer_option"
+            },
+            {
+              "decision": "allow",
+              "principle": "ask_owner"
+            },
+            {
+              "decision": "allow",
+              "principle": "urgent_exception"
+            },
+            {
+              "decision": "allow",
+              "principle": "urgent_exception"
+            },
+            {
+              "decision": "allow",
+              "principle": "urgent_exception"
+            },
+            {
+              "decision": "allow",
+              "principle": "permission"
+            },
+            {
+              "decision": "allow",
+              "principle": "safer_option"
+            }
+          ],
+          "pair_accuracy": 0,
+          "decision_change_rate": 0
+        },
+        {
+          "seed": 22,
+          "questions": 12,
+          "answered": 12,
+          "fact_accuracy": 1,
+          "decision_accuracy": 0.25,
+          "joint_accuracy": 0.25,
+          "predictions": [
+            {
+              "decision": "allow",
+              "principle": "ask_owner"
+            },
+            {
+              "decision": "allow",
+              "principle": "permission"
+            },
+            {
+              "decision": "allow",
+              "principle": "ask_owner"
+            },
+            {
+              "decision": "allow",
+              "principle": "permission"
+            },
+            {
+              "decision": "allow",
+              "principle": "safer_option"
+            },
+            {
+              "decision": "decline",
+              "principle": "safer_option"
+            },
+            {
+              "decision": "ask",
+              "principle": "ask_owner"
+            },
+            {
+              "decision": "allow",
+              "principle": "ask_owner"
+            },
+            {
+              "decision": "allow",
+              "principle": "ask_owner"
+            },
+            {
+              "decision": "allow",
+              "principle": "urgent_exception"
+            },
+            {
+              "decision": "ask",
+              "principle": "ask_owner"
+            },
+            {
+              "decision": "allow",
+              "principle": "permission"
+            }
+          ],
+          "pair_accuracy": 0,
+          "decision_change_rate": 0.5
+        },
+        {
+          "seed": 42,
+          "questions": 12,
+          "answered": 12,
+          "fact_accuracy": 1,
+          "decision_accuracy": 0.08333333333333333,
+          "joint_accuracy": 0.08333333333333333,
+          "predictions": [
+            {
+              "decision": "allow",
+              "principle": "ask_owner"
+            },
+            {
+              "decision": "allow",
+              "principle": "permission"
+            },
+            {
+              "decision": "allow",
+              "principle": "ask_owner"
+            },
+            {
+              "decision": "allow",
+              "principle": "permission"
+            },
+            {
+              "decision": "allow",
+              "principle": "safer_option"
+            },
+            {
+              "decision": "allow",
+              "principle": "safer_option"
+            },
+            {
+              "decision": "ask",
+              "principle": "ask_owner"
+            },
+            {
+              "decision": "allow",
+              "principle": "ask_owner"
+            },
+            {
+              "decision": "allow",
+              "principle": "urgent_exception"
+            },
+            {
+              "decision": "allow",
+              "principle": "urgent_exception"
+            },
+            {
+              "decision": "allow",
+              "principle": "ask_owner"
+            },
+            {
+              "decision": "allow",
+              "principle": "safer_option"
+            }
+          ],
+          "pair_accuracy": 0,
+          "decision_change_rate": 0.16666666666666666
+        }
+      ],
+      "summary": {
+        "decision_accuracy": 0.1111111111111111,
+        "joint_accuracy": 0.1111111111111111,
+        "pair_accuracy": 0,
+        "decision_change_rate": 0.2222222222222222
+      }
+    }
+  ]
+}

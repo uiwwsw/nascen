@@ -1,0 +1,1724 @@
+{
+  "dataset": "switch-principles-v2",
+  "model": "Qwen/Qwen3-4B-GGUF@bc640142c66e1fdd12af0bd68f40445458f3869b Q4_K_M; llama.cpp b12556",
+  "seed": 42,
+  "batch_size": 20,
+  "manifest_sha256": "4ee55caa755ffc17a743594d30e279a47458b41b1d2667006162a59bad1a4bc9",
+  "instructions_sha256": "f2f5fefd227e3cb74057471d04a42b99328bf45984bcd2d19637a2733b2180f9",
+  "batches": [
+    {
+      "start": 0,
+      "programs": [
+        "ebah",
+        "gd/ahfe",
+        "fa",
+        "ehf/achdbg",
+        "cb/ae",
+        "dgha",
+        "bhcgaa",
+        "ef/gh/dc",
+        "hg/efdbca",
+        "dg/eahfbc"
+      ],
+      "usage": {
+        "completion_tokens": 61,
+        "prompt_tokens": 487,
+        "total_tokens": 548,
+        "prompt_tokens_details": {
+          "cached_tokens": 3
+        }
+      },
+      "wall_seconds": 2.6771541250054725
+    },
+    {
+      "start": 10,
+      "programs": [
+        "bea/gd",
+        "ehd/ga",
+        "hbfcd",
+        "gcd",
+        "eag/hbf",
+        "eca/gdh",
+        "cahgbe",
+        "bf",
+        "gc/hee",
+        "ahb/fedg",
+        "af/chdg",
+        "bfe",
+        "hbcga",
+        "dch",
+        "dgb",
+        "dgb",
+        "bce",
+        "bcefd",
+        "cah",
+        "fb"
+      ],
+      "usage": {
+        "completion_tokens": 98,
+        "prompt_tokens": 834,
+        "total_tokens": 932,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 4.76381079100247
+    },
+    {
+      "start": 30,
+      "programs": [
+        "gfg/fc",
+        "ac",
+        "cd/fb/gh",
+        "df/egab",
+        "fghc/adc",
+        "acd/fhbg",
+        "bf",
+        "ebhga",
+        "fgebad",
+        "cef/dhg",
+        "adfg",
+        "cahdbg",
+        "eg/hb",
+        "ha",
+        "afh/ebdg",
+        "ebcgda",
+        "fh/eag",
+        "fgd",
+        "fgab",
+        "dc/ghfae"
+      ],
+      "usage": {
+        "completion_tokens": 106,
+        "prompt_tokens": 864,
+        "total_tokens": 970,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 5.29060445799405
+    },
+    {
+      "start": 50,
+      "programs": [
+        "gfb/ed",
+        "bada/fgcg",
+        "da/hfg",
+        "fgc",
+        "abgh",
+        "bgad",
+        "ehdcafgb",
+        "chdb",
+        "he",
+        "agcdebfh",
+        "aghe",
+        "hdgab",
+        "ga",
+        "gdaeb",
+        "afb",
+        "gce",
+        "echg",
+        "eh",
+        "ea",
+        "hfbceg"
+      ],
+      "usage": {
+        "completion_tokens": 96,
+        "prompt_tokens": 895,
+        "total_tokens": 991,
+        "prompt_tokens_details": {
+          "cached_tokens": 122
+        }
+      },
+      "wall_seconds": 4.774137084001268
+    },
+    {
+      "start": 70,
+      "programs": [
+        "dc/gf",
+        "eh/fab",
+        "fcgahb",
+        "cg/hb",
+        "cghf",
+        "fgbah",
+        "dea",
+        "df/hbe",
+        "gh/fd/ea",
+        "dbfcae",
+        "hf/gda",
+        "ca/fb/de/gh",
+        "hfdgeab",
+        "hd/bceaf",
+        "bcf/eahgd",
+        "bgcdh",
+        "cd/afh",
+        "fhabd",
+        "fd/ea/hg",
+        "fhab/decg"
+      ],
+      "usage": {
+        "completion_tokens": 115,
+        "prompt_tokens": 884,
+        "total_tokens": 999,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 5.412514458002988
+    },
+    {
+      "start": 90,
+      "programs": [
+        "hfb/ga",
+        "afg/cdh",
+        "afb/chge",
+        "fe/ga",
+        "ghbfeca",
+        "bdh/faegc",
+        "adegfb",
+        "ad/bge",
+        "afhdecg",
+        "efbd"
+      ],
+      "usage": {
+        "completion_tokens": 60,
+        "prompt_tokens": 537,
+        "total_tokens": 597,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 2.779547124999226
+    },
+    {
+      "start": 100,
+      "programs": [
+        "dhh/bc",
+        "gbc/had",
+        "dh",
+        "gc",
+        "cf",
+        "cfd",
+        "ghcab",
+        "fdh",
+        "fad",
+        "gfc",
+        "dhhgbc",
+        "fe",
+        "fegb",
+        "fh",
+        "hgcf",
+        "ahfd",
+        "dahc",
+        "dahce",
+        "cgaef",
+        "bdahe"
+      ],
+      "usage": {
+        "completion_tokens": 89,
+        "prompt_tokens": 829,
+        "total_tokens": 918,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 4.551619792000565
+    },
+    {
+      "start": 120,
+      "programs": [
+        "dhf/eb",
+        "gcg",
+        "hagd",
+        "hbgda",
+        "hefbg",
+        "dhfag",
+        "fbeg",
+        "efgdb",
+        "dchfg",
+        "bha",
+        "ehfcdb",
+        "bceahfg",
+        "gecbfd",
+        "dabcf",
+        "cghe",
+        "gefbd",
+        "adfg",
+        "fhcag",
+        "ga",
+        "bda"
+      ],
+      "usage": {
+        "completion_tokens": 97,
+        "prompt_tokens": 874,
+        "total_tokens": 971,
+        "prompt_tokens_details": {
+          "cached_tokens": 122
+        }
+      },
+      "wall_seconds": 4.911670417001005
+    },
+    {
+      "start": 140,
+      "programs": [
+        "hdefbgac",
+        "ahb/egdf",
+        "gb/ehcf",
+        "hacbgfe",
+        "afcebh",
+        "bd/gfe",
+        "egab",
+        "eb/hdgf",
+        "hdefc",
+        "db/cge",
+        "ag/dfe",
+        "dh/efg",
+        "ha/ebdfg",
+        "ed/aacf",
+        "hfcbegd",
+        "ae/hbf",
+        "cb/eh",
+        "ahb/fcd",
+        "bdeh",
+        "ce/bfg"
+      ],
+      "usage": {
+        "completion_tokens": 114,
+        "prompt_tokens": 930,
+        "total_tokens": 1044,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 5.488432999998622
+    },
+    {
+      "start": 160,
+      "programs": [
+        "af/dg",
+        "hfebc",
+        "facdgh",
+        "dcabfgh",
+        "faedchgb",
+        "aghbcd",
+        "dfh",
+        "hfc",
+        "fchdb",
+        "hcbfeg",
+        "gcedaf",
+        "hfcdab",
+        "bh",
+        "deac",
+        "bceafhg",
+        "fbadghec",
+        "dghabf",
+        "hbe",
+        "chfabe",
+        "fgehcdb"
+      ],
+      "usage": {
+        "completion_tokens": 106,
+        "prompt_tokens": 843,
+        "total_tokens": 949,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 5.142550166005094
+    },
+    {
+      "start": 180,
+      "programs": [
+        "dca/gf",
+        "gd/eb",
+        "dba/hd",
+        "gfdab",
+        "dg/fbh",
+        "ae/cd",
+        "ceh",
+        "ba/efg",
+        "fh/ace",
+        "fhce",
+        "gh/bf",
+        "de/fbhcg",
+        "hf",
+        "bd",
+        "hd/ebag",
+        "hg",
+        "hg/edagb",
+        "bch/ehg",
+        "abd/egh",
+        "bcf/ehg"
+      ],
+      "usage": {
+        "completion_tokens": 108,
+        "prompt_tokens": 815,
+        "total_tokens": 923,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 5.431062249997922
+    },
+    {
+      "start": 200,
+      "programs": [
+        "ehdca",
+        "fbceahg",
+        "bea",
+        "fbg",
+        "bfahdce",
+        "bh",
+        "dehfcg",
+        "aec",
+        "afdg",
+        "ef",
+        "gcb",
+        "gab",
+        "faghcdb",
+        "bf",
+        "egbd",
+        "dg",
+        "ecahfgd",
+        "bh",
+        "efg",
+        "fh"
+      ],
+      "usage": {
+        "completion_tokens": 88,
+        "prompt_tokens": 920,
+        "total_tokens": 1008,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 5.030194582999684
+    },
+    {
+      "start": 220,
+      "programs": [
+        "ec/dga",
+        "ghbdae",
+        "heagfd",
+        "dgf",
+        "habe",
+        "fbg",
+        "fdgc",
+        "fgdeh",
+        "hgbc",
+        "adgh",
+        "hgc",
+        "ad",
+        "cdhfa",
+        "gf",
+        "agcdh",
+        "fda",
+        "hd",
+        "ae",
+        "eabdgfh",
+        "egahbd"
+      ],
+      "usage": {
+        "completion_tokens": 90,
+        "prompt_tokens": 912,
+        "total_tokens": 1002,
+        "prompt_tokens_details": {
+          "cached_tokens": 121
+        }
+      },
+      "wall_seconds": 5.211170499998843
+    },
+    {
+      "start": 240,
+      "programs": [
+        "gfg/fd",
+        "gb/efcd",
+        "dca/gd",
+        "hb/ceg",
+        "fe/cgbha",
+        "gb/aec",
+        "bc/hdf",
+        "ef/bhdc",
+        "ghc",
+        "gec/hba",
+        "hdafb",
+        "dcegbafh",
+        "ae",
+        "ec/hgadbf",
+        "hc",
+        "ha/fd",
+        "ec",
+        "hg/bda",
+        "dbaa/hfce",
+        "bg"
+      ],
+      "usage": {
+        "completion_tokens": 109,
+        "prompt_tokens": 759,
+        "total_tokens": 868,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 4.876573374996951
+    },
+    {
+      "start": 260,
+      "programs": [
+        "cda/gfe",
+        "hecd",
+        "cdgb",
+        "bfcegda",
+        "acbgd",
+        "hfd/abceg",
+        "abhd",
+        "ecgbdhf",
+        "dfeg",
+        "bhgf",
+        "bga/egcfh",
+        "bgda",
+        "ae/fbg",
+        "fe/abhd",
+        "cbefh",
+        "agdc",
+        "fegb",
+        "ecgda",
+        "ebhf/cdag",
+        "fd/bhg"
+      ],
+      "usage": {
+        "completion_tokens": 110,
+        "prompt_tokens": 920,
+        "total_tokens": 1030,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 6.287408916999993
+    },
+    {
+      "start": 280,
+      "programs": [
+        "bea/gd",
+        "ah/cbg",
+        "edf",
+        "af/gdeh",
+        "fg/bdeh",
+        "fh/bc",
+        "hg/ace",
+        "da",
+        "hd/ace",
+        "dh/fge",
+        "hgcdf",
+        "cf",
+        "abcdeh",
+        "gdhcfae",
+        "hdgce",
+        "dch/agfe",
+        "fdg",
+        "hb/ad",
+        "fb/gceh",
+        "de/fbh"
+      ],
+      "usage": {
+        "completion_tokens": 103,
+        "prompt_tokens": 815,
+        "total_tokens": 918,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 5.251303249999182
+    },
+    {
+      "start": 300,
+      "programs": [
+        "eaf",
+        "gfeahdb",
+        "ce/fh",
+        "hd/fc",
+        "hb/afc/gd",
+        "fh/geb",
+        "cfh/geb",
+        "ce/da",
+        "abhfdgec",
+        "geabd",
+        "bd/ac/hg/fe",
+        "egb/cafd",
+        "dbfhgca",
+        "bhdegafc",
+        "hfda",
+        "fgha/ebdc",
+        "efha/cdgb",
+        "dcg/ebfa",
+        "bgf/hac",
+        "behfafgd"
+      ],
+      "usage": {
+        "completion_tokens": 123,
+        "prompt_tokens": 909,
+        "total_tokens": 1032,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 6.247830000000249
+    },
+    {
+      "start": 320,
+      "programs": [
+        "hg/abeca",
+        "fgcd/bhga",
+        "he/ca/fg/bd",
+        "hc/ab",
+        "gafdc",
+        "gbfdha",
+        "ge",
+        "eh/gba",
+        "cg/bhdeaf",
+        "cbageh",
+        "de/bc/fh/ga",
+        "ec/bhgaef",
+        "dgcbehaf",
+        "bafcdhe",
+        "efg",
+        "fh/gde",
+        "dc/ghef",
+        "hg",
+        "fgbcdeh",
+        "dcagefhb"
+      ],
+      "usage": {
+        "completion_tokens": 120,
+        "prompt_tokens": 909,
+        "total_tokens": 1029,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 6.144806709002296
+    },
+    {
+      "start": 340,
+      "programs": [
+        "ceabghf",
+        "ca/bfd",
+        "adg/hb",
+        "be/fgahcd",
+        "be/fc",
+        "dh/fcgae",
+        "chfagde",
+        "hdbgecfa",
+        "ga/fb",
+        "abg",
+        "ed/ah",
+        "gaee/dbfh",
+        "bcadhefg",
+        "fcg/bdh",
+        "caed",
+        "chaaed",
+        "gc/edba",
+        "ca/ebfg",
+        "cdgh",
+        "fhgcde"
+      ],
+      "usage": {
+        "completion_tokens": 113,
+        "prompt_tokens": 856,
+        "total_tokens": 969,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 6.280650957996841
+    },
+    {
+      "start": 360,
+      "programs": [
+        "dghfc",
+        "bdg/caf",
+        "eacg",
+        "befcgdh",
+        "gbcadehf",
+        "bf/ahg",
+        "dhhbcag",
+        "ag/hdc",
+        "bfd",
+        "ad/cgh",
+        "af/bc/eag",
+        "ce/fag",
+        "ecbg",
+        "beg",
+        "ahdbehfg",
+        "hf",
+        "hc/bg/df/ea",
+        "eag/hbdf",
+        "ceh",
+        "ag/ebdf"
+      ],
+      "usage": {
+        "completion_tokens": 111,
+        "prompt_tokens": 892,
+        "total_tokens": 1003,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 6.175583208001626
+    },
+    {
+      "start": 380,
+      "programs": [
+        "bfe",
+        "fgde",
+        "cbhgf",
+        "afbd",
+        "dc",
+        "bhcdfg",
+        "efabgh",
+        "echba",
+        "fdg",
+        "aec",
+        "cdg",
+        "ed",
+        "ehg",
+        "dg",
+        "dgeh",
+        "bf",
+        "gace",
+        "bgefh",
+        "ba",
+        "bhc"
+      ],
+      "usage": {
+        "completion_tokens": 82,
+        "prompt_tokens": 871,
+        "total_tokens": 953,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 4.8647569170061615
+    },
+    {
+      "start": 400,
+      "programs": [
+        "ecd/hg",
+        "ch/ga/fb",
+        "dhf/gbcda",
+        "gchfbd",
+        "abda/cdefh",
+        "efgcah",
+        "ghbcf",
+        "cbf/gdh",
+        "egd/hcfab",
+        "acbd",
+        "dcfaeb",
+        "aghdcef",
+        "dahbcdef",
+        "edacbhfg",
+        "fhdcba",
+        "ghafdbce",
+        "ceh/fdgb",
+        "bga/cfd",
+        "afcb",
+        "bga/cfd"
+      ],
+      "usage": {
+        "completion_tokens": 120,
+        "prompt_tokens": 906,
+        "total_tokens": 1026,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 7.053386332998343
+    },
+    {
+      "start": 420,
+      "programs": [
+        "abe/fdg",
+        "echg",
+        "hbcfgd",
+        "hge/adeb",
+        "hd/fgc",
+        "cg/eb",
+        "gf/ace",
+        "fca",
+        "hbef",
+        "he/abdfc",
+        "dbg/acf",
+        "gfebca",
+        "hfe",
+        "feh/abgc",
+        "aefbghc",
+        "gbdafh",
+        "gd/ebhf",
+        "af/gbhe",
+        "ef/hc",
+        "gd/chef"
+      ],
+      "usage": {
+        "completion_tokens": 116,
+        "prompt_tokens": 867,
+        "total_tokens": 983,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 6.229200292000314
+    },
+    {
+      "start": 440,
+      "programs": [
+        "cah/fged",
+        "fbhaceg",
+        "hgfbd",
+        "bd/gcf",
+        "dcaf",
+        "hebfga",
+        "gc/fa",
+        "abhc/fegd",
+        "ha/ec",
+        "hba",
+        "ah/gcb",
+        "fe/hgad",
+        "ed/hgcbf",
+        "fgbcad",
+        "ehd/gfba",
+        "fgba",
+        "gc/fa",
+        "efh",
+        "eh/cgfd",
+        "bd/hgcbf"
+      ],
+      "usage": {
+        "completion_tokens": 110,
+        "prompt_tokens": 888,
+        "total_tokens": 998,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 6.411925374995917
+    },
+    {
+      "start": 460,
+      "programs": [
+        "fa/hb",
+        "gbe",
+        "gde",
+        "bdf",
+        "gcb",
+        "hf/bce",
+        "ahdfegb",
+        "fehc",
+        "beccg/adf",
+        "ah/dg",
+        "bcg/efda",
+        "ga/cdhe",
+        "chb",
+        "chdgeb",
+        "cgaf",
+        "gcfd",
+        "ah/ecfbg",
+        "cfb/afhg",
+        "hef/gac",
+        "chb/afhg"
+      ],
+      "usage": {
+        "completion_tokens": 108,
+        "prompt_tokens": 822,
+        "total_tokens": 930,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 8.014832749999186
+    },
+    {
+      "start": 480,
+      "programs": [
+        "ahbeg",
+        "fced",
+        "adbf",
+        "bfed",
+        "afbd",
+        "edha",
+        "hafed",
+        "gabce",
+        "ghbfe",
+        "bhade",
+        "fg",
+        "hbe",
+        "fe",
+        "abfdeh",
+        "fb",
+        "cdh",
+        "gfc",
+        "fd",
+        "cbf",
+        "hfa"
+      ],
+      "usage": {
+        "completion_tokens": 85,
+        "prompt_tokens": 931,
+        "total_tokens": 1016,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 8.80175637499633
+    },
+    {
+      "start": 500,
+      "programs": [
+        "fd/bhge",
+        "da/fb",
+        "gb/dc/hg",
+        "hbcg",
+        "fcbhg",
+        "ca/hg",
+        "abehd",
+        "cfh",
+        "cfa/dh",
+        "bf/ag",
+        "bdcfeh",
+        "dg/bacf",
+        "agb",
+        "hf",
+        "ahe",
+        "bfh",
+        "ce",
+        "gb",
+        "adfb",
+        "gdcbe"
+      ],
+      "usage": {
+        "completion_tokens": 96,
+        "prompt_tokens": 846,
+        "total_tokens": 942,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 6.688922000001185
+    },
+    {
+      "start": 520,
+      "programs": [
+        "hdf/gc",
+        "de/hag",
+        "be/ga",
+        "dh/gbaec",
+        "be/fhg",
+        "dbgfeh",
+        "bc/agde",
+        "bahgcd",
+        "hg",
+        "bcghaf",
+        "hafegc",
+        "edacfgh",
+        "ahbg",
+        "cbehgfd",
+        "fgb",
+        "dfga",
+        "cefahb",
+        "adcfheb",
+        "baecdgf",
+        "baecdgf"
+      ],
+      "usage": {
+        "completion_tokens": 108,
+        "prompt_tokens": 863,
+        "total_tokens": 971,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 6.374564375000773
+    },
+    {
+      "start": 540,
+      "programs": [
+        "cgh/ea",
+        "ba/cd/fh",
+        "db/ecfga",
+        "geafbdh",
+        "ecgdafb",
+        "agd/ebfh",
+        "hagf",
+        "cd/gbae",
+        "hacdbeg",
+        "afedcg",
+        "ef/gca",
+        "bg/fd",
+        "ahd",
+        "hfdceg",
+        "ba/fgd",
+        "dfg/ba",
+        "egbda",
+        "cgf/bee",
+        "fb/hg",
+        "hage/bed"
+      ],
+      "usage": {
+        "completion_tokens": 117,
+        "prompt_tokens": 878,
+        "total_tokens": 995,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 6.592287916995701
+    },
+    {
+      "start": 560,
+      "programs": [
+        "egdchbaf",
+        "baga/hd",
+        "aef",
+        "bfg/adf",
+        "cb",
+        "bfg/acfgh",
+        "cefghd",
+        "bf/agdh",
+        "edcgabfh",
+        "bh/agd",
+        "ga/hf",
+        "df/cagh",
+        "afcg/deghb",
+        "hb/ca/dfe",
+        "ad/eg/hf/cb",
+        "cfegdabg",
+        "eh/bac",
+        "ghfa/eca",
+        "cfg/beh",
+        "cd/fheab"
+      ],
+      "usage": {
+        "completion_tokens": 119,
+        "prompt_tokens": 893,
+        "total_tokens": 1012,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 6.806777208003041
+    },
+    {
+      "start": 580,
+      "programs": [
+        "dbehfeg",
+        "fhag",
+        "ba",
+        "gde",
+        "heda",
+        "hdc",
+        "cbf",
+        "fg",
+        "cdeh",
+        "ac",
+        "ha",
+        "fb",
+        "cf",
+        "ah",
+        "bd",
+        "de",
+        "hd",
+        "bc",
+        "bg",
+        "fbd"
+      ],
+      "usage": {
+        "completion_tokens": 75,
+        "prompt_tokens": 921,
+        "total_tokens": 996,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 4.701988667002297
+    },
+    {
+      "start": 600,
+      "programs": [
+        "bda/fc",
+        "dbg",
+        "be/agcf",
+        "dbfehg",
+        "cfhb",
+        "abfg",
+        "abfc",
+        "ab",
+        "afec",
+        "cdh",
+        "ghca",
+        "geh",
+        "dg",
+        "af",
+        "fb",
+        "fb",
+        "bc",
+        "hd",
+        "ec",
+        "de"
+      ],
+      "usage": {
+        "completion_tokens": 78,
+        "prompt_tokens": 861,
+        "total_tokens": 939,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 4.8414838340031565
+    },
+    {
+      "start": 620,
+      "programs": [
+        "hfc/agd",
+        "gh/dc",
+        "adgfeh",
+        "ce/df",
+        "gdf/chb",
+        "fahb",
+        "hfg/bdace",
+        "cahfb",
+        "gbcfe",
+        "dhhcgaeb",
+        "gcghae",
+        "fb",
+        "gf/ca",
+        "bacge",
+        "gfbchad",
+        "ga/dce",
+        "gfeacd",
+        "ea/gf",
+        "bdg",
+        "bghef"
+      ],
+      "usage": {
+        "completion_tokens": 106,
+        "prompt_tokens": 845,
+        "total_tokens": 951,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 5.689730165999208
+    },
+    {
+      "start": 640,
+      "programs": [
+        "gehcdbaf",
+        "ah/efcdg",
+        "hf/gac",
+        "bah",
+        "af/dh",
+        "be/ahcfdg",
+        "gafce",
+        "ha/db",
+        "ebcah",
+        "dbh",
+        "hb/ef/dc/ag",
+        "ah/fecg",
+        "dg/hebc",
+        "gc/fdbh",
+        "efdghca",
+        "fhagd",
+        "bafg",
+        "ah/cf",
+        "ah/cb",
+        "ecfbh"
+      ],
+      "usage": {
+        "completion_tokens": 114,
+        "prompt_tokens": 869,
+        "total_tokens": 983,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 4.972154708004382
+    },
+    {
+      "start": 660,
+      "programs": [
+        "gcf/bf",
+        "efh/agbd",
+        "gab/echdbf",
+        "cg/hbabd",
+        "eb/gabc",
+        "cd/ehgbd",
+        "dhab/ech",
+        "eg/hbdf",
+        "eg/abdfh",
+        "bfa/gcd",
+        "ac/hgdf",
+        "gd/fe",
+        "fa/hbc",
+        "eadhbc",
+        "dfahgbc",
+        "eg/ah/df",
+        "bce/hfg",
+        "ef/dabg",
+        "ef/dg",
+        "fg/hde"
+      ],
+      "usage": {
+        "completion_tokens": 123,
+        "prompt_tokens": 990,
+        "total_tokens": 1113,
+        "prompt_tokens_details": {
+          "cached_tokens": 121
+        }
+      },
+      "wall_seconds": 5.541094207997958
+    },
+    {
+      "start": 680,
+      "programs": [
+        "gda/hfb",
+        "afg/hec",
+        "ah/gf/dc",
+        "ab/gdh",
+        "haec/gfdb",
+        "bdfega",
+        "cf/hg",
+        "bgeachfd",
+        "fceg",
+        "cdg/fea",
+        "habeacf",
+        "fa/hc",
+        "ehg/ahdb",
+        "hedafgc",
+        "hbg/cf",
+        "fa/dcg",
+        "fefa",
+        "ch/aefgb",
+        "gef/cb",
+        "gef/cb"
+      ],
+      "usage": {
+        "completion_tokens": 117,
+        "prompt_tokens": 874,
+        "total_tokens": 991,
+        "prompt_tokens_details": {
+          "cached_tokens": 121
+        }
+      },
+      "wall_seconds": 5.011418791000324
+    },
+    {
+      "start": 700,
+      "programs": [
+        "cbh",
+        "aegfcdbh",
+        "gef",
+        "bed",
+        "bcd/ae/dg/fh",
+        "adgc/beh",
+        "hdgfca",
+        "adffhbcg",
+        "cfe",
+        "hgcfa",
+        "hg/bedfa",
+        "fh/de",
+        "fcbhdgea",
+        "hadebcfg",
+        "dg/feha",
+        "fb/dgceh",
+        "efd",
+        "gaebf",
+        "bhg",
+        "bcdfea"
+      ],
+      "usage": {
+        "completion_tokens": 110,
+        "prompt_tokens": 869,
+        "total_tokens": 979,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 4.773222292002174
+    },
+    {
+      "start": 720,
+      "programs": [
+        "aca/gd",
+        "dhfgbc",
+        "bea/dc",
+        "fbgdh",
+        "eafhbgd",
+        "bc/ghd",
+        "abd/ceg",
+        "eagb",
+        "hd/bg",
+        "db/cghe",
+        "fahde",
+        "ecgdbahf",
+        "caeb",
+        "ghadbe",
+        "bfh/ceg",
+        "bh/eaf",
+        "gb",
+        "dg/bf/eh",
+        "fc/dheab",
+        "hcegbe"
+      ],
+      "usage": {
+        "completion_tokens": 116,
+        "prompt_tokens": 921,
+        "total_tokens": 1037,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 5.0368003330004285
+    },
+    {
+      "start": 740,
+      "programs": [
+        "gefb",
+        "dceaf",
+        "abghc",
+        "fgbhac",
+        "bfed",
+        "afcg",
+        "fhecg",
+        "agfc",
+        "ceag",
+        "abfgd",
+        "hceg",
+        "dgaebh",
+        "ed",
+        "cefgda",
+        "hdfeg",
+        "bhgfc",
+        "edhg",
+        "gbha",
+        "chfa",
+        "bead"
+      ],
+      "usage": {
+        "completion_tokens": 93,
+        "prompt_tokens": 817,
+        "total_tokens": 910,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 4.119736665998062
+    },
+    {
+      "start": 760,
+      "programs": [
+        "dcab",
+        "edcfgba",
+        "ceghafdb",
+        "eh/dc/fa/bg",
+        "db/ce",
+        "fchea",
+        "cb/hg",
+        "da/hc",
+        "afcebg",
+        "dgf",
+        "dg/cfaeh",
+        "he/bf",
+        "hf/bca",
+        "cahdge",
+        "ga/fbhe",
+        "gchdbfea",
+        "bc/hg",
+        "hba/def",
+        "hg/dfbc",
+        "ad/fc"
+      ],
+      "usage": {
+        "completion_tokens": 110,
+        "prompt_tokens": 898,
+        "total_tokens": 1008,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 4.866646624999703
+    },
+    {
+      "start": 780,
+      "programs": [
+        "cbed/gfh",
+        "cgb/deh",
+        "cd/ga",
+        "ghdbefac",
+        "dhgfa",
+        "acfe",
+        "abhdcf",
+        "fde",
+        "hbgfa",
+        "hce",
+        "adhb",
+        "ebhc",
+        "gdehfa",
+        "dega",
+        "ecgfa",
+        "ecgfa",
+        "chfde",
+        "gfa",
+        "cb",
+        "cdha"
+      ],
+      "usage": {
+        "completion_tokens": 98,
+        "prompt_tokens": 938,
+        "total_tokens": 1036,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 4.5836626250020345
+    },
+    {
+      "start": 800,
+      "programs": [
+        "bde",
+        "agbd/cfh",
+        "bdch/efga",
+        "ahgegcbd",
+        "bgc/da",
+        "fgdeh",
+        "aecfdg",
+        "gc/efbh",
+        "gd/ef",
+        "bc/gd",
+        "cdab/afge",
+        "fbcd",
+        "dcefbg",
+        "dg/hbe",
+        "bgchda",
+        "ec/af/bg/dh",
+        "afhec",
+        "bea/fg",
+        "ga/hce",
+        "bfa/fgd"
+      ],
+      "usage": {
+        "completion_tokens": 120,
+        "prompt_tokens": 871,
+        "total_tokens": 991,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 5.053700625001511
+    },
+    {
+      "start": 820,
+      "programs": [
+        "he/fac",
+        "fa/cg",
+        "hbgdfc",
+        "cbdgfa",
+        "bdfh",
+        "cefgah",
+        "gahcbe",
+        "fgdhaec",
+        "fced",
+        "gbbfaed",
+        "agh",
+        "cdgahbe",
+        "hbec",
+        "bhfdgca",
+        "hbaec",
+        "dafg",
+        "dgf",
+        "cfgha",
+        "cfehga",
+        "ggha"
+      ],
+      "usage": {
+        "completion_tokens": 103,
+        "prompt_tokens": 855,
+        "total_tokens": 958,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 4.876896875000966
+    },
+    {
+      "start": 840,
+      "programs": [
+        "fd",
+        "hfc",
+        "fhabcdg",
+        "eahdgcfb",
+        "ebdcfg",
+        "cdfab",
+        "hdb/abefg",
+        "hf/ga",
+        "fecgh/gad",
+        "acdhfeg",
+        "af/bedhfg",
+        "fhg/ac",
+        "bh/cefga",
+        "dg/bh",
+        "fh/dega",
+        "fh/dega",
+        "fecdghg",
+        "dch/ab",
+        "cehabdg",
+        "hd/bf"
+      ],
+      "usage": {
+        "completion_tokens": 97,
+        "prompt_tokens": 883,
+        "total_tokens": 980,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 5.294769374995667
+    },
+    {
+      "start": 860,
+      "programs": [
+        "eeg/fh",
+        "efgghabd",
+        "ag/cefdeh",
+        "agbhefcd",
+        "cf/ehd",
+        "ga/bd",
+        "fg",
+        "dc/ehg",
+        "bh/ced",
+        "bhae/fcdg",
+        "hce",
+        "bfgda",
+        "gh/eab",
+        "ec/abh",
+        "cfggeah",
+        "acbfhdeg",
+        "ad/bgceh",
+        "fh/gebc",
+        "abdfhceg",
+        "agd/bgceh"
+      ],
+      "usage": {
+        "completion_tokens": 119,
+        "prompt_tokens": 910,
+        "total_tokens": 1029,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 5.7086922919988865
+    },
+    {
+      "start": 880,
+      "programs": [
+        "ba",
+        "eg/hc",
+        "eg/dc",
+        "fg/cha",
+        "chd/ae",
+        "gf/db",
+        "gca/fdb",
+        "gca/fdb",
+        "hfa/edc",
+        "efha/cdb",
+        "fc/gbd",
+        "gfcabehd",
+        "cd/fgab",
+        "hf/gab",
+        "bf/cde",
+        "eg/bf",
+        "ceh/gba",
+        "egfc",
+        "egdchf",
+        "egdchf"
+      ],
+      "usage": {
+        "completion_tokens": 112,
+        "prompt_tokens": 884,
+        "total_tokens": 996,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 5.175732625000819
+    },
+    {
+      "start": 900,
+      "programs": [
+        "ad/cg",
+        "ce/fb/dg",
+        "fh/aag",
+        "abdcghf",
+        "abcefd",
+        "de/cfb",
+        "chfgba",
+        "bf/ch",
+        "hcf/db",
+        "cfha",
+        "hefgd",
+        "dhg/cef",
+        "db/fghe",
+        "abdhgce",
+        "gfedba",
+        "cge/hdb",
+        "cd/hf/gb",
+        "hf/abegd",
+        "efhg",
+        "gc/be/df"
+      ],
+      "usage": {
+        "completion_tokens": 113,
+        "prompt_tokens": 905,
+        "total_tokens": 1018,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 5.54111424999428
+    },
+    {
+      "start": 920,
+      "programs": [
+        "cdbc/fgh",
+        "bhef",
+        "dcb/aeb",
+        "hg/caf",
+        "gbd/acef",
+        "dgcb/abfeh",
+        "gda/abefh",
+        "fhdb/aceg",
+        "egfha/cd",
+        "ca/gbe",
+        "defc/bhga",
+        "dc/hgab",
+        "dfgb/ehac",
+        "cb/hdef",
+        "he/fa",
+        "debfc/aceg",
+        "fbga/ecdh",
+        "gah/ebd",
+        "ad/cbeh",
+        "ahgc/bged"
+      ],
+      "usage": {
+        "completion_tokens": 130,
+        "prompt_tokens": 952,
+        "total_tokens": 1082,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 6.083441167000274
+    },
+    {
+      "start": 940,
+      "programs": [
+        "fgahd",
+        "gcehfa",
+        "ac",
+        "dfgcbah",
+        "dgf",
+        "hfe",
+        "eagbfc",
+        "dfbe",
+        "abfegcd",
+        "hf",
+        "cedab",
+        "edg",
+        "dhf",
+        "bc",
+        "ab",
+        "bf",
+        "bf",
+        "agc",
+        "bfeg",
+        "ceg"
+      ],
+      "usage": {
+        "completion_tokens": 87,
+        "prompt_tokens": 900,
+        "total_tokens": 987,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 4.656072790996404
+    },
+    {
+      "start": 960,
+      "programs": [
+        "fg/bc",
+        "hd/ge/bf/ac",
+        "dcef",
+        "fe/cghd",
+        "gc/hd",
+        "ce/agdhf",
+        "gce/dhfab",
+        "eacbd",
+        "hg/afc",
+        "bdc",
+        "ba/chgfd",
+        "cfa/gh",
+        "ced/ahb",
+        "ha/fgce",
+        "ge/hbce",
+        "ce/hgab",
+        "eah",
+        "ec/hgafdb",
+        "afeg",
+        "cb/hdfae"
+      ],
+      "usage": {
+        "completion_tokens": 116,
+        "prompt_tokens": 844,
+        "total_tokens": 960,
+        "prompt_tokens_details": {
+          "cached_tokens": 128
+        }
+      },
+      "wall_seconds": 5.227785916998982
+    },
+    {
+      "start": 980,
+      "programs": [
+        "dcgh",
+        "behfgcd",
+        "dbceh",
+        "ac/de",
+        "beg/fgcd",
+        "ah/fehd",
+        "afh/dbec",
+        "fb/ad/gc",
+        "ed/gh",
+        "fcagdbeh",
+        "da/fc",
+        "hgafe",
+        "fe/ch/bg",
+        "eadghfc",
+        "ba/fgdeh",
+        "eah/fd",
+        "gfebcad",
+        "gd/cfad",
+        "fahebcg",
+        "afebch"
+      ],
+      "usage": {
+        "completion_tokens": 112,
+        "prompt_tokens": 913,
+        "total_tokens": 1025,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      },
+      "wall_seconds": 5.312541499995859
+    }
+  ]
+}

@@ -1,0 +1,4570 @@
+{
+  "dataset": "switch-principles-v2",
+  "environment": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit-Mach-O",
+    "torch": "2.12.0"
+  },
+  "teacher_model": "Qwen/Qwen3-4B-GGUF@bc640142c66e1fdd12af0bd68f40445458f3869b Q4_K_M; llama.cpp b12556",
+  "teaching_sha256": "7f732d9f59a5895b74c38ab3ace792176383a429a3a59ffde7a3d20031b46cf4",
+  "seeds": [
+    11,
+    22,
+    42
+  ],
+  "optimizer_steps": 240,
+  "case_budget": 1000,
+  "scales": {
+    "10": {
+      "principles": 10,
+      "exam_questions": 512,
+      "pairs_per_depth": 64,
+      "exam_sha256": "2b8865f482772154668003b06023f0f65d8008ae62db19a76fed6dd165d1bdfe",
+      "principle_annotation_bytes": 111,
+      "atomic_transition_labels": 80,
+      "teacher": {
+        "accepted": 2,
+        "simulator_fills": 8,
+        "rejected_ids": [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          9
+        ],
+        "reference_state_slots": 80,
+        "verification_wall_seconds": 0.0016215419964282773,
+        "teacher_calls": 1,
+        "teacher_wall_seconds": 2.6771541250054725,
+        "prompt_tokens": 487,
+        "completion_tokens": 61,
+        "cached_prompt_tokens": 3
+      },
+      "results": {
+        "examples": [
+          {
+            "decisions_correct": 512,
+            "traces_correct": 512,
+            "changing_pairs_correct": 256,
+            "by_depth": {
+              "2": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "3": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "4": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "5": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              }
+            },
+            "majority_answer_count": 71,
+            "predictions_sha256": "224ae9c1f3120ef5747debb9ca05333299c6a28170aafefd040e1a07758ef2c1",
+            "latency": {
+              "batch_us_per_question": 1.686279296875,
+              "single_question_us": 81.875
+            },
+            "seed": 11,
+            "parameters": 6592,
+            "fit_wall_seconds": 0.32152345799840987,
+            "fit_cpu_seconds": 0.31915800000000005,
+            "case_supervision": {
+              "case_count": 1000,
+              "annotation_bytes": 14801,
+              "atomic_cases": 40,
+              "rules_seen": 10,
+              "sha256": "990808948c05d62d362a0c2f041897389c2d186e7db5a9324586548bd3eb5f5f",
+              "preparation_wall_seconds": 0.02058729100099299,
+              "preparation_cpu_seconds": 0.02058900000000019
+            }
+          },
+          {
+            "decisions_correct": 512,
+            "traces_correct": 512,
+            "changing_pairs_correct": 256,
+            "by_depth": {
+              "2": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "3": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "4": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "5": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              }
+            },
+            "majority_answer_count": 71,
+            "predictions_sha256": "224ae9c1f3120ef5747debb9ca05333299c6a28170aafefd040e1a07758ef2c1",
+            "latency": {
+              "batch_us_per_question": 1.648681640625,
+              "single_question_us": 80.792
+            },
+            "seed": 22,
+            "parameters": 6592,
+            "fit_wall_seconds": 0.30327670800033957,
+            "fit_cpu_seconds": 0.3032189999999997,
+            "case_supervision": {
+              "case_count": 1000,
+              "annotation_bytes": 14801,
+              "atomic_cases": 40,
+              "rules_seen": 10,
+              "sha256": "f1e88e3e55df119fba9c53784b5935375693fa2b42f08df091131a50710bd726",
+              "preparation_wall_seconds": 0.005070333005278371,
+              "preparation_cpu_seconds": 0.00507000000000013
+            }
+          },
+          {
+            "decisions_correct": 512,
+            "traces_correct": 512,
+            "changing_pairs_correct": 256,
+            "by_depth": {
+              "2": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "3": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "4": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "5": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              }
+            },
+            "majority_answer_count": 71,
+            "predictions_sha256": "224ae9c1f3120ef5747debb9ca05333299c6a28170aafefd040e1a07758ef2c1",
+            "latency": {
+              "batch_us_per_question": 1.680908203125,
+              "single_question_us": 81.125
+            },
+            "seed": 42,
+            "parameters": 6592,
+            "fit_wall_seconds": 0.3015315840020776,
+            "fit_cpu_seconds": 0.301447,
+            "case_supervision": {
+              "case_count": 1000,
+              "annotation_bytes": 14801,
+              "atomic_cases": 40,
+              "rules_seen": 10,
+              "sha256": "663c024a4d4f4b50b5ce9923288811c6bde05b3661efd52c9eaa0302ee83e5e5",
+              "preparation_wall_seconds": 0.005256583994196262,
+              "preparation_cpu_seconds": 0.005255999999999705
+            }
+          }
+        ],
+        "examples_coverage_first": [
+          {
+            "decisions_correct": 512,
+            "traces_correct": 512,
+            "changing_pairs_correct": 256,
+            "by_depth": {
+              "2": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "3": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "4": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "5": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              }
+            },
+            "majority_answer_count": 71,
+            "predictions_sha256": "224ae9c1f3120ef5747debb9ca05333299c6a28170aafefd040e1a07758ef2c1",
+            "latency": {
+              "batch_us_per_question": 1.631265625,
+              "single_question_us": 80.396
+            },
+            "seed": 11,
+            "parameters": 6592,
+            "fit_wall_seconds": 0.30716795799526153,
+            "fit_cpu_seconds": 0.3070490000000001,
+            "case_supervision": {
+              "case_count": 1000,
+              "annotation_bytes": 14601,
+              "atomic_cases": 80,
+              "rules_seen": 10,
+              "sha256": "66770b1ab51d12465597ab5e5c69191f11882fdbe63106bccf2c47281c501414",
+              "preparation_wall_seconds": 0.005205292000027839,
+              "preparation_cpu_seconds": 0.005204999999999904
+            }
+          },
+          {
+            "decisions_correct": 512,
+            "traces_correct": 512,
+            "changing_pairs_correct": 256,
+            "by_depth": {
+              "2": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "3": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "4": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "5": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              }
+            },
+            "majority_answer_count": 71,
+            "predictions_sha256": "224ae9c1f3120ef5747debb9ca05333299c6a28170aafefd040e1a07758ef2c1",
+            "latency": {
+              "batch_us_per_question": 1.656494140625,
+              "single_question_us": 80.437
+            },
+            "seed": 22,
+            "parameters": 6592,
+            "fit_wall_seconds": 0.3017347080021864,
+            "fit_cpu_seconds": 0.301682,
+            "case_supervision": {
+              "case_count": 1000,
+              "annotation_bytes": 14601,
+              "atomic_cases": 80,
+              "rules_seen": 10,
+              "sha256": "2c771cf5acfdda89c144297a23aec7f87f41f995cb883e1fe0a81c6d38cd822e",
+              "preparation_wall_seconds": 0.005113999999593943,
+              "preparation_cpu_seconds": 0.005113000000000145
+            }
+          },
+          {
+            "decisions_correct": 512,
+            "traces_correct": 512,
+            "changing_pairs_correct": 256,
+            "by_depth": {
+              "2": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "3": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "4": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "5": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              }
+            },
+            "majority_answer_count": 71,
+            "predictions_sha256": "224ae9c1f3120ef5747debb9ca05333299c6a28170aafefd040e1a07758ef2c1",
+            "latency": {
+              "batch_us_per_question": 1.6396484375,
+              "single_question_us": 81.125
+            },
+            "seed": 42,
+            "parameters": 6592,
+            "fit_wall_seconds": 0.3018045830031042,
+            "fit_cpu_seconds": 0.30169599999999974,
+            "case_supervision": {
+              "case_count": 1000,
+              "annotation_bytes": 14601,
+              "atomic_cases": 80,
+              "rules_seen": 10,
+              "sha256": "ea2f76c28527c7e29cf18febb5ff72e4de116332fa60119f4aa5b18e5e8ae1ac",
+              "preparation_wall_seconds": 0.005322500001057051,
+              "preparation_cpu_seconds": 0.005311000000000288
+            }
+          }
+        ],
+        "learned_principles": [
+          {
+            "decisions_correct": 512,
+            "traces_correct": 512,
+            "changing_pairs_correct": 256,
+            "by_depth": {
+              "2": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "3": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "4": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "5": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              }
+            },
+            "majority_answer_count": 71,
+            "predictions_sha256": "224ae9c1f3120ef5747debb9ca05333299c6a28170aafefd040e1a07758ef2c1",
+            "latency": {
+              "batch_us_per_question": 1.650796875,
+              "single_question_us": 81.0
+            },
+            "seed": 11,
+            "parameters": 6592,
+            "fit_wall_seconds": 0.04418354199879104,
+            "fit_cpu_seconds": 0.04417899999999997
+          },
+          {
+            "decisions_correct": 512,
+            "traces_correct": 512,
+            "changing_pairs_correct": 256,
+            "by_depth": {
+              "2": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "3": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "4": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "5": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              }
+            },
+            "majority_answer_count": 71,
+            "predictions_sha256": "224ae9c1f3120ef5747debb9ca05333299c6a28170aafefd040e1a07758ef2c1",
+            "latency": {
+              "batch_us_per_question": 1.662435546875,
+              "single_question_us": 80.896
+            },
+            "seed": 22,
+            "parameters": 6592,
+            "fit_wall_seconds": 0.04412362500443123,
+            "fit_cpu_seconds": 0.04411699999999996
+          },
+          {
+            "decisions_correct": 512,
+            "traces_correct": 512,
+            "changing_pairs_correct": 256,
+            "by_depth": {
+              "2": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "3": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "4": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "5": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              }
+            },
+            "majority_answer_count": 71,
+            "predictions_sha256": "224ae9c1f3120ef5747debb9ca05333299c6a28170aafefd040e1a07758ef2c1",
+            "latency": {
+              "batch_us_per_question": 1.7224921875,
+              "single_question_us": 82.25
+            },
+            "seed": 42,
+            "parameters": 6592,
+            "fit_wall_seconds": 0.04465224999876227,
+            "fit_cpu_seconds": 0.044629999999999725
+          }
+        ],
+        "stored_principles": [
+          {
+            "decisions_correct": 512,
+            "traces_correct": 512,
+            "changing_pairs_correct": 256,
+            "by_depth": {
+              "2": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "3": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "4": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "5": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              }
+            },
+            "majority_answer_count": 71,
+            "predictions_sha256": "224ae9c1f3120ef5747debb9ca05333299c6a28170aafefd040e1a07758ef2c1",
+            "latency": {
+              "batch_us_per_question": 0.17488671875,
+              "single_question_us": 0.39549999999999996
+            }
+          }
+        ]
+      },
+      "verified_setup_wall_seconds": 7.862500206101686e-05,
+      "verified_setup_cpu_seconds": 7.900000000016227e-05,
+      "stored_index_wall_seconds": 1.4166995242703706e-05,
+      "stored_index_cpu_seconds": 1.3000000000040757e-05,
+      "median_ready_wall_seconds": {
+        "examples": 0.30834704100561794,
+        "examples_coverage_first": 0.30712708300416125,
+        "learned_principles": 2.7230520009979955,
+        "stored_principles": 2.6787898339971434
+      }
+    },
+    "100": {
+      "principles": 100,
+      "exam_questions": 512,
+      "pairs_per_depth": 64,
+      "exam_sha256": "fb1bec47fdedf42e06448f3a3e447c22e7b320bfb9803e979667ce65b77f59d9",
+      "principle_annotation_bytes": 1101,
+      "atomic_transition_labels": 800,
+      "teacher": {
+        "accepted": 22,
+        "simulator_fills": 78,
+        "rejected_ids": [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          33,
+          34,
+          35,
+          37,
+          38,
+          39,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          60,
+          61,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          73,
+          74,
+          75,
+          77,
+          79,
+          80,
+          82,
+          83,
+          84,
+          88,
+          89,
+          90,
+          91,
+          93,
+          96,
+          97
+        ],
+        "reference_state_slots": 800,
+        "verification_wall_seconds": 0.002497958004823886,
+        "teacher_calls": 6,
+        "teacher_wall_seconds": 25.697768041005475,
+        "prompt_tokens": 4501,
+        "completion_tokens": 536,
+        "cached_prompt_tokens": 581
+      },
+      "results": {
+        "examples": [
+          {
+            "decisions_correct": 78,
+            "traces_correct": 23,
+            "changing_pairs_correct": 8,
+            "by_depth": {
+              "2": {
+                "questions": 128,
+                "decisions_correct": 23,
+                "traces_correct": 12,
+                "changing_pairs_correct": 1,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 0
+              },
+              "3": {
+                "questions": 128,
+                "decisions_correct": 16,
+                "traces_correct": 7,
+                "changing_pairs_correct": 3,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 1
+              },
+              "4": {
+                "questions": 128,
+                "decisions_correct": 18,
+                "traces_correct": 4,
+                "changing_pairs_correct": 2,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 1
+              },
+              "5": {
+                "questions": 128,
+                "decisions_correct": 21,
+                "traces_correct": 0,
+                "changing_pairs_correct": 2,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 2
+              }
+            },
+            "majority_answer_count": 75,
+            "predictions_sha256": "b922cbf565c31dbdd1f5dad50ec903dfaff7d8198bbddf03e08a50be1d8c8f09",
+            "latency": {
+              "batch_us_per_question": 1.808919921875,
+              "single_question_us": 81.6875
+            },
+            "seed": 11,
+            "parameters": 9472,
+            "fit_wall_seconds": 0.32584558399685193,
+            "fit_cpu_seconds": 0.32527799999999996,
+            "case_supervision": {
+              "case_count": 1000,
+              "annotation_bytes": 16692,
+              "atomic_cases": 200,
+              "rules_seen": 100,
+              "sha256": "bd7142c91f27b2cdc652310d99ba60ba135552cf6217cdfb924d89f2ba8bcbd7",
+              "preparation_wall_seconds": 0.005253166003967635,
+              "preparation_cpu_seconds": 0.005240999999999829
+            },
+            "anchors": {
+              "decisions_correct": 61,
+              "traces_correct": 9,
+              "changing_pairs_correct": 3,
+              "by_depth": {
+                "2": {
+                  "questions": 128,
+                  "decisions_correct": 19,
+                  "traces_correct": 9,
+                  "changing_pairs_correct": 1,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 1
+                },
+                "3": {
+                  "questions": 128,
+                  "decisions_correct": 17,
+                  "traces_correct": 0,
+                  "changing_pairs_correct": 1,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 1
+                },
+                "4": {
+                  "questions": 128,
+                  "decisions_correct": 16,
+                  "traces_correct": 0,
+                  "changing_pairs_correct": 0,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 0
+                },
+                "5": {
+                  "questions": 128,
+                  "decisions_correct": 9,
+                  "traces_correct": 0,
+                  "changing_pairs_correct": 1,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 0
+                }
+              },
+              "majority_answer_count": 71,
+              "predictions_sha256": "f750d4ec8e8ce6f4375f151fa16a85684918fde4552721c187b72a6df7672998",
+              "latency": {
+                "batch_us_per_question": 1.6743984375,
+                "single_question_us": 81.667
+              }
+            }
+          },
+          {
+            "decisions_correct": 73,
+            "traces_correct": 19,
+            "changing_pairs_correct": 4,
+            "by_depth": {
+              "2": {
+                "questions": 128,
+                "decisions_correct": 23,
+                "traces_correct": 12,
+                "changing_pairs_correct": 1,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 1
+              },
+              "3": {
+                "questions": 128,
+                "decisions_correct": 16,
+                "traces_correct": 4,
+                "changing_pairs_correct": 1,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 0
+              },
+              "4": {
+                "questions": 128,
+                "decisions_correct": 19,
+                "traces_correct": 2,
+                "changing_pairs_correct": 1,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 1
+              },
+              "5": {
+                "questions": 128,
+                "decisions_correct": 15,
+                "traces_correct": 1,
+                "changing_pairs_correct": 1,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 0
+              }
+            },
+            "majority_answer_count": 75,
+            "predictions_sha256": "8e1e3753a195a6a22d0f7b25cde768206992bbf8473abf57b034cbbf11e6da07",
+            "latency": {
+              "batch_us_per_question": 1.79402734375,
+              "single_question_us": 82.771
+            },
+            "seed": 22,
+            "parameters": 9472,
+            "fit_wall_seconds": 0.3220291250036098,
+            "fit_cpu_seconds": 0.32189400000000035,
+            "case_supervision": {
+              "case_count": 1000,
+              "annotation_bytes": 16716,
+              "atomic_cases": 200,
+              "rules_seen": 100,
+              "sha256": "a3d7d2574404a6a1892461e97a4dfd084af159e015825ff6b0d5375467bebe10",
+              "preparation_wall_seconds": 0.005171707998670172,
+              "preparation_cpu_seconds": 0.005167000000000144
+            },
+            "anchors": {
+              "decisions_correct": 59,
+              "traces_correct": 14,
+              "changing_pairs_correct": 2,
+              "by_depth": {
+                "2": {
+                  "questions": 128,
+                  "decisions_correct": 15,
+                  "traces_correct": 8,
+                  "changing_pairs_correct": 1,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 0
+                },
+                "3": {
+                  "questions": 128,
+                  "decisions_correct": 14,
+                  "traces_correct": 6,
+                  "changing_pairs_correct": 0,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 0
+                },
+                "4": {
+                  "questions": 128,
+                  "decisions_correct": 15,
+                  "traces_correct": 0,
+                  "changing_pairs_correct": 0,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 0
+                },
+                "5": {
+                  "questions": 128,
+                  "decisions_correct": 15,
+                  "traces_correct": 0,
+                  "changing_pairs_correct": 1,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 0
+                }
+              },
+              "majority_answer_count": 71,
+              "predictions_sha256": "1a4cfeb7e8dc313de4ffb1aef0b1ca0e40efdede55656b57cf529a65edb3a76a",
+              "latency": {
+                "batch_us_per_question": 1.64070703125,
+                "single_question_us": 82.125
+              }
+            }
+          },
+          {
+            "decisions_correct": 82,
+            "traces_correct": 35,
+            "changing_pairs_correct": 7,
+            "by_depth": {
+              "2": {
+                "questions": 128,
+                "decisions_correct": 32,
+                "traces_correct": 27,
+                "changing_pairs_correct": 5,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 2
+              },
+              "3": {
+                "questions": 128,
+                "decisions_correct": 16,
+                "traces_correct": 5,
+                "changing_pairs_correct": 0,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 0
+              },
+              "4": {
+                "questions": 128,
+                "decisions_correct": 15,
+                "traces_correct": 1,
+                "changing_pairs_correct": 1,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 1
+              },
+              "5": {
+                "questions": 128,
+                "decisions_correct": 19,
+                "traces_correct": 2,
+                "changing_pairs_correct": 1,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 0
+              }
+            },
+            "majority_answer_count": 75,
+            "predictions_sha256": "bb08dffcef72e09b23344f75276fae7d4d19215c4f4d5cdad03040715db676fb",
+            "latency": {
+              "batch_us_per_question": 1.766681640625,
+              "single_question_us": 80.458
+            },
+            "seed": 42,
+            "parameters": 9472,
+            "fit_wall_seconds": 0.3203544170028181,
+            "fit_cpu_seconds": 0.32027500000000053,
+            "case_supervision": {
+              "case_count": 1000,
+              "annotation_bytes": 16722,
+              "atomic_cases": 200,
+              "rules_seen": 100,
+              "sha256": "55c69bc5102b6d96e988004e6f0f3cb27368f16c2225539db839b44926bcd5c5",
+              "preparation_wall_seconds": 0.00516862500080606,
+              "preparation_cpu_seconds": 0.0051669999999992555
+            },
+            "anchors": {
+              "decisions_correct": 70,
+              "traces_correct": 29,
+              "changing_pairs_correct": 3,
+              "by_depth": {
+                "2": {
+                  "questions": 128,
+                  "decisions_correct": 23,
+                  "traces_correct": 17,
+                  "changing_pairs_correct": 0,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 0
+                },
+                "3": {
+                  "questions": 128,
+                  "decisions_correct": 18,
+                  "traces_correct": 8,
+                  "changing_pairs_correct": 2,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 1
+                },
+                "4": {
+                  "questions": 128,
+                  "decisions_correct": 16,
+                  "traces_correct": 3,
+                  "changing_pairs_correct": 1,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 0
+                },
+                "5": {
+                  "questions": 128,
+                  "decisions_correct": 13,
+                  "traces_correct": 1,
+                  "changing_pairs_correct": 0,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 0
+                }
+              },
+              "majority_answer_count": 71,
+              "predictions_sha256": "7cb896c22d557120df80fe73b149368bc1d241630dcaf741b16550b964c26c6d",
+              "latency": {
+                "batch_us_per_question": 1.618408203125,
+                "single_question_us": 82.521
+              }
+            }
+          }
+        ],
+        "examples_coverage_first": [
+          {
+            "decisions_correct": 512,
+            "traces_correct": 512,
+            "changing_pairs_correct": 256,
+            "by_depth": {
+              "2": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "3": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "4": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "5": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              }
+            },
+            "majority_answer_count": 75,
+            "predictions_sha256": "297d0f6ac4b8be9092f5c31ecc00ea39185ddd99f6776a84ce765fa56f2c7fbb",
+            "latency": {
+              "batch_us_per_question": 1.851642578125,
+              "single_question_us": 81.1455
+            },
+            "seed": 11,
+            "parameters": 9472,
+            "fit_wall_seconds": 0.3226540830000886,
+            "fit_cpu_seconds": 0.32218299999999944,
+            "case_supervision": {
+              "case_count": 1000,
+              "annotation_bytes": 12356,
+              "atomic_cases": 800,
+              "rules_seen": 100,
+              "sha256": "b020ab8cb1c4f125c9af2d8a93784ba25cfeb2f1afe6063c514f9912a59835f3",
+              "preparation_wall_seconds": 0.004885750000539701,
+              "preparation_cpu_seconds": 0.00488500000000025
+            },
+            "anchors": {
+              "decisions_correct": 512,
+              "traces_correct": 512,
+              "changing_pairs_correct": 256,
+              "by_depth": {
+                "2": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                },
+                "3": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                },
+                "4": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                },
+                "5": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                }
+              },
+              "majority_answer_count": 71,
+              "predictions_sha256": "224ae9c1f3120ef5747debb9ca05333299c6a28170aafefd040e1a07758ef2c1",
+              "latency": {
+                "batch_us_per_question": 1.6822109375,
+                "single_question_us": 81.375
+              }
+            }
+          },
+          {
+            "decisions_correct": 512,
+            "traces_correct": 512,
+            "changing_pairs_correct": 256,
+            "by_depth": {
+              "2": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "3": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "4": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "5": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              }
+            },
+            "majority_answer_count": 75,
+            "predictions_sha256": "297d0f6ac4b8be9092f5c31ecc00ea39185ddd99f6776a84ce765fa56f2c7fbb",
+            "latency": {
+              "batch_us_per_question": 1.821044921875,
+              "single_question_us": 80.8545
+            },
+            "seed": 22,
+            "parameters": 9472,
+            "fit_wall_seconds": 0.3160262499950477,
+            "fit_cpu_seconds": 0.3159220000000005,
+            "case_supervision": {
+              "case_count": 1000,
+              "annotation_bytes": 12343,
+              "atomic_cases": 800,
+              "rules_seen": 100,
+              "sha256": "3ccf3b0279bfff3edc068945506764322187d9f6203d4738ef8e7a72d4c3e711",
+              "preparation_wall_seconds": 0.004917082995234523,
+              "preparation_cpu_seconds": 0.004907999999999468
+            },
+            "anchors": {
+              "decisions_correct": 512,
+              "traces_correct": 512,
+              "changing_pairs_correct": 256,
+              "by_depth": {
+                "2": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                },
+                "3": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                },
+                "4": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                },
+                "5": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                }
+              },
+              "majority_answer_count": 71,
+              "predictions_sha256": "224ae9c1f3120ef5747debb9ca05333299c6a28170aafefd040e1a07758ef2c1",
+              "latency": {
+                "batch_us_per_question": 1.64616015625,
+                "single_question_us": 80.5
+              }
+            }
+          },
+          {
+            "decisions_correct": 512,
+            "traces_correct": 512,
+            "changing_pairs_correct": 256,
+            "by_depth": {
+              "2": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "3": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "4": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "5": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              }
+            },
+            "majority_answer_count": 75,
+            "predictions_sha256": "297d0f6ac4b8be9092f5c31ecc00ea39185ddd99f6776a84ce765fa56f2c7fbb",
+            "latency": {
+              "batch_us_per_question": 1.851642578125,
+              "single_question_us": 80.854
+            },
+            "seed": 42,
+            "parameters": 9472,
+            "fit_wall_seconds": 0.31879983299586456,
+            "fit_cpu_seconds": 0.31871700000000036,
+            "case_supervision": {
+              "case_count": 1000,
+              "annotation_bytes": 12365,
+              "atomic_cases": 800,
+              "rules_seen": 100,
+              "sha256": "451f3a0f5bb4bc34a7d865b6162bd263c57d7a2a589104d52a0fc0372816ece1",
+              "preparation_wall_seconds": 0.0050181250044261105,
+              "preparation_cpu_seconds": 0.005006999999999984
+            },
+            "anchors": {
+              "decisions_correct": 512,
+              "traces_correct": 512,
+              "changing_pairs_correct": 256,
+              "by_depth": {
+                "2": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                },
+                "3": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                },
+                "4": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                },
+                "5": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                }
+              },
+              "majority_answer_count": 71,
+              "predictions_sha256": "224ae9c1f3120ef5747debb9ca05333299c6a28170aafefd040e1a07758ef2c1",
+              "latency": {
+                "batch_us_per_question": 1.66048046875,
+                "single_question_us": 79.542
+              }
+            }
+          }
+        ],
+        "learned_principles": [
+          {
+            "decisions_correct": 512,
+            "traces_correct": 512,
+            "changing_pairs_correct": 256,
+            "by_depth": {
+              "2": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "3": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "4": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "5": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              }
+            },
+            "majority_answer_count": 75,
+            "predictions_sha256": "297d0f6ac4b8be9092f5c31ecc00ea39185ddd99f6776a84ce765fa56f2c7fbb",
+            "latency": {
+              "batch_us_per_question": 1.84505078125,
+              "single_question_us": 81.083
+            },
+            "seed": 11,
+            "parameters": 9472,
+            "fit_wall_seconds": 0.057761708994803485,
+            "fit_cpu_seconds": 0.05774000000000079,
+            "anchors": {
+              "decisions_correct": 512,
+              "traces_correct": 512,
+              "changing_pairs_correct": 256,
+              "by_depth": {
+                "2": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                },
+                "3": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                },
+                "4": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                },
+                "5": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                }
+              },
+              "majority_answer_count": 71,
+              "predictions_sha256": "224ae9c1f3120ef5747debb9ca05333299c6a28170aafefd040e1a07758ef2c1",
+              "latency": {
+                "batch_us_per_question": 1.66748046875,
+                "single_question_us": 80.9585
+              }
+            }
+          },
+          {
+            "decisions_correct": 512,
+            "traces_correct": 512,
+            "changing_pairs_correct": 256,
+            "by_depth": {
+              "2": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "3": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "4": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "5": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              }
+            },
+            "majority_answer_count": 75,
+            "predictions_sha256": "297d0f6ac4b8be9092f5c31ecc00ea39185ddd99f6776a84ce765fa56f2c7fbb",
+            "latency": {
+              "batch_us_per_question": 1.767333984375,
+              "single_question_us": 80.625
+            },
+            "seed": 22,
+            "parameters": 9472,
+            "fit_wall_seconds": 0.05761979099770542,
+            "fit_cpu_seconds": 0.05759700000000034,
+            "anchors": {
+              "decisions_correct": 512,
+              "traces_correct": 512,
+              "changing_pairs_correct": 256,
+              "by_depth": {
+                "2": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                },
+                "3": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                },
+                "4": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                },
+                "5": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                }
+              },
+              "majority_answer_count": 71,
+              "predictions_sha256": "224ae9c1f3120ef5747debb9ca05333299c6a28170aafefd040e1a07758ef2c1",
+              "latency": {
+                "batch_us_per_question": 1.665609375,
+                "single_question_us": 80.125
+              }
+            }
+          },
+          {
+            "decisions_correct": 512,
+            "traces_correct": 512,
+            "changing_pairs_correct": 256,
+            "by_depth": {
+              "2": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "3": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "4": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "5": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              }
+            },
+            "majority_answer_count": 75,
+            "predictions_sha256": "297d0f6ac4b8be9092f5c31ecc00ea39185ddd99f6776a84ce765fa56f2c7fbb",
+            "latency": {
+              "batch_us_per_question": 1.80379296875,
+              "single_question_us": 81.396
+            },
+            "seed": 42,
+            "parameters": 9472,
+            "fit_wall_seconds": 0.05731062499398831,
+            "fit_cpu_seconds": 0.057294999999999874,
+            "anchors": {
+              "decisions_correct": 512,
+              "traces_correct": 512,
+              "changing_pairs_correct": 256,
+              "by_depth": {
+                "2": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                },
+                "3": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                },
+                "4": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                },
+                "5": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                }
+              },
+              "majority_answer_count": 71,
+              "predictions_sha256": "224ae9c1f3120ef5747debb9ca05333299c6a28170aafefd040e1a07758ef2c1",
+              "latency": {
+                "batch_us_per_question": 1.63720703125,
+                "single_question_us": 80.083
+              }
+            }
+          }
+        ],
+        "stored_principles": [
+          {
+            "decisions_correct": 512,
+            "traces_correct": 512,
+            "changing_pairs_correct": 256,
+            "by_depth": {
+              "2": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "3": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "4": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "5": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              }
+            },
+            "majority_answer_count": 75,
+            "predictions_sha256": "297d0f6ac4b8be9092f5c31ecc00ea39185ddd99f6776a84ce765fa56f2c7fbb",
+            "latency": {
+              "batch_us_per_question": 0.17822265625,
+              "single_question_us": 0.416
+            },
+            "anchors": {
+              "decisions_correct": 512,
+              "traces_correct": 512,
+              "changing_pairs_correct": 256,
+              "by_depth": {
+                "2": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                },
+                "3": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                },
+                "4": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                },
+                "5": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                }
+              },
+              "majority_answer_count": 71,
+              "predictions_sha256": "224ae9c1f3120ef5747debb9ca05333299c6a28170aafefd040e1a07758ef2c1",
+              "latency": {
+                "batch_us_per_question": 0.17488671875,
+                "single_question_us": 0.417
+              }
+            }
+          }
+        ]
+      },
+      "verified_setup_wall_seconds": 9.029100328916684e-05,
+      "verified_setup_cpu_seconds": 9.000000000014552e-05,
+      "stored_index_wall_seconds": 6.429200584534556e-05,
+      "stored_index_cpu_seconds": 6.300000000036832e-05,
+      "median_ready_wall_seconds": {
+        "examples": 0.32720083300228,
+        "examples_coverage_first": 0.3238179580002907,
+        "learned_principles": 25.75804037301714,
+        "stored_principles": 25.700330291016144
+      }
+    },
+    "1000": {
+      "principles": 1000,
+      "exam_questions": 512,
+      "pairs_per_depth": 64,
+      "exam_sha256": "2c3770467c189a0783126b8a415f6d2b7a913cfcc50573cdb0aa350899ff8240",
+      "principle_annotation_bytes": 11001,
+      "atomic_transition_labels": 8000,
+      "teacher": {
+        "accepted": 221,
+        "simulator_fills": 779,
+        "rejected_ids": [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          33,
+          34,
+          35,
+          37,
+          38,
+          39,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          60,
+          61,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          73,
+          74,
+          75,
+          77,
+          79,
+          80,
+          82,
+          83,
+          84,
+          88,
+          89,
+          90,
+          91,
+          93,
+          96,
+          97,
+          100,
+          101,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          112,
+          113,
+          114,
+          115,
+          116,
+          118,
+          119,
+          120,
+          121,
+          122,
+          123,
+          124,
+          125,
+          126,
+          127,
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          136,
+          137,
+          138,
+          139,
+          140,
+          142,
+          143,
+          145,
+          147,
+          148,
+          149,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155,
+          156,
+          158,
+          159,
+          160,
+          161,
+          163,
+          164,
+          165,
+          169,
+          170,
+          171,
+          173,
+          174,
+          175,
+          176,
+          177,
+          178,
+          179,
+          180,
+          181,
+          182,
+          183,
+          185,
+          186,
+          187,
+          188,
+          189,
+          190,
+          191,
+          192,
+          194,
+          195,
+          196,
+          197,
+          198,
+          199,
+          200,
+          201,
+          202,
+          203,
+          204,
+          205,
+          206,
+          207,
+          208,
+          209,
+          210,
+          211,
+          212,
+          213,
+          214,
+          215,
+          216,
+          217,
+          218,
+          219,
+          220,
+          221,
+          222,
+          223,
+          224,
+          225,
+          226,
+          227,
+          228,
+          229,
+          230,
+          231,
+          232,
+          233,
+          234,
+          235,
+          236,
+          237,
+          238,
+          239,
+          240,
+          241,
+          242,
+          243,
+          244,
+          245,
+          246,
+          247,
+          248,
+          249,
+          250,
+          251,
+          252,
+          257,
+          258,
+          259,
+          260,
+          262,
+          263,
+          264,
+          265,
+          266,
+          267,
+          269,
+          270,
+          272,
+          273,
+          274,
+          275,
+          276,
+          277,
+          278,
+          279,
+          280,
+          283,
+          284,
+          285,
+          286,
+          288,
+          289,
+          290,
+          291,
+          292,
+          293,
+          294,
+          295,
+          296,
+          298,
+          299,
+          300,
+          304,
+          305,
+          306,
+          307,
+          308,
+          311,
+          313,
+          316,
+          317,
+          319,
+          320,
+          321,
+          324,
+          327,
+          331,
+          334,
+          335,
+          336,
+          337,
+          338,
+          339,
+          340,
+          341,
+          342,
+          343,
+          348,
+          349,
+          351,
+          354,
+          355,
+          357,
+          358,
+          359,
+          360,
+          361,
+          362,
+          363,
+          364,
+          365,
+          366,
+          367,
+          369,
+          370,
+          371,
+          372,
+          374,
+          377,
+          378,
+          379,
+          381,
+          383,
+          384,
+          386,
+          388,
+          389,
+          390,
+          391,
+          392,
+          393,
+          394,
+          395,
+          396,
+          397,
+          398,
+          399,
+          400,
+          402,
+          404,
+          405,
+          408,
+          410,
+          411,
+          412,
+          413,
+          415,
+          416,
+          417,
+          418,
+          419,
+          420,
+          421,
+          422,
+          423,
+          424,
+          426,
+          427,
+          429,
+          430,
+          431,
+          434,
+          437,
+          439,
+          440,
+          441,
+          442,
+          443,
+          444,
+          445,
+          449,
+          450,
+          451,
+          452,
+          453,
+          456,
+          457,
+          458,
+          459,
+          460,
+          461,
+          462,
+          463,
+          465,
+          466,
+          468,
+          469,
+          471,
+          472,
+          473,
+          474,
+          475,
+          476,
+          477,
+          478,
+          479,
+          480,
+          481,
+          482,
+          483,
+          485,
+          486,
+          487,
+          488,
+          489,
+          490,
+          491,
+          492,
+          493,
+          494,
+          495,
+          496,
+          497,
+          499,
+          500,
+          501,
+          502,
+          504,
+          505,
+          506,
+          507,
+          508,
+          509,
+          510,
+          511,
+          512,
+          513,
+          514,
+          515,
+          516,
+          517,
+          518,
+          519,
+          520,
+          521,
+          523,
+          524,
+          525,
+          526,
+          529,
+          530,
+          531,
+          532,
+          533,
+          534,
+          535,
+          538,
+          539,
+          540,
+          544,
+          545,
+          546,
+          547,
+          550,
+          552,
+          553,
+          555,
+          556,
+          557,
+          559,
+          561,
+          563,
+          565,
+          566,
+          567,
+          568,
+          570,
+          572,
+          573,
+          575,
+          577,
+          580,
+          581,
+          583,
+          584,
+          585,
+          586,
+          587,
+          588,
+          589,
+          590,
+          591,
+          592,
+          593,
+          594,
+          595,
+          596,
+          597,
+          598,
+          599,
+          600,
+          602,
+          603,
+          605,
+          606,
+          607,
+          609,
+          610,
+          611,
+          612,
+          613,
+          614,
+          615,
+          616,
+          617,
+          618,
+          619,
+          620,
+          622,
+          624,
+          625,
+          628,
+          629,
+          630,
+          631,
+          633,
+          634,
+          635,
+          636,
+          637,
+          639,
+          641,
+          642,
+          643,
+          644,
+          645,
+          647,
+          651,
+          654,
+          656,
+          658,
+          659,
+          660,
+          661,
+          662,
+          663,
+          664,
+          665,
+          666,
+          667,
+          669,
+          670,
+          671,
+          672,
+          673,
+          674,
+          676,
+          677,
+          678,
+          679,
+          680,
+          681,
+          684,
+          685,
+          689,
+          690,
+          692,
+          693,
+          694,
+          695,
+          696,
+          698,
+          699,
+          700,
+          701,
+          702,
+          704,
+          705,
+          706,
+          707,
+          709,
+          710,
+          713,
+          714,
+          715,
+          717,
+          719,
+          720,
+          721,
+          722,
+          723,
+          725,
+          726,
+          727,
+          728,
+          729,
+          732,
+          733,
+          734,
+          735,
+          737,
+          738,
+          739,
+          740,
+          741,
+          742,
+          743,
+          744,
+          745,
+          746,
+          748,
+          749,
+          750,
+          751,
+          753,
+          754,
+          755,
+          756,
+          757,
+          758,
+          759,
+          760,
+          764,
+          766,
+          769,
+          770,
+          772,
+          773,
+          774,
+          775,
+          776,
+          777,
+          778,
+          780,
+          781,
+          784,
+          785,
+          787,
+          788,
+          789,
+          790,
+          791,
+          792,
+          793,
+          794,
+          795,
+          796,
+          797,
+          798,
+          799,
+          800,
+          801,
+          802,
+          803,
+          804,
+          807,
+          809,
+          810,
+          811,
+          813,
+          814,
+          817,
+          818,
+          819,
+          820,
+          821,
+          822,
+          823,
+          824,
+          825,
+          826,
+          827,
+          828,
+          829,
+          831,
+          832,
+          833,
+          834,
+          835,
+          837,
+          838,
+          839,
+          841,
+          842,
+          844,
+          846,
+          847,
+          848,
+          849,
+          850,
+          851,
+          852,
+          853,
+          854,
+          855,
+          856,
+          857,
+          858,
+          859,
+          860,
+          861,
+          862,
+          863,
+          864,
+          867,
+          868,
+          871,
+          872,
+          873,
+          874,
+          875,
+          877,
+          878,
+          879,
+          880,
+          881,
+          882,
+          883,
+          884,
+          886,
+          887,
+          888,
+          889,
+          891,
+          892,
+          893,
+          894,
+          895,
+          896,
+          897,
+          898,
+          899,
+          900,
+          901,
+          902,
+          903,
+          904,
+          905,
+          906,
+          908,
+          909,
+          910,
+          911,
+          912,
+          913,
+          914,
+          915,
+          917,
+          918,
+          919,
+          920,
+          921,
+          922,
+          923,
+          924,
+          925,
+          926,
+          928,
+          929,
+          930,
+          934,
+          935,
+          936,
+          937,
+          938,
+          939,
+          940,
+          941,
+          942,
+          943,
+          944,
+          945,
+          946,
+          947,
+          948,
+          949,
+          951,
+          952,
+          953,
+          954,
+          955,
+          956,
+          957,
+          958,
+          959,
+          960,
+          962,
+          963,
+          964,
+          965,
+          966,
+          969,
+          971,
+          973,
+          974,
+          975,
+          979,
+          980,
+          984,
+          985,
+          986,
+          989,
+          990,
+          991,
+          993,
+          994,
+          995,
+          996,
+          997,
+          998
+        ],
+        "reference_state_slots": 8000,
+        "verification_wall_seconds": 0.009876124997390434,
+        "teacher_calls": 51,
+        "teacher_wall_seconds": 277.6357210399947,
+        "prompt_tokens": 44169,
+        "completion_tokens": 5327,
+        "cached_prompt_tokens": 5754
+      },
+      "results": {
+        "examples": [
+          {
+            "decisions_correct": 61,
+            "traces_correct": 3,
+            "changing_pairs_correct": 6,
+            "by_depth": {
+              "2": {
+                "questions": 128,
+                "decisions_correct": 23,
+                "traces_correct": 3,
+                "changing_pairs_correct": 3,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 2
+              },
+              "3": {
+                "questions": 128,
+                "decisions_correct": 9,
+                "traces_correct": 0,
+                "changing_pairs_correct": 2,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 1
+              },
+              "4": {
+                "questions": 128,
+                "decisions_correct": 11,
+                "traces_correct": 0,
+                "changing_pairs_correct": 0,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 0
+              },
+              "5": {
+                "questions": 128,
+                "decisions_correct": 18,
+                "traces_correct": 0,
+                "changing_pairs_correct": 1,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 1
+              }
+            },
+            "majority_answer_count": 71,
+            "predictions_sha256": "78d42ade22c37110685d68ceb67d7f7d228551542ca187917622dd572de3f1f4",
+            "latency": {
+              "batch_us_per_question": 2.31787109375,
+              "single_question_us": 80.1455
+            },
+            "seed": 11,
+            "parameters": 38272,
+            "fit_wall_seconds": 0.44451416700030677,
+            "fit_cpu_seconds": 0.44442000000000004,
+            "case_supervision": {
+              "case_count": 1000,
+              "annotation_bytes": 19660,
+              "atomic_cases": 200,
+              "rules_seen": 1000,
+              "sha256": "d63ffa68419c9d87749f67d22c970ac0fb3a03da94c9539cc0b456055cf96eda",
+              "preparation_wall_seconds": 0.016721874999348074,
+              "preparation_cpu_seconds": 0.01671800000000001
+            },
+            "anchors": {
+              "decisions_correct": 74,
+              "traces_correct": 1,
+              "changing_pairs_correct": 2,
+              "by_depth": {
+                "2": {
+                  "questions": 128,
+                  "decisions_correct": 17,
+                  "traces_correct": 1,
+                  "changing_pairs_correct": 1,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 1
+                },
+                "3": {
+                  "questions": 128,
+                  "decisions_correct": 14,
+                  "traces_correct": 0,
+                  "changing_pairs_correct": 0,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 0
+                },
+                "4": {
+                  "questions": 128,
+                  "decisions_correct": 26,
+                  "traces_correct": 0,
+                  "changing_pairs_correct": 1,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 1
+                },
+                "5": {
+                  "questions": 128,
+                  "decisions_correct": 17,
+                  "traces_correct": 0,
+                  "changing_pairs_correct": 0,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 0
+                }
+              },
+              "majority_answer_count": 71,
+              "predictions_sha256": "e9733672f39caa9ffdf67b2b462f73d5e907a5eeb662a380bfde9ce658d2304b",
+              "latency": {
+                "batch_us_per_question": 1.67081640625,
+                "single_question_us": 80.3335
+              }
+            }
+          },
+          {
+            "decisions_correct": 63,
+            "traces_correct": 2,
+            "changing_pairs_correct": 3,
+            "by_depth": {
+              "2": {
+                "questions": 128,
+                "decisions_correct": 17,
+                "traces_correct": 2,
+                "changing_pairs_correct": 1,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 1
+              },
+              "3": {
+                "questions": 128,
+                "decisions_correct": 17,
+                "traces_correct": 0,
+                "changing_pairs_correct": 1,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 0
+              },
+              "4": {
+                "questions": 128,
+                "decisions_correct": 15,
+                "traces_correct": 0,
+                "changing_pairs_correct": 1,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 0
+              },
+              "5": {
+                "questions": 128,
+                "decisions_correct": 14,
+                "traces_correct": 0,
+                "changing_pairs_correct": 0,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 0
+              }
+            },
+            "majority_answer_count": 71,
+            "predictions_sha256": "04a75b6b655fd88e165f13a21410d8bd26d6223af4e9078dcddd68dc955fbe55",
+            "latency": {
+              "batch_us_per_question": 2.31632421875,
+              "single_question_us": 81.5625
+            },
+            "seed": 22,
+            "parameters": 38272,
+            "fit_wall_seconds": 0.4485500829978264,
+            "fit_cpu_seconds": 0.4481270000000004,
+            "case_supervision": {
+              "case_count": 1000,
+              "annotation_bytes": 19688,
+              "atomic_cases": 200,
+              "rules_seen": 1000,
+              "sha256": "68e3073ff2b945465818496af15295e16d29f63291753e7053be8caf5dcf9f67",
+              "preparation_wall_seconds": 0.017385625003953464,
+              "preparation_cpu_seconds": 0.017386000000000124
+            },
+            "anchors": {
+              "decisions_correct": 81,
+              "traces_correct": 2,
+              "changing_pairs_correct": 6,
+              "by_depth": {
+                "2": {
+                  "questions": 128,
+                  "decisions_correct": 19,
+                  "traces_correct": 2,
+                  "changing_pairs_correct": 3,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 1
+                },
+                "3": {
+                  "questions": 128,
+                  "decisions_correct": 17,
+                  "traces_correct": 0,
+                  "changing_pairs_correct": 0,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 0
+                },
+                "4": {
+                  "questions": 128,
+                  "decisions_correct": 23,
+                  "traces_correct": 0,
+                  "changing_pairs_correct": 2,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 2
+                },
+                "5": {
+                  "questions": 128,
+                  "decisions_correct": 22,
+                  "traces_correct": 0,
+                  "changing_pairs_correct": 1,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 1
+                }
+              },
+              "majority_answer_count": 71,
+              "predictions_sha256": "2be5daad4680f39cecc212a02fc694444df7c3f1164d6cd53548c91f1e3b22b8",
+              "latency": {
+                "batch_us_per_question": 1.652994140625,
+                "single_question_us": 80.2295
+              }
+            }
+          },
+          {
+            "decisions_correct": 68,
+            "traces_correct": 4,
+            "changing_pairs_correct": 1,
+            "by_depth": {
+              "2": {
+                "questions": 128,
+                "decisions_correct": 15,
+                "traces_correct": 3,
+                "changing_pairs_correct": 1,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 0
+              },
+              "3": {
+                "questions": 128,
+                "decisions_correct": 19,
+                "traces_correct": 1,
+                "changing_pairs_correct": 0,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 0
+              },
+              "4": {
+                "questions": 128,
+                "decisions_correct": 13,
+                "traces_correct": 0,
+                "changing_pairs_correct": 0,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 0
+              },
+              "5": {
+                "questions": 128,
+                "decisions_correct": 21,
+                "traces_correct": 0,
+                "changing_pairs_correct": 0,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 0
+              }
+            },
+            "majority_answer_count": 71,
+            "predictions_sha256": "ee0b76bd9d726827ac6b28c64925f84dbccce06e75a672ea34067a58387a9c8b",
+            "latency": {
+              "batch_us_per_question": 2.3154296875,
+              "single_question_us": 80.5
+            },
+            "seed": 42,
+            "parameters": 38272,
+            "fit_wall_seconds": 0.4450324580029701,
+            "fit_cpu_seconds": 0.44488099999999875,
+            "case_supervision": {
+              "case_count": 1000,
+              "annotation_bytes": 19670,
+              "atomic_cases": 200,
+              "rules_seen": 1000,
+              "sha256": "3a5e284e062f84f3a076dc77082937be632a8cb48fb49c5d47aca9332f655cdd",
+              "preparation_wall_seconds": 0.0171016249951208,
+              "preparation_cpu_seconds": 0.017098000000000724
+            },
+            "anchors": {
+              "decisions_correct": 67,
+              "traces_correct": 7,
+              "changing_pairs_correct": 2,
+              "by_depth": {
+                "2": {
+                  "questions": 128,
+                  "decisions_correct": 12,
+                  "traces_correct": 6,
+                  "changing_pairs_correct": 1,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 0
+                },
+                "3": {
+                  "questions": 128,
+                  "decisions_correct": 17,
+                  "traces_correct": 1,
+                  "changing_pairs_correct": 0,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 0
+                },
+                "4": {
+                  "questions": 128,
+                  "decisions_correct": 20,
+                  "traces_correct": 0,
+                  "changing_pairs_correct": 0,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 0
+                },
+                "5": {
+                  "questions": 128,
+                  "decisions_correct": 18,
+                  "traces_correct": 0,
+                  "changing_pairs_correct": 1,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 1
+                }
+              },
+              "majority_answer_count": 71,
+              "predictions_sha256": "ceba7b5ed3f9ae8cba5aec3d4c77d2c9b1443b22f16d942b8b07a537824d0187",
+              "latency": {
+                "batch_us_per_question": 1.635904296875,
+                "single_question_us": 81.083
+              }
+            }
+          }
+        ],
+        "examples_coverage_first": [
+          {
+            "decisions_correct": 70,
+            "traces_correct": 11,
+            "changing_pairs_correct": 2,
+            "by_depth": {
+              "2": {
+                "questions": 128,
+                "decisions_correct": 19,
+                "traces_correct": 9,
+                "changing_pairs_correct": 0,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 0
+              },
+              "3": {
+                "questions": 128,
+                "decisions_correct": 16,
+                "traces_correct": 1,
+                "changing_pairs_correct": 0,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 0
+              },
+              "4": {
+                "questions": 128,
+                "decisions_correct": 14,
+                "traces_correct": 1,
+                "changing_pairs_correct": 0,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 0
+              },
+              "5": {
+                "questions": 128,
+                "decisions_correct": 21,
+                "traces_correct": 0,
+                "changing_pairs_correct": 2,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 2
+              }
+            },
+            "majority_answer_count": 71,
+            "predictions_sha256": "b8655cc486add1176df5facf5a13c0eb8b5aed4216e957fd16d1f5eb069c0832",
+            "latency": {
+              "batch_us_per_question": 2.2919921875,
+              "single_question_us": 81.875
+            },
+            "seed": 11,
+            "parameters": 38272,
+            "fit_wall_seconds": 0.43884058299590833,
+            "fit_cpu_seconds": 0.4386600000000005,
+            "case_supervision": {
+              "case_count": 1000,
+              "annotation_bytes": 11891,
+              "atomic_cases": 1000,
+              "rules_seen": 1000,
+              "sha256": "890acd7f761d062c92fdd9fbde4de2fc96d0db7c8c6c55e0f706bcd4f7716480",
+              "preparation_wall_seconds": 0.003768374997889623,
+              "preparation_cpu_seconds": 0.0037679999999999936
+            },
+            "anchors": {
+              "decisions_correct": 63,
+              "traces_correct": 16,
+              "changing_pairs_correct": 3,
+              "by_depth": {
+                "2": {
+                  "questions": 128,
+                  "decisions_correct": 19,
+                  "traces_correct": 13,
+                  "changing_pairs_correct": 1,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 0
+                },
+                "3": {
+                  "questions": 128,
+                  "decisions_correct": 15,
+                  "traces_correct": 2,
+                  "changing_pairs_correct": 1,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 0
+                },
+                "4": {
+                  "questions": 128,
+                  "decisions_correct": 13,
+                  "traces_correct": 1,
+                  "changing_pairs_correct": 1,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 1
+                },
+                "5": {
+                  "questions": 128,
+                  "decisions_correct": 16,
+                  "traces_correct": 0,
+                  "changing_pairs_correct": 0,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 0
+                }
+              },
+              "majority_answer_count": 71,
+              "predictions_sha256": "dc9d3481890b1e557cddf09388889884c86790976e67d2b4183eae4854e7a516",
+              "latency": {
+                "batch_us_per_question": 1.63248828125,
+                "single_question_us": 79.917
+              }
+            }
+          },
+          {
+            "decisions_correct": 52,
+            "traces_correct": 9,
+            "changing_pairs_correct": 2,
+            "by_depth": {
+              "2": {
+                "questions": 128,
+                "decisions_correct": 17,
+                "traces_correct": 7,
+                "changing_pairs_correct": 1,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 1
+              },
+              "3": {
+                "questions": 128,
+                "decisions_correct": 12,
+                "traces_correct": 2,
+                "changing_pairs_correct": 0,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 0
+              },
+              "4": {
+                "questions": 128,
+                "decisions_correct": 11,
+                "traces_correct": 0,
+                "changing_pairs_correct": 1,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 0
+              },
+              "5": {
+                "questions": 128,
+                "decisions_correct": 12,
+                "traces_correct": 0,
+                "changing_pairs_correct": 0,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 0
+              }
+            },
+            "majority_answer_count": 71,
+            "predictions_sha256": "8c8da12ee44e0bad9bc74e3f552f7f9a024bc5251525fa28fb6d646b6d702923",
+            "latency": {
+              "batch_us_per_question": 2.22607421875,
+              "single_question_us": 82.458
+            },
+            "seed": 22,
+            "parameters": 38272,
+            "fit_wall_seconds": 0.44308170899603283,
+            "fit_cpu_seconds": 0.44238099999999925,
+            "case_supervision": {
+              "case_count": 1000,
+              "annotation_bytes": 11891,
+              "atomic_cases": 1000,
+              "rules_seen": 1000,
+              "sha256": "f9b8767a5478ffeb95f02d534261f52a2c7480564db3d543eef7a4eec27317eb",
+              "preparation_wall_seconds": 0.0038990409957477823,
+              "preparation_cpu_seconds": 0.0038879999999998915
+            },
+            "anchors": {
+              "decisions_correct": 79,
+              "traces_correct": 5,
+              "changing_pairs_correct": 3,
+              "by_depth": {
+                "2": {
+                  "questions": 128,
+                  "decisions_correct": 23,
+                  "traces_correct": 5,
+                  "changing_pairs_correct": 1,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 0
+                },
+                "3": {
+                  "questions": 128,
+                  "decisions_correct": 16,
+                  "traces_correct": 0,
+                  "changing_pairs_correct": 0,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 0
+                },
+                "4": {
+                  "questions": 128,
+                  "decisions_correct": 20,
+                  "traces_correct": 0,
+                  "changing_pairs_correct": 1,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 0
+                },
+                "5": {
+                  "questions": 128,
+                  "decisions_correct": 20,
+                  "traces_correct": 0,
+                  "changing_pairs_correct": 1,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 1
+                }
+              },
+              "majority_answer_count": 71,
+              "predictions_sha256": "fab71cb14e66b28290832c219fcc659201ab26238aa2c1ca404affabd0cd02c6",
+              "latency": {
+                "batch_us_per_question": 1.647216796875,
+                "single_question_us": 81.167
+              }
+            }
+          },
+          {
+            "decisions_correct": 65,
+            "traces_correct": 7,
+            "changing_pairs_correct": 3,
+            "by_depth": {
+              "2": {
+                "questions": 128,
+                "decisions_correct": 15,
+                "traces_correct": 2,
+                "changing_pairs_correct": 1,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 0
+              },
+              "3": {
+                "questions": 128,
+                "decisions_correct": 19,
+                "traces_correct": 3,
+                "changing_pairs_correct": 1,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 1
+              },
+              "4": {
+                "questions": 128,
+                "decisions_correct": 17,
+                "traces_correct": 2,
+                "changing_pairs_correct": 1,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 0
+              },
+              "5": {
+                "questions": 128,
+                "decisions_correct": 14,
+                "traces_correct": 0,
+                "changing_pairs_correct": 0,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 0
+              }
+            },
+            "majority_answer_count": 71,
+            "predictions_sha256": "e649ceac18fe33afb906021277d786c3b38cfe843b34298c3bbb4c58741d10d4",
+            "latency": {
+              "batch_us_per_question": 2.320962890625,
+              "single_question_us": 80.4375
+            },
+            "seed": 42,
+            "parameters": 38272,
+            "fit_wall_seconds": 0.4374479580001207,
+            "fit_cpu_seconds": 0.437342000000001,
+            "case_supervision": {
+              "case_count": 1000,
+              "annotation_bytes": 11891,
+              "atomic_cases": 1000,
+              "rules_seen": 1000,
+              "sha256": "a03633bbea6cd28b4eb8060ecdc758decbd0fc77692c12bf63de17a710ea7cf9",
+              "preparation_wall_seconds": 0.0037619169961544685,
+              "preparation_cpu_seconds": 0.003762000000000043
+            },
+            "anchors": {
+              "decisions_correct": 59,
+              "traces_correct": 6,
+              "changing_pairs_correct": 2,
+              "by_depth": {
+                "2": {
+                  "questions": 128,
+                  "decisions_correct": 15,
+                  "traces_correct": 5,
+                  "changing_pairs_correct": 1,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 0
+                },
+                "3": {
+                  "questions": 128,
+                  "decisions_correct": 16,
+                  "traces_correct": 1,
+                  "changing_pairs_correct": 1,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 0
+                },
+                "4": {
+                  "questions": 128,
+                  "decisions_correct": 14,
+                  "traces_correct": 0,
+                  "changing_pairs_correct": 0,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 0
+                },
+                "5": {
+                  "questions": 128,
+                  "decisions_correct": 14,
+                  "traces_correct": 0,
+                  "changing_pairs_correct": 0,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 0
+                }
+              },
+              "majority_answer_count": 71,
+              "predictions_sha256": "eec12d24bc9ff9a4fcfd3433b6eb772e12409c4974f08bd20bf71b9664e1ae12",
+              "latency": {
+                "batch_us_per_question": 1.643392578125,
+                "single_question_us": 80.209
+              }
+            }
+          }
+        ],
+        "learned_principles": [
+          {
+            "decisions_correct": 512,
+            "traces_correct": 512,
+            "changing_pairs_correct": 256,
+            "by_depth": {
+              "2": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "3": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "4": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "5": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              }
+            },
+            "majority_answer_count": 71,
+            "predictions_sha256": "7216e41decf90d4a1f548fd417ec2d33b937a442c4093baa6d0a25171fa2340c",
+            "latency": {
+              "batch_us_per_question": 2.265298828125,
+              "single_question_us": 80.729
+            },
+            "seed": 11,
+            "parameters": 38272,
+            "fit_wall_seconds": 0.17775212500419002,
+            "fit_cpu_seconds": 0.17769100000000027,
+            "anchors": {
+              "decisions_correct": 512,
+              "traces_correct": 512,
+              "changing_pairs_correct": 256,
+              "by_depth": {
+                "2": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                },
+                "3": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                },
+                "4": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                },
+                "5": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                }
+              },
+              "majority_answer_count": 71,
+              "predictions_sha256": "224ae9c1f3120ef5747debb9ca05333299c6a28170aafefd040e1a07758ef2c1",
+              "latency": {
+                "batch_us_per_question": 1.6678046875,
+                "single_question_us": 80.2085
+              }
+            }
+          },
+          {
+            "decisions_correct": 512,
+            "traces_correct": 512,
+            "changing_pairs_correct": 256,
+            "by_depth": {
+              "2": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "3": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "4": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "5": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              }
+            },
+            "majority_answer_count": 71,
+            "predictions_sha256": "7216e41decf90d4a1f548fd417ec2d33b937a442c4093baa6d0a25171fa2340c",
+            "latency": {
+              "batch_us_per_question": 2.2591953125,
+              "single_question_us": 83.333
+            },
+            "seed": 22,
+            "parameters": 38272,
+            "fit_wall_seconds": 0.17972237499634502,
+            "fit_cpu_seconds": 0.17957499999999982,
+            "anchors": {
+              "decisions_correct": 512,
+              "traces_correct": 512,
+              "changing_pairs_correct": 256,
+              "by_depth": {
+                "2": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                },
+                "3": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                },
+                "4": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                },
+                "5": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                }
+              },
+              "majority_answer_count": 71,
+              "predictions_sha256": "224ae9c1f3120ef5747debb9ca05333299c6a28170aafefd040e1a07758ef2c1",
+              "latency": {
+                "batch_us_per_question": 1.682048828125,
+                "single_question_us": 81.0835
+              }
+            }
+          },
+          {
+            "decisions_correct": 512,
+            "traces_correct": 512,
+            "changing_pairs_correct": 256,
+            "by_depth": {
+              "2": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "3": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "4": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "5": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              }
+            },
+            "majority_answer_count": 71,
+            "predictions_sha256": "7216e41decf90d4a1f548fd417ec2d33b937a442c4093baa6d0a25171fa2340c",
+            "latency": {
+              "batch_us_per_question": 2.22786328125,
+              "single_question_us": 83.208
+            },
+            "seed": 42,
+            "parameters": 38272,
+            "fit_wall_seconds": 0.17951975000323728,
+            "fit_cpu_seconds": 0.17942500000000017,
+            "anchors": {
+              "decisions_correct": 512,
+              "traces_correct": 512,
+              "changing_pairs_correct": 256,
+              "by_depth": {
+                "2": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                },
+                "3": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                },
+                "4": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                },
+                "5": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                }
+              },
+              "majority_answer_count": 71,
+              "predictions_sha256": "224ae9c1f3120ef5747debb9ca05333299c6a28170aafefd040e1a07758ef2c1",
+              "latency": {
+                "batch_us_per_question": 1.649740234375,
+                "single_question_us": 82.3955
+              }
+            }
+          }
+        ],
+        "stored_principles": [
+          {
+            "decisions_correct": 512,
+            "traces_correct": 512,
+            "changing_pairs_correct": 256,
+            "by_depth": {
+              "2": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "3": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "4": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              },
+              "5": {
+                "questions": 128,
+                "decisions_correct": 128,
+                "traces_correct": 128,
+                "changing_pairs_correct": 64,
+                "reordered_pairs": 32,
+                "reordered_pairs_correct": 32
+              }
+            },
+            "majority_answer_count": 71,
+            "predictions_sha256": "7216e41decf90d4a1f548fd417ec2d33b937a442c4093baa6d0a25171fa2340c",
+            "latency": {
+              "batch_us_per_question": 0.199951171875,
+              "single_question_us": 0.459
+            },
+            "anchors": {
+              "decisions_correct": 512,
+              "traces_correct": 512,
+              "changing_pairs_correct": 256,
+              "by_depth": {
+                "2": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                },
+                "3": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                },
+                "4": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                },
+                "5": {
+                  "questions": 128,
+                  "decisions_correct": 128,
+                  "traces_correct": 128,
+                  "changing_pairs_correct": 64,
+                  "reordered_pairs": 32,
+                  "reordered_pairs_correct": 32
+                }
+              },
+              "majority_answer_count": 71,
+              "predictions_sha256": "224ae9c1f3120ef5747debb9ca05333299c6a28170aafefd040e1a07758ef2c1",
+              "latency": {
+                "batch_us_per_question": 0.173419921875,
+                "single_question_us": 0.375
+              }
+            }
+          }
+        ]
+      },
+      "verified_setup_wall_seconds": 0.0007914579982752912,
+      "verified_setup_cpu_seconds": 0.0007909999999995421,
+      "stored_index_wall_seconds": 0.0005551659996854141,
+      "stored_index_cpu_seconds": 0.0005550000000003052,
+      "median_ready_wall_seconds": {
+        "examples": 0.4621340829980909,
+        "examples_coverage_first": 0.44260895799379796,
+        "learned_principles": 277.82646353899327,
+        "stored_principles": 277.64615233099175
+      }
+    }
+  },
+  "verified_only_100": {
+    "principles": 100,
+    "exam_questions": 512,
+    "pairs_per_depth": 64,
+    "exam_sha256": "ca5b882b4289f12db86841f4dd6c2347cf3b981500d9e456f8b63091a2bfd258",
+    "principle_annotation_bytes": 1101,
+    "atomic_transition_labels": 800,
+    "teacher": {
+      "accepted": 102,
+      "simulator_fills": 0,
+      "rejected_ids": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        33,
+        34,
+        35,
+        37,
+        38,
+        39,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        60,
+        61,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        73,
+        74,
+        75,
+        77,
+        79,
+        80,
+        82,
+        83,
+        84,
+        88,
+        89,
+        90,
+        91,
+        93,
+        96,
+        97,
+        100,
+        101,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        112,
+        113,
+        114,
+        115,
+        116,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        136,
+        137,
+        138,
+        139,
+        140,
+        142,
+        143,
+        145,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        158,
+        159,
+        160,
+        161,
+        163,
+        164,
+        165,
+        169,
+        170,
+        171,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191,
+        192,
+        194,
+        195,
+        196,
+        197,
+        198,
+        199,
+        200,
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        208,
+        209,
+        210,
+        211,
+        212,
+        213,
+        214,
+        215,
+        216,
+        217,
+        218,
+        219,
+        220,
+        221,
+        222,
+        223,
+        224,
+        225,
+        226,
+        227,
+        228,
+        229,
+        230,
+        231,
+        232,
+        233,
+        234,
+        235,
+        236,
+        237,
+        238,
+        239,
+        240,
+        241,
+        242,
+        243,
+        244,
+        245,
+        246,
+        247,
+        248,
+        249,
+        250,
+        251,
+        252,
+        257,
+        258,
+        259,
+        260,
+        262,
+        263,
+        264,
+        265,
+        266,
+        267,
+        269,
+        270,
+        272,
+        273,
+        274,
+        275,
+        276,
+        277,
+        278,
+        279,
+        280,
+        283,
+        284,
+        285,
+        286,
+        288,
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        298,
+        299,
+        300,
+        304,
+        305,
+        306,
+        307,
+        308,
+        311,
+        313,
+        316,
+        317,
+        319,
+        320,
+        321,
+        324,
+        327,
+        331,
+        334,
+        335,
+        336,
+        337,
+        338,
+        339,
+        340,
+        341,
+        342,
+        343,
+        348,
+        349,
+        351,
+        354,
+        355,
+        357,
+        358,
+        359,
+        360,
+        361,
+        362,
+        363,
+        364,
+        365,
+        366,
+        367,
+        369,
+        370,
+        371,
+        372,
+        374,
+        377,
+        378,
+        379,
+        381,
+        383,
+        384,
+        386,
+        388,
+        389,
+        390,
+        391,
+        392,
+        393,
+        394,
+        395,
+        396,
+        397,
+        398,
+        399,
+        400,
+        402,
+        404,
+        405,
+        408,
+        410,
+        411,
+        412,
+        413,
+        415,
+        416,
+        417,
+        418,
+        419,
+        420,
+        421,
+        422,
+        423,
+        424,
+        426,
+        427,
+        429,
+        430,
+        431,
+        434,
+        437,
+        439,
+        440,
+        441,
+        442,
+        443,
+        444,
+        445,
+        449,
+        450,
+        451,
+        452,
+        453,
+        456,
+        457,
+        458,
+        459
+      ],
+      "reference_state_slots": 3680,
+      "verification_wall_seconds": 0.005208582995692268,
+      "teacher_calls": 24,
+      "teacher_wall_seconds": 127.28789408300509,
+      "prompt_tokens": 20216,
+      "completion_tokens": 2445,
+      "cached_prompt_tokens": 2648,
+      "source_ids": [
+        2,
+        8,
+        20,
+        31,
+        32,
+        36,
+        40,
+        58,
+        59,
+        62,
+        72,
+        76,
+        78,
+        81,
+        85,
+        86,
+        87,
+        92,
+        94,
+        95,
+        98,
+        99,
+        102,
+        103,
+        104,
+        111,
+        117,
+        135,
+        141,
+        144,
+        146,
+        157,
+        162,
+        166,
+        167,
+        168,
+        172,
+        184,
+        193,
+        253,
+        254,
+        255,
+        256,
+        261,
+        268,
+        271,
+        281,
+        282,
+        287,
+        297,
+        301,
+        302,
+        303,
+        309,
+        310,
+        312,
+        314,
+        315,
+        318,
+        322,
+        323,
+        325,
+        326,
+        328,
+        329,
+        330,
+        332,
+        333,
+        344,
+        345,
+        346,
+        347,
+        350,
+        352,
+        353,
+        356,
+        368,
+        373,
+        375,
+        376,
+        380,
+        382,
+        385,
+        387,
+        401,
+        403,
+        406,
+        407,
+        409,
+        414,
+        425,
+        428,
+        432,
+        433,
+        435,
+        436,
+        438,
+        446,
+        447,
+        448
+      ],
+      "proposals_paid_for": 460,
+      "accepted_in_paid_prefix": 102,
+      "used_teacher_principles": 100
+    },
+    "results": {
+      "examples": [
+        {
+          "decisions_correct": 78,
+          "traces_correct": 25,
+          "changing_pairs_correct": 12,
+          "by_depth": {
+            "2": {
+              "questions": 128,
+              "decisions_correct": 28,
+              "traces_correct": 20,
+              "changing_pairs_correct": 6,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 3
+            },
+            "3": {
+              "questions": 128,
+              "decisions_correct": 19,
+              "traces_correct": 4,
+              "changing_pairs_correct": 3,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 2
+            },
+            "4": {
+              "questions": 128,
+              "decisions_correct": 16,
+              "traces_correct": 1,
+              "changing_pairs_correct": 1,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 0
+            },
+            "5": {
+              "questions": 128,
+              "decisions_correct": 15,
+              "traces_correct": 0,
+              "changing_pairs_correct": 2,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 0
+            }
+          },
+          "majority_answer_count": 75,
+          "predictions_sha256": "6eec0fe600ab264cf37497bc87c91af55a0ae3eb95bf4bced6e99f90411b6aea",
+          "latency": {
+            "batch_us_per_question": 1.804931640625,
+            "single_question_us": 82.5415
+          },
+          "seed": 11,
+          "parameters": 9472,
+          "fit_wall_seconds": 0.32364612499804934,
+          "fit_cpu_seconds": 0.3235770000000002,
+          "case_supervision": {
+            "case_count": 1000,
+            "annotation_bytes": 16692,
+            "atomic_cases": 200,
+            "rules_seen": 100,
+            "sha256": "95ff9be9bf484f67a508d2ac985e062e6755e3013146b5d5b3643179a0321fd5",
+            "preparation_wall_seconds": 0.005047874998126645,
+            "preparation_cpu_seconds": 0.005044999999999078
+          }
+        },
+        {
+          "decisions_correct": 86,
+          "traces_correct": 30,
+          "changing_pairs_correct": 4,
+          "by_depth": {
+            "2": {
+              "questions": 128,
+              "decisions_correct": 31,
+              "traces_correct": 26,
+              "changing_pairs_correct": 2,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 1
+            },
+            "3": {
+              "questions": 128,
+              "decisions_correct": 16,
+              "traces_correct": 3,
+              "changing_pairs_correct": 0,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 0
+            },
+            "4": {
+              "questions": 128,
+              "decisions_correct": 17,
+              "traces_correct": 0,
+              "changing_pairs_correct": 2,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 0
+            },
+            "5": {
+              "questions": 128,
+              "decisions_correct": 22,
+              "traces_correct": 1,
+              "changing_pairs_correct": 0,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 0
+            }
+          },
+          "majority_answer_count": 75,
+          "predictions_sha256": "1299e98f581d9dfe649720ea59fbed4d9e830839bc0014c1066d194909d96a5b",
+          "latency": {
+            "batch_us_per_question": 1.81396484375,
+            "single_question_us": 81.875
+          },
+          "seed": 22,
+          "parameters": 9472,
+          "fit_wall_seconds": 0.32644074999552686,
+          "fit_cpu_seconds": 0.3259439999999998,
+          "case_supervision": {
+            "case_count": 1000,
+            "annotation_bytes": 16716,
+            "atomic_cases": 200,
+            "rules_seen": 100,
+            "sha256": "37435d7eee38eacb5c80f5205b9649271f92efc29a89dd33c7ca28e6ff9a1494",
+            "preparation_wall_seconds": 0.005006166000384837,
+            "preparation_cpu_seconds": 0.005005999999999844
+          }
+        },
+        {
+          "decisions_correct": 87,
+          "traces_correct": 32,
+          "changing_pairs_correct": 5,
+          "by_depth": {
+            "2": {
+              "questions": 128,
+              "decisions_correct": 28,
+              "traces_correct": 21,
+              "changing_pairs_correct": 2,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 0
+            },
+            "3": {
+              "questions": 128,
+              "decisions_correct": 21,
+              "traces_correct": 9,
+              "changing_pairs_correct": 2,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 0
+            },
+            "4": {
+              "questions": 128,
+              "decisions_correct": 22,
+              "traces_correct": 2,
+              "changing_pairs_correct": 0,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 0
+            },
+            "5": {
+              "questions": 128,
+              "decisions_correct": 16,
+              "traces_correct": 0,
+              "changing_pairs_correct": 1,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 0
+            }
+          },
+          "majority_answer_count": 75,
+          "predictions_sha256": "4110c373fcdb6fe5458661c403d3692edfa360925a32224920160da62ceb9905",
+          "latency": {
+            "batch_us_per_question": 1.86669921875,
+            "single_question_us": 81.271
+          },
+          "seed": 42,
+          "parameters": 9472,
+          "fit_wall_seconds": 0.32085708399972646,
+          "fit_cpu_seconds": 0.3206640000000007,
+          "case_supervision": {
+            "case_count": 1000,
+            "annotation_bytes": 16722,
+            "atomic_cases": 200,
+            "rules_seen": 100,
+            "sha256": "6cd1995b3cc28f13b82c8b9d39f37b5e71ad560b3409d77de80026f70d5e03df",
+            "preparation_wall_seconds": 0.004981959005817771,
+            "preparation_cpu_seconds": 0.004982000000000042
+          }
+        }
+      ],
+      "examples_coverage_first": [
+        {
+          "decisions_correct": 512,
+          "traces_correct": 512,
+          "changing_pairs_correct": 256,
+          "by_depth": {
+            "2": {
+              "questions": 128,
+              "decisions_correct": 128,
+              "traces_correct": 128,
+              "changing_pairs_correct": 64,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 32
+            },
+            "3": {
+              "questions": 128,
+              "decisions_correct": 128,
+              "traces_correct": 128,
+              "changing_pairs_correct": 64,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 32
+            },
+            "4": {
+              "questions": 128,
+              "decisions_correct": 128,
+              "traces_correct": 128,
+              "changing_pairs_correct": 64,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 32
+            },
+            "5": {
+              "questions": 128,
+              "decisions_correct": 128,
+              "traces_correct": 128,
+              "changing_pairs_correct": 64,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 32
+            }
+          },
+          "majority_answer_count": 75,
+          "predictions_sha256": "7fbe1343e1aaf0b97546f6d64929e3e12a429699544e5d90c2f692c26cd134c7",
+          "latency": {
+            "batch_us_per_question": 1.810546875,
+            "single_question_us": 81.333
+          },
+          "seed": 11,
+          "parameters": 9472,
+          "fit_wall_seconds": 0.3190281249990221,
+          "fit_cpu_seconds": 0.3189510000000002,
+          "case_supervision": {
+            "case_count": 1000,
+            "annotation_bytes": 12356,
+            "atomic_cases": 800,
+            "rules_seen": 100,
+            "sha256": "b5ccbef74f15425936964a9f2734b12282859e53dbbceb96f9fc08faf4c1464e",
+            "preparation_wall_seconds": 0.004899250001471955,
+            "preparation_cpu_seconds": 0.004898999999999987
+          }
+        },
+        {
+          "decisions_correct": 512,
+          "traces_correct": 512,
+          "changing_pairs_correct": 256,
+          "by_depth": {
+            "2": {
+              "questions": 128,
+              "decisions_correct": 128,
+              "traces_correct": 128,
+              "changing_pairs_correct": 64,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 32
+            },
+            "3": {
+              "questions": 128,
+              "decisions_correct": 128,
+              "traces_correct": 128,
+              "changing_pairs_correct": 64,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 32
+            },
+            "4": {
+              "questions": 128,
+              "decisions_correct": 128,
+              "traces_correct": 128,
+              "changing_pairs_correct": 64,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 32
+            },
+            "5": {
+              "questions": 128,
+              "decisions_correct": 128,
+              "traces_correct": 128,
+              "changing_pairs_correct": 64,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 32
+            }
+          },
+          "majority_answer_count": 75,
+          "predictions_sha256": "7fbe1343e1aaf0b97546f6d64929e3e12a429699544e5d90c2f692c26cd134c7",
+          "latency": {
+            "batch_us_per_question": 1.842041015625,
+            "single_question_us": 81.146
+          },
+          "seed": 22,
+          "parameters": 9472,
+          "fit_wall_seconds": 0.32234237500233576,
+          "fit_cpu_seconds": 0.3218350000000001,
+          "case_supervision": {
+            "case_count": 1000,
+            "annotation_bytes": 12343,
+            "atomic_cases": 800,
+            "rules_seen": 100,
+            "sha256": "dbd5ff11b884d63265ddf3cb1b97df20b1a97a11219a6c1668159f870548a9ac",
+            "preparation_wall_seconds": 0.005000915996788535,
+            "preparation_cpu_seconds": 0.004993999999999943
+          }
+        },
+        {
+          "decisions_correct": 512,
+          "traces_correct": 512,
+          "changing_pairs_correct": 256,
+          "by_depth": {
+            "2": {
+              "questions": 128,
+              "decisions_correct": 128,
+              "traces_correct": 128,
+              "changing_pairs_correct": 64,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 32
+            },
+            "3": {
+              "questions": 128,
+              "decisions_correct": 128,
+              "traces_correct": 128,
+              "changing_pairs_correct": 64,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 32
+            },
+            "4": {
+              "questions": 128,
+              "decisions_correct": 128,
+              "traces_correct": 128,
+              "changing_pairs_correct": 64,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 32
+            },
+            "5": {
+              "questions": 128,
+              "decisions_correct": 128,
+              "traces_correct": 128,
+              "changing_pairs_correct": 64,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 32
+            }
+          },
+          "majority_answer_count": 75,
+          "predictions_sha256": "7fbe1343e1aaf0b97546f6d64929e3e12a429699544e5d90c2f692c26cd134c7",
+          "latency": {
+            "batch_us_per_question": 1.81591796875,
+            "single_question_us": 82.167
+          },
+          "seed": 42,
+          "parameters": 9472,
+          "fit_wall_seconds": 0.3193420839961618,
+          "fit_cpu_seconds": 0.31919899999999934,
+          "case_supervision": {
+            "case_count": 1000,
+            "annotation_bytes": 12365,
+            "atomic_cases": 800,
+            "rules_seen": 100,
+            "sha256": "171acb3d18995a18f29924906e6e8860b6b0e4bc2b26df301f97fe28511bad32",
+            "preparation_wall_seconds": 0.00486487500165822,
+            "preparation_cpu_seconds": 0.004865000000000563
+          }
+        }
+      ],
+      "learned_principles": [
+        {
+          "decisions_correct": 512,
+          "traces_correct": 512,
+          "changing_pairs_correct": 256,
+          "by_depth": {
+            "2": {
+              "questions": 128,
+              "decisions_correct": 128,
+              "traces_correct": 128,
+              "changing_pairs_correct": 64,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 32
+            },
+            "3": {
+              "questions": 128,
+              "decisions_correct": 128,
+              "traces_correct": 128,
+              "changing_pairs_correct": 64,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 32
+            },
+            "4": {
+              "questions": 128,
+              "decisions_correct": 128,
+              "traces_correct": 128,
+              "changing_pairs_correct": 64,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 32
+            },
+            "5": {
+              "questions": 128,
+              "decisions_correct": 128,
+              "traces_correct": 128,
+              "changing_pairs_correct": 64,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 32
+            }
+          },
+          "majority_answer_count": 75,
+          "predictions_sha256": "7fbe1343e1aaf0b97546f6d64929e3e12a429699544e5d90c2f692c26cd134c7",
+          "latency": {
+            "batch_us_per_question": 1.873861328125,
+            "single_question_us": 81.2705
+          },
+          "seed": 11,
+          "parameters": 9472,
+          "fit_wall_seconds": 0.05807916699995985,
+          "fit_cpu_seconds": 0.05807300000000026
+        },
+        {
+          "decisions_correct": 512,
+          "traces_correct": 512,
+          "changing_pairs_correct": 256,
+          "by_depth": {
+            "2": {
+              "questions": 128,
+              "decisions_correct": 128,
+              "traces_correct": 128,
+              "changing_pairs_correct": 64,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 32
+            },
+            "3": {
+              "questions": 128,
+              "decisions_correct": 128,
+              "traces_correct": 128,
+              "changing_pairs_correct": 64,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 32
+            },
+            "4": {
+              "questions": 128,
+              "decisions_correct": 128,
+              "traces_correct": 128,
+              "changing_pairs_correct": 64,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 32
+            },
+            "5": {
+              "questions": 128,
+              "decisions_correct": 128,
+              "traces_correct": 128,
+              "changing_pairs_correct": 64,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 32
+            }
+          },
+          "majority_answer_count": 75,
+          "predictions_sha256": "7fbe1343e1aaf0b97546f6d64929e3e12a429699544e5d90c2f692c26cd134c7",
+          "latency": {
+            "batch_us_per_question": 1.847494140625,
+            "single_question_us": 81.6875
+          },
+          "seed": 22,
+          "parameters": 9472,
+          "fit_wall_seconds": 0.05887329200049862,
+          "fit_cpu_seconds": 0.05878799999999984
+        },
+        {
+          "decisions_correct": 512,
+          "traces_correct": 512,
+          "changing_pairs_correct": 256,
+          "by_depth": {
+            "2": {
+              "questions": 128,
+              "decisions_correct": 128,
+              "traces_correct": 128,
+              "changing_pairs_correct": 64,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 32
+            },
+            "3": {
+              "questions": 128,
+              "decisions_correct": 128,
+              "traces_correct": 128,
+              "changing_pairs_correct": 64,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 32
+            },
+            "4": {
+              "questions": 128,
+              "decisions_correct": 128,
+              "traces_correct": 128,
+              "changing_pairs_correct": 64,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 32
+            },
+            "5": {
+              "questions": 128,
+              "decisions_correct": 128,
+              "traces_correct": 128,
+              "changing_pairs_correct": 64,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 32
+            }
+          },
+          "majority_answer_count": 75,
+          "predictions_sha256": "7fbe1343e1aaf0b97546f6d64929e3e12a429699544e5d90c2f692c26cd134c7",
+          "latency": {
+            "batch_us_per_question": 1.837890625,
+            "single_question_us": 80.1665
+          },
+          "seed": 42,
+          "parameters": 9472,
+          "fit_wall_seconds": 0.057840417000988964,
+          "fit_cpu_seconds": 0.05783399999999972
+        }
+      ],
+      "stored_principles": [
+        {
+          "decisions_correct": 512,
+          "traces_correct": 512,
+          "changing_pairs_correct": 256,
+          "by_depth": {
+            "2": {
+              "questions": 128,
+              "decisions_correct": 128,
+              "traces_correct": 128,
+              "changing_pairs_correct": 64,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 32
+            },
+            "3": {
+              "questions": 128,
+              "decisions_correct": 128,
+              "traces_correct": 128,
+              "changing_pairs_correct": 64,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 32
+            },
+            "4": {
+              "questions": 128,
+              "decisions_correct": 128,
+              "traces_correct": 128,
+              "changing_pairs_correct": 64,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 32
+            },
+            "5": {
+              "questions": 128,
+              "decisions_correct": 128,
+              "traces_correct": 128,
+              "changing_pairs_correct": 64,
+              "reordered_pairs": 32,
+              "reordered_pairs_correct": 32
+            }
+          },
+          "majority_answer_count": 75,
+          "predictions_sha256": "7fbe1343e1aaf0b97546f6d64929e3e12a429699544e5d90c2f692c26cd134c7",
+          "latency": {
+            "batch_us_per_question": 0.177978515625,
+            "single_question_us": 0.417
+          }
+        }
+      ]
+    },
+    "verified_setup_wall_seconds": 0.00012308299483265728,
+    "verified_setup_cpu_seconds": 0.0001239999999995689,
+    "stored_index_wall_seconds": 6.27919944236055e-05,
+    "stored_index_cpu_seconds": 6.299999999903605e-05,
+    "median_ready_wall_seconds": {
+      "examples": 0.328693999996176,
+      "examples_coverage_first": 0.32420695899782004,
+      "learned_principles": 127.35136770799,
+      "stored_principles": 127.2931654579952
+    }
+  }
+}

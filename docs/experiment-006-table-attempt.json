@@ -1,0 +1,432 @@
+{
+  "dataset": "switch-principles-v1",
+  "model": "Qwen/Qwen3-4B-GGUF@bc640142c66e1fdd12af0bd68f40445458f3869b Q4_K_M; llama.cpp b12556",
+  "seed": 42,
+  "batch_size": 20,
+  "manifest_sha256": "2f51682f3226c31a931138f5083018d40872a932f3394a9f16c2ae2e579e5aab",
+  "instructions_sha256": "8dd37238c45c8f51288bddbe690e3ce2c89b05939c6e19b68e19cb6b9bec4c23",
+  "batches": [
+    {
+      "start": 0,
+      "tables": [
+        "hbaehdha",
+        "hgdchfeg",
+        "faafaaaa",
+        "cbgdhfeh",
+        "fbadefaf",
+        "hgdhbgah",
+        "hbgahgah",
+        "edcbfhfg",
+        "ehcdefgh",
+        "hfbacdeg"
+      ],
+      "usage": {
+        "completion_tokens": 89,
+        "prompt_tokens": 378,
+        "total_tokens": 467,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "wall_seconds": 3.276529999995546
+    },
+    {
+      "start": 10,
+      "tables": [
+        "bacdehgf",
+        "adghefcf",
+        "abfghdch",
+        "deghcdef",
+        "adghefcf",
+        "adghefcf",
+        "abfghdch",
+        "efgfbhcd",
+        "ghefgcdh",
+        "abfghdch",
+        "adghefcf",
+        "efgfbhcd",
+        "adghefcf",
+        "efgfbhcd",
+        "efgfbhcd",
+        "adghefcf",
+        "adghefcf",
+        "adghefcf",
+        "adghefcf",
+        "adghefcf"
+      ],
+      "usage": {
+        "completion_tokens": 172,
+        "prompt_tokens": 563,
+        "total_tokens": 735,
+        "prompt_tokens_details": {
+          "cached_tokens": 164
+        }
+      },
+      "wall_seconds": 5.804388958000345
+    },
+    {
+      "start": 30,
+      "tables": [
+        "hchghhfg",
+        "acabacaa",
+        "fghdghfb",
+        "bcgefdga",
+        "hgfedhga",
+        "cbghfhab",
+        "fbfbfbfb",
+        "dhfbegfh",
+        "dhfbegfh",
+        "bhfedfga",
+        "fgfgfgfa",
+        "hfgfcgfd",
+        "hfgfcgfd",
+        "hfgfcgfd",
+        "hfgfcgfd",
+        "hfgfcgfd",
+        "hfgfcgfd",
+        "hfgfcgfd",
+        "hfgfcgfd",
+        "hfgfcgfd"
+      ],
+      "usage": {
+        "completion_tokens": 167,
+        "prompt_tokens": 581,
+        "total_tokens": 748,
+        "prompt_tokens_details": {
+          "cached_tokens": 162
+        }
+      },
+      "wall_seconds": 5.67554666599608
+    },
+    {
+      "start": 50,
+      "tables": [
+        "ggeddggf",
+        "dabhdgfh",
+        "dahdcegh",
+        "dcdgfgfh",
+        "bhfcdfha",
+        "dggdbehg",
+        "gfeadghd",
+        "chhdgfbh",
+        "hhehghhg",
+        "gfbdhgfh",
+        "ghhdbfhg",
+        "hbggghhd",
+        "agagghha",
+        "hbadgfgf",
+        "fbaedgcb",
+        "ebdghfcg",
+        "ehgfdhga",
+        "ehgfdhga",
+        "ehgfdhga",
+        "ehgfdhga"
+      ],
+      "usage": {
+        "completion_tokens": 173,
+        "prompt_tokens": 596,
+        "total_tokens": 769,
+        "prompt_tokens_details": {
+          "cached_tokens": 162
+        }
+      },
+      "wall_seconds": 5.690068458003225
+    },
+    {
+      "start": 70,
+      "tables": [
+        "hahgfcba",
+        "cbgfaehg",
+        "hfgcbahg",
+        "bhgcbahg",
+        "hcgfghgf",
+        "hgfbgfhg",
+        "eadeabce",
+        "ebadhfgh",
+        "ehgfdghg",
+        "ebhgdgfc",
+        "ehgdcfgb",
+        "cbfadghe",
+        "bhgcehfg",
+        "fhgcehgd",
+        "hgcfehgd",
+        "gchdghfb",
+        "fhdgchfa",
+        "bdhfhafg",
+        "chgfehgd",
+        "fhgcehgd"
+      ],
+      "usage": {
+        "completion_tokens": 171,
+        "prompt_tokens": 593,
+        "total_tokens": 764,
+        "prompt_tokens_details": {
+          "cached_tokens": 168
+        }
+      },
+      "wall_seconds": 5.873360917001264
+    },
+    {
+      "start": 90,
+      "tables": [
+        "ehdfehga",
+        "fdehgaef",
+        "fhgdehga",
+        "dgfeghga",
+        "gfbhgaeh",
+        "ehgfbhga",
+        "dbfggaeh",
+        "dbfggheh",
+        "fggdehga",
+        "dfehgaeb"
+      ],
+      "usage": {
+        "completion_tokens": 93,
+        "prompt_tokens": 396,
+        "total_tokens": 489,
+        "prompt_tokens_details": {
+          "cached_tokens": 164
+        }
+      },
+      "wall_seconds": 3.2497068329976173
+    },
+    {
+      "start": 100,
+      "tables": [
+        "gcbhfaed",
+        "dghcfaeb",
+        "hhdhhdhh",
+        "ghghghgh",
+        "fcfcfcfc",
+        "acfdacfd",
+        "fbgcbhgc",
+        "hcbadghb",
+        "hfbadghc",
+        "gfhcagfd",
+        "bghdcefg",
+        "fegfegfe",
+        "cbfdaegf",
+        "cbdfbehf",
+        "bdfecghg",
+        "hgbfcgfh",
+        "ehgcbfgc",
+        "hdcgbehc",
+        "dhgcbfgc",
+        "hgbfcgfh"
+      ],
+      "usage": {
+        "completion_tokens": 170,
+        "prompt_tokens": 566,
+        "total_tokens": 736,
+        "prompt_tokens_details": {
+          "cached_tokens": 164
+        }
+      },
+      "wall_seconds": 5.894421999997576
+    },
+    {
+      "start": 120,
+      "tables": [
+        "eaaehdgg",
+        "adcgefbh",
+        "hdebfgha",
+        "cgdahghb",
+        "gbdhfghe",
+        "cbfgdheg",
+        "egfbgahf",
+        "bcadefgh",
+        "hcefgdhh",
+        "hahbghfc",
+        "dcbhfghe",
+        "hefgdhhc",
+        "fgdhhcbe",
+        "hfbcdhge",
+        "ehgcbhfe",
+        "dgbfehgf",
+        "dghfbdga",
+        "dghfbdga",
+        "gbdhfghe",
+        "egfbgahf"
+      ],
+      "usage": {
+        "completion_tokens": 172,
+        "prompt_tokens": 587,
+        "total_tokens": 759,
+        "prompt_tokens_details": {
+          "cached_tokens": 167
+        }
+      },
+      "wall_seconds": 6.150916499995219
+    },
+    {
+      "start": 140,
+      "tables": [
+        "gfehdbac",
+        "hahfgbde",
+        "egfbhdae",
+        "cbeghdfd",
+        "hfbegdah",
+        "abecfgfd",
+        "abegfdga",
+        "hfbgdeha",
+        "hgaedfbh",
+        "gfehdgaa",
+        "gfbdeagh",
+        "egfdhfga",
+        "hfbgdeha",
+        "egfbhdae",
+        "gfehdgaa",
+        "gfehdgaa",
+        "hfbegdah",
+        "hfbegdah",
+        "hfbegdah",
+        "hfbegdah"
+      ],
+      "usage": {
+        "completion_tokens": 172,
+        "prompt_tokens": 611,
+        "total_tokens": 783,
+        "prompt_tokens_details": {
+          "cached_tokens": 164
+        }
+      },
+      "wall_seconds": 6.627177624999604
+    },
+    {
+      "start": 160,
+      "tables": [
+        "fghedabf",
+        "hbehfgfc",
+        "cdgfaahg",
+        "fegdchfg",
+        "fgdhafbc",
+        "gcbhfgfc",
+        "fhgdfhgd",
+        "hfgcchfd",
+        "fghdchfg",
+        "hfgfcfhc",
+        "dheafgch",
+        "dchfgahf",
+        "hfbghdgc",
+        "ehdghcfa",
+        "hfgdchfg",
+        "dchfgahf",
+        "dchfgahf",
+        "fgdchfga",
+        "fgdchfga",
+        "fgdchfga"
+      ],
+      "usage": {
+        "completion_tokens": 173,
+        "prompt_tokens": 572,
+        "total_tokens": 745,
+        "prompt_tokens_details": {
+          "cached_tokens": 164
+        }
+      },
+      "wall_seconds": 6.553356542004622
+    },
+    {
+      "start": 180,
+      "tables": [
+        "gdcbehgf",
+        "abegfcdb",
+        "hbahdgfc",
+        "begafdgh",
+        "hgfbdhfg",
+        "eafdbcfh",
+        "ehfgfcfh",
+        "bafecghf",
+        "ceabdfhh",
+        "dffcghhe",
+        "dffcghhe",
+        "fgbhfcgh",
+        "hfgfghfg",
+        "dffbghfg",
+        "gfbhfgfc",
+        "hfgfghfg",
+        "dgbhfgfc",
+        "dgbhfgfc",
+        "hfgfghfg",
+        "hfgfghfg"
+      ],
+      "usage": {
+        "completion_tokens": 166,
+        "prompt_tokens": 560,
+        "total_tokens": 726,
+        "prompt_tokens_details": {
+          "cached_tokens": 162
+        }
+      },
+      "wall_seconds": 6.253886250000505
+    },
+    {
+      "start": 200,
+      "tables": [
+        "cghedhgf",
+        "hgfedhga",
+        "hgedcbeh",
+        "gfhdaegb",
+        "hgfecbah",
+        "hgbfehga",
+        "fgdehgbf",
+        "cegdfhga",
+        "hgfecbah",
+        "gfhdaegb",
+        "fgdehgbf",
+        "gdehgaeb",
+        "hgfecbah",
+        "hgfecbah",
+        "fgdehgbf",
+        "gfhdaegb",
+        "hgfecbah",
+        "gfhdaegb",
+        "gfhdaegb",
+        "gfhdaegb"
+      ],
+      "usage": {
+        "completion_tokens": 168,
+        "prompt_tokens": 617,
+        "total_tokens": 785,
+        "prompt_tokens_details": {
+          "cached_tokens": 162
+        }
+      },
+      "wall_seconds": 6.385588333003398
+    },
+    {
+      "start": 220,
+      "tables": [
+        "fghedcba",
+        "edgabchf",
+        "gabehdfc",
+        "fgdabehc",
+        "bfhcgdae",
+        "dgfhebac",
+        "gacfdghb",
+        "fegdhcbg",
+        "dbeghfcg",
+        "dghfcbea",
+        "fhgcbadg",
+        "ahgdbfcg",
+        "gfbhcdag",
+        "dgfcbeah",
+        "gfhbcdae",
+        "ghfcbead",
+        "ghfcbead",
+        "hdbagfcg",
+        "dabeghfc",
+        "dabeghfc"
+      ],
+      "usage": {
+        "completion_tokens": 168,
+        "prompt_tokens": 605,
+        "total_tokens": 773,
+        "prompt_tokens_details": {
+          "cached_tokens": 164
+        }
+      },
+      "wall_seconds": 6.436226208999869
+    }
+  ]
+}

@@ -1,0 +1,713 @@
+{
+  "dataset": "lending-v1",
+  "seed": 42,
+  "teacher": {
+    "kind": "local_model",
+    "model": "Qwen/Qwen3-4B-GGUF@bc640142c66e1fdd12af0bd68f40445458f3869b Q4_K_M; llama.cpp b12556"
+  },
+  "questions_sha256": "7a3766ea0709c0c22c47736807b423c4e01c8525a78bf36d605d2e970fd3a739",
+  "batch_size": 5,
+  "prompt_sha256": "c74d977d81f98c8b00de66ae3044cae1c192f21b34e77b5935ffddc7e2e6bb45",
+  "lessons": [
+    {
+      "id": "lesson-000",
+      "decision": "decline",
+      "principle": "refusal",
+      "explanation": "The owner already said no, and there is an equally effective authorized alternative, so the use should be declined.",
+      "question": "This is a lending scenario at the workshop. The owner already said no. Someone faces immediate serious harm. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-001",
+      "decision": "decline",
+      "principle": "over_scope",
+      "explanation": "The proposed use goes beyond what is necessary, so it should be declined despite the owner saying no.",
+      "question": "This is a lending scenario at the studio. The owner already said no. There is no immediate danger. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-002",
+      "decision": "allow",
+      "principle": "ask_owner",
+      "explanation": "The owner cannot respond in time, and there is no immediate danger, so the other player may use the item.",
+      "question": "This is a lending scenario at the studio. The owner cannot respond in time. There is no immediate danger. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-003",
+      "decision": "ask",
+      "principle": "ask_owner",
+      "explanation": "The owner can be asked and has given no answer, and the proposed use is limited to what is necessary, so the other player should be asked.",
+      "question": "This is a lending scenario at the clubhouse. The owner can be asked and has given no answer. There is no immediate danger. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-004",
+      "decision": "allow",
+      "principle": "urgent_exception",
+      "explanation": "Someone faces immediate serious harm, and there is no equally effective authorized alternative, so the use should be allowed.",
+      "question": "This is a lending scenario at the theater. The owner already said no. Someone faces immediate serious harm. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-005",
+      "decision": "allow",
+      "principle": "ask_owner",
+      "explanation": "The owner cannot respond in time, there is no immediate danger, and the proposed use is limited to what is necessary, so it is appropriate to ask the owner for permission.",
+      "question": "This is a lending scenario at the workshop. The owner cannot respond in time. There is no immediate danger. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-006",
+      "decision": "decline",
+      "principle": "safer_option",
+      "explanation": "There is an equally effective authorized alternative available, so it is safer to decline the use and opt for the alternative.",
+      "question": "This is a lending scenario at the theater. The owner cannot respond in time. There is no immediate danger. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-007",
+      "decision": "allow",
+      "principle": "urgent_exception",
+      "explanation": "Someone faces immediate serious harm, and there is no equally effective authorized alternative, so it is appropriate to allow the use in an urgent exception.",
+      "question": "This is a lending scenario at the studio. The owner cannot respond in time. Someone faces immediate serious harm. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-008",
+      "decision": "decline",
+      "principle": "safer_option",
+      "explanation": "There is an equally effective authorized alternative available, so it is safer to decline the use and opt for the alternative.",
+      "question": "This is a lending scenario at the studio. The owner cannot respond in time. There is no immediate danger. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-009",
+      "decision": "decline",
+      "principle": "over_scope",
+      "explanation": "The proposed use goes beyond what is necessary, so it is appropriate to decline the use and consider the scope of the request.",
+      "question": "This is a lending scenario at the clubhouse. The owner cannot respond in time. There is no immediate danger. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-010",
+      "decision": "allow",
+      "principle": "permission",
+      "explanation": "The owner already gave permission, so the other player may use the item in this exercise.",
+      "question": "This is a lending scenario at the theater. The owner already gave permission. Someone faces immediate serious harm. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-011",
+      "decision": "decline",
+      "principle": "over_scope",
+      "explanation": "The proposed use goes beyond what is necessary, so the other player may not use the item in this exercise.",
+      "question": "This is a lending scenario at the campsite. The owner already gave permission. Someone faces immediate serious harm. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-012",
+      "decision": "decline",
+      "principle": "over_scope",
+      "explanation": "The proposed use goes beyond what is necessary, so the other player may not use the item in this exercise.",
+      "question": "This is a lending scenario at the campsite. The owner can be asked and has given no answer. There is no immediate danger. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-013",
+      "decision": "ask",
+      "principle": "ask_owner",
+      "explanation": "The owner can be asked and there is no imminent serious harm, so the other player may use the item in this exercise.",
+      "question": "This is a lending scenario at the boathouse. The owner can be asked and has given no answer. There is no immediate danger. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-014",
+      "decision": "decline",
+      "principle": "safer_option",
+      "explanation": "There is an equally effective authorized alternative, so the other player may not use the item in this exercise.",
+      "question": "This is a lending scenario at the campsite. The owner can be asked and has given no answer. There is no immediate danger. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-015",
+      "decision": "decline",
+      "principle": "refusal",
+      "explanation": "The owner explicitly refused, so the use should be declined.",
+      "question": "This is a lending scenario at the theater. The owner already said no. There is no immediate danger. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-016",
+      "decision": "allow",
+      "principle": "urgent_exception",
+      "explanation": "Someone faces immediate serious harm, and an equally effective authorized alternative exists, so the use is allowed.",
+      "question": "This is a lending scenario at the theater. The owner cannot respond in time. Someone faces immediate serious harm. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-017",
+      "decision": "decline",
+      "principle": "over_scope",
+      "explanation": "The proposed use goes beyond what is necessary, so the use should be declined.",
+      "question": "This is a lending scenario at the boathouse. The owner cannot respond in time. Someone faces immediate serious harm. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-018",
+      "decision": "decline",
+      "principle": "safer_option",
+      "explanation": "There is an equally effective authorized alternative, so the use should be declined.",
+      "question": "This is a lending scenario at the studio. The owner can be asked and has given no answer. There is no immediate danger. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-019",
+      "decision": "decline",
+      "principle": "over_scope",
+      "explanation": "The proposed use goes beyond what is necessary, so the use should be declined.",
+      "question": "This is a lending scenario at the workshop. The owner cannot respond in time. There is no immediate danger. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-020",
+      "decision": "decline",
+      "principle": "over_scope",
+      "explanation": "The proposed use goes beyond what is necessary, so it should be declined.",
+      "question": "This is a lending scenario at the clubhouse. The owner can be asked and has given no answer. There is no immediate danger. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-021",
+      "decision": "allow",
+      "principle": "permission",
+      "explanation": "The owner already gave permission, so the other player may use the item.",
+      "question": "This is a lending scenario at the workshop. The owner already gave permission. There is no immediate danger. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-022",
+      "decision": "decline",
+      "principle": "safer_option",
+      "explanation": "There is an equally effective authorized alternative, so the use should be declined.",
+      "question": "This is a lending scenario at the clubhouse. The owner already gave permission. There is no immediate danger. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-023",
+      "decision": "allow",
+      "principle": "ask_owner",
+      "explanation": "The owner cannot respond in time, and there is no imminent serious harm, so the other player may use the item.",
+      "question": "This is a lending scenario at the clubhouse. The owner cannot respond in time. There is no immediate danger. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-024",
+      "decision": "decline",
+      "principle": "over_scope",
+      "explanation": "The proposed use goes beyond what is necessary, so it should be declined.",
+      "question": "This is a lending scenario at the campsite. The owner cannot respond in time. There is no immediate danger. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-025",
+      "decision": "allow",
+      "principle": "urgent_exception",
+      "explanation": "The owner already gave permission, and the proposed use goes beyond what is necessary, but there is no equally effective authorized alternative, so the other player may use the item in this exercise.",
+      "question": "This is a lending scenario at the studio. The owner already gave permission. Someone faces immediate serious harm. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-026",
+      "decision": "decline",
+      "principle": "safer_option",
+      "explanation": "The owner already said no, and there is an equally effective authorized alternative, so the other player may not use the item in this exercise.",
+      "question": "This is a lending scenario at the workshop. The owner already said no. Someone faces immediate serious harm. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-027",
+      "decision": "allow",
+      "principle": "urgent_exception",
+      "explanation": "The owner already gave permission, and someone faces immediate serious harm, so the other player may use the item in this exercise.",
+      "question": "This is a lending scenario at the workshop. The owner already gave permission. Someone faces immediate serious harm. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-028",
+      "decision": "allow",
+      "principle": "urgent_exception",
+      "explanation": "The owner already gave permission, and someone faces immediate serious harm, so the other player may use the item in this exercise.",
+      "question": "This is a lending scenario at the studio. The owner already gave permission. Someone faces immediate serious harm. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-029",
+      "decision": "ask",
+      "principle": "ask_owner",
+      "explanation": "The owner can be asked, and there is an equally effective authorized alternative, so the other player may use the item in this exercise.",
+      "question": "This is a lending scenario at the clubhouse. The owner can be asked and has given no answer. Someone faces immediate serious harm. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-030",
+      "decision": "decline",
+      "principle": "refusal",
+      "explanation": "The owner already said no, so the use should be declined.",
+      "question": "This is a lending scenario at the campsite. The owner already said no. There is no immediate danger. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-031",
+      "decision": "decline",
+      "principle": "over_scope",
+      "explanation": "The proposed use goes beyond the immediate need and there is no equally effective authorized alternative.",
+      "question": "This is a lending scenario at the studio. The owner cannot respond in time. Someone faces immediate serious harm. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-032",
+      "decision": "decline",
+      "principle": "safer_option",
+      "explanation": "There is an equally effective authorized alternative, so the use should be declined.",
+      "question": "This is a lending scenario at the theater. The owner cannot respond in time. There is no immediate danger. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-033",
+      "decision": "allow",
+      "principle": "urgent_exception",
+      "explanation": "Someone faces immediate serious harm, so the use is allowed despite the owner saying no.",
+      "question": "This is a lending scenario at the clubhouse. The owner already said no. Someone faces immediate serious harm. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-034",
+      "decision": "decline",
+      "principle": "over_scope",
+      "explanation": "The proposed use goes beyond what is necessary and there is no equally effective authorized alternative.",
+      "question": "This is a lending scenario at the studio. The owner can be asked and has given no answer. Someone faces immediate serious harm. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-035",
+      "decision": "decline",
+      "principle": "over_scope",
+      "explanation": "The proposed use goes beyond what is necessary, so it should be declined.",
+      "question": "This is a lending scenario at the theater. The owner cannot respond in time. Someone faces immediate serious harm. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-036",
+      "decision": "allow",
+      "principle": "ask_owner",
+      "explanation": "The proposed use is limited to what is necessary and there is no imminent serious harm, so it should be allowed.",
+      "question": "This is a lending scenario at the campsite. The owner cannot respond in time. Someone faces immediate serious harm. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-037",
+      "decision": "decline",
+      "principle": "safer_option",
+      "explanation": "The owner already said no, and there is an equally effective authorized alternative, so it should be declined.",
+      "question": "This is a lending scenario at the clubhouse. The owner already said no. There is no immediate danger. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-038",
+      "decision": "allow",
+      "principle": "ask_owner",
+      "explanation": "The owner can be asked and has given no answer, and there is an equally effective authorized alternative, so it should be allowed.",
+      "question": "This is a lending scenario at the campsite. The owner can be asked and has given no answer. There is no immediate danger. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-039",
+      "decision": "decline",
+      "principle": "safer_option",
+      "explanation": "The owner already said no, and there is no equally effective authorized alternative, so it should be declined.",
+      "question": "This is a lending scenario at the theater. The owner already said no. Someone faces immediate serious harm. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-040",
+      "decision": "decline",
+      "principle": "safer_option",
+      "explanation": "There is an equally effective authorized alternative and the proposed use goes beyond the immediate need, so the safer option is to decline.",
+      "question": "This is a lending scenario at the theater. The owner cannot respond in time. Someone faces immediate serious harm. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-041",
+      "decision": "allow",
+      "principle": "ask_owner",
+      "explanation": "The owner cannot respond in time, there is no immediate danger, and the proposed use is limited to what is necessary, so it is appropriate to ask the owner.",
+      "question": "This is a lending scenario at the campsite. The owner cannot respond in time. There is no immediate danger. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-042",
+      "decision": "allow",
+      "principle": "permission",
+      "explanation": "The owner already gave permission, and even though there is an equally effective authorized alternative, the permission from the owner overrides the alternative.",
+      "question": "This is a lending scenario at the boathouse. The owner already gave permission. Someone faces immediate serious harm. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-043",
+      "decision": "allow",
+      "principle": "ask_owner",
+      "explanation": "The owner cannot respond in time, someone faces immediate serious harm, and the proposed use is limited to what is necessary, so it is appropriate to ask the owner.",
+      "question": "This is a lending scenario at the campsite. The owner cannot respond in time. Someone faces immediate serious harm. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-044",
+      "decision": "decline",
+      "principle": "over_scope",
+      "explanation": "The owner already gave permission, but the proposed use goes beyond what is necessary, so it is appropriate to decline.",
+      "question": "This is a lending scenario at the studio. The owner already gave permission. There is no immediate danger. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-045",
+      "decision": "ask",
+      "principle": "ask_owner",
+      "explanation": "The owner can be asked and has given no answer, there is no imminent serious harm, and there is an equally effective authorized alternative.",
+      "question": "This is a lending scenario at the clubhouse. The owner can be asked and has given no answer. There is no immediate danger. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-046",
+      "decision": "decline",
+      "principle": "safer_option",
+      "explanation": "The owner can be asked and has given no answer, there is no immediate danger, there is an equally effective authorized alternative, and the proposed use goes beyond what is necessary.",
+      "question": "This is a lending scenario at the theater. The owner can be asked and has given no answer. There is no immediate danger. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-047",
+      "decision": "decline",
+      "principle": "over_scope",
+      "explanation": "The owner already gave permission, there is no immediate danger, there is no equally effective authorized alternative, and the proposed use goes beyond what is necessary.",
+      "question": "This is a lending scenario at the theater. The owner already gave permission. There is no immediate danger. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-048",
+      "decision": "decline",
+      "principle": "over_scope",
+      "explanation": "The owner cannot respond in time, there is no immediate danger, there is no equally effective authorized alternative, and the proposed use goes beyond what is necessary.",
+      "question": "This is a lending scenario at the studio. The owner cannot respond in time. There is no immediate danger. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-049",
+      "decision": "allow",
+      "principle": "permission",
+      "explanation": "The owner already gave permission, there is no immediate danger, there is no equally effective authorized alternative, and the proposed use is limited to what is necessary.",
+      "question": "This is a lending scenario at the campsite. The owner already gave permission. There is no immediate danger. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-050",
+      "decision": "decline",
+      "principle": "refusal",
+      "explanation": "The owner already said no, so the use should be declined.",
+      "question": "This is a lending scenario at the theater. The owner already said no. There is no immediate danger. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-051",
+      "decision": "decline",
+      "principle": "over_scope",
+      "explanation": "The proposed use goes beyond what is necessary, so it should be declined.",
+      "question": "This is a lending scenario at the clubhouse. The owner already said no. There is no immediate danger. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-052",
+      "decision": "allow",
+      "principle": "permission",
+      "explanation": "The owner already gave permission, and the use is limited to what is necessary.",
+      "question": "This is a lending scenario at the campsite. The owner already gave permission. Someone faces immediate serious harm. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-053",
+      "decision": "allow",
+      "principle": "urgent_exception",
+      "explanation": "Someone faces immediate serious harm, so the use should be allowed despite the proposed use going beyond what is necessary.",
+      "question": "This is a lending scenario at the studio. The owner can be asked and has given no answer. Someone faces immediate serious harm. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-054",
+      "decision": "allow",
+      "principle": "safer_option",
+      "explanation": "There is an equally effective authorized alternative, so the use should be allowed.",
+      "question": "This is a lending scenario at the campsite. The owner cannot respond in time. There is no immediate danger. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-055",
+      "decision": "allow",
+      "principle": "permission",
+      "explanation": "The owner already gave permission, so the other player may use the item in this exercise.",
+      "question": "This is a lending scenario at the boathouse. The owner already gave permission. There is no immediate danger. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-056",
+      "decision": "decline",
+      "principle": "safer_option",
+      "explanation": "There is an equally effective authorized alternative and someone faces immediate serious harm, so the other player may not use the item in this exercise.",
+      "question": "This is a lending scenario at the boathouse. The owner can be asked and has given no answer. Someone faces immediate serious harm. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-057",
+      "decision": "allow",
+      "principle": "permission",
+      "explanation": "The owner already gave permission, so the other player may use the item in this exercise.",
+      "question": "This is a lending scenario at the clubhouse. The owner already gave permission. Someone faces immediate serious harm. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-058",
+      "decision": "decline",
+      "principle": "safer_option",
+      "explanation": "There is an equally effective authorized alternative and the owner already said no, so the other player may not use the item in this exercise.",
+      "question": "This is a lending scenario at the workshop. The owner already said no. There is no immediate danger. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-059",
+      "decision": "allow",
+      "principle": "urgent_exception",
+      "explanation": "Someone faces immediate serious harm and the proposed use is limited to what is necessary, so the other player may use the item in this exercise.",
+      "question": "This is a lending scenario at the theater. The owner can be asked and has given no answer. Someone faces immediate serious harm. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-060",
+      "decision": "ask",
+      "principle": "ask_owner",
+      "explanation": "The owner can be asked and has given no answer, and there is an equally effective authorized alternative, so it is appropriate to ask the owner for permission.",
+      "question": "This is a lending scenario at the workshop. The owner can be asked and has given no answer. There is no immediate danger. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-061",
+      "decision": "decline",
+      "principle": "refusal",
+      "explanation": "The owner already said no, and there is no equally effective authorized alternative, so the other player should not use the item.",
+      "question": "This is a lending scenario at the studio. The owner already said no. There is no immediate danger. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-062",
+      "decision": "allow",
+      "principle": "permission",
+      "explanation": "The owner already gave permission, and there is immediate serious harm, so the other player may use the item.",
+      "question": "This is a lending scenario at the clubhouse. The owner already gave permission. Someone faces immediate serious harm. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-063",
+      "decision": "ask",
+      "principle": "ask_owner",
+      "explanation": "The owner can be asked and has given no answer, and there is an equally effective authorized alternative, so it is appropriate to ask the owner for permission.",
+      "question": "This is a lending scenario at the studio. The owner can be asked and has given no answer. There is no immediate danger. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-064",
+      "decision": "decline",
+      "principle": "over_scope",
+      "explanation": "The proposed use goes beyond what is necessary, and there is no equally effective authorized alternative, so the other player should not use the item.",
+      "question": "This is a lending scenario at the boathouse. The owner already gave permission. Someone faces immediate serious harm. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-065",
+      "decision": "decline",
+      "principle": "refusal",
+      "explanation": "The owner already said no, and there is an equally effective authorized alternative, so the use should be declined.",
+      "question": "This is a lending scenario at the boathouse. The owner already said no. Someone faces immediate serious harm. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-066",
+      "decision": "decline",
+      "principle": "safer_option",
+      "explanation": "The owner already said no, and there is an equally effective authorized alternative, so the use should be declined.",
+      "question": "This is a lending scenario at the workshop. The owner already said no. There is no immediate danger. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-067",
+      "decision": "allow",
+      "principle": "permission",
+      "explanation": "The owner already gave permission, so the use is allowed despite the presence of an equally effective authorized alternative.",
+      "question": "This is a lending scenario at the campsite. The owner already gave permission. There is no immediate danger. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-068",
+      "decision": "allow",
+      "principle": "permission",
+      "explanation": "The owner already gave permission, so the use is allowed despite the presence of an equally effective authorized alternative.",
+      "question": "This is a lending scenario at the theater. The owner already gave permission. There is no immediate danger. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-069",
+      "decision": "allow",
+      "principle": "urgent_exception",
+      "explanation": "The owner cannot respond in time, someone faces immediate serious harm, and the proposed use goes beyond what is necessary, so the use is allowed under urgent exception.",
+      "question": "This is a lending scenario at the campsite. The owner cannot respond in time. Someone faces immediate serious harm. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-070",
+      "decision": "decline",
+      "principle": "over_scope",
+      "explanation": "The proposed use goes beyond what is necessary, so it should be declined.",
+      "question": "This is a lending scenario at the workshop. The owner can be asked and has given no answer. There is no immediate danger. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-071",
+      "decision": "allow",
+      "principle": "ask_owner",
+      "explanation": "Someone faces immediate serious harm, so the other player may use the item.",
+      "question": "This is a lending scenario at the clubhouse. The owner cannot respond in time. Someone faces immediate serious harm. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-072",
+      "decision": "allow",
+      "principle": "safer_option",
+      "explanation": "There is an equally effective authorized alternative, so the other player may use the item.",
+      "question": "This is a lending scenario at the workshop. The owner can be asked and has given no answer. Someone faces immediate serious harm. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-073",
+      "decision": "decline",
+      "principle": "refusal",
+      "explanation": "The owner already said no, so the other player cannot use the item.",
+      "question": "This is a lending scenario at the clubhouse. The owner already said no. There is no immediate danger. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-074",
+      "decision": "decline",
+      "principle": "over_scope",
+      "explanation": "The proposed use goes beyond what is necessary, so it should be declined.",
+      "question": "This is a lending scenario at the theater. The owner cannot respond in time. There is no immediate danger. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-075",
+      "decision": "decline",
+      "principle": "refusal",
+      "explanation": "The owner already said no, and the proposed use goes beyond what is necessary, so the other player cannot use the item.",
+      "question": "This is a lending scenario at the workshop. The owner already said no. Someone faces immediate serious harm. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-076",
+      "decision": "ask",
+      "principle": "ask_owner",
+      "explanation": "The owner can be asked, and there is no imminent serious harm, so the other player should ask the owner for permission.",
+      "question": "This is a lending scenario at the campsite. The owner can be asked and has given no answer. Someone faces immediate serious harm. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-077",
+      "decision": "allow",
+      "principle": "urgent_exception",
+      "explanation": "The owner cannot respond in time, someone faces immediate serious harm, and there is an equally effective authorized alternative, so the other player can use the item.",
+      "question": "This is a lending scenario at the studio. The owner cannot respond in time. Someone faces immediate serious harm. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-078",
+      "decision": "decline",
+      "principle": "over_scope",
+      "explanation": "The owner already gave permission, but the proposed use goes beyond what is necessary, so the other player cannot use the item.",
+      "question": "This is a lending scenario at the theater. The owner already gave permission. There is no immediate danger. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-079",
+      "decision": "allow",
+      "principle": "urgent_exception",
+      "explanation": "The owner already gave permission, someone faces immediate serious harm, and there is an equally effective authorized alternative, so the other player can use the item.",
+      "question": "This is a lending scenario at the theater. The owner already gave permission. Someone faces immediate serious harm. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-080",
+      "decision": "ask",
+      "principle": "ask_owner",
+      "explanation": "The owner can be asked and has given no answer, and there is no imminent serious harm, so the other player should ask for permission.",
+      "question": "This is a lending scenario at the workshop. The owner can be asked and has given no answer. There is no immediate danger. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-081",
+      "decision": "decline",
+      "principle": "over_scope",
+      "explanation": "The owner already said no, and the proposed use goes beyond what is necessary, so the other player should decline.",
+      "question": "This is a lending scenario at the theater. The owner already said no. There is no immediate danger. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-082",
+      "decision": "allow",
+      "principle": "urgent_exception",
+      "explanation": "The owner already gave permission, and someone faces immediate serious harm, so the other player should allow the use despite the proposed use going beyond what is necessary.",
+      "question": "This is a lending scenario at the boathouse. The owner already gave permission. Someone faces immediate serious harm. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-083",
+      "decision": "allow",
+      "principle": "urgent_exception",
+      "explanation": "The owner can be asked and has given no answer, someone faces immediate serious harm, and there is no equally effective authorized alternative, so the other player should allow the use.",
+      "question": "This is a lending scenario at the boathouse. The owner can be asked and has given no answer. Someone faces immediate serious harm. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-084",
+      "decision": "allow",
+      "principle": "safer_option",
+      "explanation": "The owner already gave permission, and there is an equally effective authorized alternative, so the other player should allow the use.",
+      "question": "This is a lending scenario at the studio. The owner already gave permission. There is no immediate danger. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-085",
+      "decision": "decline",
+      "principle": "safer_option",
+      "explanation": "The owner already gave permission, but there is an equally effective authorized alternative and the proposed use goes beyond what is necessary, so decline and use the safer option.",
+      "question": "This is a lending scenario at the boathouse. The owner already gave permission. There is no immediate danger. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-086",
+      "decision": "allow",
+      "principle": "urgent_exception",
+      "explanation": "The owner cannot respond in time, someone faces immediate serious harm, and the proposed use goes beyond what is necessary, so allow and use the urgent exception.",
+      "question": "This is a lending scenario at the workshop. The owner cannot respond in time. Someone faces immediate serious harm. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-087",
+      "decision": "decline",
+      "principle": "safer_option",
+      "explanation": "The owner already said no, there is an equally effective authorized alternative, and the proposed use goes beyond what is necessary, so decline and use the safer option.",
+      "question": "This is a lending scenario at the studio. The owner already said no. Someone faces immediate serious harm. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-088",
+      "decision": "allow",
+      "principle": "urgent_exception",
+      "explanation": "The owner already gave permission, someone faces immediate serious harm, and the proposed use goes beyond what is necessary, so allow and use the urgent exception.",
+      "question": "This is a lending scenario at the theater. The owner already gave permission. Someone faces immediate serious harm. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-089",
+      "decision": "decline",
+      "principle": "over_scope",
+      "explanation": "The owner already said no, there is no immediate danger, there is no equally effective authorized alternative, and the proposed use goes beyond what is necessary, so decline and use the over_scope principle.",
+      "question": "This is a lending scenario at the boathouse. The owner already said no. There is no immediate danger. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-090",
+      "decision": "ask",
+      "principle": "ask_owner",
+      "explanation": "The owner can be asked and has given no answer, and there is an equally effective authorized alternative, so the other player should ask for permission.",
+      "question": "This is a lending scenario at the studio. The owner can be asked and has given no answer. Someone faces immediate serious harm. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-091",
+      "decision": "decline",
+      "principle": "over_scope",
+      "explanation": "The proposed use goes beyond what is necessary, so the other player should decline to use the item.",
+      "question": "This is a lending scenario at the campsite. The owner already gave permission. There is no immediate danger. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-092",
+      "decision": "allow",
+      "principle": "permission",
+      "explanation": "The owner already gave permission, so the other player can use the item.",
+      "question": "This is a lending scenario at the workshop. The owner already gave permission. There is no immediate danger. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-093",
+      "decision": "decline",
+      "principle": "safer_option",
+      "explanation": "There is an equally effective authorized alternative, so the other player should decline to use the item.",
+      "question": "This is a lending scenario at the boathouse. The owner cannot respond in time. There is no immediate danger. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-094",
+      "decision": "allow",
+      "principle": "urgent_exception",
+      "explanation": "Someone faces immediate serious harm, so the other player can use the item despite the owner saying no.",
+      "question": "This is a lending scenario at the boathouse. The owner already said no. Someone faces immediate serious harm. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-095",
+      "decision": "decline",
+      "principle": "safer_option",
+      "explanation": "The owner can be asked, but there is an equally effective authorized alternative, so the safer option is to decline.",
+      "question": "This is a lending scenario at the theater. The owner can be asked and has given no answer. Someone faces immediate serious harm. There is an equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-096",
+      "decision": "decline",
+      "principle": "over_scope",
+      "explanation": "The proposed use goes beyond what is necessary, so it is declined despite the owner not being able to respond in time.",
+      "question": "This is a lending scenario at the boathouse. The owner cannot respond in time. There is no immediate danger. There is no equally effective authorized alternative. The proposed use goes beyond what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-097",
+      "decision": "allow",
+      "principle": "urgent_exception",
+      "explanation": "The owner already said no, but someone faces immediate serious harm, so the urgent exception allows the use of the item.",
+      "question": "This is a lending scenario at the theater. The owner already said no. Someone faces immediate serious harm. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-098",
+      "decision": "allow",
+      "principle": "urgent_exception",
+      "explanation": "The owner already said no, but someone faces immediate serious harm, so the urgent exception allows the use of the item.",
+      "question": "This is a lending scenario at the boathouse. The owner already said no. Someone faces immediate serious harm. There is no equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    },
+    {
+      "id": "lesson-099",
+      "decision": "allow",
+      "principle": "urgent_exception",
+      "explanation": "The owner already gave permission, but someone faces immediate serious harm, so the urgent exception allows the use of the item.",
+      "question": "This is a lending scenario at the studio. The owner already gave permission. Someone faces immediate serious harm. There is an equally effective authorized alternative. The proposed use is limited to what is necessary. May the other player use the item in this exercise?"
+    }
+  ]
+}

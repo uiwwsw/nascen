@@ -1,0 +1,1145 @@
+{
+  "steps": 300,
+  "question_budget": null,
+  "held_out": [
+    [
+      "coral",
+      "circle"
+    ],
+    [
+      "amber",
+      "square"
+    ],
+    [
+      "blue",
+      "triangle"
+    ],
+    [
+      "violet",
+      "circle"
+    ]
+  ],
+  "seeds": [
+    11,
+    22,
+    33,
+    42,
+    55
+  ],
+  "environment": {
+    "python": "3.14.3",
+    "torch": "2.12.0",
+    "arch": "arm64"
+  },
+  "summary": [
+    {
+      "strategy": "active",
+      "replay": true,
+      "mean_questions": 106.8,
+      "held_out_curve": [
+        {
+          "step": 0,
+          "mean_accuracy": 0.0625,
+          "mean_questions": 0
+        },
+        {
+          "step": 50,
+          "mean_accuracy": 0.25,
+          "mean_questions": 18
+        },
+        {
+          "step": 100,
+          "mean_accuracy": 0.35625,
+          "mean_questions": 37
+        },
+        {
+          "step": 150,
+          "mean_accuracy": 0.41875,
+          "mean_questions": 55.4
+        },
+        {
+          "step": 200,
+          "mean_accuracy": 0.46875,
+          "mean_questions": 72
+        },
+        {
+          "step": 250,
+          "mean_accuracy": 0.64375,
+          "mean_questions": 90
+        },
+        {
+          "step": 300,
+          "mean_accuracy": 0.59375,
+          "mean_questions": 106.8
+        }
+      ],
+      "mean_final_seen_accuracy": 0.671875,
+      "mean_final_prediction_error": 0.23255484351164715
+    },
+    {
+      "strategy": "random",
+      "replay": true,
+      "mean_questions": 53.6,
+      "held_out_curve": [
+        {
+          "step": 0,
+          "mean_accuracy": 0.0625,
+          "mean_questions": 0
+        },
+        {
+          "step": 50,
+          "mean_accuracy": 0.19375,
+          "mean_questions": 9
+        },
+        {
+          "step": 100,
+          "mean_accuracy": 0.20625,
+          "mean_questions": 19.6
+        },
+        {
+          "step": 150,
+          "mean_accuracy": 0.43125,
+          "mean_questions": 26.4
+        },
+        {
+          "step": 200,
+          "mean_accuracy": 0.35,
+          "mean_questions": 34.6
+        },
+        {
+          "step": 250,
+          "mean_accuracy": 0.35625,
+          "mean_questions": 45.6
+        },
+        {
+          "step": 300,
+          "mean_accuracy": 0.3625,
+          "mean_questions": 53.6
+        }
+      ],
+      "mean_final_seen_accuracy": 0.45,
+      "mean_final_prediction_error": 0.2841044280947776
+    },
+    {
+      "strategy": "active",
+      "replay": false,
+      "mean_questions": 107.2,
+      "held_out_curve": [
+        {
+          "step": 0,
+          "mean_accuracy": 0.0625,
+          "mean_questions": 0
+        },
+        {
+          "step": 50,
+          "mean_accuracy": 0.0875,
+          "mean_questions": 18
+        },
+        {
+          "step": 100,
+          "mean_accuracy": 0.18125,
+          "mean_questions": 36.8
+        },
+        {
+          "step": 150,
+          "mean_accuracy": 0.2875,
+          "mean_questions": 55.4
+        },
+        {
+          "step": 200,
+          "mean_accuracy": 0.3,
+          "mean_questions": 72
+        },
+        {
+          "step": 250,
+          "mean_accuracy": 0.35,
+          "mean_questions": 90.2
+        },
+        {
+          "step": 300,
+          "mean_accuracy": 0.36875,
+          "mean_questions": 107.2
+        }
+      ],
+      "mean_final_seen_accuracy": 0.315625,
+      "mean_final_prediction_error": 0.250916900640741
+    }
+  ],
+  "trials": [
+    {
+      "seed": 11,
+      "strategy": "active",
+      "replay": true,
+      "questions": 109,
+      "rejected": 465,
+      "history": [
+        {
+          "step": 0,
+          "accuracy": 0.1875,
+          "seen_accuracy": 0.0,
+          "prediction_error": null,
+          "mean_reward": null,
+          "questions": 0
+        },
+        {
+          "step": 50,
+          "accuracy": 0.1875,
+          "seen_accuracy": 0.25,
+          "prediction_error": 0.21739450097084045,
+          "mean_reward": 0.2467961554011951,
+          "questions": 17
+        },
+        {
+          "step": 100,
+          "accuracy": 0.40625,
+          "seen_accuracy": 0.203125,
+          "prediction_error": 0.14180841516045964,
+          "mean_reward": 0.2526741630157145,
+          "questions": 38
+        },
+        {
+          "step": 150,
+          "accuracy": 0.40625,
+          "seen_accuracy": 0.4375,
+          "prediction_error": 0.22746459974182975,
+          "mean_reward": 0.24132279951435823,
+          "questions": 54
+        },
+        {
+          "step": 200,
+          "accuracy": 0.5,
+          "seen_accuracy": 0.5,
+          "prediction_error": 0.21634366512298583,
+          "mean_reward": 0.2533757404294253,
+          "questions": 70
+        },
+        {
+          "step": 250,
+          "accuracy": 0.5,
+          "seen_accuracy": 0.5,
+          "prediction_error": 0.19073118641972542,
+          "mean_reward": 0.20546119752029576,
+          "questions": 91
+        },
+        {
+          "step": 300,
+          "accuracy": 0.5625,
+          "seen_accuracy": 0.5625,
+          "prediction_error": 0.16355455631301516,
+          "mean_reward": 0.2715163623417417,
+          "questions": 109
+        }
+      ]
+    },
+    {
+      "seed": 22,
+      "strategy": "active",
+      "replay": true,
+      "questions": 107,
+      "rejected": 450,
+      "history": [
+        {
+          "step": 0,
+          "accuracy": 0.0,
+          "seen_accuracy": 0.125,
+          "prediction_error": null,
+          "mean_reward": null,
+          "questions": 0
+        },
+        {
+          "step": 50,
+          "accuracy": 0.4375,
+          "seen_accuracy": 0.3125,
+          "prediction_error": 0.39596911037669463,
+          "mean_reward": 0.18977003490862746,
+          "questions": 18
+        },
+        {
+          "step": 100,
+          "accuracy": 0.34375,
+          "seen_accuracy": 0.296875,
+          "prediction_error": 0.35712609738111495,
+          "mean_reward": 0.23058471273009976,
+          "questions": 35
+        },
+        {
+          "step": 150,
+          "accuracy": 0.46875,
+          "seen_accuracy": 0.46875,
+          "prediction_error": 0.23768537172249385,
+          "mean_reward": 0.2083109010476619,
+          "questions": 54
+        },
+        {
+          "step": 200,
+          "accuracy": 0.5,
+          "seen_accuracy": 0.5,
+          "prediction_error": 0.3050073590129614,
+          "mean_reward": 0.20461936607956885,
+          "questions": 73
+        },
+        {
+          "step": 250,
+          "accuracy": 0.75,
+          "seen_accuracy": 0.75,
+          "prediction_error": 0.20778525372346243,
+          "mean_reward": 0.22702757168813453,
+          "questions": 91
+        },
+        {
+          "step": 300,
+          "accuracy": 0.90625,
+          "seen_accuracy": 0.921875,
+          "prediction_error": 0.32850913625014455,
+          "mean_reward": 0.21111533888305226,
+          "questions": 107
+        }
+      ]
+    },
+    {
+      "seed": 33,
+      "strategy": "active",
+      "replay": true,
+      "questions": 106,
+      "rejected": 452,
+      "history": [
+        {
+          "step": 0,
+          "accuracy": 0.0,
+          "seen_accuracy": 0.0,
+          "prediction_error": null,
+          "mean_reward": null,
+          "questions": 0
+        },
+        {
+          "step": 50,
+          "accuracy": 0.21875,
+          "seen_accuracy": 0.296875,
+          "prediction_error": 0.301536920823549,
+          "mean_reward": 0.21741754048193493,
+          "questions": 18
+        },
+        {
+          "step": 100,
+          "accuracy": 0.40625,
+          "seen_accuracy": 0.453125,
+          "prediction_error": 0.12860952755984137,
+          "mean_reward": 0.26252582849992906,
+          "questions": 38
+        },
+        {
+          "step": 150,
+          "accuracy": 0.375,
+          "seen_accuracy": 0.40625,
+          "prediction_error": 0.29991425946354866,
+          "mean_reward": 0.2085883681458654,
+          "questions": 56
+        },
+        {
+          "step": 200,
+          "accuracy": 0.5,
+          "seen_accuracy": 0.484375,
+          "prediction_error": 0.18437694562108894,
+          "mean_reward": 0.25033056987139085,
+          "questions": 72
+        },
+        {
+          "step": 250,
+          "accuracy": 0.59375,
+          "seen_accuracy": 0.59375,
+          "prediction_error": 0.12010927200317383,
+          "mean_reward": 0.26670880519164103,
+          "questions": 89
+        },
+        {
+          "step": 300,
+          "accuracy": 0.53125,
+          "seen_accuracy": 0.53125,
+          "prediction_error": 0.21094352320620888,
+          "mean_reward": 0.23584320086364943,
+          "questions": 106
+        }
+      ]
+    },
+    {
+      "seed": 42,
+      "strategy": "active",
+      "replay": true,
+      "questions": 105,
+      "rejected": 452,
+      "history": [
+        {
+          "step": 0,
+          "accuracy": 0.125,
+          "seen_accuracy": 0.15625,
+          "prediction_error": null,
+          "mean_reward": null,
+          "questions": 0
+        },
+        {
+          "step": 50,
+          "accuracy": 0.25,
+          "seen_accuracy": 0.3125,
+          "prediction_error": 0.25645173537103755,
+          "mean_reward": 0.2250085631199181,
+          "questions": 18
+        },
+        {
+          "step": 100,
+          "accuracy": 0.5625,
+          "seen_accuracy": 0.5625,
+          "prediction_error": 0.2745420399465059,
+          "mean_reward": 0.21039568436642486,
+          "questions": 37
+        },
+        {
+          "step": 150,
+          "accuracy": 0.375,
+          "seen_accuracy": 0.375,
+          "prediction_error": 0.14167741313576698,
+          "mean_reward": 0.24792253462597727,
+          "questions": 57
+        },
+        {
+          "step": 200,
+          "accuracy": 0.3125,
+          "seen_accuracy": 0.375,
+          "prediction_error": 0.22600064012739393,
+          "mean_reward": 0.2217491052330782,
+          "questions": 73
+        },
+        {
+          "step": 250,
+          "accuracy": 0.90625,
+          "seen_accuracy": 0.921875,
+          "prediction_error": 0.094124246211279,
+          "mean_reward": 0.28355837831894554,
+          "questions": 89
+        },
+        {
+          "step": 300,
+          "accuracy": 0.59375,
+          "seen_accuracy": 0.6875,
+          "prediction_error": 0.1602465108036995,
+          "mean_reward": 0.2621436282247305,
+          "questions": 105
+        }
+      ]
+    },
+    {
+      "seed": 55,
+      "strategy": "active",
+      "replay": true,
+      "questions": 107,
+      "rejected": 439,
+      "history": [
+        {
+          "step": 0,
+          "accuracy": 0.0,
+          "seen_accuracy": 0.125,
+          "prediction_error": null,
+          "mean_reward": null,
+          "questions": 0
+        },
+        {
+          "step": 50,
+          "accuracy": 0.15625,
+          "seen_accuracy": 0.109375,
+          "prediction_error": 0.2627941370010376,
+          "mean_reward": 0.26401523580464226,
+          "questions": 19
+        },
+        {
+          "step": 100,
+          "accuracy": 0.0625,
+          "seen_accuracy": 0.28125,
+          "prediction_error": 0.16636216309335497,
+          "mean_reward": 0.24705883283168079,
+          "questions": 37
+        },
+        {
+          "step": 150,
+          "accuracy": 0.46875,
+          "seen_accuracy": 0.703125,
+          "prediction_error": 0.16286106035113335,
+          "mean_reward": 0.227281696141387,
+          "questions": 56
+        },
+        {
+          "step": 200,
+          "accuracy": 0.53125,
+          "seen_accuracy": 0.734375,
+          "prediction_error": 0.25151346458329094,
+          "mean_reward": 0.24087981193947294,
+          "questions": 72
+        },
+        {
+          "step": 250,
+          "accuracy": 0.46875,
+          "seen_accuracy": 0.671875,
+          "prediction_error": 0.21100155617061414,
+          "mean_reward": 0.24693896833652007,
+          "questions": 90
+        },
+        {
+          "step": 300,
+          "accuracy": 0.375,
+          "seen_accuracy": 0.65625,
+          "prediction_error": 0.29952049098516764,
+          "mean_reward": 0.22337321726915735,
+          "questions": 107
+        }
+      ]
+    },
+    {
+      "seed": 11,
+      "strategy": "random",
+      "replay": true,
+      "questions": 49,
+      "rejected": 406,
+      "history": [
+        {
+          "step": 0,
+          "accuracy": 0.1875,
+          "seen_accuracy": 0.0,
+          "prediction_error": null,
+          "mean_reward": null,
+          "questions": 0
+        },
+        {
+          "step": 50,
+          "accuracy": 0.15625,
+          "seen_accuracy": 0.203125,
+          "prediction_error": 0.3932784408330917,
+          "mean_reward": 0.19916833236192663,
+          "questions": 8
+        },
+        {
+          "step": 100,
+          "accuracy": 0.0,
+          "seen_accuracy": 0.203125,
+          "prediction_error": 0.27182565033435824,
+          "mean_reward": 0.21543168563395737,
+          "questions": 17
+        },
+        {
+          "step": 150,
+          "accuracy": 0.40625,
+          "seen_accuracy": 0.40625,
+          "prediction_error": 0.2957385915021102,
+          "mean_reward": 0.22490427762269974,
+          "questions": 22
+        },
+        {
+          "step": 200,
+          "accuracy": 0.21875,
+          "seen_accuracy": 0.328125,
+          "prediction_error": 0.21088141409887207,
+          "mean_reward": 0.22090356561044852,
+          "questions": 32
+        },
+        {
+          "step": 250,
+          "accuracy": 0.25,
+          "seen_accuracy": 0.28125,
+          "prediction_error": 0.3084252248207728,
+          "mean_reward": 0.14036377737589645,
+          "questions": 43
+        },
+        {
+          "step": 300,
+          "accuracy": 0.25,
+          "seen_accuracy": 0.28125,
+          "prediction_error": 0.22591932428379854,
+          "mean_reward": 0.2414565553764502,
+          "questions": 49
+        }
+      ]
+    },
+    {
+      "seed": 22,
+      "strategy": "random",
+      "replay": true,
+      "questions": 60,
+      "rejected": 393,
+      "history": [
+        {
+          "step": 0,
+          "accuracy": 0.0,
+          "seen_accuracy": 0.125,
+          "prediction_error": null,
+          "mean_reward": null,
+          "questions": 0
+        },
+        {
+          "step": 50,
+          "accuracy": 0.25,
+          "seen_accuracy": 0.3125,
+          "prediction_error": 0.3075674805376265,
+          "mean_reward": 0.21985266981801638,
+          "questions": 14
+        },
+        {
+          "step": 100,
+          "accuracy": 0.25,
+          "seen_accuracy": 0.3125,
+          "prediction_error": 0.3082779475620815,
+          "mean_reward": 0.22109970364098747,
+          "questions": 23
+        },
+        {
+          "step": 150,
+          "accuracy": 0.25,
+          "seen_accuracy": 0.34375,
+          "prediction_error": 0.439889216109326,
+          "mean_reward": 0.15676870424300432,
+          "questions": 32
+        },
+        {
+          "step": 200,
+          "accuracy": 0.28125,
+          "seen_accuracy": 0.359375,
+          "prediction_error": 0.340120541660682,
+          "mean_reward": 0.19115873982508977,
+          "questions": 40
+        },
+        {
+          "step": 250,
+          "accuracy": 0.5,
+          "seen_accuracy": 0.5,
+          "prediction_error": 0.2583654307656818,
+          "mean_reward": 0.19433851461236673,
+          "questions": 51
+        },
+        {
+          "step": 300,
+          "accuracy": 0.625,
+          "seen_accuracy": 0.625,
+          "prediction_error": 0.184761880338192,
+          "mean_reward": 0.2292762943714236,
+          "questions": 60
+        }
+      ]
+    },
+    {
+      "seed": 33,
+      "strategy": "random",
+      "replay": true,
+      "questions": 49,
+      "rejected": 437,
+      "history": [
+        {
+          "step": 0,
+          "accuracy": 0.0,
+          "seen_accuracy": 0.0,
+          "prediction_error": null,
+          "mean_reward": null,
+          "questions": 0
+        },
+        {
+          "step": 50,
+          "accuracy": 0.21875,
+          "seen_accuracy": 0.015625,
+          "prediction_error": 0.4263372912126429,
+          "mean_reward": 0.15263024224899707,
+          "questions": 6
+        },
+        {
+          "step": 100,
+          "accuracy": 0.4375,
+          "seen_accuracy": 0.21875,
+          "prediction_error": 0.3265303075313568,
+          "mean_reward": 0.19443490621944268,
+          "questions": 21
+        },
+        {
+          "step": 150,
+          "accuracy": 0.4375,
+          "seen_accuracy": 0.4375,
+          "prediction_error": 0.3972373535999885,
+          "mean_reward": 0.20716268638769783,
+          "questions": 26
+        },
+        {
+          "step": 200,
+          "accuracy": 0.46875,
+          "seen_accuracy": 0.46875,
+          "prediction_error": 0.3437468927839528,
+          "mean_reward": 0.22418884182969728,
+          "questions": 32
+        },
+        {
+          "step": 250,
+          "accuracy": 0.46875,
+          "seen_accuracy": 0.46875,
+          "prediction_error": 0.30898754533968475,
+          "mean_reward": 0.21364774135251838,
+          "questions": 39
+        },
+        {
+          "step": 300,
+          "accuracy": 0.5,
+          "seen_accuracy": 0.5,
+          "prediction_error": 0.38000629656016827,
+          "mean_reward": 0.15455873540292184,
+          "questions": 49
+        }
+      ]
+    },
+    {
+      "seed": 42,
+      "strategy": "random",
+      "replay": true,
+      "questions": 53,
+      "rejected": 431,
+      "history": [
+        {
+          "step": 0,
+          "accuracy": 0.125,
+          "seen_accuracy": 0.15625,
+          "prediction_error": null,
+          "mean_reward": null,
+          "questions": 0
+        },
+        {
+          "step": 50,
+          "accuracy": 0.0,
+          "seen_accuracy": 0.125,
+          "prediction_error": 0.3464510589838028,
+          "mean_reward": 0.15279952550772577,
+          "questions": 8
+        },
+        {
+          "step": 100,
+          "accuracy": 0.03125,
+          "seen_accuracy": 0.21875,
+          "prediction_error": 0.3530238214880228,
+          "mean_reward": 0.18031934081266324,
+          "questions": 19
+        },
+        {
+          "step": 150,
+          "accuracy": 0.4375,
+          "seen_accuracy": 0.4375,
+          "prediction_error": 0.42381048798561094,
+          "mean_reward": 0.1600305145482222,
+          "questions": 26
+        },
+        {
+          "step": 200,
+          "accuracy": 0.4375,
+          "seen_accuracy": 0.4375,
+          "prediction_error": 0.19421975549898648,
+          "mean_reward": 0.22177978491177783,
+          "questions": 35
+        },
+        {
+          "step": 250,
+          "accuracy": 0.125,
+          "seen_accuracy": 0.34375,
+          "prediction_error": 0.4158020160264439,
+          "mean_reward": 0.1544344743185987,
+          "questions": 48
+        },
+        {
+          "step": 300,
+          "accuracy": 0.1875,
+          "seen_accuracy": 0.46875,
+          "prediction_error": 0.33096046813509683,
+          "mean_reward": 0.2077964044859012,
+          "questions": 53
+        }
+      ]
+    },
+    {
+      "seed": 55,
+      "strategy": "random",
+      "replay": true,
+      "questions": 57,
+      "rejected": 421,
+      "history": [
+        {
+          "step": 0,
+          "accuracy": 0.0,
+          "seen_accuracy": 0.125,
+          "prediction_error": null,
+          "mean_reward": null,
+          "questions": 0
+        },
+        {
+          "step": 50,
+          "accuracy": 0.34375,
+          "seen_accuracy": 0.203125,
+          "prediction_error": 0.35965224574593935,
+          "mean_reward": 0.1874042995367199,
+          "questions": 9
+        },
+        {
+          "step": 100,
+          "accuracy": 0.3125,
+          "seen_accuracy": 0.1875,
+          "prediction_error": 0.46170899271965027,
+          "mean_reward": 0.1683947682722161,
+          "questions": 18
+        },
+        {
+          "step": 150,
+          "accuracy": 0.625,
+          "seen_accuracy": 0.8125,
+          "prediction_error": 0.33337613567709923,
+          "mean_reward": 0.1722300620516762,
+          "questions": 26
+        },
+        {
+          "step": 200,
+          "accuracy": 0.34375,
+          "seen_accuracy": 0.421875,
+          "prediction_error": 0.2551707953214645,
+          "mean_reward": 0.2285385448268304,
+          "questions": 34
+        },
+        {
+          "step": 250,
+          "accuracy": 0.4375,
+          "seen_accuracy": 0.375,
+          "prediction_error": 0.3263273572220522,
+          "mean_reward": 0.16783392312393214,
+          "questions": 47
+        },
+        {
+          "step": 300,
+          "accuracy": 0.25,
+          "seen_accuracy": 0.375,
+          "prediction_error": 0.2988741711566323,
+          "mean_reward": 0.1938453378031651,
+          "questions": 57
+        }
+      ]
+    },
+    {
+      "seed": 11,
+      "strategy": "active",
+      "replay": false,
+      "questions": 109,
+      "rejected": 467,
+      "history": [
+        {
+          "step": 0,
+          "accuracy": 0.1875,
+          "seen_accuracy": 0.0,
+          "prediction_error": null,
+          "mean_reward": null,
+          "questions": 0
+        },
+        {
+          "step": 50,
+          "accuracy": 0.0,
+          "seen_accuracy": 0.125,
+          "prediction_error": 0.18255552649497986,
+          "mean_reward": 0.26536148551230626,
+          "questions": 17
+        },
+        {
+          "step": 100,
+          "accuracy": 0.21875,
+          "seen_accuracy": 0.1875,
+          "prediction_error": 0.2553774697913064,
+          "mean_reward": 0.2656508983679426,
+          "questions": 37
+        },
+        {
+          "step": 150,
+          "accuracy": 0.40625,
+          "seen_accuracy": 0.40625,
+          "prediction_error": 0.23952501018842062,
+          "mean_reward": 0.28004797777316226,
+          "questions": 53
+        },
+        {
+          "step": 200,
+          "accuracy": 0.25,
+          "seen_accuracy": 0.125,
+          "prediction_error": 0.2676633924245834,
+          "mean_reward": 0.2844431437916743,
+          "questions": 69
+        },
+        {
+          "step": 250,
+          "accuracy": 0.09375,
+          "seen_accuracy": 0.21875,
+          "prediction_error": 0.2707132120927175,
+          "mean_reward": 0.24133938834381602,
+          "questions": 91
+        },
+        {
+          "step": 300,
+          "accuracy": 0.40625,
+          "seen_accuracy": 0.40625,
+          "prediction_error": 0.13970941872823806,
+          "mean_reward": 0.3085315778770624,
+          "questions": 109
+        }
+      ]
+    },
+    {
+      "seed": 22,
+      "strategy": "active",
+      "replay": false,
+      "questions": 107,
+      "rejected": 441,
+      "history": [
+        {
+          "step": 0,
+          "accuracy": 0.0,
+          "seen_accuracy": 0.125,
+          "prediction_error": null,
+          "mean_reward": null,
+          "questions": 0
+        },
+        {
+          "step": 50,
+          "accuracy": 0.1875,
+          "seen_accuracy": 0.15625,
+          "prediction_error": 0.4470980395289028,
+          "mean_reward": 0.21183446779459095,
+          "questions": 18
+        },
+        {
+          "step": 100,
+          "accuracy": 0.0,
+          "seen_accuracy": 0.25,
+          "prediction_error": 0.35189154744148254,
+          "mean_reward": 0.26347182660053176,
+          "questions": 35
+        },
+        {
+          "step": 150,
+          "accuracy": 0.375,
+          "seen_accuracy": 0.5625,
+          "prediction_error": 0.29508208770018357,
+          "mean_reward": 0.23060693265986626,
+          "questions": 55
+        },
+        {
+          "step": 200,
+          "accuracy": 0.3125,
+          "seen_accuracy": 0.3125,
+          "prediction_error": 0.32093847148558674,
+          "mean_reward": 0.25508056968993814,
+          "questions": 73
+        },
+        {
+          "step": 250,
+          "accuracy": 0.125,
+          "seen_accuracy": 0.25,
+          "prediction_error": 0.4137364410691791,
+          "mean_reward": 0.2330109356692992,
+          "questions": 91
+        },
+        {
+          "step": 300,
+          "accuracy": 0.25,
+          "seen_accuracy": 0.375,
+          "prediction_error": 0.3211093231251365,
+          "mean_reward": 0.24963936286522465,
+          "questions": 107
+        }
+      ]
+    },
+    {
+      "seed": 33,
+      "strategy": "active",
+      "replay": false,
+      "questions": 106,
+      "rejected": 447,
+      "history": [
+        {
+          "step": 0,
+          "accuracy": 0.0,
+          "seen_accuracy": 0.0,
+          "prediction_error": null,
+          "mean_reward": null,
+          "questions": 0
+        },
+        {
+          "step": 50,
+          "accuracy": 0.0,
+          "seen_accuracy": 0.25,
+          "prediction_error": 0.3740137235114449,
+          "mean_reward": 0.2467514108121395,
+          "questions": 18
+        },
+        {
+          "step": 100,
+          "accuracy": 0.25,
+          "seen_accuracy": 0.25,
+          "prediction_error": 0.15835615466622746,
+          "mean_reward": 0.27696874069049954,
+          "questions": 38
+        },
+        {
+          "step": 150,
+          "accuracy": 0.15625,
+          "seen_accuracy": 0.15625,
+          "prediction_error": 0.42220715060830116,
+          "mean_reward": 0.22660032244088749,
+          "questions": 56
+        },
+        {
+          "step": 200,
+          "accuracy": 0.3125,
+          "seen_accuracy": 0.15625,
+          "prediction_error": 0.20189470366427772,
+          "mean_reward": 0.28709710241295394,
+          "questions": 72
+        },
+        {
+          "step": 250,
+          "accuracy": 0.3125,
+          "seen_accuracy": 0.46875,
+          "prediction_error": 0.10797824263572693,
+          "mean_reward": 0.28602334994822737,
+          "questions": 89
+        },
+        {
+          "step": 300,
+          "accuracy": 0.25,
+          "seen_accuracy": 0.15625,
+          "prediction_error": 0.27144877534163625,
+          "mean_reward": 0.2675145987949023,
+          "questions": 106
+        }
+      ]
+    },
+    {
+      "seed": 42,
+      "strategy": "active",
+      "replay": false,
+      "questions": 106,
+      "rejected": 448,
+      "history": [
+        {
+          "step": 0,
+          "accuracy": 0.125,
+          "seen_accuracy": 0.15625,
+          "prediction_error": null,
+          "mean_reward": null,
+          "questions": 0
+        },
+        {
+          "step": 50,
+          "accuracy": 0.25,
+          "seen_accuracy": 0.28125,
+          "prediction_error": 0.31982358505851344,
+          "mean_reward": 0.2479334961591909,
+          "questions": 18
+        },
+        {
+          "step": 100,
+          "accuracy": 0.375,
+          "seen_accuracy": 0.1875,
+          "prediction_error": 0.276801649677126,
+          "mean_reward": 0.25001388031678895,
+          "questions": 37
+        },
+        {
+          "step": 150,
+          "accuracy": 0.25,
+          "seen_accuracy": 0.3125,
+          "prediction_error": 0.21717892587184906,
+          "mean_reward": 0.26762253441226974,
+          "questions": 57
+        },
+        {
+          "step": 200,
+          "accuracy": 0.5,
+          "seen_accuracy": 0.40625,
+          "prediction_error": 0.24756674634085762,
+          "mean_reward": 0.2741501605552427,
+          "questions": 73
+        },
+        {
+          "step": 250,
+          "accuracy": 0.65625,
+          "seen_accuracy": 0.484375,
+          "prediction_error": 0.10504312458492461,
+          "mean_reward": 0.31120716850763225,
+          "questions": 89
+        },
+        {
+          "step": 300,
+          "accuracy": 0.4375,
+          "seen_accuracy": 0.390625,
+          "prediction_error": 0.18763426416798643,
+          "mean_reward": 0.29753110171994196,
+          "questions": 106
+        }
+      ]
+    },
+    {
+      "seed": 55,
+      "strategy": "active",
+      "replay": false,
+      "questions": 108,
+      "rejected": 446,
+      "history": [
+        {
+          "step": 0,
+          "accuracy": 0.0,
+          "seen_accuracy": 0.125,
+          "prediction_error": null,
+          "mean_reward": null,
+          "questions": 0
+        },
+        {
+          "step": 50,
+          "accuracy": 0.0,
+          "seen_accuracy": 0.203125,
+          "prediction_error": 0.25981720089912413,
+          "mean_reward": 0.28660178893711413,
+          "questions": 19
+        },
+        {
+          "step": 100,
+          "accuracy": 0.0625,
+          "seen_accuracy": 0.109375,
+          "prediction_error": 0.23845195604695213,
+          "mean_reward": 0.24363507556418576,
+          "questions": 37
+        },
+        {
+          "step": 150,
+          "accuracy": 0.25,
+          "seen_accuracy": 0.25,
+          "prediction_error": 0.23209687508642673,
+          "mean_reward": 0.27030450946340956,
+          "questions": 56
+        },
+        {
+          "step": 200,
+          "accuracy": 0.125,
+          "seen_accuracy": 0.15625,
+          "prediction_error": 0.20372621218363443,
+          "mean_reward": 0.2809969827812165,
+          "questions": 73
+        },
+        {
+          "step": 250,
+          "accuracy": 0.5625,
+          "seen_accuracy": 0.375,
+          "prediction_error": 0.19044654667377472,
+          "mean_reward": 0.2739376547901581,
+          "questions": 91
+        },
+        {
+          "step": 300,
+          "accuracy": 0.5,
+          "seen_accuracy": 0.25,
+          "prediction_error": 0.33468272184070785,
+          "mean_reward": 0.25634850837872364,
+          "questions": 108
+        }
+      ]
+    }
+  ]
+}

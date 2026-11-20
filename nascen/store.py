@@ -70,7 +70,7 @@ class Store:
     def _load(db: sqlite3.Connection, expected_run: int | None = None) -> tuple[int, Experiment]:
         run = db.execute("SELECT * FROM runs ORDER BY id DESC LIMIT 1").fetchone()
         if expected_run is not None and run["id"] != expected_run:
-            raise StaleRun("This run changed. Refresh the lab and try again.")
+            raise StaleRun("The current run changed. Run status and try again.")
         recent = db.execute(
             "SELECT payload FROM experiences WHERE run_id = ? ORDER BY step DESC LIMIT ?",
             (run["id"], MEMORY_SIZE),
@@ -116,7 +116,7 @@ class Store:
                 if type(teach_id) is not int or teach_id not in experiment.world.objects or count != 1:
                     raise InvalidRequest("Choose an object for a single teaching interaction.")
                 if scene != experiment.world.scene + 1:
-                    raise StaleRun("The scene changed. Refresh the lab and choose an object again.")
+                    raise StaleRun("The scene changed. Run status and choose an object again.")
 
             for _ in range(count):
                 record = experiment.advance(teach_id)
@@ -134,7 +134,7 @@ class Store:
             db.execute("BEGIN IMMEDIATE")
             _, experiment = self._load(db, run_id)
             if not experiment.records or step != experiment.steps:
-                raise StaleRun("The latest experience changed. Refresh before sending feedback.")
+                raise StaleRun("There is no current experience to rate at that step. Run status and try again.")
             if experiment.records[-1]["approval"] is not None:
                 raise StaleRun("Feedback has already been recorded for this experience.")
             record = experiment.feedback(approval)

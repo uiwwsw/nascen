@@ -37,6 +37,18 @@ class WorldTests(TestCase):
 
 
 class LearningTests(TestCase):
+    def test_question_budget_limits_both_explicit_and_policy_requests(self):
+        for strategy in ("active", "random"):
+            with self.subTest(strategy=strategy):
+                experiment = Experiment(42, strategy, question_budget=1)
+                experiment.advance(teach_id=1)
+                with self.assertRaisesRegex(ValueError, "exhausted"):
+                    experiment.advance(teach_id=2)
+                for _ in range(30):
+                    self.assertNotEqual(experiment.advance()["action"], "ask")
+                self.assertEqual(experiment.questions, 1)
+                self.assertEqual(experiment.steps, 31)
+
     def test_mentor_experience_updates_concepts_and_feedback_only_updates_preference(self):
         experiment = Experiment(42, "active")
         initial = experiment.learner.checkpoint()

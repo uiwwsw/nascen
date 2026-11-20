@@ -36,11 +36,12 @@ SEEN_PROBE = probe(TRAIN_PAIRS)
 class Experiment:
     def __init__(
         self, seed: int, strategy: str, replay: bool = True, *,
-        state: dict | None = None, records: list[dict] | None = None,
+        state: dict | None = None, records: list[dict] | None = None, question_budget: int | None = None,
     ):
         self.seed = seed
         self.strategy = strategy
         self.replay = replay
+        self.question_budget = question_budget
         self.learner = Learner(seed)
         self.records = list(records or [])
         if state is None:
@@ -112,13 +113,18 @@ class Experiment:
         return max(candidates, key=score)
 
     def advance(self, teach_id: int | None = None) -> dict:
+        can_ask = self.question_budget is None or self.questions < self.question_budget
+        if teach_id is not None and not can_ask:
+            raise ValueError("This run exhausted its mentor question budget.")
+
         rng = Random(self.seed * 1_000_003 + self.steps * 97 + 43)
         proposed = [(obj, action) for obj in self.world.objects.values() for action in ACTIONS]
         allowed = [(obj, action) for obj, action in proposed if self.world.allowed(obj, action)]
         rejected = len(proposed) - len(allowed)
         self.rejected += rejected
+        candidates = allowed if can_ask else [(obj, action) for obj, action in allowed if action != "ask"]
 
-        obj, action = self._select(allowed, rng) if teach_id is None else (self.world.objects[teach_id], "ask")
+        obj, action = self._select(candidates, rng) if teach_id is None else (self.world.objects[teach_id], "ask")
         visit = f"{obj.id}:{action}"
         count = self.visits.get(visit, 0)
         self.visits[visit] = count + 1

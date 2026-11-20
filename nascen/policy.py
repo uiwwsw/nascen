@@ -5,9 +5,19 @@ from random import Random
 
 import torch
 
+from .knowledge import Verification
 from .model import Learner
 
 QUESTION_STRATEGIES = ("random", "uncertainty", "progress")
+
+
+def verification_bonus(verification: Verification, new_evidence: bool) -> float:
+    """Prefer independent rechecks of open hypotheses."""
+    if not new_evidence:
+        return -0.25
+    if verification.status == "verified":
+        return -0.10
+    return 0.22 if verification.votes else 0.0
 
 
 @torch.no_grad()

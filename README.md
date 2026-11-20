@@ -37,6 +37,8 @@ flowchart LR
 
 ## 바로 실행하기
 
+새 데이터베이스는 v0.3 선택 학습으로 시작합니다. `python -m nascen knowledge`로 가설과 증거를 확인할 수 있으며, `reset --learning immediate`로 v0.2 방식도 실행할 수 있습니다.
+
 Python 3.12~3.14와 CPU를 사용합니다. Linux x86-64와 macOS 14 이상 Apple Silicon에서 검증했습니다.
 
 ```sh

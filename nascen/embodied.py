@@ -43,6 +43,7 @@ def vision_probes(encoder: str) -> tuple:
 
 class EmbodiedExperiment(Experiment):
     world: EmbodiedWorld
+    version = MODEL_VERSION
 
     def __init__(
         self, seed: int, strategy: str, replay: bool = True, *,
@@ -65,7 +66,7 @@ class EmbodiedExperiment(Experiment):
 
     def checkpoint(self) -> dict:
         return super().checkpoint() | {
-            "model_version": MODEL_VERSION, "config": asdict(self.config), "position": self.world.agent,
+            "model_version": self.version, "config": asdict(self.config), "position": self.world.agent,
         }
 
     def _select_action(
@@ -77,12 +78,13 @@ class EmbodiedExperiment(Experiment):
             return selected[0]
 
         asks = [option.target for option in options if option.name == "ask"]
-        gains = [(record["visual"], record["learning_gain"]) for record in self.records if record["target"] is not None]
+        gains = self._question_gains()
         scores = question_scores(
             self.learner, [visuals[target] for target in asks], self.config.question_strategy, gains, rng,
         )
         query_scores = dict(zip(asks, scores, strict=True))
         zero = [0.0] * self.learner.visual_size
+        biases = self._action_biases(view, options)
 
         @torch.no_grad()
         def rank(option: Action) -> float:
@@ -100,9 +102,18 @@ class EmbodiedExperiment(Experiment):
             else:
                 base = 0.52 if name in DIRECTIONS else 0.37
                 exploration = base / sqrt(1 + self.visits.get(f"{target}:{name}", 0))
-            return exploration + 0.16 * learned + rng.random() * 0.1
+            return exploration + 0.16 * learned + rng.random() * 0.1 + biases.get(option, 0.0)
 
         return max(options, key=rank)
+
+    def _action_biases(self, view: LocalView, options: list[Action]) -> dict[Action, float]:
+        return {}
+
+    def _question_gains(self) -> list[tuple[list[float], float]]:
+        return [(record["visual"], record["learning_gain"]) for record in self.records if record["target"] is not None]
+
+    def _process_experience(self, view: LocalView, action: Action, record: dict, rng: Random) -> tuple[float, bool]:
+        return self._update_models(record, rng), True
 
     @staticmethod
     def _context(view: LocalView, action: Action) -> list[float]:
@@ -157,14 +168,15 @@ class EmbodiedExperiment(Experiment):
             record["question_cost"] = self.config.question_cost
             self.questions += 1
 
-        gain = self._update_models(record, rng)
+        gain, consolidated = self._process_experience(view, selected, record, rng)
         record["learning_gain"] = gain
         record["reward_parts"] = {
             "help": float(outcome is True), "approval": 0.0, "curiosity": gain,
             "cooperation": float(label is not None and not self.visits.get(f"{target}:ask")),
         }
         record["reward"] = reward_value(record["reward_parts"]) - record.get("question_cost", 0.0)
-        self.learner.train_reward(appearance, context, selected.name, record["reward"])
+        if consolidated:
+            self.learner.train_reward(appearance, context, selected.name, record["reward"])
         key = f"{target}:{selected.name}"
         self.visits[key] = self.visits.get(key, 0) + 1
         cell = f"cell:{self.world.agent}"

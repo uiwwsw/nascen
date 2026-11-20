@@ -8,6 +8,7 @@ import sqlite3
 
 from .embodied import MODEL_VERSION, EmbodiedConfig, EmbodiedExperiment
 from .experiment import MEMORY_SIZE, STRATEGIES, Experiment
+from .selective import SELECTIVE_VERSION, SelectiveExperiment
 from .world import COLORS, SHAPES
 
 HISTORY_SIZE = 80
@@ -24,7 +25,7 @@ class StaleRun(InvalidRequest):
 
 
 class Store:
-    def __init__(self, path: Path, default_config: EmbodiedConfig | None = None):
+    def __init__(self, path: Path, default_config: EmbodiedConfig | None = None, *, selective: bool = False):
         self.path = path
         path.parent.mkdir(parents=True, exist_ok=True)
         with self._connect() as db:
@@ -46,7 +47,7 @@ class Store:
             """)
             db.execute("BEGIN IMMEDIATE")
             if db.execute("SELECT id FROM runs LIMIT 1").fetchone() is None:
-                self._create(db, seed=42, strategy="active", replay=True, config=default_config)
+                self._create(db, seed=42, strategy="active", replay=True, config=default_config, selective=selective)
 
     @contextmanager
     def _connect(self) -> Iterator[sqlite3.Connection]:
@@ -62,11 +63,14 @@ class Store:
     @staticmethod
     def _create(
         db: sqlite3.Connection, seed: int, strategy: str, replay: bool, config: EmbodiedConfig | None = None,
+        *, selective: bool = False,
     ) -> tuple[int, Experiment]:
-        experiment = (
-            Experiment(seed, strategy, replay) if config is None
-            else EmbodiedExperiment(seed, strategy, replay, config=config)
-        )
+        if selective:
+            experiment = SelectiveExperiment(seed, strategy, replay, config=config or EmbodiedConfig())
+        elif config is None:
+            experiment = Experiment(seed, strategy, replay)
+        else:
+            experiment = EmbodiedExperiment(seed, strategy, replay, config=config)
         cursor = db.execute(
             "INSERT INTO runs (seed, strategy, replay, checkpoint) VALUES (?, ?, ?, ?)",
             (seed, strategy, replay, json.dumps(experiment.checkpoint())),
@@ -86,8 +90,9 @@ class Store:
         state = json.loads(run["checkpoint"])
         records = [json.loads(row["payload"]) for row in reversed(recent)]
         version = state.get("model_version")
-        if version == MODEL_VERSION:
-            experiment = EmbodiedExperiment(*params, config=EmbodiedConfig(**state["config"]), state=state, records=records)
+        if version in (MODEL_VERSION, SELECTIVE_VERSION):
+            lab = SelectiveExperiment if version == SELECTIVE_VERSION else EmbodiedExperiment
+            experiment = lab(*params, config=EmbodiedConfig(**state["config"]), state=state, records=records)
         elif version is None:
             experiment = Experiment(*params, state=state, records=records)
         else:
@@ -101,14 +106,20 @@ class Store:
             (json.dumps(experiment.checkpoint()), run_id),
         )
 
-    def get(self) -> dict:
+    def get(self, *, include_knowledge: bool = False) -> dict:
         with self._connect() as db:
             db.execute("BEGIN")
             run_id, experiment = self._load(db)
-            return public_state(run_id, experiment)
+            state = public_state(run_id, experiment)
+            if include_knowledge:
+                if not isinstance(experiment, SelectiveExperiment):
+                    raise InvalidRequest("Knowledge inspection is available in a selective learning run.")
+                state["findings"] = experiment.knowledge.findings()
+            return state
 
     def start(
         self, run_id: int, seed: int, strategy: str, replay: bool, config: EmbodiedConfig | None = None,
+        *, selective: bool = False,
     ) -> dict:
         if type(seed) is not int or not 0 <= seed <= MAX_SEED:
             raise InvalidRequest(f"Seed must be an integer from 0 to {MAX_SEED}.")
@@ -117,7 +128,7 @@ class Store:
         with self._connect() as db:
             db.execute("BEGIN IMMEDIATE")
             self._load(db, run_id)
-            new_id, experiment = self._create(db, seed, strategy, replay, config)
+            new_id, experiment = self._create(db, seed, strategy, replay, config, selective=selective)
             return public_state(new_id, experiment)
 
     def step(
@@ -176,7 +187,10 @@ def public_state(run_id: int, experiment: Experiment) -> dict:
     latest = records[-1] if records else None
     episode = None
     if latest is not None:
-        episode = {key: value for key, value in latest.items() if key not in ("visual", "context", "metrics", "target")}
+        episode = {
+            key: value for key, value in latest.items()
+            if key not in ("visual", "context", "metrics", "target", "observations")
+        }
         target = latest["target"]
         episode["label"] = f"{tuple(COLORS)[target[0]]} {SHAPES[target[1]]}" if target is not None else None
     history = [record["metrics"] for record in records[-HISTORY_SIZE:]]
@@ -188,5 +202,7 @@ def public_state(run_id: int, experiment: Experiment) -> dict:
         "world": experiment.public_world(), "latest": episode, "metrics": history[-1], "history": history,
     }
     if isinstance(experiment, EmbodiedExperiment):
-        state.update(model_version=MODEL_VERSION, config=vars(experiment.config))
+        state.update(model_version=experiment.version, config=vars(experiment.config))
+    if isinstance(experiment, SelectiveExperiment):
+        state["knowledge"] = experiment.knowledge.counts()
     return state

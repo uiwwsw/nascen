@@ -30,6 +30,10 @@ def show(state: dict[str, Any]) -> None:
           f' · {state["rejected"]} protected-tile proposals blocked')
     print(f'Held-out accuracy {metrics["accuracy"]:.1%} · seen-combination accuracy {metrics["seen_accuracy"]:.1%}')
     print(f'Push prediction error {number(metrics["prediction_error"])} · mean reward {number(metrics["mean_reward"])}')
+    if "knowledge" in state:
+        knowledge = state["knowledge"]
+        print(f'{knowledge["verified"]} verified · {knowledge["pending"]} pending · {knowledge["conflicted"]} conflicted'
+              f' · {knowledge["consolidations"]} learning updates')
 
     latest = state["latest"]
     if latest is not None:
@@ -46,6 +50,10 @@ def show(state: dict[str, Any]) -> None:
         print(f'  Prediction: {forecast} · outcome: {outcome} · reward: {latest["reward"]:+.3f}')
         if "question" in latest:
             print(f'  {latest["question"]} · {latest["answer_source"]} answer')
+        if "selection" in latest:
+            decision = latest["selection"]
+            result = "learned" if decision["consolidated"] else "retained"
+            print(f'  Evidence: {decision["status"]} · {result}')
         if latest["approval"] is not None:
             print(f'  Mentor feedback: {latest["approval"]:+d}')
 
@@ -56,6 +64,12 @@ def show(state: dict[str, Any]) -> None:
         print(f'  {obj["id"]}. {object_name(obj):16} {cell} · agent guesses {appearance(obj["prediction"])}')
     if not world["objects"]:
         print("  No objects in view.")
+
+    if "findings" in state:
+        print("\nHypotheses")
+        for finding in state["findings"]:
+            votes = ", ".join(f"{outcome} ×{count}" for outcome, count in finding["votes"].items())
+            print(f'  {finding["claim"]} · {finding["status"]} · {votes or "awaiting evidence"}')
 
 
 def appearance(obj: dict) -> str:
@@ -96,6 +110,7 @@ def arguments() -> tuple[argparse.ArgumentParser, argparse.Namespace]:
     parser.add_argument("--json", action="store_true", help="print run state as JSON")
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("status", help="show the current run, metrics and objects")
+    commands.add_parser("knowledge", help="inspect hypotheses, evidence, and verification in the current run")
     train = commands.add_parser("train", help="advance the current run")
     train.add_argument("--steps", type=int, default=50, choices=range(1, MAX_BATCH + 1), metavar="1–50")
     teach = commands.add_parser("teach", help="label an object from the current scene")
@@ -109,6 +124,7 @@ def arguments() -> tuple[argparse.ArgumentParser, argparse.Namespace]:
     reset.add_argument("--strategy", default="active", choices=STRATEGIES)
     reset.add_argument("--no-replay", action="store_true", help="train only on the newest experience")
     reset.add_argument("--world", choices=("embodied", "legacy"), default="embodied")
+    reset.add_argument("--learning", choices=("selective", "immediate"), default="selective")
     reset.add_argument("--encoder", choices=ENCODERS, default=EmbodiedConfig().encoder)
     reset.add_argument("--questions", choices=QUESTION_STRATEGIES, default="uncertainty")
     reset.add_argument("--question-budget", type=int)
@@ -120,8 +136,8 @@ def main() -> None:
     parser, args = arguments()
     torch.set_num_threads(1)
     try:
-        store = Store(args.db, default_config=EmbodiedConfig())
-        state = store.get()
+        store = Store(args.db, default_config=EmbodiedConfig(), selective=True)
+        state = store.get(include_knowledge=args.command == "knowledge")
         run_id = state["run_id"]
         match args.command:
             case "train":
@@ -137,7 +153,8 @@ def main() -> None:
                 config = None
                 if args.world == "embodied":
                     config = EmbodiedConfig(args.encoder, args.questions, args.question_budget, args.question_cost)
-                state = store.start(run_id, args.seed, args.strategy, not args.no_replay, config=config)
+                selective = config is not None and args.learning == "selective"
+                state = store.start(run_id, args.seed, args.strategy, not args.no_replay, config=config, selective=selective)
     except (ValueError, OSError, sqlite3.Error) as error:
         parser.exit(1, f"nascen: {error}\n")
 

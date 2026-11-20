@@ -12,6 +12,7 @@ from torch.nn.functional import cosine_similarity, cross_entropy, normalize
 from .dataset import Episode
 from .encoder import SentenceEncoder, SentenceVectors
 from .model import TheoryLearner, rank
+from .observation_model import ObservationLearner
 
 MODES = ("semantic", "principle", "shuffled", "noisy")
 FALSE_PRINCIPLES = {
@@ -144,14 +145,18 @@ def fit(data, width, seed, steps, batch_size, weights, targets=None):
     }
 
 
-def save_checkpoint(path: Path, model: TheoryLearner, encoder: SentenceEncoder, metadata: dict):
+def save_checkpoint(path: Path, model: TheoryLearner | ObservationLearner, encoder: SentenceEncoder, metadata: dict):
+    if isinstance(model, ObservationLearner):
+        architecture = {"schema": 2, "states": model.states, "actions": model.actions}
+    else:
+        architecture = {"schema": 1, "slots": model.slots}
     path.parent.mkdir(parents=True, exist_ok=True)
     with NamedTemporaryFile(dir=path.parent, delete=False) as stream:
         temporary = Path(stream.name)
         try:
             torch.save({
-                "schema": 1, "encoder": encoder.identity, "width": model.width, "hidden": model.hidden,
-                "slots": model.slots, "metadata": metadata, "weights": model.state_dict(),
+                **architecture, "encoder": encoder.identity, "width": model.width, "hidden": model.hidden,
+                "metadata": metadata, "weights": model.state_dict(),
             }, stream)
             stream.close()
             temporary.replace(path)
@@ -161,8 +166,13 @@ def save_checkpoint(path: Path, model: TheoryLearner, encoder: SentenceEncoder, 
 
 def load_checkpoint(path: Path, encoder: SentenceEncoder):
     bundle = torch.load(path, weights_only=True, map_location="cpu")
-    if bundle["schema"] != 1 or bundle["encoder"] != encoder.identity or bundle["width"] != encoder.width:
+    if bundle["encoder"] != encoder.identity or bundle["width"] != encoder.width:
         raise ValueError("The student checkpoint requires its original encoder snapshot.")
-    model = TheoryLearner(bundle["width"], 0, bundle["hidden"], bundle["slots"])
+    if bundle["schema"] == 2:
+        model = ObservationLearner(bundle["width"], bundle["states"], bundle["actions"], 0, bundle["hidden"])
+    elif bundle["schema"] == 1:
+        model = TheoryLearner(bundle["width"], 0, bundle["hidden"], bundle["slots"])
+    else:
+        raise ValueError("Unsupported student checkpoint format.")
     model.load_state_dict(bundle["weights"])
     return model.eval(), bundle["metadata"]

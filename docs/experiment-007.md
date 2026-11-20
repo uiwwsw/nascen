@@ -89,6 +89,8 @@ python -m nascen.semantic_teacher --teacher MODEL_ID --output .nascen/new-lesson
 
 ### 결과
 
+Experiment 008의 후속 점검에서 이 시험의 보기만으로 108단계 중 107단계를 맞힐 수 있는 단서가 발견됐습니다. 아래 수치의 해석에는 이 한계가 적용됩니다. [보기 누출 진단과 교정 결과](experiment-008.md)
+
 외부 지식 문항을 제외한 88문항의 최종 상태 정확도입니다. 신경망은 세 시드 평균을 표시합니다.
 
 | 학습 경험 | A · 의미 전이 | B · 원리 추가 | C · 원리 설명 셔플 |

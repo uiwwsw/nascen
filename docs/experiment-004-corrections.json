@@ -1,0 +1,1033 @@
+{
+  "experiment": "004 — Learning from Mistakes",
+  "nascen_version": "0.3.0",
+  "dataset": "lending-v1",
+  "original_lessons_sha256": "518c581f32a8d1ad2bba5b4b89e6373337b69ed489cf6fa38cb1050f14ee0129",
+  "teacher": "Qwen/Qwen3-4B-GGUF@bc640142c66e1fdd12af0bd68f40445458f3869b Q4_K_M; llama.cpp b12556",
+  "prompt_sha256": "b81c057ea889dbfa6a72a88c54c8ddf54ef6550b3db3c26473f4e103865f3bae",
+  "budget": 8,
+  "seeds": [
+    11,
+    22,
+    42
+  ],
+  "epochs_per_fit": 180,
+  "practice_cases": [
+    {
+      "id": "practice-00",
+      "facts": {
+        "setting": "workshop",
+        "owner": "unavailable",
+        "urgent": false,
+        "alternative": false,
+        "limited": false
+      }
+    },
+    {
+      "id": "practice-01",
+      "facts": {
+        "setting": "workshop",
+        "owner": "unavailable",
+        "urgent": false,
+        "alternative": false,
+        "limited": true
+      }
+    },
+    {
+      "id": "practice-02",
+      "facts": {
+        "setting": "workshop",
+        "owner": "unavailable",
+        "urgent": false,
+        "alternative": true,
+        "limited": false
+      }
+    },
+    {
+      "id": "practice-03",
+      "facts": {
+        "setting": "workshop",
+        "owner": "unavailable",
+        "urgent": true,
+        "alternative": false,
+        "limited": false
+      }
+    },
+    {
+      "id": "practice-04",
+      "facts": {
+        "setting": "workshop",
+        "owner": "unavailable",
+        "urgent": true,
+        "alternative": false,
+        "limited": true
+      }
+    },
+    {
+      "id": "practice-05",
+      "facts": {
+        "setting": "workshop",
+        "owner": "unavailable",
+        "urgent": true,
+        "alternative": true,
+        "limited": false
+      }
+    },
+    {
+      "id": "practice-06",
+      "facts": {
+        "setting": "campsite",
+        "owner": "unavailable",
+        "urgent": false,
+        "alternative": false,
+        "limited": false
+      }
+    },
+    {
+      "id": "practice-07",
+      "facts": {
+        "setting": "campsite",
+        "owner": "unavailable",
+        "urgent": false,
+        "alternative": false,
+        "limited": true
+      }
+    },
+    {
+      "id": "practice-08",
+      "facts": {
+        "setting": "campsite",
+        "owner": "unavailable",
+        "urgent": false,
+        "alternative": true,
+        "limited": false
+      }
+    },
+    {
+      "id": "practice-09",
+      "facts": {
+        "setting": "campsite",
+        "owner": "unavailable",
+        "urgent": true,
+        "alternative": false,
+        "limited": false
+      }
+    },
+    {
+      "id": "practice-10",
+      "facts": {
+        "setting": "campsite",
+        "owner": "unavailable",
+        "urgent": true,
+        "alternative": false,
+        "limited": true
+      }
+    },
+    {
+      "id": "practice-11",
+      "facts": {
+        "setting": "campsite",
+        "owner": "unavailable",
+        "urgent": true,
+        "alternative": true,
+        "limited": false
+      }
+    },
+    {
+      "id": "practice-12",
+      "facts": {
+        "setting": "theater",
+        "owner": "unavailable",
+        "urgent": false,
+        "alternative": false,
+        "limited": false
+      }
+    },
+    {
+      "id": "practice-13",
+      "facts": {
+        "setting": "theater",
+        "owner": "unavailable",
+        "urgent": false,
+        "alternative": false,
+        "limited": true
+      }
+    },
+    {
+      "id": "practice-14",
+      "facts": {
+        "setting": "theater",
+        "owner": "unavailable",
+        "urgent": false,
+        "alternative": true,
+        "limited": false
+      }
+    },
+    {
+      "id": "practice-15",
+      "facts": {
+        "setting": "theater",
+        "owner": "unavailable",
+        "urgent": true,
+        "alternative": false,
+        "limited": false
+      }
+    },
+    {
+      "id": "practice-16",
+      "facts": {
+        "setting": "theater",
+        "owner": "unavailable",
+        "urgent": true,
+        "alternative": false,
+        "limited": true
+      }
+    },
+    {
+      "id": "practice-17",
+      "facts": {
+        "setting": "theater",
+        "owner": "unavailable",
+        "urgent": true,
+        "alternative": true,
+        "limited": false
+      }
+    }
+  ],
+  "turns": {
+    "11": {
+      "mistakes": [
+        {
+          "round": 1,
+          "question": "practice-15",
+          "prior": {
+            "decision": "decline",
+            "principle": "refusal"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 18,
+          "lesson": {
+            "id": "practice-15",
+            "decision": "decline",
+            "principle": "refusal",
+            "explanation": "The owner is unavailable and there is imminent serious harm, so the correct decision is decline and refusal."
+          },
+          "accepted": false
+        },
+        {
+          "round": 2,
+          "question": "practice-16",
+          "prior": {
+            "decision": "decline",
+            "principle": "refusal"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 17,
+          "lesson": {
+            "id": "practice-16",
+            "decision": "decline",
+            "principle": "refusal",
+            "explanation": "The owner is unavailable and there is imminent serious harm, so the correct decision is decline and refusal."
+          },
+          "accepted": false
+        },
+        {
+          "round": 3,
+          "question": "practice-13",
+          "prior": {
+            "decision": "decline",
+            "principle": "refusal"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 16,
+          "lesson": {
+            "id": "practice-13",
+            "decision": "decline",
+            "principle": "refusal",
+            "explanation": "The owner is unavailable, and there is no imminent serious harm, so the refusal principle applies."
+          },
+          "accepted": false
+        },
+        {
+          "round": 4,
+          "question": "practice-11",
+          "prior": {
+            "decision": "allow",
+            "principle": "permission"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 15,
+          "lesson": {
+            "id": "practice-11",
+            "decision": "decline",
+            "principle": "safer_option",
+            "explanation": "The owner is unavailable, there is an equally effective authorized alternative, and the proposed use goes beyond the immediate need, so decline and safer_option is the correct choice."
+          },
+          "accepted": true
+        },
+        {
+          "round": 5,
+          "question": "practice-02",
+          "prior": {
+            "decision": "decline",
+            "principle": "safer_option"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 14,
+          "lesson": {
+            "id": "practice-02",
+            "decision": "decline",
+            "principle": "safer_option",
+            "explanation": "The owner is unavailable, and an equally effective authorized alternative exists, so decline and safer_option is the correct choice."
+          },
+          "accepted": false
+        },
+        {
+          "round": 6,
+          "question": "practice-00",
+          "prior": {
+            "decision": "decline",
+            "principle": "safer_option"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 13,
+          "lesson": {
+            "id": "practice-00",
+            "decision": "ask",
+            "principle": "ask_owner",
+            "explanation": "The owner is unavailable, but there is no imminent serious harm, so we should ask the owner for permission."
+          },
+          "accepted": true
+        },
+        {
+          "round": 7,
+          "question": "practice-07",
+          "prior": {
+            "decision": "decline",
+            "principle": "safer_option"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 12,
+          "lesson": {
+            "id": "practice-07",
+            "decision": "ask",
+            "principle": "ask_owner",
+            "explanation": "The owner is unavailable, but the use is limited to the immediate need, so it is appropriate to ask the owner for permission."
+          },
+          "accepted": true
+        },
+        {
+          "round": 8,
+          "question": "practice-12",
+          "prior": {
+            "decision": "decline",
+            "principle": "safer_option"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 11,
+          "lesson": {
+            "id": "practice-12",
+            "decision": "ask",
+            "principle": "ask_owner",
+            "explanation": "The owner is unavailable, but there is no imminent serious harm, so we should ask the owner for permission."
+          },
+          "accepted": true
+        }
+      ],
+      "random": [
+        {
+          "round": 1,
+          "question": "practice-15",
+          "prior": {
+            "decision": "decline",
+            "principle": "refusal"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 1,
+          "lesson": {
+            "id": "practice-15",
+            "decision": "decline",
+            "principle": "refusal",
+            "explanation": "The owner is unavailable and there is imminent serious harm, so the correct decision is decline and refusal."
+          },
+          "accepted": false
+        },
+        {
+          "round": 2,
+          "question": "practice-02",
+          "prior": {
+            "decision": "ask",
+            "principle": "ask_owner"
+          },
+          "grader_found_error": false,
+          "selection_grader_checks": 1,
+          "lesson": {
+            "id": "practice-02",
+            "decision": "decline",
+            "principle": "safer_option",
+            "explanation": "The owner is unavailable, and an equally effective authorized alternative exists, so the safer option is to decline."
+          },
+          "accepted": false
+        },
+        {
+          "round": 3,
+          "question": "practice-16",
+          "prior": {
+            "decision": "decline",
+            "principle": "refusal"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 1,
+          "lesson": {
+            "id": "practice-16",
+            "decision": "decline",
+            "principle": "refusal",
+            "explanation": "The owner is unavailable and there is imminent serious harm, so the correct decision is decline and refusal."
+          },
+          "accepted": false
+        },
+        {
+          "round": 4,
+          "question": "practice-13",
+          "prior": {
+            "decision": "decline",
+            "principle": "refusal"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 1,
+          "lesson": {
+            "id": "practice-13",
+            "decision": "decline",
+            "principle": "refusal",
+            "explanation": "The owner is unavailable, and there is no imminent serious harm, so the refusal principle applies."
+          },
+          "accepted": false
+        },
+        {
+          "round": 5,
+          "question": "practice-11",
+          "prior": {
+            "decision": "allow",
+            "principle": "permission"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 1,
+          "lesson": {
+            "id": "practice-11",
+            "decision": "decline",
+            "principle": "safer_option",
+            "explanation": "The owner is unavailable, there is an equally effective authorized alternative, and the proposed use goes beyond the immediate need, so decline and safer_option is the correct choice."
+          },
+          "accepted": true
+        },
+        {
+          "round": 6,
+          "question": "practice-17",
+          "prior": {
+            "decision": "decline",
+            "principle": "safer_option"
+          },
+          "grader_found_error": false,
+          "selection_grader_checks": 1,
+          "lesson": {
+            "id": "practice-17",
+            "decision": "decline",
+            "principle": "safer_option",
+            "explanation": "The owner is unavailable, and an equally effective authorized alternative exists, so decline and safer_option is the correct choice."
+          },
+          "accepted": true
+        },
+        {
+          "round": 7,
+          "question": "practice-00",
+          "prior": {
+            "decision": "decline",
+            "principle": "safer_option"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 1,
+          "lesson": {
+            "id": "practice-00",
+            "decision": "ask",
+            "principle": "ask_owner",
+            "explanation": "The owner is unavailable, but there is no imminent serious harm, so we should ask the owner for permission."
+          },
+          "accepted": true
+        },
+        {
+          "round": 8,
+          "question": "practice-07",
+          "prior": {
+            "decision": "decline",
+            "principle": "ask_owner"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 1,
+          "lesson": {
+            "id": "practice-07",
+            "decision": "decline",
+            "principle": "safer_option",
+            "explanation": "The owner is unavailable and there is no imminent serious harm, so the safer option is to decline the request."
+          },
+          "accepted": false
+        }
+      ]
+    },
+    "22": {
+      "mistakes": [
+        {
+          "round": 1,
+          "question": "practice-04",
+          "prior": {
+            "decision": "decline",
+            "principle": "refusal"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 18,
+          "lesson": {
+            "id": "practice-04",
+            "decision": "decline",
+            "principle": "over_scope",
+            "explanation": "The proposed use goes beyond the immediate need as the owner is unavailable and there is imminent serious harm."
+          },
+          "accepted": false
+        },
+        {
+          "round": 2,
+          "question": "practice-06",
+          "prior": {
+            "decision": "allow",
+            "principle": "permission"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 17,
+          "lesson": {
+            "id": "practice-06",
+            "decision": "ask",
+            "principle": "ask_owner",
+            "explanation": "The owner is unavailable, but there is no imminent serious harm, so the owner should be asked."
+          },
+          "accepted": true
+        },
+        {
+          "round": 3,
+          "question": "practice-17",
+          "prior": {
+            "decision": "ask",
+            "principle": "ask_owner"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 16,
+          "lesson": {
+            "id": "practice-17",
+            "decision": "decline",
+            "principle": "safer_option",
+            "explanation": "The owner is unavailable and there is an equally effective authorized alternative, so the safer option is to decline."
+          },
+          "accepted": true
+        },
+        {
+          "round": 4,
+          "question": "practice-09",
+          "prior": {
+            "decision": "ask",
+            "principle": "ask_owner"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 15,
+          "lesson": {
+            "id": "practice-09",
+            "decision": "decline",
+            "principle": "urgent_exception",
+            "explanation": "The owner is unavailable and there is imminent serious harm, so the exception is urgent and requires immediate action."
+          },
+          "accepted": false
+        },
+        {
+          "round": 5,
+          "question": "practice-13",
+          "prior": {
+            "decision": "decline",
+            "principle": "safer_option"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 14,
+          "lesson": {
+            "id": "practice-13",
+            "decision": "ask",
+            "principle": "ask_owner",
+            "explanation": "The owner is unavailable, but the use is limited to the immediate need, so it is appropriate to ask the owner for permission."
+          },
+          "accepted": true
+        },
+        {
+          "round": 6,
+          "question": "practice-14",
+          "prior": {
+            "decision": "decline",
+            "principle": "safer_option"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 13,
+          "lesson": {
+            "id": "practice-14",
+            "decision": "decline",
+            "principle": "safer_option",
+            "explanation": "The owner is unavailable, and an equally effective authorized alternative exists, so decline and safer_option is the correct choice."
+          },
+          "accepted": false
+        },
+        {
+          "round": 7,
+          "question": "practice-16",
+          "prior": {
+            "decision": "ask",
+            "principle": "ask_owner"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 12,
+          "lesson": {
+            "id": "practice-16",
+            "decision": "allow",
+            "principle": "urgent_exception",
+            "explanation": "The owner is unavailable and there is imminent serious harm, so the use is allowed under the urgent exception rule."
+          },
+          "accepted": true
+        },
+        {
+          "round": 8,
+          "question": "practice-03",
+          "prior": {
+            "decision": "allow",
+            "principle": "urgent_exception"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 11,
+          "lesson": {
+            "id": "practice-03",
+            "decision": "decline",
+            "principle": "over_scope",
+            "explanation": "The proposed use goes beyond the immediate need as the owner is unavailable and there is imminent serious harm."
+          },
+          "accepted": true
+        }
+      ],
+      "random": [
+        {
+          "round": 1,
+          "question": "practice-04",
+          "prior": {
+            "decision": "decline",
+            "principle": "refusal"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 1,
+          "lesson": {
+            "id": "practice-04",
+            "decision": "decline",
+            "principle": "over_scope",
+            "explanation": "The proposed use goes beyond the immediate need as the owner is unavailable and there is imminent serious harm."
+          },
+          "accepted": false
+        },
+        {
+          "round": 2,
+          "question": "practice-06",
+          "prior": {
+            "decision": "allow",
+            "principle": "permission"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 1,
+          "lesson": {
+            "id": "practice-06",
+            "decision": "ask",
+            "principle": "ask_owner",
+            "explanation": "The owner is unavailable, but there is no imminent serious harm, so the owner should be asked."
+          },
+          "accepted": true
+        },
+        {
+          "round": 3,
+          "question": "practice-16",
+          "prior": {
+            "decision": "decline",
+            "principle": "refusal"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 1,
+          "lesson": {
+            "id": "practice-16",
+            "decision": "decline",
+            "principle": "refusal",
+            "explanation": "The owner is unavailable and there is imminent serious harm, so the correct decision is decline and refusal."
+          },
+          "accepted": false
+        },
+        {
+          "round": 4,
+          "question": "practice-17",
+          "prior": {
+            "decision": "ask",
+            "principle": "ask_owner"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 1,
+          "lesson": {
+            "id": "practice-17",
+            "decision": "decline",
+            "principle": "safer_option",
+            "explanation": "The owner is unavailable and there is an equally effective authorized alternative, so the safer option is to decline."
+          },
+          "accepted": true
+        },
+        {
+          "round": 5,
+          "question": "practice-08",
+          "prior": {
+            "decision": "ask",
+            "principle": "ask_owner"
+          },
+          "grader_found_error": false,
+          "selection_grader_checks": 1,
+          "lesson": {
+            "id": "practice-08",
+            "decision": "decline",
+            "principle": "safer_option",
+            "explanation": "The owner is unavailable, and an equally effective authorized alternative exists, so the safer option is to decline."
+          },
+          "accepted": false
+        },
+        {
+          "round": 6,
+          "question": "practice-05",
+          "prior": {
+            "decision": "ask",
+            "principle": "safer_option"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 1,
+          "lesson": {
+            "id": "practice-05",
+            "decision": "decline",
+            "principle": "safer_option",
+            "explanation": "The owner is unavailable and there is an equally effective authorized alternative, so the safer option is to decline."
+          },
+          "accepted": true
+        },
+        {
+          "round": 7,
+          "question": "practice-00",
+          "prior": {
+            "decision": "decline",
+            "principle": "safer_option"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 1,
+          "lesson": {
+            "id": "practice-00",
+            "decision": "ask",
+            "principle": "ask_owner",
+            "explanation": "The owner is unavailable, but there is no imminent serious harm, so we should ask the owner for permission."
+          },
+          "accepted": true
+        },
+        {
+          "round": 8,
+          "question": "practice-11",
+          "prior": {
+            "decision": "decline",
+            "principle": "safer_option"
+          },
+          "grader_found_error": false,
+          "selection_grader_checks": 1,
+          "lesson": {
+            "id": "practice-11",
+            "decision": "decline",
+            "principle": "safer_option",
+            "explanation": "The owner is unavailable, there is an equally effective authorized alternative, and the proposed use goes beyond the immediate need, making safer_option the correct principle."
+          },
+          "accepted": true
+        }
+      ]
+    },
+    "42": {
+      "mistakes": [
+        {
+          "round": 1,
+          "question": "practice-07",
+          "prior": {
+            "decision": "allow",
+            "principle": "permission"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 18,
+          "lesson": {
+            "id": "practice-07",
+            "decision": "allow",
+            "principle": "permission",
+            "explanation": "The owner is unavailable, but the use is limited to the immediate need, so permission is appropriate."
+          },
+          "accepted": false
+        },
+        {
+          "round": 2,
+          "question": "practice-11",
+          "prior": {
+            "decision": "allow",
+            "principle": "permission"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 17,
+          "lesson": {
+            "id": "practice-11",
+            "decision": "decline",
+            "principle": "safer_option",
+            "explanation": "The owner is unavailable, there is an equally effective authorized alternative, and the proposed use goes beyond the immediate need, so decline and safer_option is the correct choice."
+          },
+          "accepted": true
+        },
+        {
+          "round": 3,
+          "question": "practice-15",
+          "prior": {
+            "decision": "decline",
+            "principle": "safer_option"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 16,
+          "lesson": {
+            "id": "practice-15",
+            "decision": "decline",
+            "principle": "over_scope",
+            "explanation": "The proposed use goes beyond the immediate need as the owner is unavailable and there is no imminent serious harm, but the use is not confined to what is necessary."
+          },
+          "accepted": true
+        },
+        {
+          "round": 4,
+          "question": "practice-08",
+          "prior": {
+            "decision": "decline",
+            "principle": "safer_option"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 15,
+          "lesson": {
+            "id": "practice-08",
+            "decision": "decline",
+            "principle": "safer_option",
+            "explanation": "The owner is unavailable, and an equally effective authorized alternative exists, so decline and safer_option is the correct choice."
+          },
+          "accepted": false
+        },
+        {
+          "round": 5,
+          "question": "practice-00",
+          "prior": {
+            "decision": "decline",
+            "principle": "refusal"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 14,
+          "lesson": {
+            "id": "practice-00",
+            "decision": "decline",
+            "principle": "refusal",
+            "explanation": "The owner is unavailable, and there is no imminent serious harm, so the refusal principle applies."
+          },
+          "accepted": false
+        },
+        {
+          "round": 6,
+          "question": "practice-16",
+          "prior": {
+            "decision": "decline",
+            "principle": "over_scope"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 13,
+          "lesson": {
+            "id": "practice-16",
+            "decision": "decline",
+            "principle": "urgent_exception",
+            "explanation": "The owner is unavailable and there is imminent serious harm, so the use should be declined with an urgent exception."
+          },
+          "accepted": false
+        },
+        {
+          "round": 7,
+          "question": "practice-06",
+          "prior": {
+            "decision": "decline",
+            "principle": "safer_option"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 12,
+          "lesson": {
+            "id": "practice-06",
+            "decision": "ask",
+            "principle": "ask_owner",
+            "explanation": "The owner is unavailable, but there is no imminent serious harm, so it is appropriate to ask the owner for permission."
+          },
+          "accepted": true
+        },
+        {
+          "round": 8,
+          "question": "practice-13",
+          "prior": {
+            "decision": "decline",
+            "principle": "over_scope"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 11,
+          "lesson": {
+            "id": "practice-13",
+            "decision": "decline",
+            "principle": "safer_option",
+            "explanation": "The owner is unavailable, and there is no imminent serious harm, so the safer option is to decline the request."
+          },
+          "accepted": false
+        }
+      ],
+      "random": [
+        {
+          "round": 1,
+          "question": "practice-07",
+          "prior": {
+            "decision": "allow",
+            "principle": "permission"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 1,
+          "lesson": {
+            "id": "practice-07",
+            "decision": "allow",
+            "principle": "permission",
+            "explanation": "The owner is unavailable, but the use is limited to the immediate need, so permission is appropriate."
+          },
+          "accepted": false
+        },
+        {
+          "round": 2,
+          "question": "practice-11",
+          "prior": {
+            "decision": "allow",
+            "principle": "permission"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 1,
+          "lesson": {
+            "id": "practice-11",
+            "decision": "decline",
+            "principle": "safer_option",
+            "explanation": "The owner is unavailable, there is an equally effective authorized alternative, and the proposed use goes beyond the immediate need, so decline and safer_option is the correct choice."
+          },
+          "accepted": true
+        },
+        {
+          "round": 3,
+          "question": "practice-15",
+          "prior": {
+            "decision": "decline",
+            "principle": "safer_option"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 1,
+          "lesson": {
+            "id": "practice-15",
+            "decision": "decline",
+            "principle": "over_scope",
+            "explanation": "The proposed use goes beyond the immediate need as the owner is unavailable and there is no imminent serious harm, but the use is not confined to what is necessary."
+          },
+          "accepted": true
+        },
+        {
+          "round": 4,
+          "question": "practice-03",
+          "prior": {
+            "decision": "decline",
+            "principle": "over_scope"
+          },
+          "grader_found_error": false,
+          "selection_grader_checks": 1,
+          "lesson": {
+            "id": "practice-03",
+            "decision": "decline",
+            "principle": "urgent_exception",
+            "explanation": "The owner is unavailable and there is imminent serious harm, so the use should be declined with an urgent exception."
+          },
+          "accepted": false
+        },
+        {
+          "round": 5,
+          "question": "practice-08",
+          "prior": {
+            "decision": "decline",
+            "principle": "safer_option"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 1,
+          "lesson": {
+            "id": "practice-08",
+            "decision": "decline",
+            "principle": "safer_option",
+            "explanation": "The owner is unavailable, and an equally effective authorized alternative exists, so decline and safer_option is the correct choice."
+          },
+          "accepted": false
+        },
+        {
+          "round": 6,
+          "question": "practice-00",
+          "prior": {
+            "decision": "decline",
+            "principle": "refusal"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 1,
+          "lesson": {
+            "id": "practice-00",
+            "decision": "decline",
+            "principle": "refusal",
+            "explanation": "The owner is unavailable, and there is no imminent serious harm, so the refusal principle applies."
+          },
+          "accepted": false
+        },
+        {
+          "round": 7,
+          "question": "practice-06",
+          "prior": {
+            "decision": "decline",
+            "principle": "safer_option"
+          },
+          "grader_found_error": true,
+          "selection_grader_checks": 1,
+          "lesson": {
+            "id": "practice-06",
+            "decision": "ask",
+            "principle": "ask_owner",
+            "explanation": "The owner is unavailable, but there is no imminent serious harm, so it is appropriate to ask the owner for permission."
+          },
+          "accepted": true
+        },
+        {
+          "round": 8,
+          "question": "practice-05",
+          "prior": {
+            "decision": "decline",
+            "principle": "safer_option"
+          },
+          "grader_found_error": false,
+          "selection_grader_checks": 1,
+          "lesson": {
+            "id": "practice-05",
+            "decision": "decline",
+            "principle": "safer_option",
+            "explanation": "The owner is unavailable, and an equally effective authorized alternative exists, so decline and safer_option is the correct choice."
+          },
+          "accepted": true
+        }
+      ]
+    }
+  }
+}

@@ -8,6 +8,7 @@ from hashlib import sha256
 from itertools import product
 import json
 from pathlib import Path
+import platform
 from random import Random
 from statistics import mean
 
@@ -249,6 +250,7 @@ def evaluate(lesson_path: Path, trace: dict) -> dict:
         "baseline_lessons": [lesson.id for _, lesson in baseline], "teacher_available_to_exam": False,
         "source_lessons_sha256": manifest["original_lessons_sha256"],
         "trace_sha256": sha256(json.dumps(trace, sort_keys=True).encode()).hexdigest(),
+        "environment": {"python": platform.python_version(), "torch": torch.__version__, "arch": platform.machine()},
         "exam_cases": [case_record(case) for case in cases], "retention_count": len(retention),
         "summary": summary, "trials": runs,
     }

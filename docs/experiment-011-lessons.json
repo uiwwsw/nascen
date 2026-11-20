@@ -1,0 +1,183 @@
+{
+  "dataset": "lamp-principles-ko-v1",
+  "training_rules_sha256": "f9a3660617089c811803c637269f90cc4eb3ad5f82163fbe18b84eae426229a9",
+  "held_rules_sha256": "2a9218040535105b80626a48e5b3f65bdac2885a754ab4fc53794c83e4c25a97",
+  "prompt_sha256": "6849d8daf8feea62e174e815b89c959e5d8088583389e865960371339cc05bff",
+  "teacher": {
+    "model": "Qwen3-4B-Q4_K_M sha256=7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+    "seed": 42
+  },
+  "lessons": {
+    "lesson-01": {
+      "first": "전원 접점이 연결되어 있다.",
+      "second": "보호 덮개가 열려 있다.",
+      "logic": "앞서의 두 조건 중 하나 이상이 참이어야 한다.",
+      "exception": "확인 코드가 검증되었다.",
+      "counterexample": "앞서의 조건이 참이어도, 확인 코드가 검증되었다면 표시등이 켜지지 않는다."
+    },
+    "lesson-02": {
+      "first": "전원 접점이 끊겨 있다.",
+      "second": "보호 덮개가 닫혀 있다.",
+      "logic": "앞선 두 조건이 모두 만족되어야 한다.",
+      "exception": "확인 코드가 검증되지 않았다.",
+      "counterexample": "앞선 조건을 만족해도 다음 상태에서는 표시등이 켜지지 않는다. 확인 코드가 검증되지 않았다."
+    },
+    "lesson-03": {
+      "first": "전원 접점이 끊겨 있다.",
+      "second": "확인 코드가 검증되었다.",
+      "logic": "앞서의 두 가지 조건 중 하나 이상이 참이어야 한다.",
+      "exception": "정비 모드가 켜져 있다.",
+      "counterexample": "앞서의 조건이 참이어도, 정비 모드가 켜져 있다면 표시등이 켜지지 않는다."
+    },
+    "lesson-04": {
+      "first": "전원 접점이 연결되어 있다.",
+      "second": "확인 코드가 검증되지 않았다.",
+      "logic": "앞선 두 조건이 모두 만족되어야 한다.",
+      "exception": "정비 모드가 꺼져 있다.",
+      "counterexample": "앞선 조건을 만족해도 다음 상태에서는 표시등이 켜지지 않는다. 정비 모드가 꺼져 있다."
+    },
+    "lesson-05": {
+      "first": "보호 덮개가 닫혀 있다.",
+      "second": "정비 모드가 켜져 있다.",
+      "logic": "앞서의 두 조건 중 하나 이상이 참이어야 한다.",
+      "exception": "전원 접점이 끊겨 있다.",
+      "counterexample": "앞서의 조건이 참이어도, 전원 접점이 끊겨 있다면 표시등이 켜지지 않는다."
+    },
+    "lesson-06": {
+      "first": "보호 덮개가 열려 있다.",
+      "second": "정비 모드가 꺼져 있다.",
+      "logic": "앞선 두 조건이 모두 만족되어야 한다.",
+      "exception": "전원 접점이 연결되어 있다.",
+      "counterexample": "앞선 조건을 만족해도 다음 상태에서는 표시등이 켜지지 않는다. 전원 접점이 연결되어 있다."
+    },
+    "lesson-07": {
+      "first": "확인 코드가 검증되지 않았다.",
+      "second": "정비 모드가 꺼져 있다.",
+      "logic": "앞선 두 조건 가운데 하나 이상이 만족되어야 한다.",
+      "exception": "보호 덮개가 닫혀 있다.",
+      "counterexample": "앞선 조건을 만족해도 다음 상태에서는 표시등이 켜지지 않는다. 보호 덮개가 닫혀 있다."
+    },
+    "lesson-08": {
+      "first": "확인 코드가 검증되었다.",
+      "second": "정비 모드가 켜져 있다.",
+      "logic": "앞선 두 조건이 모두 만족되어야 한다.",
+      "exception": "보호 덮개가 열려 있다.",
+      "counterexample": "앞선 조건을 만족해도 다음 상태에서는 표시등이 켜지지 않는다. 보호 덮개가 열려 있다."
+    }
+  },
+  "cost": {
+    "lesson-01": {
+      "wall_seconds": 2.550215000002936,
+      "usage": {
+        "completion_tokens": 99,
+        "prompt_tokens": 199,
+        "total_tokens": 298,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    "lesson-02": {
+      "wall_seconds": 2.2608186249999562,
+      "usage": {
+        "completion_tokens": 105,
+        "prompt_tokens": 204,
+        "total_tokens": 309,
+        "prompt_tokens_details": {
+          "cached_tokens": 106
+        }
+      }
+    },
+    "lesson-03": {
+      "wall_seconds": 2.078907208997407,
+      "usage": {
+        "completion_tokens": 108,
+        "prompt_tokens": 207,
+        "total_tokens": 315,
+        "prompt_tokens_details": {
+          "cached_tokens": 116
+        }
+      }
+    },
+    "lesson-04": {
+      "wall_seconds": 2.268365542004176,
+      "usage": {
+        "completion_tokens": 106,
+        "prompt_tokens": 205,
+        "total_tokens": 311,
+        "prompt_tokens_details": {
+          "cached_tokens": 114
+        }
+      }
+    },
+    "lesson-05": {
+      "wall_seconds": 2.758373707998544,
+      "usage": {
+        "completion_tokens": 109,
+        "prompt_tokens": 209,
+        "total_tokens": 318,
+        "prompt_tokens_details": {
+          "cached_tokens": 101
+        }
+      }
+    },
+    "lesson-06": {
+      "wall_seconds": 2.1640826660004677,
+      "usage": {
+        "completion_tokens": 103,
+        "prompt_tokens": 202,
+        "total_tokens": 305,
+        "prompt_tokens_details": {
+          "cached_tokens": 106
+        }
+      }
+    },
+    "lesson-07": {
+      "wall_seconds": 2.3899844999978086,
+      "usage": {
+        "completion_tokens": 109,
+        "prompt_tokens": 208,
+        "total_tokens": 317,
+        "prompt_tokens_details": {
+          "cached_tokens": 101
+        }
+      }
+    },
+    "lesson-08": {
+      "wall_seconds": 3.283254542002396,
+      "usage": {
+        "completion_tokens": 103,
+        "prompt_tokens": 384,
+        "total_tokens": 487,
+        "prompt_tokens_details": {
+          "cached_tokens": 91
+        }
+      }
+    }
+  },
+  "revisions": [
+    {
+      "lesson": "lesson-08",
+      "previous": {
+        "first": "전원이 켜져 있어야 한다.",
+        "second": "정비 모드가 켜져 있어야 한다.",
+        "logic": "앞서 언급된 두 조건이 모두 만족되어야 한다.",
+        "exception": "보호 덮개가 열려 있다.",
+        "counterexample": "앞서 언급된 조건을 만족해도 다음 상태에서는 표시등이 켜지지 않는다. 보호 덮개가 열려 있다."
+      },
+      "cost": {
+        "wall_seconds": 2.460305166998296,
+        "usage": {
+          "completion_tokens": 114,
+          "prompt_tokens": 202,
+          "total_tokens": 316,
+          "prompt_tokens_details": {
+            "cached_tokens": 107
+          }
+        }
+      },
+      "feedback": "첫 조건은 전원이 아니라 확인 코드 검증이 완료되었다는 사실이다. 전원 조건을 넣지 말고 확인 코드가 검증되었다라는 기준 사실을 보존하라.",
+      "prompt_sha256": "6a94a3159b4b7b8214706209f5a6ec385030bf5b3ea50212d211ee0f148ddd09"
+    }
+  ]
+}

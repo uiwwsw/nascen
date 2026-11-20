@@ -1,0 +1,38 @@
+{
+  "collection_sha256": "23b14067b15d295b4479860f2cb9556e493c8d06750c5b578108e48b691a6836",
+  "method": "조건의 대상과 극성, 논리 연결, 예외의 우선순위, 반례를 시뮬레이터의 원리 명세와 대조했다.",
+  "lessons": {
+    "lesson-01": {
+      "accepted": true,
+      "reason": "전원 연결 또는 덮개 열림 조건과 코드 검증 시 차단을 보존한다."
+    },
+    "lesson-02": {
+      "accepted": true,
+      "reason": "전원 단절과 덮개 닫힘 모두 필요하며 미검증 코드는 차단한다."
+    },
+    "lesson-03": {
+      "accepted": true,
+      "reason": "전원 단절 또는 코드 검증 조건과 정비 모드 활성 예외를 보존한다."
+    },
+    "lesson-04": {
+      "accepted": true,
+      "reason": "전원 연결과 코드 미검증 모두 필요하고 정비 모드 비활성 시 차단한다."
+    },
+    "lesson-05": {
+      "accepted": true,
+      "reason": "덮개 닫힘 또는 정비 모드 활성 조건과 전원 단절 예외가 맞다."
+    },
+    "lesson-06": {
+      "accepted": true,
+      "reason": "덮개 열림과 정비 모드 비활성 모두 필요하고 전원 연결 시 차단한다."
+    },
+    "lesson-07": {
+      "accepted": true,
+      "reason": "코드 미검증 또는 정비 모드 비활성 조건과 덮개 닫힘 예외가 맞다."
+    },
+    "lesson-08": {
+      "accepted": true,
+      "reason": "초기 전원 조건을 제거했다. 재작성본은 코드 검증과 정비 모드 활성의 동시 필요, 덮개 열림 예외를 보존한다."
+    }
+  }
+}

@@ -1,0 +1,2 @@
+# Optional comparison arm with a local, frozen MiniLM snapshot.
+transformers==4.57.6

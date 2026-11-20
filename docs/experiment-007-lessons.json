@@ -1,0 +1,138 @@
+{
+  "dataset": "semantic-ko-v1",
+  "prompt_version": "ko-semantic-v5",
+  "prompt_sha256": "58ff6851ef460e379715782254989847788b79c8ea0baeeae23ebc0e21cdb2c2",
+  "training_sha256": "cd8f18ac41a93758f33609fa3de5e95e7dfed3d6d66a42eeb35aa1a047e52da0",
+  "principle_references_sha256": "06e1d89e9b53562efb18684ba84dc44d4b8f50fa83abfaff3564ef79c36d8eb0",
+  "teacher": {
+    "model": "Qwen3-4B-Q4_K_M sha256=7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+    "seed": 42,
+    "kind": "local_model"
+  },
+  "relations": {
+    "rel-00": "equivalent",
+    "rel-01": "related",
+    "rel-02": "exception",
+    "rel-03": "related",
+    "rel-04": "contradiction",
+    "rel-05": "contradiction",
+    "rel-06": "entailment",
+    "rel-07": "entailment",
+    "rel-08": "cause",
+    "rel-09": "cause",
+    "rel-10": "condition",
+    "rel-11": "condition",
+    "rel-12": "exception",
+    "rel-13": "contradiction"
+  },
+  "principles": {
+    "push": {
+      "when": "물체를 움직이려는 힘이 저항보다 클 때",
+      "then": "물체가 밀려 이동한다",
+      "otherwise_when": "물체를 움직이려는 힘이 저항보다 작을 때",
+      "otherwise_then": "물체가 제자리에 남는다",
+      "explanation": "물체를 움직이려는 힘이 저항보다 클 때 물체가 밀려 이동하지만, 저항을 넘지 못하면 물체는 제자리에 남는다."
+    },
+    "latch": {
+      "when": "덮개나 문을 당길 때 걸쇠가 풀려 있다.",
+      "then": "문이 열린다.",
+      "otherwise_when": "덮개나 문을 당길 때 걸쇠가 걸려 있다.",
+      "otherwise_then": "문이 열리지 않는다.",
+      "explanation": "문을 당길 때 걸쇠가 풀려 있다면 문이 열리지만, 걸려 있다면 열리지 않는다."
+    },
+    "consent": {
+      "when": "물건의 주인이 사용을 명시적으로 허락했다.",
+      "then": "물건을 사용할 수 있다.",
+      "otherwise_when": "물건의 주인이 사용을 명시적으로 허락하지 않았다.",
+      "otherwise_then": "물건을 사용하기 전에 먼저 확인해야 한다.",
+      "explanation": "물건의 주인이 사용을 명시적으로 허락하면 사용할 수 있으며, 허락이 없으면 사용하기 전에 먼저 확인해야 한다."
+    },
+    "scope": {
+      "when": "허락이 이미 받았지만 범위 안에서만 사용할 수 있다.",
+      "then": "허락한 범위 내에서의 사용은 허용된다.",
+      "otherwise_when": "허락이 이미 받았지만 범위를 벗어나면 다시 허락을 받는다.",
+      "otherwise_then": "범위를 벗어난 사용은 다시 허락을 받아야 한다.",
+      "explanation": "허락이 이미 받았지만 범위 안에서 사용하면 허용되며, 범위를 벗어나면 다시 허락을 받아야 한다."
+    }
+  },
+  "cost": {
+    "relations-0": [
+      {
+        "wall_seconds": 5.4524804999964545,
+        "usage": {
+          "completion_tokens": 125,
+          "prompt_tokens": 454,
+          "total_tokens": 579,
+          "prompt_tokens_details": {
+            "cached_tokens": 453
+          }
+        }
+      }
+    ],
+    "relations-7": [
+      {
+        "wall_seconds": 5.538925291999476,
+        "usage": {
+          "completion_tokens": 122,
+          "prompt_tokens": 522,
+          "total_tokens": 644,
+          "prompt_tokens_details": {
+            "cached_tokens": 521
+          }
+        }
+      }
+    ],
+    "push": [
+      {
+        "wall_seconds": 6.68724574999942,
+        "usage": {
+          "completion_tokens": 120,
+          "prompt_tokens": 338,
+          "total_tokens": 458,
+          "prompt_tokens_details": {
+            "cached_tokens": 204
+          }
+        }
+      }
+    ],
+    "latch": [
+      {
+        "wall_seconds": 5.0285189999995055,
+        "usage": {
+          "completion_tokens": 90,
+          "prompt_tokens": 313,
+          "total_tokens": 403,
+          "prompt_tokens_details": {
+            "cached_tokens": 204
+          }
+        }
+      }
+    ],
+    "consent": [
+      {
+        "wall_seconds": 5.660129208998114,
+        "usage": {
+          "completion_tokens": 106,
+          "prompt_tokens": 329,
+          "total_tokens": 435,
+          "prompt_tokens_details": {
+            "cached_tokens": 204
+          }
+        }
+      }
+    ],
+    "scope": [
+      {
+        "wall_seconds": 5.917146708001383,
+        "usage": {
+          "completion_tokens": 136,
+          "prompt_tokens": 346,
+          "total_tokens": 482,
+          "prompt_tokens_details": {
+            "cached_tokens": 345
+          }
+        }
+      }
+    ]
+  }
+}

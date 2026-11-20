@@ -87,11 +87,11 @@ def request_lessons(ids: list[str], instructions: str, examples: list[dict], por
 
 
 def request_json(instructions: str, material: list | dict, schema: dict, port: int, seed: int, *,
-                 max_tokens: int) -> tuple[dict, dict]:
+                 max_tokens: int, ensure_ascii: bool = True) -> tuple[dict, dict]:
     request = {
         "messages": [
             {"role": "system", "content": instructions},
-            {"role": "user", "content": json.dumps(material)},
+            {"role": "user", "content": json.dumps(material, ensure_ascii=ensure_ascii)},
         ],
         "response_format": {"type": "json_schema", "schema": schema},
         "chat_template_kwargs": {"enable_thinking": False},

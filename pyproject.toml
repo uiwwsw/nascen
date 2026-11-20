@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "nascen"
 dynamic = ["version"]
-description = "Learning which experiences matter, and testing whether the lessons transfer."
+description = "Nascen's Large Theory Model research on sentence-level learning and principle transfer."
 readme = "README.md"
 license = "Apache-2.0"
 requires-python = ">=3.12,<3.15"
@@ -18,7 +18,7 @@ teacher = ["transformers==4.57.6"]
 Repository = "https://github.com/uiwwsw/nascen"
 
 [tool.setuptools]
-packages = ["nascen"]
+packages = ["nascen", "nascen.theory_language"]
 
 [tool.setuptools.dynamic]
 version = {attr = "nascen.__version__"}

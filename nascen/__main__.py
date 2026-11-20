@@ -109,7 +109,7 @@ def arguments() -> tuple[argparse.ArgumentParser, argparse.Namespace]:
     reset.add_argument("--strategy", default="active", choices=STRATEGIES)
     reset.add_argument("--no-replay", action="store_true", help="train only on the newest experience")
     reset.add_argument("--world", choices=("embodied", "legacy"), default="embodied")
-    reset.add_argument("--encoder", choices=ENCODERS, default="shared")
+    reset.add_argument("--encoder", choices=ENCODERS, default=EmbodiedConfig().encoder)
     reset.add_argument("--questions", choices=QUESTION_STRATEGIES, default="uncertainty")
     reset.add_argument("--question-budget", type=int)
     reset.add_argument("--question-cost", type=float, default=0.08)

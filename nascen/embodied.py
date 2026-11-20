@@ -22,7 +22,7 @@ SCENE_STEPS = 32
 
 @dataclass(frozen=True)
 class EmbodiedConfig:
-    encoder: str = "shared"
+    encoder: str = "factored"
     question_strategy: str = "uncertainty"
     question_budget: int | None = None
     question_cost: float = 0.08

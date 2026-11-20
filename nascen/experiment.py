@@ -76,12 +76,8 @@ class Experiment:
             "weights": self.learner.checkpoint(), "initial": self.initial,
         }
 
-    @torch.no_grad()
     def accuracy(self, dataset: tuple[torch.Tensor, torch.Tensor]) -> float:
-        inputs, target = dataset
-        color, shape = self.learner.concepts(inputs)
-        correct = (color.argmax(dim=-1) == target[:, 0]) & (shape.argmax(dim=-1) == target[:, 1])
-        return correct.float().mean().item()
+        return self.learner.joint_accuracy(*dataset)
 
     def metrics(self) -> dict:
         held, seen = self._probes()
@@ -178,11 +174,8 @@ class Experiment:
         color, shape = self.learner.concepts(torch.tensor(visual))
         return {"color": tuple(COLORS)[color.argmax().item()], "shape": SHAPES[shape.argmax().item()]}
 
-    @torch.no_grad()
     def _concept_probability(self, record: dict) -> float:
-        color, shape = self.learner.concepts(torch.tensor(record["visual"]))
-        target_color, target_shape = record["target"]
-        return (color.softmax(dim=-1)[target_color] * shape.softmax(dim=-1)[target_shape]).item()
+        return self.learner.label_probability(record["visual"], record["target"])
 
     def _update_models(self, record: dict, rng: Random) -> float:
         if record["target"] is not None:

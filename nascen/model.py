@@ -45,6 +45,17 @@ class Learner(nn.Module):
     def features(self, pixels: tuple[float, ...]) -> list[float]:
         return list(pixels if self.encoder == "shared" else factored_pixels(pixels))
 
+    @torch.no_grad()
+    def label_probability(self, features: list[float], label: list[int]) -> float:
+        color, shape = self.concepts(torch.tensor(features))
+        return (color.softmax(dim=-1)[label[0]] * shape.softmax(dim=-1)[label[1]]).item()
+
+    @torch.no_grad()
+    def joint_accuracy(self, inputs: torch.Tensor, target: torch.Tensor) -> float:
+        color, shape = self.concepts(inputs)
+        correct = (color.argmax(dim=-1) == target[:, 0]) & (shape.argmax(dim=-1) == target[:, 1])
+        return correct.float().mean().item()
+
     def motion(self, context: torch.Tensor, directions: torch.Tensor) -> torch.Tensor:
         encoded = nn.functional.one_hot(directions, len(DIRECTIONS)).float()
         return self.physics(torch.cat((context, encoded), dim=-1)).squeeze(-1)

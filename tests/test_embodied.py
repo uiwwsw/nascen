@@ -47,8 +47,17 @@ class EmbodiedWorldTests(TestCase):
 
 
 class EmbodiedLearningTests(TestCase):
+    def test_cost_can_make_the_policy_keep_exploring_instead_of_asking(self):
+        free = EmbodiedExperiment(42, "active", config=EmbodiedConfig(question_cost=0))
+        expensive = EmbodiedExperiment(42, "active", config=EmbodiedConfig(question_cost=1))
+        for experiment in (free, expensive):
+            for _ in range(50):
+                experiment.advance()
+        self.assertGreater(free.questions, 0)
+        self.assertEqual(expensive.questions, 0)
+
     def test_only_solicited_labels_are_learned_and_questions_pay_configured_cost(self):
-        config = EmbodiedConfig(question_budget=1, question_cost=0.3)
+        config = EmbodiedConfig(encoder="shared", question_budget=1, question_cost=0.3)
         run = EmbodiedExperiment(42, "active", config=config)
         before = run.learner.checkpoint()
         event = run.advance(teach_id=2, lesson=(0, 1))

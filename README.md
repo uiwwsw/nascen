@@ -1,6 +1,6 @@
 # Nascen
 
-Nascen은 문장으로 표현한 경험에서 배운 원리가 새로운 상황에서도 통하는지 시험하는 **개인 실험 프로젝트**입니다.
+Nascen은 문장으로 표현한 경험에서 배운 원리가 새로운 상황에도 통하는지 살펴보는 **개인 테스트 프로젝트**입니다.
 
 [![CI](https://github.com/uiwwsw/nascen/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/uiwwsw/nascen/actions/workflows/ci.yml) [![License](https://img.shields.io/badge/license-Apache--2.0-285d48)](LICENSE)
 
@@ -13,6 +13,8 @@ Meta의 Large Concept Model(LCM)이 쓰는 문장 단위 예측과, KAIST 연구
 현재 구현에서 다국어 E5는 입력을 토큰화해 문장별 벡터를 만들고, 학생은 그 벡터들의 순서를 학습합니다. 적은 데이터에서의 성능과 전체 토큰 절감은 각각 검증해야 할 가설입니다. 이를 평가하려면 학생이 본 사례와 원리 설명의 양, 교사의 입출력 토큰, 인코더의 사전학습과 실행 비용을 함께 봐야 합니다. [다국어 E5 기술 보고서](https://arxiv.org/abs/2402.05672)
 
 ## 현재 결과
+
+**Experiment 008**은 정답을 드러내던 보기 구성을 교정하고, 상태가 바뀌는지를 학습 신호로 추가했습니다. 별도 확인 시험에서 경험 1,000개로 학습한 모델은 **58.7%**, 시작 상태를 그대로 고르는 기준선은 **55.7%**였습니다. 연속 행동의 모든 단계를 맞히는 데에는 여전히 어려움이 남았습니다. [후속 시험과 실패 분석](docs/experiment-008.md)
 
 **Experiment 007**의 잠재 전이 엔진은 한국어 상태와 행동을 입력받아 다음 상태를 예측하고, 그 예측을 다음 행동에 다시 사용합니다. 초기 문장 예측 비교에 이어, 같은 학생을 경험 100·300·1,000개로 학습시켜 교사의 원리 설명을 추가한 효과를 비교했습니다. [초기 문장 예측 결과](docs/experiment-007.md#결과) · [잠재 전이 엔진과 재현 명령](docs/experiment-007.md#잠재-전이-엔진)
 

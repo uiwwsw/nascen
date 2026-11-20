@@ -4,6 +4,8 @@
 
 *An AI that learns to grow.*
 
+Nascen is an open-source research project on how agents learn from interaction, form concepts, and adapt over time.
+
 [![CI](https://github.com/uiwwsw/nascen/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/uiwwsw/nascen/actions/workflows/ci.yml) [![License](https://img.shields.io/badge/license-Apache--2.0-285d48)](LICENSE)
 
 ## Nascen이 꿈꾸는 것
@@ -11,6 +13,8 @@
 빨간 공을 보고 사람에게 이름을 배운 에이전트가 처음 본 파란 공도 알아볼 수 있을까요? 틀린 예측을 했을 때 어디가 헷갈렸는지 알아차리고, 다음에 무엇을 관찰하거나 물어볼지 스스로 고를 수 있을까요?
 
 Nascen은 작은 세계에서 **보고, 예측하고, 시도하고, 다시 배우는 과정**을 연구합니다. 장기적으로는 각각 배운 색·형태·행동을 조합해 처음 받는 요청도 수행하는 에이전트를 만들고 싶습니다. 더 적은 가르침으로도 배우는지, 새로 배운 뒤에도 예전 지식을 사용할 수 있는지, 사람의 평가가 행동을 어떻게 바꾸는지를 따로 측정합니다.
+
+이름 Nascen(나센)은 ‘태어나다’를 뜻하는 라틴어 *nascī*에서 따왔습니다.
 
 ## 첫 번째 실험
 
@@ -29,7 +33,7 @@ flowchart LR
 - **동기**는 이동 성공, 멘토 평가, 예측 개선, 새 질문을 보상에 반영합니다. 학습 정책은 이 보상과 후보 행동의 탐색 횟수를 함께 고려합니다. 멘토 타일을 침범하는 밀기는 시뮬레이터의 규칙이 실행 전에 차단합니다.
 - **기록**은 SQLite에 경험과 모델 체크포인트로 남습니다. 다시 실행하면 이어서 학습하며, `reset`은 새 기록을 시작합니다.
 
-이 세계에는 고정된 색·형태 범주와 제한된 행동이 있습니다. 첫 MVP에서 ‘이름을 배운다’는 것은 그 범주를 합성 관찰에 연결하는 것을 뜻합니다.
+첫 MVP에서 ‘이름을 배운다’는 것은 고정된 색·형태 범주를 관찰에 연결하는 것을 뜻합니다. 벤치마크에 쓰는 관찰과 멘토 답변은 시뮬레이터가 생성하며, 에이전트의 행동도 그 안에서만 일어납니다.
 
 ## 바로 실행하기
 

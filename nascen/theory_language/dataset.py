@@ -54,7 +54,7 @@ def _alternatives(state):
                  for changed in range(3))
 
 
-def training_pool(seed=42) -> tuple[Episode, ...]:
+def training_pool(seed=42, *, full_options=False) -> tuple[Episode, ...]:
     rng = Random(seed)
     groups = {}
     for world, actions in ACTIONS.items():
@@ -72,7 +72,8 @@ def training_pool(seed=42) -> tuple[Episode, ...]:
     ):
         style = rng.randrange(2)
         result = transition(state, action)
-        negatives = tuple(describe_state(world, item, wrong, style) for wrong in _alternatives(result))
+        alternatives = (wrong for wrong in STATES if wrong != result) if full_options else _alternatives(result)
+        negatives = tuple(describe_state(world, item, wrong, style) for wrong in alternatives)
         episodes.append(Episode(
             f"e{i:04}", describe_state(world, item, state, style), describe_action(action, style),
             describe_state(world, item, result, style), negatives,
@@ -81,7 +82,7 @@ def training_pool(seed=42) -> tuple[Episode, ...]:
     return tuple(episodes)
 
 
-def exam() -> tuple[tuple[Question, ...], tuple[Answer, ...]]:
+def exam(*, full_options=False, items=EXAM_ITEMS, chains=None) -> tuple[tuple[Question, ...], tuple[Answer, ...]]:
     questions = []
     answers = []
 
@@ -93,7 +94,7 @@ def exam() -> tuple[tuple[Question, ...], tuple[Answer, ...]]:
         keys = []
         for action in actions:
             state = transition(state, action)
-            candidates = [state, *_alternatives(state)]
+            candidates = list(STATES) if full_options else [state, *_alternatives(state)]
             rng.shuffle(candidates)
             options.append(tuple(describe_state(world, item, value, style) for value in candidates))
             keys.append(candidates.index(state))
@@ -106,11 +107,11 @@ def exam() -> tuple[tuple[Question, ...], tuple[Answer, ...]]:
             held_state = next(state for state in STATES if held_structure(world, state, action))
             known_state = next(state for state in STATES if not held_structure(world, state, action))
             for j in (0, 1):
-                item = EXAM_ITEMS[world][(i + j) % len(EXAM_ITEMS[world])]
+                item = items[world][(i + j) % len(items[world])]
                 add(world, item, held_state, (action,), "transfer", f"{world}-{action}-transfer-{j}", 0)
             group = f"{world}-{action}-paraphrase"
             for style in (0, 2):
-                add(world, EXAM_ITEMS[world][i], known_state, (action,), "paraphrase", group, style)
+                add(world, items[world][i], known_state, (action,), "paraphrase", group, style)
 
     contrasts = (
         ("physical", "negation", (False, True, False), ("push", "no_push")),
@@ -122,9 +123,9 @@ def exam() -> tuple[tuple[Question, ...], tuple[Answer, ...]]:
     for world, skill, state, actions in contrasts:
         for i in range(3):
             for action in actions:
-                add(world, EXAM_ITEMS[world][i], state, (action,), skill, f"{world}-{skill}-{i}", 2)
+                add(world, items[world][i], state, (action,), skill, f"{world}-{skill}-{i}", 2)
 
-    chains = (
+    chains = chains or (
         ("physical", (False, False, False), ("unblock", "push", "advance")),
         ("physical", (False, True, False), ("push", "block", "advance")),
         ("physical", (True, True, False), ("advance", "block")),
@@ -135,7 +136,7 @@ def exam() -> tuple[tuple[Question, ...], tuple[Answer, ...]]:
     )
     for j, (world, state, actions) in enumerate(chains):
         for i in range(2):
-            add(world, EXAM_ITEMS[world][(i + j) % len(EXAM_ITEMS[world])], state, actions,
+            add(world, items[world][(i + j) % len(items[world])], state, actions,
                 "composition", f"{world}-chain-{j}-{i}", 2)
 
     outside = (

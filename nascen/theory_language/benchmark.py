@@ -123,7 +123,7 @@ def run(data, encoder, collection, review, weights, *, budgets=BUDGETS, seeds=SE
                 break
 
     return {
-        "experiment": "007 · LTM latent transition engine", "schema": 1, "manifest": manifest,
+        "experiment": "007 · Nascen latent transition engine", "schema": 1, "manifest": manifest,
         "budgets": budgets, "seeds": seeds, "steps": steps, "batch_size": batch_size, "loss_weights": asdict(weights),
         "questions": len(questions), "in_domain_questions": sum(a.skill != "outside_knowledge" for a in answers),
         "composition_questions": sum(a.skill == "composition" for a in answers),

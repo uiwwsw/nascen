@@ -1,0 +1,10821 @@
+{
+  "experiment": "008 · Balanced outcome choices and action-sensitive transitions",
+  "phase": "confirmation",
+  "original_choice_audit": {
+    "steps": 108,
+    "exact_choice_geometry_correct": 108,
+    "e5_candidate_only_correct": 107
+  },
+  "budgets": [
+    100,
+    300,
+    1000
+  ],
+  "seeds": [
+    11,
+    22,
+    42
+  ],
+  "steps": 480,
+  "batch_size": 32,
+  "train_sha256": "7828a5d98797caef063f52cd39da9b6d7eaaa44432cabb437c9a23cc47796a1f",
+  "exam_sha256": "c445af2d88e0366612359459f52b4318b74395d59d497c3999e71eadd1ee213d",
+  "answer_sha256": "6e4147c563f3b1944d5ca9b90dcf1550f4fd0131e6c2ec2edfe2c69bdb3a29e9",
+  "lesson_sha256": "2cd42942f6e80682348475fea8cf0c1d6a8b1904301dd9ad62b934b22bdf0f3b",
+  "review_sha256": "6e0050a6e2df3ce07aa18ae3a0cc0824ec984b4c34b8916b72cd0b690f6216f2",
+  "encoder": {
+    "model": "intfloat/multilingual-e5-small",
+    "reference_revision": "fd1525a9fd15316a2d503bf26ab031a61d056e98",
+    "files_sha256": {
+      "config.json": "69137736cab8b8903a07fe8afaafdda25aac55415a12a55d1bffa9f581abf959",
+      "model.safetensors": "1a55775f53449dac10a2bcbc312469fac40b96d53198c407081a831f81c98477",
+      "tokenizer.json": "0b44a9d7b51c3c62626640cda0e2c2f70fdacdc25bbbd68038369d14ebdf4c39",
+      "tokenizer_config.json": "a1d6bc8734a6f635dc158508bef000f8e2e5a759c7d92f984b2c86e5ff53425b",
+      "special_tokens_map.json": "d05497f1da52c5e09554c0cd874037a083e1dc1b9cfd48034d1c717f1afc07a7",
+      "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865"
+    },
+    "parameters": 117653760,
+    "frozen": true,
+    "pretraining_cost": null
+  },
+  "encoding_cost": {
+    "training": {
+      "unique_sentences": 790,
+      "cpu_seconds": 3.782477,
+      "input_tokens": 29252
+    },
+    "exam": {
+      "unique_sentences": 218,
+      "cpu_seconds": 1.1340029999999999,
+      "input_tokens": 7949
+    },
+    "theory": {
+      "unique_sentences": 0,
+      "cpu_seconds": 4.400000000082116e-05,
+      "input_tokens": 0
+    }
+  },
+  "variants": {
+    "A": {
+      "projected_outcomes": false,
+      "balanced_routing": false,
+      "teacher": false,
+      "learned_change_gate": false
+    },
+    "B": {
+      "projected_outcomes": true,
+      "balanced_routing": false,
+      "teacher": false,
+      "learned_change_gate": false
+    },
+    "F": {
+      "projected_outcomes": true,
+      "balanced_routing": false,
+      "teacher": false,
+      "learned_change_gate": true
+    }
+  },
+  "answer_key": [
+    {
+      "id": "q000",
+      "steps": [
+        0
+      ],
+      "skill": "transfer",
+      "group": "physical-push-transfer-0"
+    },
+    {
+      "id": "q001",
+      "steps": [
+        4
+      ],
+      "skill": "transfer",
+      "group": "physical-push-transfer-1"
+    },
+    {
+      "id": "q002",
+      "steps": [
+        0
+      ],
+      "skill": "paraphrase",
+      "group": "physical-push-paraphrase"
+    },
+    {
+      "id": "q003",
+      "steps": [
+        3
+      ],
+      "skill": "paraphrase",
+      "group": "physical-push-paraphrase"
+    },
+    {
+      "id": "q004",
+      "steps": [
+        1
+      ],
+      "skill": "transfer",
+      "group": "physical-no_push-transfer-0"
+    },
+    {
+      "id": "q005",
+      "steps": [
+        4
+      ],
+      "skill": "transfer",
+      "group": "physical-no_push-transfer-1"
+    },
+    {
+      "id": "q006",
+      "steps": [
+        7
+      ],
+      "skill": "paraphrase",
+      "group": "physical-no_push-paraphrase"
+    },
+    {
+      "id": "q007",
+      "steps": [
+        0
+      ],
+      "skill": "paraphrase",
+      "group": "physical-no_push-paraphrase"
+    },
+    {
+      "id": "q008",
+      "steps": [
+        4
+      ],
+      "skill": "transfer",
+      "group": "physical-unblock-transfer-0"
+    },
+    {
+      "id": "q009",
+      "steps": [
+        0
+      ],
+      "skill": "transfer",
+      "group": "physical-unblock-transfer-1"
+    },
+    {
+      "id": "q010",
+      "steps": [
+        6
+      ],
+      "skill": "paraphrase",
+      "group": "physical-unblock-paraphrase"
+    },
+    {
+      "id": "q011",
+      "steps": [
+        3
+      ],
+      "skill": "paraphrase",
+      "group": "physical-unblock-paraphrase"
+    },
+    {
+      "id": "q012",
+      "steps": [
+        6
+      ],
+      "skill": "transfer",
+      "group": "physical-block-transfer-0"
+    },
+    {
+      "id": "q013",
+      "steps": [
+        6
+      ],
+      "skill": "transfer",
+      "group": "physical-block-transfer-1"
+    },
+    {
+      "id": "q014",
+      "steps": [
+        7
+      ],
+      "skill": "paraphrase",
+      "group": "physical-block-paraphrase"
+    },
+    {
+      "id": "q015",
+      "steps": [
+        5
+      ],
+      "skill": "paraphrase",
+      "group": "physical-block-paraphrase"
+    },
+    {
+      "id": "q016",
+      "steps": [
+        7
+      ],
+      "skill": "transfer",
+      "group": "physical-advance-transfer-0"
+    },
+    {
+      "id": "q017",
+      "steps": [
+        7
+      ],
+      "skill": "transfer",
+      "group": "physical-advance-transfer-1"
+    },
+    {
+      "id": "q018",
+      "steps": [
+        1
+      ],
+      "skill": "paraphrase",
+      "group": "physical-advance-paraphrase"
+    },
+    {
+      "id": "q019",
+      "steps": [
+        5
+      ],
+      "skill": "paraphrase",
+      "group": "physical-advance-paraphrase"
+    },
+    {
+      "id": "q020",
+      "steps": [
+        6
+      ],
+      "skill": "transfer",
+      "group": "social-owner_grants-transfer-0"
+    },
+    {
+      "id": "q021",
+      "steps": [
+        7
+      ],
+      "skill": "transfer",
+      "group": "social-owner_grants-transfer-1"
+    },
+    {
+      "id": "q022",
+      "steps": [
+        6
+      ],
+      "skill": "paraphrase",
+      "group": "social-owner_grants-paraphrase"
+    },
+    {
+      "id": "q023",
+      "steps": [
+        6
+      ],
+      "skill": "paraphrase",
+      "group": "social-owner_grants-paraphrase"
+    },
+    {
+      "id": "q024",
+      "steps": [
+        3
+      ],
+      "skill": "transfer",
+      "group": "social-peer_grants-transfer-0"
+    },
+    {
+      "id": "q025",
+      "steps": [
+        1
+      ],
+      "skill": "transfer",
+      "group": "social-peer_grants-transfer-1"
+    },
+    {
+      "id": "q026",
+      "steps": [
+        7
+      ],
+      "skill": "paraphrase",
+      "group": "social-peer_grants-paraphrase"
+    },
+    {
+      "id": "q027",
+      "steps": [
+        4
+      ],
+      "skill": "paraphrase",
+      "group": "social-peer_grants-paraphrase"
+    },
+    {
+      "id": "q028",
+      "steps": [
+        2
+      ],
+      "skill": "transfer",
+      "group": "social-urgent_now-transfer-0"
+    },
+    {
+      "id": "q029",
+      "steps": [
+        0
+      ],
+      "skill": "transfer",
+      "group": "social-urgent_now-transfer-1"
+    },
+    {
+      "id": "q030",
+      "steps": [
+        1
+      ],
+      "skill": "paraphrase",
+      "group": "social-urgent_now-paraphrase"
+    },
+    {
+      "id": "q031",
+      "steps": [
+        6
+      ],
+      "skill": "paraphrase",
+      "group": "social-urgent_now-paraphrase"
+    },
+    {
+      "id": "q032",
+      "steps": [
+        5
+      ],
+      "skill": "transfer",
+      "group": "social-urgent_before-transfer-0"
+    },
+    {
+      "id": "q033",
+      "steps": [
+        3
+      ],
+      "skill": "transfer",
+      "group": "social-urgent_before-transfer-1"
+    },
+    {
+      "id": "q034",
+      "steps": [
+        6
+      ],
+      "skill": "paraphrase",
+      "group": "social-urgent_before-paraphrase"
+    },
+    {
+      "id": "q035",
+      "steps": [
+        6
+      ],
+      "skill": "paraphrase",
+      "group": "social-urgent_before-paraphrase"
+    },
+    {
+      "id": "q036",
+      "steps": [
+        7
+      ],
+      "skill": "transfer",
+      "group": "social-use_in-transfer-0"
+    },
+    {
+      "id": "q037",
+      "steps": [
+        7
+      ],
+      "skill": "transfer",
+      "group": "social-use_in-transfer-1"
+    },
+    {
+      "id": "q038",
+      "steps": [
+        4
+      ],
+      "skill": "paraphrase",
+      "group": "social-use_in-paraphrase"
+    },
+    {
+      "id": "q039",
+      "steps": [
+        5
+      ],
+      "skill": "paraphrase",
+      "group": "social-use_in-paraphrase"
+    },
+    {
+      "id": "q040",
+      "steps": [
+        1
+      ],
+      "skill": "transfer",
+      "group": "social-use_out-transfer-0"
+    },
+    {
+      "id": "q041",
+      "steps": [
+        5
+      ],
+      "skill": "transfer",
+      "group": "social-use_out-transfer-1"
+    },
+    {
+      "id": "q042",
+      "steps": [
+        4
+      ],
+      "skill": "paraphrase",
+      "group": "social-use_out-paraphrase"
+    },
+    {
+      "id": "q043",
+      "steps": [
+        7
+      ],
+      "skill": "paraphrase",
+      "group": "social-use_out-paraphrase"
+    },
+    {
+      "id": "q044",
+      "steps": [
+        7
+      ],
+      "skill": "negation",
+      "group": "physical-negation-0"
+    },
+    {
+      "id": "q045",
+      "steps": [
+        1
+      ],
+      "skill": "negation",
+      "group": "physical-negation-0"
+    },
+    {
+      "id": "q046",
+      "steps": [
+        2
+      ],
+      "skill": "negation",
+      "group": "physical-negation-1"
+    },
+    {
+      "id": "q047",
+      "steps": [
+        3
+      ],
+      "skill": "negation",
+      "group": "physical-negation-1"
+    },
+    {
+      "id": "q048",
+      "steps": [
+        2
+      ],
+      "skill": "negation",
+      "group": "physical-negation-2"
+    },
+    {
+      "id": "q049",
+      "steps": [
+        7
+      ],
+      "skill": "negation",
+      "group": "physical-negation-2"
+    },
+    {
+      "id": "q050",
+      "steps": [
+        0
+      ],
+      "skill": "condition",
+      "group": "physical-condition-0"
+    },
+    {
+      "id": "q051",
+      "steps": [
+        4
+      ],
+      "skill": "condition",
+      "group": "physical-condition-0"
+    },
+    {
+      "id": "q052",
+      "steps": [
+        6
+      ],
+      "skill": "condition",
+      "group": "physical-condition-1"
+    },
+    {
+      "id": "q053",
+      "steps": [
+        0
+      ],
+      "skill": "condition",
+      "group": "physical-condition-1"
+    },
+    {
+      "id": "q054",
+      "steps": [
+        3
+      ],
+      "skill": "condition",
+      "group": "physical-condition-2"
+    },
+    {
+      "id": "q055",
+      "steps": [
+        3
+      ],
+      "skill": "condition",
+      "group": "physical-condition-2"
+    },
+    {
+      "id": "q056",
+      "steps": [
+        0
+      ],
+      "skill": "subject",
+      "group": "social-subject-0"
+    },
+    {
+      "id": "q057",
+      "steps": [
+        1
+      ],
+      "skill": "subject",
+      "group": "social-subject-0"
+    },
+    {
+      "id": "q058",
+      "steps": [
+        1
+      ],
+      "skill": "subject",
+      "group": "social-subject-1"
+    },
+    {
+      "id": "q059",
+      "steps": [
+        1
+      ],
+      "skill": "subject",
+      "group": "social-subject-1"
+    },
+    {
+      "id": "q060",
+      "steps": [
+        5
+      ],
+      "skill": "subject",
+      "group": "social-subject-2"
+    },
+    {
+      "id": "q061",
+      "steps": [
+        3
+      ],
+      "skill": "subject",
+      "group": "social-subject-2"
+    },
+    {
+      "id": "q062",
+      "steps": [
+        7
+      ],
+      "skill": "time",
+      "group": "social-time-0"
+    },
+    {
+      "id": "q063",
+      "steps": [
+        3
+      ],
+      "skill": "time",
+      "group": "social-time-0"
+    },
+    {
+      "id": "q064",
+      "steps": [
+        3
+      ],
+      "skill": "time",
+      "group": "social-time-1"
+    },
+    {
+      "id": "q065",
+      "steps": [
+        1
+      ],
+      "skill": "time",
+      "group": "social-time-1"
+    },
+    {
+      "id": "q066",
+      "steps": [
+        5
+      ],
+      "skill": "time",
+      "group": "social-time-2"
+    },
+    {
+      "id": "q067",
+      "steps": [
+        3
+      ],
+      "skill": "time",
+      "group": "social-time-2"
+    },
+    {
+      "id": "q068",
+      "steps": [
+        0
+      ],
+      "skill": "condition",
+      "group": "social-condition-0"
+    },
+    {
+      "id": "q069",
+      "steps": [
+        0
+      ],
+      "skill": "condition",
+      "group": "social-condition-0"
+    },
+    {
+      "id": "q070",
+      "steps": [
+        5
+      ],
+      "skill": "condition",
+      "group": "social-condition-1"
+    },
+    {
+      "id": "q071",
+      "steps": [
+        7
+      ],
+      "skill": "condition",
+      "group": "social-condition-1"
+    },
+    {
+      "id": "q072",
+      "steps": [
+        3
+      ],
+      "skill": "condition",
+      "group": "social-condition-2"
+    },
+    {
+      "id": "q073",
+      "steps": [
+        4
+      ],
+      "skill": "condition",
+      "group": "social-condition-2"
+    },
+    {
+      "id": "q074",
+      "steps": [
+        0,
+        4,
+        6
+      ],
+      "skill": "composition",
+      "group": "physical-chain-0-0"
+    },
+    {
+      "id": "q075",
+      "steps": [
+        3,
+        7,
+        6
+      ],
+      "skill": "composition",
+      "group": "physical-chain-0-1"
+    },
+    {
+      "id": "q076",
+      "steps": [
+        4,
+        2,
+        3
+      ],
+      "skill": "composition",
+      "group": "physical-chain-1-0"
+    },
+    {
+      "id": "q077",
+      "steps": [
+        3,
+        3,
+        1
+      ],
+      "skill": "composition",
+      "group": "physical-chain-1-1"
+    },
+    {
+      "id": "q078",
+      "steps": [
+        2,
+        6
+      ],
+      "skill": "composition",
+      "group": "physical-chain-2-0"
+    },
+    {
+      "id": "q079",
+      "steps": [
+        6,
+        7
+      ],
+      "skill": "composition",
+      "group": "physical-chain-2-1"
+    },
+    {
+      "id": "q080",
+      "steps": [
+        7,
+        2,
+        3
+      ],
+      "skill": "composition",
+      "group": "social-chain-3-0"
+    },
+    {
+      "id": "q081",
+      "steps": [
+        5,
+        1,
+        0
+      ],
+      "skill": "composition",
+      "group": "social-chain-3-1"
+    },
+    {
+      "id": "q082",
+      "steps": [
+        0,
+        7
+      ],
+      "skill": "composition",
+      "group": "social-chain-4-0"
+    },
+    {
+      "id": "q083",
+      "steps": [
+        5,
+        1
+      ],
+      "skill": "composition",
+      "group": "social-chain-4-1"
+    },
+    {
+      "id": "q084",
+      "steps": [
+        7,
+        1,
+        6
+      ],
+      "skill": "composition",
+      "group": "social-chain-5-0"
+    },
+    {
+      "id": "q085",
+      "steps": [
+        3,
+        2,
+        5
+      ],
+      "skill": "composition",
+      "group": "social-chain-5-1"
+    },
+    {
+      "id": "q086",
+      "steps": [
+        3,
+        5,
+        7
+      ],
+      "skill": "composition",
+      "group": "social-chain-6-0"
+    },
+    {
+      "id": "q087",
+      "steps": [
+        3,
+        3,
+        1
+      ],
+      "skill": "composition",
+      "group": "social-chain-6-1"
+    },
+    {
+      "id": "q088",
+      "steps": [
+        0
+      ],
+      "skill": "outside_knowledge",
+      "group": "q088"
+    },
+    {
+      "id": "q089",
+      "steps": [
+        2
+      ],
+      "skill": "outside_knowledge",
+      "group": "q089"
+    }
+  ],
+  "summary": [
+    {
+      "arm": "candidate-only",
+      "budget": null,
+      "accuracy": 0.125,
+      "outside_knowledge_accuracy": 0.5,
+      "changed_accuracy": 0.1568627450980392,
+      "unchanged_accuracy": 0.09836065573770492,
+      "changed_steps": 51,
+      "unchanged_steps": 61,
+      "counterfactual_both_correct": 0,
+      "composition_all_steps": 0,
+      "transfer": 0.18181818181818182,
+      "seed_accuracies": [
+        0.125
+      ],
+      "effective_slots": null,
+      "uniform_routing_accuracy": null
+    },
+    {
+      "arm": "E5-copy",
+      "budget": null,
+      "accuracy": 0.5568181818181818,
+      "outside_knowledge_accuracy": 1,
+      "changed_accuracy": 0.0784313725490196,
+      "unchanged_accuracy": 0.9016393442622951,
+      "changed_steps": 51,
+      "unchanged_steps": 61,
+      "counterfactual_both_correct": 0,
+      "composition_all_steps": 0.14285714285714285,
+      "transfer": 0.5454545454545454,
+      "seed_accuracies": [
+        0.5568181818181818
+      ],
+      "effective_slots": null,
+      "uniform_routing_accuracy": null
+    },
+    {
+      "arm": "A",
+      "budget": 100,
+      "accuracy": 0.4166666666666667,
+      "outside_knowledge_accuracy": 1,
+      "changed_accuracy": 0.13071895424836602,
+      "unchanged_accuracy": 0.6065573770491803,
+      "changed_steps": 51,
+      "unchanged_steps": 61,
+      "counterfactual_both_correct": 0,
+      "composition_all_steps": 0.14285714285714285,
+      "transfer": 0.3333333333333333,
+      "seed_accuracies": [
+        0.4318181818181818,
+        0.4090909090909091,
+        0.4090909090909091
+      ],
+      "effective_slots": 1.0008381605148315,
+      "uniform_routing_accuracy": 0.38636363636363635
+    },
+    {
+      "arm": "B",
+      "budget": 100,
+      "accuracy": 0.35984848484848486,
+      "outside_knowledge_accuracy": 0.5,
+      "changed_accuracy": 0.16993464052287582,
+      "unchanged_accuracy": 0.47540983606557374,
+      "changed_steps": 51,
+      "unchanged_steps": 61,
+      "counterfactual_both_correct": 0,
+      "composition_all_steps": 0.09523809523809523,
+      "transfer": 0.3939393939393939,
+      "seed_accuracies": [
+        0.4318181818181818,
+        0.3068181818181818,
+        0.3409090909090909
+      ],
+      "effective_slots": 4.810232639312744,
+      "uniform_routing_accuracy": 0.42424242424242425
+    },
+    {
+      "arm": "F",
+      "budget": 100,
+      "accuracy": 0.5113636363636364,
+      "outside_knowledge_accuracy": 0.8333333333333334,
+      "changed_accuracy": 0.1568627450980392,
+      "unchanged_accuracy": 0.7650273224043715,
+      "changed_steps": 51,
+      "unchanged_steps": 61,
+      "counterfactual_both_correct": 0,
+      "composition_all_steps": 0.14285714285714285,
+      "transfer": 0.48484848484848486,
+      "seed_accuracies": [
+        0.5227272727272727,
+        0.5340909090909091,
+        0.4772727272727273
+      ],
+      "effective_slots": 2.842979907989502,
+      "uniform_routing_accuracy": 0.5454545454545454
+    },
+    {
+      "arm": "A",
+      "budget": 300,
+      "accuracy": 0.4393939393939394,
+      "outside_knowledge_accuracy": 0.6666666666666666,
+      "changed_accuracy": 0.09803921568627451,
+      "unchanged_accuracy": 0.6830601092896175,
+      "changed_steps": 51,
+      "unchanged_steps": 61,
+      "counterfactual_both_correct": 0,
+      "composition_all_steps": 0.14285714285714285,
+      "transfer": 0.24242424242424243,
+      "seed_accuracies": [
+        0.45454545454545453,
+        0.4318181818181818,
+        0.4318181818181818
+      ],
+      "effective_slots": 1.0000718832015991,
+      "uniform_routing_accuracy": 0.4621212121212121
+    },
+    {
+      "arm": "B",
+      "budget": 300,
+      "accuracy": 0.45454545454545453,
+      "outside_knowledge_accuracy": 0.8333333333333334,
+      "changed_accuracy": 0.2875816993464052,
+      "unchanged_accuracy": 0.46994535519125685,
+      "changed_steps": 51,
+      "unchanged_steps": 61,
+      "counterfactual_both_correct": 0.1111111111111111,
+      "composition_all_steps": 0.023809523809523808,
+      "transfer": 0.6060606060606061,
+      "seed_accuracies": [
+        0.4318181818181818,
+        0.4659090909090909,
+        0.4659090909090909
+      ],
+      "effective_slots": 5.425217469533284,
+      "uniform_routing_accuracy": 0.3939393939393939
+    },
+    {
+      "arm": "F",
+      "budget": 300,
+      "accuracy": 0.5757575757575758,
+      "outside_knowledge_accuracy": 0.6666666666666666,
+      "changed_accuracy": 0.20261437908496732,
+      "unchanged_accuracy": 0.819672131147541,
+      "changed_steps": 51,
+      "unchanged_steps": 61,
+      "counterfactual_both_correct": 0.1111111111111111,
+      "composition_all_steps": 0.11904761904761904,
+      "transfer": 0.7272727272727273,
+      "seed_accuracies": [
+        0.5795454545454546,
+        0.5681818181818182,
+        0.5795454545454546
+      ],
+      "effective_slots": 3.9424702326456704,
+      "uniform_routing_accuracy": 0.5568181818181819
+    },
+    {
+      "arm": "A",
+      "budget": 1000,
+      "accuracy": 0.46969696969696967,
+      "outside_knowledge_accuracy": 0,
+      "changed_accuracy": 0.12418300653594772,
+      "unchanged_accuracy": 0.7049180327868853,
+      "changed_steps": 51,
+      "unchanged_steps": 61,
+      "counterfactual_both_correct": 0,
+      "composition_all_steps": 0.14285714285714285,
+      "transfer": 0.30303030303030304,
+      "seed_accuracies": [
+        0.4659090909090909,
+        0.4772727272727273,
+        0.4659090909090909
+      ],
+      "effective_slots": 1.000365416208903,
+      "uniform_routing_accuracy": 0.46969696969696967
+    },
+    {
+      "arm": "B",
+      "budget": 1000,
+      "accuracy": 0.4393939393939394,
+      "outside_knowledge_accuracy": 0.5,
+      "changed_accuracy": 0.2679738562091503,
+      "unchanged_accuracy": 0.5027322404371585,
+      "changed_steps": 51,
+      "unchanged_steps": 61,
+      "counterfactual_both_correct": 0.044444444444444446,
+      "composition_all_steps": 0,
+      "transfer": 0.6060606060606061,
+      "seed_accuracies": [
+        0.36363636363636365,
+        0.4318181818181818,
+        0.5227272727272727
+      ],
+      "effective_slots": 5.444036960601807,
+      "uniform_routing_accuracy": 0.4810606060606061
+    },
+    {
+      "arm": "F",
+      "budget": 1000,
+      "accuracy": 0.5871212121212122,
+      "outside_knowledge_accuracy": 0.8333333333333334,
+      "changed_accuracy": 0.20915032679738563,
+      "unchanged_accuracy": 0.8360655737704917,
+      "changed_steps": 51,
+      "unchanged_steps": 61,
+      "counterfactual_both_correct": 0.06666666666666667,
+      "composition_all_steps": 0.09523809523809523,
+      "transfer": 0.7121212121212122,
+      "seed_accuracies": [
+        0.5909090909090909,
+        0.6022727272727273,
+        0.5681818181818182
+      ],
+      "effective_slots": 3.454591671625773,
+      "uniform_routing_accuracy": 0.5340909090909091
+    }
+  ],
+  "trials": [
+    {
+      "arm": "candidate-only",
+      "budget": null,
+      "seed": null,
+      "predictions": {
+        "q000": [
+          4
+        ],
+        "q001": [
+          2
+        ],
+        "q002": [
+          4
+        ],
+        "q003": [
+          1
+        ],
+        "q004": [
+          5
+        ],
+        "q005": [
+          0
+        ],
+        "q006": [
+          6
+        ],
+        "q007": [
+          3
+        ],
+        "q008": [
+          4
+        ],
+        "q009": [
+          0
+        ],
+        "q010": [
+          6
+        ],
+        "q011": [
+          0
+        ],
+        "q012": [
+          5
+        ],
+        "q013": [
+          1
+        ],
+        "q014": [
+          5
+        ],
+        "q015": [
+          6
+        ],
+        "q016": [
+          1
+        ],
+        "q017": [
+          5
+        ],
+        "q018": [
+          6
+        ],
+        "q019": [
+          0
+        ],
+        "q020": [
+          7
+        ],
+        "q021": [
+          5
+        ],
+        "q022": [
+          0
+        ],
+        "q023": [
+          5
+        ],
+        "q024": [
+          7
+        ],
+        "q025": [
+          7
+        ],
+        "q026": [
+          3
+        ],
+        "q027": [
+          3
+        ],
+        "q028": [
+          4
+        ],
+        "q029": [
+          3
+        ],
+        "q030": [
+          0
+        ],
+        "q031": [
+          6
+        ],
+        "q032": [
+          7
+        ],
+        "q033": [
+          6
+        ],
+        "q034": [
+          7
+        ],
+        "q035": [
+          4
+        ],
+        "q036": [
+          2
+        ],
+        "q037": [
+          3
+        ],
+        "q038": [
+          5
+        ],
+        "q039": [
+          2
+        ],
+        "q040": [
+          1
+        ],
+        "q041": [
+          5
+        ],
+        "q042": [
+          7
+        ],
+        "q043": [
+          3
+        ],
+        "q044": [
+          1
+        ],
+        "q045": [
+          7
+        ],
+        "q046": [
+          6
+        ],
+        "q047": [
+          3
+        ],
+        "q048": [
+          3
+        ],
+        "q049": [
+          6
+        ],
+        "q050": [
+          5
+        ],
+        "q051": [
+          0
+        ],
+        "q052": [
+          5
+        ],
+        "q053": [
+          3
+        ],
+        "q054": [
+          2
+        ],
+        "q055": [
+          7
+        ],
+        "q056": [
+          4
+        ],
+        "q057": [
+          5
+        ],
+        "q058": [
+          6
+        ],
+        "q059": [
+          6
+        ],
+        "q060": [
+          3
+        ],
+        "q061": [
+          6
+        ],
+        "q062": [
+          7
+        ],
+        "q063": [
+          5
+        ],
+        "q064": [
+          3
+        ],
+        "q065": [
+          7
+        ],
+        "q066": [
+          5
+        ],
+        "q067": [
+          1
+        ],
+        "q068": [
+          7
+        ],
+        "q069": [
+          2
+        ],
+        "q070": [
+          7
+        ],
+        "q071": [
+          4
+        ],
+        "q072": [
+          0
+        ],
+        "q073": [
+          5
+        ],
+        "q074": [
+          3,
+          0,
+          1
+        ],
+        "q075": [
+          7,
+          7,
+          4
+        ],
+        "q076": [
+          2,
+          2,
+          3
+        ],
+        "q077": [
+          7,
+          1,
+          3
+        ],
+        "q080": [
+          5,
+          7,
+          6
+        ],
+        "q081": [
+          0,
+          7,
+          2
+        ],
+        "q084": [
+          2,
+          7,
+          0
+        ],
+        "q085": [
+          3,
+          6,
+          2
+        ],
+        "q086": [
+          1,
+          4,
+          3
+        ],
+        "q087": [
+          0,
+          4,
+          3
+        ],
+        "q078": [
+          3,
+          1
+        ],
+        "q079": [
+          3,
+          2
+        ],
+        "q082": [
+          3,
+          0
+        ],
+        "q083": [
+          0,
+          6
+        ],
+        "q088": [
+          0
+        ],
+        "q089": [
+          1
+        ]
+      },
+      "metrics": {
+        "accuracy": 0.125,
+        "outside_knowledge_accuracy": 0.5,
+        "changed_accuracy": 0.1568627450980392,
+        "unchanged_accuracy": 0.09836065573770492,
+        "changed_steps": 51,
+        "unchanged_steps": 61,
+        "counterfactual_both_correct": 0,
+        "composition_all_steps": 0,
+        "transfer": 0.18181818181818182
+      }
+    },
+    {
+      "arm": "E5-copy",
+      "budget": null,
+      "seed": null,
+      "predictions": {
+        "q000": [
+          0
+        ],
+        "q001": [
+          4
+        ],
+        "q002": [
+          0
+        ],
+        "q003": [
+          3
+        ],
+        "q004": [
+          1
+        ],
+        "q005": [
+          4
+        ],
+        "q006": [
+          7
+        ],
+        "q007": [
+          0
+        ],
+        "q008": [
+          4
+        ],
+        "q009": [
+          0
+        ],
+        "q010": [
+          1
+        ],
+        "q011": [
+          4
+        ],
+        "q012": [
+          7
+        ],
+        "q013": [
+          7
+        ],
+        "q014": [
+          7
+        ],
+        "q015": [
+          5
+        ],
+        "q016": [
+          2
+        ],
+        "q017": [
+          1
+        ],
+        "q018": [
+          1
+        ],
+        "q019": [
+          5
+        ],
+        "q020": [
+          1
+        ],
+        "q021": [
+          2
+        ],
+        "q022": [
+          0
+        ],
+        "q023": [
+          2
+        ],
+        "q024": [
+          3
+        ],
+        "q025": [
+          1
+        ],
+        "q026": [
+          7
+        ],
+        "q027": [
+          4
+        ],
+        "q028": [
+          2
+        ],
+        "q029": [
+          0
+        ],
+        "q030": [
+          4
+        ],
+        "q031": [
+          2
+        ],
+        "q032": [
+          0
+        ],
+        "q033": [
+          0
+        ],
+        "q034": [
+          6
+        ],
+        "q035": [
+          6
+        ],
+        "q036": [
+          5
+        ],
+        "q037": [
+          2
+        ],
+        "q038": [
+          4
+        ],
+        "q039": [
+          5
+        ],
+        "q040": [
+          1
+        ],
+        "q041": [
+          5
+        ],
+        "q042": [
+          4
+        ],
+        "q043": [
+          7
+        ],
+        "q044": [
+          5
+        ],
+        "q045": [
+          1
+        ],
+        "q046": [
+          6
+        ],
+        "q047": [
+          3
+        ],
+        "q048": [
+          1
+        ],
+        "q049": [
+          7
+        ],
+        "q050": [
+          0
+        ],
+        "q051": [
+          3
+        ],
+        "q052": [
+          6
+        ],
+        "q053": [
+          4
+        ],
+        "q054": [
+          3
+        ],
+        "q055": [
+          0
+        ],
+        "q056": [
+          5
+        ],
+        "q057": [
+          1
+        ],
+        "q058": [
+          0
+        ],
+        "q059": [
+          1
+        ],
+        "q060": [
+          1
+        ],
+        "q061": [
+          3
+        ],
+        "q062": [
+          3
+        ],
+        "q063": [
+          3
+        ],
+        "q064": [
+          4
+        ],
+        "q065": [
+          1
+        ],
+        "q066": [
+          7
+        ],
+        "q067": [
+          3
+        ],
+        "q068": [
+          4
+        ],
+        "q069": [
+          0
+        ],
+        "q070": [
+          6
+        ],
+        "q071": [
+          7
+        ],
+        "q072": [
+          5
+        ],
+        "q073": [
+          4
+        ],
+        "q074": [
+          2,
+          6,
+          6
+        ],
+        "q075": [
+          2,
+          5,
+          6
+        ],
+        "q076": [
+          4,
+          6,
+          4
+        ],
+        "q077": [
+          3,
+          0,
+          7
+        ],
+        "q080": [
+          7,
+          1,
+          5
+        ],
+        "q081": [
+          5,
+          4,
+          1
+        ],
+        "q084": [
+          4,
+          1,
+          6
+        ],
+        "q085": [
+          5,
+          2,
+          5
+        ],
+        "q086": [
+          3,
+          2,
+          4
+        ],
+        "q087": [
+          3,
+          5,
+          6
+        ],
+        "q078": [
+          1,
+          5
+        ],
+        "q079": [
+          0,
+          0
+        ],
+        "q082": [
+          0,
+          7
+        ],
+        "q083": [
+          5,
+          1
+        ],
+        "q088": [
+          0
+        ],
+        "q089": [
+          2
+        ]
+      },
+      "metrics": {
+        "accuracy": 0.5568181818181818,
+        "outside_knowledge_accuracy": 1,
+        "changed_accuracy": 0.0784313725490196,
+        "unchanged_accuracy": 0.9016393442622951,
+        "changed_steps": 51,
+        "unchanged_steps": 61,
+        "counterfactual_both_correct": 0,
+        "composition_all_steps": 0.14285714285714285,
+        "transfer": 0.5454545454545454
+      }
+    },
+    {
+      "arm": "A",
+      "budget": 100,
+      "seed": 11,
+      "cpu_seconds": 0.9422870000000003,
+      "parameters": 282760,
+      "metrics": {
+        "accuracy": 0.4318181818181818,
+        "outside_knowledge_accuracy": 1,
+        "changed_accuracy": 0.11764705882352941,
+        "unchanged_accuracy": 0.639344262295082,
+        "changed_steps": 51,
+        "unchanged_steps": 61,
+        "counterfactual_both_correct": 0,
+        "composition_all_steps": 0.14285714285714285,
+        "transfer": 0.3181818181818182
+      },
+      "predictions": {
+        "q000": [
+          0
+        ],
+        "q001": [
+          4
+        ],
+        "q002": [
+          0
+        ],
+        "q003": [
+          3
+        ],
+        "q004": [
+          1
+        ],
+        "q005": [
+          2
+        ],
+        "q006": [
+          7
+        ],
+        "q007": [
+          7
+        ],
+        "q008": [
+          1
+        ],
+        "q009": [
+          0
+        ],
+        "q010": [
+          6
+        ],
+        "q011": [
+          4
+        ],
+        "q012": [
+          7
+        ],
+        "q013": [
+          7
+        ],
+        "q014": [
+          7
+        ],
+        "q015": [
+          5
+        ],
+        "q016": [
+          7
+        ],
+        "q017": [
+          5
+        ],
+        "q018": [
+          6
+        ],
+        "q019": [
+          5
+        ],
+        "q020": [
+          1
+        ],
+        "q021": [
+          2
+        ],
+        "q022": [
+          3
+        ],
+        "q023": [
+          7
+        ],
+        "q024": [
+          6
+        ],
+        "q025": [
+          0
+        ],
+        "q026": [
+          7
+        ],
+        "q027": [
+          4
+        ],
+        "q028": [
+          2
+        ],
+        "q029": [
+          0
+        ],
+        "q030": [
+          1
+        ],
+        "q031": [
+          2
+        ],
+        "q032": [
+          0
+        ],
+        "q033": [
+          0
+        ],
+        "q034": [
+          6
+        ],
+        "q035": [
+          6
+        ],
+        "q036": [
+          5
+        ],
+        "q037": [
+          2
+        ],
+        "q038": [
+          4
+        ],
+        "q039": [
+          5
+        ],
+        "q040": [
+          2
+        ],
+        "q041": [
+          7
+        ],
+        "q042": [
+          4
+        ],
+        "q043": [
+          7
+        ],
+        "q044": [
+          5
+        ],
+        "q045": [
+          1
+        ],
+        "q046": [
+          5
+        ],
+        "q047": [
+          6
+        ],
+        "q048": [
+          1
+        ],
+        "q049": [
+          7
+        ],
+        "q050": [
+          0
+        ],
+        "q051": [
+          3
+        ],
+        "q052": [
+          4
+        ],
+        "q053": [
+          5
+        ],
+        "q054": [
+          3
+        ],
+        "q055": [
+          0
+        ],
+        "q056": [
+          5
+        ],
+        "q057": [
+          1
+        ],
+        "q058": [
+          0
+        ],
+        "q059": [
+          1
+        ],
+        "q060": [
+          1
+        ],
+        "q061": [
+          3
+        ],
+        "q062": [
+          3
+        ],
+        "q063": [
+          3
+        ],
+        "q064": [
+          4
+        ],
+        "q065": [
+          1
+        ],
+        "q066": [
+          7
+        ],
+        "q067": [
+          3
+        ],
+        "q068": [
+          3
+        ],
+        "q069": [
+          7
+        ],
+        "q070": [
+          4
+        ],
+        "q071": [
+          5
+        ],
+        "q072": [
+          0
+        ],
+        "q073": [
+          5
+        ],
+        "q074": [
+          2,
+          6,
+          6
+        ],
+        "q075": [
+          1,
+          0,
+          1
+        ],
+        "q076": [
+          3,
+          7,
+          0
+        ],
+        "q077": [
+          3,
+          0,
+          7
+        ],
+        "q080": [
+          7,
+          1,
+          5
+        ],
+        "q081": [
+          5,
+          4,
+          1
+        ],
+        "q084": [
+          4,
+          1,
+          6
+        ],
+        "q085": [
+          5,
+          2,
+          5
+        ],
+        "q086": [
+          4,
+          6,
+          2
+        ],
+        "q087": [
+          5,
+          0,
+          7
+        ],
+        "q078": [
+          1,
+          5
+        ],
+        "q079": [
+          0,
+          0
+        ],
+        "q082": [
+          0,
+          7
+        ],
+        "q083": [
+          5,
+          1
+        ],
+        "q088": [
+          0
+        ],
+        "q089": [
+          2
+        ]
+      },
+      "routing": {
+        "effective_slots": 1.0024943351745605,
+        "mean_slot_mass": [
+          2.1556218143814476e-06,
+          0.00022333070228341967,
+          2.118376414728118e-06,
+          6.136175670690136e-06,
+          1.0503153134777676e-05,
+          6.027412382536568e-06,
+          0.9997467398643494,
+          3.0071498713368783e-06
+        ],
+        "max_slot_mass": 0.9997467398643494,
+        "top_slot_counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          114,
+          0
+        ]
+      },
+      "uniform_routing_accuracy": 0.4318181818181818
+    },
+    {
+      "arm": "A",
+      "budget": 100,
+      "seed": 22,
+      "cpu_seconds": 0.9384119999999996,
+      "parameters": 282760,
+      "metrics": {
+        "accuracy": 0.4090909090909091,
+        "outside_knowledge_accuracy": 1,
+        "changed_accuracy": 0.1568627450980392,
+        "unchanged_accuracy": 0.5737704918032787,
+        "changed_steps": 51,
+        "unchanged_steps": 61,
+        "counterfactual_both_correct": 0,
+        "composition_all_steps": 0.14285714285714285,
+        "transfer": 0.3181818181818182
+      },
+      "predictions": {
+        "q000": [
+          0
+        ],
+        "q001": [
+          4
+        ],
+        "q002": [
+          0
+        ],
+        "q003": [
+          3
+        ],
+        "q004": [
+          2
+        ],
+        "q005": [
+          2
+        ],
+        "q006": [
+          7
+        ],
+        "q007": [
+          7
+        ],
+        "q008": [
+          1
+        ],
+        "q009": [
+          0
+        ],
+        "q010": [
+          1
+        ],
+        "q011": [
+          4
+        ],
+        "q012": [
+          7
+        ],
+        "q013": [
+          7
+        ],
+        "q014": [
+          7
+        ],
+        "q015": [
+          5
+        ],
+        "q016": [
+          7
+        ],
+        "q017": [
+          7
+        ],
+        "q018": [
+          1
+        ],
+        "q019": [
+          5
+        ],
+        "q020": [
+          1
+        ],
+        "q021": [
+          1
+        ],
+        "q022": [
+          3
+        ],
+        "q023": [
+          7
+        ],
+        "q024": [
+          6
+        ],
+        "q025": [
+          0
+        ],
+        "q026": [
+          6
+        ],
+        "q027": [
+          4
+        ],
+        "q028": [
+          2
+        ],
+        "q029": [
+          0
+        ],
+        "q030": [
+          1
+        ],
+        "q031": [
+          6
+        ],
+        "q032": [
+          0
+        ],
+        "q033": [
+          0
+        ],
+        "q034": [
+          6
+        ],
+        "q035": [
+          6
+        ],
+        "q036": [
+          4
+        ],
+        "q037": [
+          4
+        ],
+        "q038": [
+          4
+        ],
+        "q039": [
+          5
+        ],
+        "q040": [
+          2
+        ],
+        "q041": [
+          7
+        ],
+        "q042": [
+          4
+        ],
+        "q043": [
+          7
+        ],
+        "q044": [
+          5
+        ],
+        "q045": [
+          1
+        ],
+        "q046": [
+          5
+        ],
+        "q047": [
+          6
+        ],
+        "q048": [
+          1
+        ],
+        "q049": [
+          7
+        ],
+        "q050": [
+          0
+        ],
+        "q051": [
+          3
+        ],
+        "q052": [
+          4
+        ],
+        "q053": [
+          5
+        ],
+        "q054": [
+          0
+        ],
+        "q055": [
+          2
+        ],
+        "q056": [
+          5
+        ],
+        "q057": [
+          1
+        ],
+        "q058": [
+          0
+        ],
+        "q059": [
+          1
+        ],
+        "q060": [
+          3
+        ],
+        "q061": [
+          6
+        ],
+        "q062": [
+          3
+        ],
+        "q063": [
+          3
+        ],
+        "q064": [
+          4
+        ],
+        "q065": [
+          1
+        ],
+        "q066": [
+          5
+        ],
+        "q067": [
+          1
+        ],
+        "q068": [
+          3
+        ],
+        "q069": [
+          7
+        ],
+        "q070": [
+          4
+        ],
+        "q071": [
+          5
+        ],
+        "q072": [
+          0
+        ],
+        "q073": [
+          5
+        ],
+        "q074": [
+          2,
+          6,
+          6
+        ],
+        "q075": [
+          1,
+          0,
+          1
+        ],
+        "q076": [
+          3,
+          7,
+          0
+        ],
+        "q077": [
+          3,
+          0,
+          7
+        ],
+        "q080": [
+          7,
+          1,
+          5
+        ],
+        "q081": [
+          5,
+          4,
+          1
+        ],
+        "q084": [
+          4,
+          1,
+          6
+        ],
+        "q085": [
+          5,
+          2,
+          5
+        ],
+        "q086": [
+          4,
+          6,
+          2
+        ],
+        "q087": [
+          5,
+          0,
+          7
+        ],
+        "q078": [
+          0,
+          5
+        ],
+        "q079": [
+          0,
+          0
+        ],
+        "q082": [
+          0,
+          7
+        ],
+        "q083": [
+          5,
+          1
+        ],
+        "q088": [
+          0
+        ],
+        "q089": [
+          2
+        ]
+      },
+      "routing": {
+        "effective_slots": 1.0000016689300537,
+        "mean_slot_mass": [
+          1.5391613317206065e-08,
+          7.777791743990292e-10,
+          1.0,
+          2.7120975687466853e-08,
+          6.0467071349989965e-09,
+          3.4057956455058047e-09,
+          3.28861027298899e-09,
+          3.586336205785301e-08
+        ],
+        "max_slot_mass": 1.0,
+        "top_slot_counts": [
+          0,
+          0,
+          114,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "uniform_routing_accuracy": 0.38636363636363635
+    },
+    {
+      "arm": "A",
+      "budget": 100,
+      "seed": 42,
+      "cpu_seconds": 0.9300420000000003,
+      "parameters": 282760,
+      "metrics": {
+        "accuracy": 0.4090909090909091,
+        "outside_knowledge_accuracy": 1,
+        "changed_accuracy": 0.11764705882352941,
+        "unchanged_accuracy": 0.6065573770491803,
+        "changed_steps": 51,
+        "unchanged_steps": 61,
+        "counterfactual_both_correct": 0,
+        "composition_all_steps": 0.14285714285714285,
+        "transfer": 0.36363636363636365
+      },
+      "predictions": {
+        "q000": [
+          0
+        ],
+        "q001": [
+          4
+        ],
+        "q002": [
+          0
+        ],
+        "q003": [
+          3
+        ],
+        "q004": [
+          1
+        ],
+        "q005": [
+          2
+        ],
+        "q006": [
+          7
+        ],
+        "q007": [
+          7
+        ],
+        "q008": [
+          1
+        ],
+        "q009": [
+          0
+        ],
+        "q010": [
+          1
+        ],
+        "q011": [
+          4
+        ],
+        "q012": [
+          7
+        ],
+        "q013": [
+          7
+        ],
+        "q014": [
+          7
+        ],
+        "q015": [
+          5
+        ],
+        "q016": [
+          7
+        ],
+        "q017": [
+          7
+        ],
+        "q018": [
+          1
+        ],
+        "q019": [
+          5
+        ],
+        "q020": [
+          1
+        ],
+        "q021": [
+          1
+        ],
+        "q022": [
+          3
+        ],
+        "q023": [
+          7
+        ],
+        "q024": [
+          6
+        ],
+        "q025": [
+          0
+        ],
+        "q026": [
+          6
+        ],
+        "q027": [
+          4
+        ],
+        "q028": [
+          2
+        ],
+        "q029": [
+          0
+        ],
+        "q030": [
+          1
+        ],
+        "q031": [
+          2
+        ],
+        "q032": [
+          0
+        ],
+        "q033": [
+          0
+        ],
+        "q034": [
+          6
+        ],
+        "q035": [
+          6
+        ],
+        "q036": [
+          4
+        ],
+        "q037": [
+          2
+        ],
+        "q038": [
+          4
+        ],
+        "q039": [
+          5
+        ],
+        "q040": [
+          6
+        ],
+        "q041": [
+          7
+        ],
+        "q042": [
+          4
+        ],
+        "q043": [
+          7
+        ],
+        "q044": [
+          5
+        ],
+        "q045": [
+          1
+        ],
+        "q046": [
+          5
+        ],
+        "q047": [
+          6
+        ],
+        "q048": [
+          1
+        ],
+        "q049": [
+          7
+        ],
+        "q050": [
+          3
+        ],
+        "q051": [
+          7
+        ],
+        "q052": [
+          4
+        ],
+        "q053": [
+          5
+        ],
+        "q054": [
+          0
+        ],
+        "q055": [
+          2
+        ],
+        "q056": [
+          5
+        ],
+        "q057": [
+          1
+        ],
+        "q058": [
+          0
+        ],
+        "q059": [
+          1
+        ],
+        "q060": [
+          1
+        ],
+        "q061": [
+          3
+        ],
+        "q062": [
+          3
+        ],
+        "q063": [
+          3
+        ],
+        "q064": [
+          4
+        ],
+        "q065": [
+          1
+        ],
+        "q066": [
+          7
+        ],
+        "q067": [
+          3
+        ],
+        "q068": [
+          3
+        ],
+        "q069": [
+          7
+        ],
+        "q070": [
+          4
+        ],
+        "q071": [
+          5
+        ],
+        "q072": [
+          0
+        ],
+        "q073": [
+          5
+        ],
+        "q074": [
+          6,
+          7,
+          6
+        ],
+        "q075": [
+          1,
+          0,
+          5
+        ],
+        "q076": [
+          3,
+          7,
+          0
+        ],
+        "q077": [
+          3,
+          0,
+          7
+        ],
+        "q080": [
+          7,
+          1,
+          5
+        ],
+        "q081": [
+          5,
+          4,
+          1
+        ],
+        "q084": [
+          4,
+          1,
+          6
+        ],
+        "q085": [
+          5,
+          2,
+          5
+        ],
+        "q086": [
+          4,
+          6,
+          2
+        ],
+        "q087": [
+          5,
+          0,
+          7
+        ],
+        "q078": [
+          0,
+          0
+        ],
+        "q079": [
+          5,
+          4
+        ],
+        "q082": [
+          0,
+          7
+        ],
+        "q083": [
+          5,
+          1
+        ],
+        "q088": [
+          0
+        ],
+        "q089": [
+          2
+        ]
+      },
+      "routing": {
+        "effective_slots": 1.0000184774398804,
+        "mean_slot_mass": [
+          0.999998927116394,
+          7.640946364517731e-08,
+          4.220845539748552e-07,
+          1.0771704239687097e-07,
+          1.6043699702095182e-08,
+          2.3905511170596583e-07,
+          5.664527513715711e-09,
+          2.8057903023182007e-07
+        ],
+        "max_slot_mass": 0.999998927116394,
+        "top_slot_counts": [
+          114,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "uniform_routing_accuracy": 0.3409090909090909
+    },
+    {
+      "arm": "B",
+      "budget": 100,
+      "seed": 11,
+      "cpu_seconds": 1.0151819999999994,
+      "parameters": 282760,
+      "metrics": {
+        "accuracy": 0.4318181818181818,
+        "outside_knowledge_accuracy": 0.5,
+        "changed_accuracy": 0.1568627450980392,
+        "unchanged_accuracy": 0.6721311475409836,
+        "changed_steps": 51,
+        "unchanged_steps": 61,
+        "counterfactual_both_correct": 0,
+        "composition_all_steps": 0.21428571428571427,
+        "transfer": 0.5
+      },
+      "predictions": {
+        "q000": [
+          0
+        ],
+        "q001": [
+          2
+        ],
+        "q002": [
+          0
+        ],
+        "q003": [
+          5
+        ],
+        "q004": [
+          1
+        ],
+        "q005": [
+          4
+        ],
+        "q006": [
+          6
+        ],
+        "q007": [
+          4
+        ],
+        "q008": [
+          4
+        ],
+        "q009": [
+          0
+        ],
+        "q010": [
+          1
+        ],
+        "q011": [
+          4
+        ],
+        "q012": [
+          7
+        ],
+        "q013": [
+          7
+        ],
+        "q014": [
+          7
+        ],
+        "q015": [
+          5
+        ],
+        "q016": [
+          7
+        ],
+        "q017": [
+          7
+        ],
+        "q018": [
+          6
+        ],
+        "q019": [
+          7
+        ],
+        "q020": [
+          3
+        ],
+        "q021": [
+          1
+        ],
+        "q022": [
+          4
+        ],
+        "q023": [
+          0
+        ],
+        "q024": [
+          6
+        ],
+        "q025": [
+          1
+        ],
+        "q026": [
+          7
+        ],
+        "q027": [
+          0
+        ],
+        "q028": [
+          2
+        ],
+        "q029": [
+          7
+        ],
+        "q030": [
+          1
+        ],
+        "q031": [
+          2
+        ],
+        "q032": [
+          0
+        ],
+        "q033": [
+          0
+        ],
+        "q034": [
+          6
+        ],
+        "q035": [
+          6
+        ],
+        "q036": [
+          5
+        ],
+        "q037": [
+          2
+        ],
+        "q038": [
+          4
+        ],
+        "q039": [
+          5
+        ],
+        "q040": [
+          1
+        ],
+        "q041": [
+          5
+        ],
+        "q042": [
+          4
+        ],
+        "q043": [
+          7
+        ],
+        "q044": [
+          5
+        ],
+        "q045": [
+          1
+        ],
+        "q046": [
+          7
+        ],
+        "q047": [
+          0
+        ],
+        "q048": [
+          1
+        ],
+        "q049": [
+          7
+        ],
+        "q050": [
+          0
+        ],
+        "q051": [
+          5
+        ],
+        "q052": [
+          6
+        ],
+        "q053": [
+          4
+        ],
+        "q054": [
+          3
+        ],
+        "q055": [
+          0
+        ],
+        "q056": [
+          6
+        ],
+        "q057": [
+          1
+        ],
+        "q058": [
+          5
+        ],
+        "q059": [
+          5
+        ],
+        "q060": [
+          0
+        ],
+        "q061": [
+          3
+        ],
+        "q062": [
+          3
+        ],
+        "q063": [
+          3
+        ],
+        "q064": [
+          4
+        ],
+        "q065": [
+          1
+        ],
+        "q066": [
+          7
+        ],
+        "q067": [
+          3
+        ],
+        "q068": [
+          4
+        ],
+        "q069": [
+          7
+        ],
+        "q070": [
+          2
+        ],
+        "q071": [
+          7
+        ],
+        "q072": [
+          0
+        ],
+        "q073": [
+          3
+        ],
+        "q074": [
+          7,
+          4,
+          4
+        ],
+        "q075": [
+          2,
+          0,
+          1
+        ],
+        "q076": [
+          7,
+          0,
+          6
+        ],
+        "q077": [
+          3,
+          3,
+          1
+        ],
+        "q080": [
+          7,
+          1,
+          5
+        ],
+        "q081": [
+          5,
+          1,
+          5
+        ],
+        "q084": [
+          4,
+          1,
+          6
+        ],
+        "q085": [
+          5,
+          2,
+          5
+        ],
+        "q086": [
+          3,
+          2,
+          2
+        ],
+        "q087": [
+          4,
+          2,
+          4
+        ],
+        "q078": [
+          1,
+          2
+        ],
+        "q079": [
+          3,
+          2
+        ],
+        "q082": [
+          0,
+          7
+        ],
+        "q083": [
+          5,
+          1
+        ],
+        "q088": [
+          1
+        ],
+        "q089": [
+          2
+        ]
+      },
+      "routing": {
+        "effective_slots": 3.817103385925293,
+        "mean_slot_mass": [
+          0.001079214853234589,
+          0.009078895673155785,
+          0.017751647159457207,
+          0.010862333700060844,
+          0.05058203265070915,
+          0.47235020995140076,
+          0.23907598853111267,
+          0.19921961426734924
+        ],
+        "max_slot_mass": 0.47235020995140076,
+        "top_slot_counts": [
+          0,
+          0,
+          2,
+          0,
+          4,
+          61,
+          27,
+          20
+        ]
+      },
+      "uniform_routing_accuracy": 0.4772727272727273
+    },
+    {
+      "arm": "B",
+      "budget": 100,
+      "seed": 22,
+      "cpu_seconds": 1.013814,
+      "parameters": 282760,
+      "metrics": {
+        "accuracy": 0.3068181818181818,
+        "outside_knowledge_accuracy": 0.5,
+        "changed_accuracy": 0.17647058823529413,
+        "unchanged_accuracy": 0.3114754098360656,
+        "changed_steps": 51,
+        "unchanged_steps": 61,
+        "counterfactual_both_correct": 0,
+        "composition_all_steps": 0.07142857142857142,
+        "transfer": 0.3181818181818182
+      },
+      "predictions": {
+        "q000": [
+          6
+        ],
+        "q001": [
+          7
+        ],
+        "q002": [
+          0
+        ],
+        "q003": [
+          2
+        ],
+        "q004": [
+          1
+        ],
+        "q005": [
+          4
+        ],
+        "q006": [
+          6
+        ],
+        "q007": [
+          2
+        ],
+        "q008": [
+          5
+        ],
+        "q009": [
+          3
+        ],
+        "q010": [
+          6
+        ],
+        "q011": [
+          4
+        ],
+        "q012": [
+          3
+        ],
+        "q013": [
+          7
+        ],
+        "q014": [
+          7
+        ],
+        "q015": [
+          5
+        ],
+        "q016": [
+          7
+        ],
+        "q017": [
+          7
+        ],
+        "q018": [
+          6
+        ],
+        "q019": [
+          5
+        ],
+        "q020": [
+          3
+        ],
+        "q021": [
+          1
+        ],
+        "q022": [
+          1
+        ],
+        "q023": [
+          4
+        ],
+        "q024": [
+          6
+        ],
+        "q025": [
+          0
+        ],
+        "q026": [
+          7
+        ],
+        "q027": [
+          4
+        ],
+        "q028": [
+          6
+        ],
+        "q029": [
+          7
+        ],
+        "q030": [
+          1
+        ],
+        "q031": [
+          6
+        ],
+        "q032": [
+          2
+        ],
+        "q033": [
+          3
+        ],
+        "q034": [
+          6
+        ],
+        "q035": [
+          4
+        ],
+        "q036": [
+          5
+        ],
+        "q037": [
+          2
+        ],
+        "q038": [
+          3
+        ],
+        "q039": [
+          5
+        ],
+        "q040": [
+          1
+        ],
+        "q041": [
+          5
+        ],
+        "q042": [
+          4
+        ],
+        "q043": [
+          7
+        ],
+        "q044": [
+          7
+        ],
+        "q045": [
+          4
+        ],
+        "q046": [
+          7
+        ],
+        "q047": [
+          7
+        ],
+        "q048": [
+          2
+        ],
+        "q049": [
+          3
+        ],
+        "q050": [
+          7
+        ],
+        "q051": [
+          5
+        ],
+        "q052": [
+          4
+        ],
+        "q053": [
+          5
+        ],
+        "q054": [
+          2
+        ],
+        "q055": [
+          7
+        ],
+        "q056": [
+          6
+        ],
+        "q057": [
+          1
+        ],
+        "q058": [
+          4
+        ],
+        "q059": [
+          1
+        ],
+        "q060": [
+          0
+        ],
+        "q061": [
+          3
+        ],
+        "q062": [
+          6
+        ],
+        "q063": [
+          6
+        ],
+        "q064": [
+          1
+        ],
+        "q065": [
+          5
+        ],
+        "q066": [
+          5
+        ],
+        "q067": [
+          1
+        ],
+        "q068": [
+          5
+        ],
+        "q069": [
+          7
+        ],
+        "q070": [
+          1
+        ],
+        "q071": [
+          5
+        ],
+        "q072": [
+          2
+        ],
+        "q073": [
+          3
+        ],
+        "q074": [
+          7,
+          0,
+          2
+        ],
+        "q075": [
+          1,
+          0,
+          1
+        ],
+        "q076": [
+          5,
+          6,
+          4
+        ],
+        "q077": [
+          6,
+          0,
+          7
+        ],
+        "q080": [
+          5,
+          0,
+          7
+        ],
+        "q081": [
+          1,
+          0,
+          6
+        ],
+        "q084": [
+          2,
+          5,
+          7
+        ],
+        "q085": [
+          6,
+          4,
+          2
+        ],
+        "q086": [
+          2,
+          0,
+          0
+        ],
+        "q087": [
+          1,
+          6,
+          7
+        ],
+        "q078": [
+          3,
+          1
+        ],
+        "q079": [
+          2,
+          6
+        ],
+        "q082": [
+          2,
+          3
+        ],
+        "q083": [
+          5,
+          1
+        ],
+        "q088": [
+          1
+        ],
+        "q089": [
+          2
+        ]
+      },
+      "routing": {
+        "effective_slots": 4.4980573654174805,
+        "mean_slot_mass": [
+          0.09584494680166245,
+          0.040580857545137405,
+          0.003735735546797514,
+          0.40225866436958313,
+          0.01159731112420559,
+          0.11798615008592606,
+          0.026537980884313583,
+          0.3014583885669708
+        ],
+        "max_slot_mass": 0.40225866436958313,
+        "top_slot_counts": [
+          9,
+          4,
+          0,
+          45,
+          1,
+          12,
+          2,
+          41
+        ]
+      },
+      "uniform_routing_accuracy": 0.3977272727272727
+    },
+    {
+      "arm": "B",
+      "budget": 100,
+      "seed": 42,
+      "cpu_seconds": 1.031676000000001,
+      "parameters": 282760,
+      "metrics": {
+        "accuracy": 0.3409090909090909,
+        "outside_knowledge_accuracy": 0.5,
+        "changed_accuracy": 0.17647058823529413,
+        "unchanged_accuracy": 0.4426229508196721,
+        "changed_steps": 51,
+        "unchanged_steps": 61,
+        "counterfactual_both_correct": 0,
+        "composition_all_steps": 0,
+        "transfer": 0.36363636363636365
+      },
+      "predictions": {
+        "q000": [
+          4
+        ],
+        "q001": [
+          2
+        ],
+        "q002": [
+          0
+        ],
+        "q003": [
+          2
+        ],
+        "q004": [
+          1
+        ],
+        "q005": [
+          4
+        ],
+        "q006": [
+          6
+        ],
+        "q007": [
+          3
+        ],
+        "q008": [
+          1
+        ],
+        "q009": [
+          6
+        ],
+        "q010": [
+          6
+        ],
+        "q011": [
+          1
+        ],
+        "q012": [
+          3
+        ],
+        "q013": [
+          7
+        ],
+        "q014": [
+          5
+        ],
+        "q015": [
+          6
+        ],
+        "q016": [
+          7
+        ],
+        "q017": [
+          7
+        ],
+        "q018": [
+          6
+        ],
+        "q019": [
+          5
+        ],
+        "q020": [
+          0
+        ],
+        "q021": [
+          3
+        ],
+        "q022": [
+          6
+        ],
+        "q023": [
+          6
+        ],
+        "q024": [
+          3
+        ],
+        "q025": [
+          1
+        ],
+        "q026": [
+          7
+        ],
+        "q027": [
+          6
+        ],
+        "q028": [
+          2
+        ],
+        "q029": [
+          7
+        ],
+        "q030": [
+          1
+        ],
+        "q031": [
+          2
+        ],
+        "q032": [
+          0
+        ],
+        "q033": [
+          0
+        ],
+        "q034": [
+          6
+        ],
+        "q035": [
+          6
+        ],
+        "q036": [
+          5
+        ],
+        "q037": [
+          2
+        ],
+        "q038": [
+          4
+        ],
+        "q039": [
+          5
+        ],
+        "q040": [
+          6
+        ],
+        "q041": [
+          5
+        ],
+        "q042": [
+          4
+        ],
+        "q043": [
+          7
+        ],
+        "q044": [
+          1
+        ],
+        "q045": [
+          1
+        ],
+        "q046": [
+          7
+        ],
+        "q047": [
+          0
+        ],
+        "q048": [
+          1
+        ],
+        "q049": [
+          7
+        ],
+        "q050": [
+          3
+        ],
+        "q051": [
+          0
+        ],
+        "q052": [
+          4
+        ],
+        "q053": [
+          7
+        ],
+        "q054": [
+          0
+        ],
+        "q055": [
+          7
+        ],
+        "q056": [
+          7
+        ],
+        "q057": [
+          1
+        ],
+        "q058": [
+          7
+        ],
+        "q059": [
+          4
+        ],
+        "q060": [
+          2
+        ],
+        "q061": [
+          3
+        ],
+        "q062": [
+          3
+        ],
+        "q063": [
+          3
+        ],
+        "q064": [
+          4
+        ],
+        "q065": [
+          1
+        ],
+        "q066": [
+          7
+        ],
+        "q067": [
+          3
+        ],
+        "q068": [
+          5
+        ],
+        "q069": [
+          4
+        ],
+        "q070": [
+          1
+        ],
+        "q071": [
+          0
+        ],
+        "q072": [
+          1
+        ],
+        "q073": [
+          3
+        ],
+        "q074": [
+          3,
+          7,
+          2
+        ],
+        "q075": [
+          6,
+          0,
+          1
+        ],
+        "q076": [
+          2,
+          2,
+          3
+        ],
+        "q077": [
+          4,
+          6,
+          1
+        ],
+        "q080": [
+          7,
+          6,
+          2
+        ],
+        "q081": [
+          5,
+          6,
+          5
+        ],
+        "q084": [
+          4,
+          0,
+          4
+        ],
+        "q085": [
+          5,
+          2,
+          4
+        ],
+        "q086": [
+          2,
+          0,
+          0
+        ],
+        "q087": [
+          6,
+          3,
+          5
+        ],
+        "q078": [
+          3,
+          1
+        ],
+        "q079": [
+          2,
+          6
+        ],
+        "q082": [
+          0,
+          3
+        ],
+        "q083": [
+          6,
+          3
+        ],
+        "q088": [
+          1
+        ],
+        "q089": [
+          2
+        ]
+      },
+      "routing": {
+        "effective_slots": 6.115537166595459,
+        "mean_slot_mass": [
+          0.017113003879785538,
+          0.23840895295143127,
+          0.07977206259965897,
+          0.053550370037555695,
+          0.17665331065654755,
+          0.05517028644680977,
+          0.08941150456666946,
+          0.28992053866386414
+        ],
+        "max_slot_mass": 0.28992053866386414,
+        "top_slot_counts": [
+          0,
+          43,
+          5,
+          2,
+          26,
+          0,
+          10,
+          28
+        ]
+      },
+      "uniform_routing_accuracy": 0.3977272727272727
+    },
+    {
+      "arm": "F",
+      "budget": 100,
+      "seed": 11,
+      "cpu_seconds": 1.262803,
+      "parameters": 315785,
+      "metrics": {
+        "accuracy": 0.5227272727272727,
+        "outside_knowledge_accuracy": 1,
+        "changed_accuracy": 0.23529411764705882,
+        "unchanged_accuracy": 0.7540983606557377,
+        "changed_steps": 51,
+        "unchanged_steps": 61,
+        "counterfactual_both_correct": 0,
+        "composition_all_steps": 0.21428571428571427,
+        "transfer": 0.45454545454545453
+      },
+      "predictions": {
+        "q000": [
+          4
+        ],
+        "q001": [
+          2
+        ],
+        "q002": [
+          7
+        ],
+        "q003": [
+          1
+        ],
+        "q004": [
+          1
+        ],
+        "q005": [
+          4
+        ],
+        "q006": [
+          7
+        ],
+        "q007": [
+          0
+        ],
+        "q008": [
+          1
+        ],
+        "q009": [
+          6
+        ],
+        "q010": [
+          6
+        ],
+        "q011": [
+          3
+        ],
+        "q012": [
+          6
+        ],
+        "q013": [
+          7
+        ],
+        "q014": [
+          7
+        ],
+        "q015": [
+          6
+        ],
+        "q016": [
+          5
+        ],
+        "q017": [
+          3
+        ],
+        "q018": [
+          6
+        ],
+        "q019": [
+          5
+        ],
+        "q020": [
+          1
+        ],
+        "q021": [
+          7
+        ],
+        "q022": [
+          0
+        ],
+        "q023": [
+          2
+        ],
+        "q024": [
+          3
+        ],
+        "q025": [
+          1
+        ],
+        "q026": [
+          7
+        ],
+        "q027": [
+          4
+        ],
+        "q028": [
+          2
+        ],
+        "q029": [
+          0
+        ],
+        "q030": [
+          1
+        ],
+        "q031": [
+          2
+        ],
+        "q032": [
+          0
+        ],
+        "q033": [
+          0
+        ],
+        "q034": [
+          6
+        ],
+        "q035": [
+          6
+        ],
+        "q036": [
+          5
+        ],
+        "q037": [
+          2
+        ],
+        "q038": [
+          4
+        ],
+        "q039": [
+          5
+        ],
+        "q040": [
+          1
+        ],
+        "q041": [
+          5
+        ],
+        "q042": [
+          4
+        ],
+        "q043": [
+          7
+        ],
+        "q044": [
+          5
+        ],
+        "q045": [
+          1
+        ],
+        "q046": [
+          6
+        ],
+        "q047": [
+          3
+        ],
+        "q048": [
+          1
+        ],
+        "q049": [
+          7
+        ],
+        "q050": [
+          5
+        ],
+        "q051": [
+          3
+        ],
+        "q052": [
+          6
+        ],
+        "q053": [
+          4
+        ],
+        "q054": [
+          3
+        ],
+        "q055": [
+          0
+        ],
+        "q056": [
+          5
+        ],
+        "q057": [
+          1
+        ],
+        "q058": [
+          0
+        ],
+        "q059": [
+          1
+        ],
+        "q060": [
+          1
+        ],
+        "q061": [
+          3
+        ],
+        "q062": [
+          3
+        ],
+        "q063": [
+          3
+        ],
+        "q064": [
+          4
+        ],
+        "q065": [
+          1
+        ],
+        "q066": [
+          7
+        ],
+        "q067": [
+          3
+        ],
+        "q068": [
+          4
+        ],
+        "q069": [
+          0
+        ],
+        "q070": [
+          6
+        ],
+        "q071": [
+          7
+        ],
+        "q072": [
+          5
+        ],
+        "q073": [
+          4
+        ],
+        "q074": [
+          2,
+          4,
+          6
+        ],
+        "q075": [
+          2,
+          5,
+          6
+        ],
+        "q076": [
+          4,
+          2,
+          3
+        ],
+        "q077": [
+          1,
+          3,
+          1
+        ],
+        "q080": [
+          7,
+          1,
+          5
+        ],
+        "q081": [
+          5,
+          4,
+          1
+        ],
+        "q084": [
+          7,
+          3,
+          2
+        ],
+        "q085": [
+          5,
+          2,
+          5
+        ],
+        "q086": [
+          3,
+          2,
+          4
+        ],
+        "q087": [
+          3,
+          5,
+          6
+        ],
+        "q078": [
+          1,
+          5
+        ],
+        "q079": [
+          0,
+          0
+        ],
+        "q082": [
+          0,
+          7
+        ],
+        "q083": [
+          5,
+          1
+        ],
+        "q088": [
+          0
+        ],
+        "q089": [
+          2
+        ]
+      },
+      "routing": {
+        "effective_slots": 2.7958128452301025,
+        "mean_slot_mass": [
+          0.00033931140205822885,
+          0.00048233757843263447,
+          0.0010142350802198052,
+          0.0005447105504572392,
+          0.0853729397058487,
+          0.17883796989917755,
+          0.647278368473053,
+          0.08613011240959167
+        ],
+        "max_slot_mass": 0.647278368473053,
+        "top_slot_counts": [
+          0,
+          0,
+          0,
+          0,
+          11,
+          22,
+          70,
+          11
+        ]
+      },
+      "uniform_routing_accuracy": 0.5568181818181818
+    },
+    {
+      "arm": "F",
+      "budget": 100,
+      "seed": 22,
+      "cpu_seconds": 1.258946,
+      "parameters": 315785,
+      "metrics": {
+        "accuracy": 0.5340909090909091,
+        "outside_knowledge_accuracy": 1,
+        "changed_accuracy": 0.11764705882352941,
+        "unchanged_accuracy": 0.819672131147541,
+        "changed_steps": 51,
+        "unchanged_steps": 61,
+        "counterfactual_both_correct": 0,
+        "composition_all_steps": 0.14285714285714285,
+        "transfer": 0.5
+      },
+      "predictions": {
+        "q000": [
+          4
+        ],
+        "q001": [
+          4
+        ],
+        "q002": [
+          0
+        ],
+        "q003": [
+          3
+        ],
+        "q004": [
+          1
+        ],
+        "q005": [
+          4
+        ],
+        "q006": [
+          7
+        ],
+        "q007": [
+          0
+        ],
+        "q008": [
+          4
+        ],
+        "q009": [
+          0
+        ],
+        "q010": [
+          6
+        ],
+        "q011": [
+          4
+        ],
+        "q012": [
+          7
+        ],
+        "q013": [
+          2
+        ],
+        "q014": [
+          7
+        ],
+        "q015": [
+          6
+        ],
+        "q016": [
+          1
+        ],
+        "q017": [
+          7
+        ],
+        "q018": [
+          6
+        ],
+        "q019": [
+          5
+        ],
+        "q020": [
+          1
+        ],
+        "q021": [
+          3
+        ],
+        "q022": [
+          0
+        ],
+        "q023": [
+          2
+        ],
+        "q024": [
+          3
+        ],
+        "q025": [
+          1
+        ],
+        "q026": [
+          7
+        ],
+        "q027": [
+          4
+        ],
+        "q028": [
+          2
+        ],
+        "q029": [
+          4
+        ],
+        "q030": [
+          1
+        ],
+        "q031": [
+          2
+        ],
+        "q032": [
+          0
+        ],
+        "q033": [
+          0
+        ],
+        "q034": [
+          6
+        ],
+        "q035": [
+          6
+        ],
+        "q036": [
+          5
+        ],
+        "q037": [
+          2
+        ],
+        "q038": [
+          4
+        ],
+        "q039": [
+          5
+        ],
+        "q040": [
+          1
+        ],
+        "q041": [
+          5
+        ],
+        "q042": [
+          4
+        ],
+        "q043": [
+          7
+        ],
+        "q044": [
+          5
+        ],
+        "q045": [
+          1
+        ],
+        "q046": [
+          6
+        ],
+        "q047": [
+          3
+        ],
+        "q048": [
+          1
+        ],
+        "q049": [
+          7
+        ],
+        "q050": [
+          0
+        ],
+        "q051": [
+          3
+        ],
+        "q052": [
+          6
+        ],
+        "q053": [
+          4
+        ],
+        "q054": [
+          3
+        ],
+        "q055": [
+          0
+        ],
+        "q056": [
+          5
+        ],
+        "q057": [
+          1
+        ],
+        "q058": [
+          0
+        ],
+        "q059": [
+          1
+        ],
+        "q060": [
+          1
+        ],
+        "q061": [
+          3
+        ],
+        "q062": [
+          3
+        ],
+        "q063": [
+          3
+        ],
+        "q064": [
+          4
+        ],
+        "q065": [
+          1
+        ],
+        "q066": [
+          7
+        ],
+        "q067": [
+          3
+        ],
+        "q068": [
+          4
+        ],
+        "q069": [
+          0
+        ],
+        "q070": [
+          6
+        ],
+        "q071": [
+          7
+        ],
+        "q072": [
+          5
+        ],
+        "q073": [
+          4
+        ],
+        "q074": [
+          2,
+          6,
+          6
+        ],
+        "q075": [
+          2,
+          5,
+          6
+        ],
+        "q076": [
+          4,
+          6,
+          4
+        ],
+        "q077": [
+          3,
+          0,
+          7
+        ],
+        "q080": [
+          7,
+          1,
+          5
+        ],
+        "q081": [
+          5,
+          4,
+          1
+        ],
+        "q084": [
+          4,
+          3,
+          3
+        ],
+        "q085": [
+          5,
+          2,
+          5
+        ],
+        "q086": [
+          3,
+          2,
+          4
+        ],
+        "q087": [
+          3,
+          5,
+          6
+        ],
+        "q078": [
+          1,
+          5
+        ],
+        "q079": [
+          0,
+          0
+        ],
+        "q082": [
+          0,
+          7
+        ],
+        "q083": [
+          5,
+          1
+        ],
+        "q088": [
+          0
+        ],
+        "q089": [
+          2
+        ]
+      },
+      "routing": {
+        "effective_slots": 2.9416115283966064,
+        "mean_slot_mass": [
+          0.006358630955219269,
+          0.005102816503494978,
+          0.006612889468669891,
+          0.23916108906269073,
+          0.06957877427339554,
+          0.6292803287506104,
+          0.02081327512860298,
+          0.02309221401810646
+        ],
+        "max_slot_mass": 0.6292803287506104,
+        "top_slot_counts": [
+          0,
+          0,
+          0,
+          26,
+          6,
+          80,
+          1,
+          1
+        ]
+      },
+      "uniform_routing_accuracy": 0.5454545454545454
+    },
+    {
+      "arm": "F",
+      "budget": 100,
+      "seed": 42,
+      "cpu_seconds": 1.2777470000000015,
+      "parameters": 315785,
+      "metrics": {
+        "accuracy": 0.4772727272727273,
+        "outside_knowledge_accuracy": 0.5,
+        "changed_accuracy": 0.11764705882352941,
+        "unchanged_accuracy": 0.7213114754098361,
+        "changed_steps": 51,
+        "unchanged_steps": 61,
+        "counterfactual_both_correct": 0,
+        "composition_all_steps": 0.07142857142857142,
+        "transfer": 0.5
+      },
+      "predictions": {
+        "q000": [
+          4
+        ],
+        "q001": [
+          4
+        ],
+        "q002": [
+          0
+        ],
+        "q003": [
+          3
+        ],
+        "q004": [
+          1
+        ],
+        "q005": [
+          4
+        ],
+        "q006": [
+          7
+        ],
+        "q007": [
+          0
+        ],
+        "q008": [
+          1
+        ],
+        "q009": [
+          0
+        ],
+        "q010": [
+          6
+        ],
+        "q011": [
+          3
+        ],
+        "q012": [
+          3
+        ],
+        "q013": [
+          7
+        ],
+        "q014": [
+          7
+        ],
+        "q015": [
+          5
+        ],
+        "q016": [
+          7
+        ],
+        "q017": [
+          7
+        ],
+        "q018": [
+          1
+        ],
+        "q019": [
+          5
+        ],
+        "q020": [
+          1
+        ],
+        "q021": [
+          7
+        ],
+        "q022": [
+          0
+        ],
+        "q023": [
+          2
+        ],
+        "q024": [
+          3
+        ],
+        "q025": [
+          1
+        ],
+        "q026": [
+          7
+        ],
+        "q027": [
+          4
+        ],
+        "q028": [
+          6
+        ],
+        "q029": [
+          7
+        ],
+        "q030": [
+          5
+        ],
+        "q031": [
+          2
+        ],
+        "q032": [
+          0
+        ],
+        "q033": [
+          0
+        ],
+        "q034": [
+          6
+        ],
+        "q035": [
+          6
+        ],
+        "q036": [
+          5
+        ],
+        "q037": [
+          2
+        ],
+        "q038": [
+          6
+        ],
+        "q039": [
+          3
+        ],
+        "q040": [
+          1
+        ],
+        "q041": [
+          5
+        ],
+        "q042": [
+          4
+        ],
+        "q043": [
+          7
+        ],
+        "q044": [
+          5
+        ],
+        "q045": [
+          1
+        ],
+        "q046": [
+          6
+        ],
+        "q047": [
+          3
+        ],
+        "q048": [
+          1
+        ],
+        "q049": [
+          7
+        ],
+        "q050": [
+          5
+        ],
+        "q051": [
+          0
+        ],
+        "q052": [
+          6
+        ],
+        "q053": [
+          4
+        ],
+        "q054": [
+          2
+        ],
+        "q055": [
+          7
+        ],
+        "q056": [
+          5
+        ],
+        "q057": [
+          1
+        ],
+        "q058": [
+          0
+        ],
+        "q059": [
+          1
+        ],
+        "q060": [
+          1
+        ],
+        "q061": [
+          3
+        ],
+        "q062": [
+          3
+        ],
+        "q063": [
+          3
+        ],
+        "q064": [
+          4
+        ],
+        "q065": [
+          1
+        ],
+        "q066": [
+          7
+        ],
+        "q067": [
+          3
+        ],
+        "q068": [
+          4
+        ],
+        "q069": [
+          0
+        ],
+        "q070": [
+          6
+        ],
+        "q071": [
+          7
+        ],
+        "q072": [
+          5
+        ],
+        "q073": [
+          4
+        ],
+        "q074": [
+          3,
+          0,
+          1
+        ],
+        "q075": [
+          2,
+          5,
+          6
+        ],
+        "q076": [
+          4,
+          6,
+          4
+        ],
+        "q077": [
+          3,
+          0,
+          7
+        ],
+        "q080": [
+          7,
+          1,
+          2
+        ],
+        "q081": [
+          5,
+          4,
+          1
+        ],
+        "q084": [
+          1,
+          2,
+          2
+        ],
+        "q085": [
+          5,
+          6,
+          2
+        ],
+        "q086": [
+          3,
+          2,
+          4
+        ],
+        "q087": [
+          3,
+          5,
+          6
+        ],
+        "q078": [
+          3,
+          1
+        ],
+        "q079": [
+          2,
+          6
+        ],
+        "q082": [
+          0,
+          7
+        ],
+        "q083": [
+          5,
+          0
+        ],
+        "q088": [
+          1
+        ],
+        "q089": [
+          2
+        ]
+      },
+      "routing": {
+        "effective_slots": 2.791515350341797,
+        "mean_slot_mass": [
+          0.004041658714413643,
+          0.010273406282067299,
+          0.30685609579086304,
+          0.00705456268042326,
+          0.0792943686246872,
+          0.003340194933116436,
+          0.004844715818762779,
+          0.5842949748039246
+        ],
+        "max_slot_mass": 0.5842949748039246,
+        "top_slot_counts": [
+          0,
+          1,
+          39,
+          0,
+          9,
+          0,
+          0,
+          65
+        ]
+      },
+      "uniform_routing_accuracy": 0.5340909090909091
+    },
+    {
+      "arm": "A",
+      "budget": 300,
+      "seed": 11,
+      "cpu_seconds": 0.9365809999999968,
+      "parameters": 282760,
+      "metrics": {
+        "accuracy": 0.45454545454545453,
+        "outside_knowledge_accuracy": 0.5,
+        "changed_accuracy": 0.11764705882352941,
+        "unchanged_accuracy": 0.6885245901639344,
+        "changed_steps": 51,
+        "unchanged_steps": 61,
+        "counterfactual_both_correct": 0,
+        "composition_all_steps": 0.14285714285714285,
+        "transfer": 0.36363636363636365
+      },
+      "predictions": {
+        "q000": [
+          0
+        ],
+        "q001": [
+          4
+        ],
+        "q002": [
+          0
+        ],
+        "q003": [
+          3
+        ],
+        "q004": [
+          2
+        ],
+        "q005": [
+          2
+        ],
+        "q006": [
+          7
+        ],
+        "q007": [
+          0
+        ],
+        "q008": [
+          4
+        ],
+        "q009": [
+          0
+        ],
+        "q010": [
+          1
+        ],
+        "q011": [
+          4
+        ],
+        "q012": [
+          7
+        ],
+        "q013": [
+          7
+        ],
+        "q014": [
+          7
+        ],
+        "q015": [
+          5
+        ],
+        "q016": [
+          7
+        ],
+        "q017": [
+          7
+        ],
+        "q018": [
+          1
+        ],
+        "q019": [
+          5
+        ],
+        "q020": [
+          1
+        ],
+        "q021": [
+          2
+        ],
+        "q022": [
+          3
+        ],
+        "q023": [
+          7
+        ],
+        "q024": [
+          6
+        ],
+        "q025": [
+          0
+        ],
+        "q026": [
+          7
+        ],
+        "q027": [
+          4
+        ],
+        "q028": [
+          2
+        ],
+        "q029": [
+          0
+        ],
+        "q030": [
+          1
+        ],
+        "q031": [
+          2
+        ],
+        "q032": [
+          0
+        ],
+        "q033": [
+          0
+        ],
+        "q034": [
+          4
+        ],
+        "q035": [
+          6
+        ],
+        "q036": [
+          5
+        ],
+        "q037": [
+          4
+        ],
+        "q038": [
+          4
+        ],
+        "q039": [
+          5
+        ],
+        "q040": [
+          7
+        ],
+        "q041": [
+          7
+        ],
+        "q042": [
+          4
+        ],
+        "q043": [
+          7
+        ],
+        "q044": [
+          5
+        ],
+        "q045": [
+          1
+        ],
+        "q046": [
+          6
+        ],
+        "q047": [
+          3
+        ],
+        "q048": [
+          7
+        ],
+        "q049": [
+          4
+        ],
+        "q050": [
+          0
+        ],
+        "q051": [
+          3
+        ],
+        "q052": [
+          6
+        ],
+        "q053": [
+          4
+        ],
+        "q054": [
+          3
+        ],
+        "q055": [
+          0
+        ],
+        "q056": [
+          5
+        ],
+        "q057": [
+          1
+        ],
+        "q058": [
+          0
+        ],
+        "q059": [
+          1
+        ],
+        "q060": [
+          1
+        ],
+        "q061": [
+          3
+        ],
+        "q062": [
+          3
+        ],
+        "q063": [
+          3
+        ],
+        "q064": [
+          4
+        ],
+        "q065": [
+          1
+        ],
+        "q066": [
+          7
+        ],
+        "q067": [
+          3
+        ],
+        "q068": [
+          3
+        ],
+        "q069": [
+          7
+        ],
+        "q070": [
+          4
+        ],
+        "q071": [
+          5
+        ],
+        "q072": [
+          2
+        ],
+        "q073": [
+          3
+        ],
+        "q074": [
+          2,
+          6,
+          0
+        ],
+        "q075": [
+          2,
+          5,
+          6
+        ],
+        "q076": [
+          4,
+          6,
+          4
+        ],
+        "q077": [
+          3,
+          0,
+          7
+        ],
+        "q080": [
+          7,
+          1,
+          5
+        ],
+        "q081": [
+          5,
+          4,
+          1
+        ],
+        "q084": [
+          4,
+          1,
+          6
+        ],
+        "q085": [
+          5,
+          2,
+          5
+        ],
+        "q086": [
+          4,
+          6,
+          2
+        ],
+        "q087": [
+          5,
+          0,
+          7
+        ],
+        "q078": [
+          1,
+          5
+        ],
+        "q079": [
+          0,
+          0
+        ],
+        "q082": [
+          0,
+          7
+        ],
+        "q083": [
+          5,
+          1
+        ],
+        "q088": [
+          0
+        ],
+        "q089": [
+          1
+        ]
+      },
+      "routing": {
+        "effective_slots": 1.000000238418579,
+        "mean_slot_mass": [
+          7.834881632362567e-10,
+          1.1623908502400582e-09,
+          1.7518151373963065e-09,
+          8.616340974043624e-10,
+          5.488252075025457e-09,
+          8.397563755480064e-10,
+          1.0,
+          9.293628644435614e-10
+        ],
+        "max_slot_mass": 1.0,
+        "top_slot_counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          114,
+          0
+        ]
+      },
+      "uniform_routing_accuracy": 0.5
+    },
+    {
+      "arm": "A",
+      "budget": 300,
+      "seed": 22,
+      "cpu_seconds": 0.9325739999999989,
+      "parameters": 282760,
+      "metrics": {
+        "accuracy": 0.4318181818181818,
+        "outside_knowledge_accuracy": 1,
+        "changed_accuracy": 0.0784313725490196,
+        "unchanged_accuracy": 0.6885245901639344,
+        "changed_steps": 51,
+        "unchanged_steps": 61,
+        "counterfactual_both_correct": 0,
+        "composition_all_steps": 0.14285714285714285,
+        "transfer": 0.18181818181818182
+      },
+      "predictions": {
+        "q000": [
+          0
+        ],
+        "q001": [
+          4
+        ],
+        "q002": [
+          0
+        ],
+        "q003": [
+          3
+        ],
+        "q004": [
+          3
+        ],
+        "q005": [
+          4
+        ],
+        "q006": [
+          7
+        ],
+        "q007": [
+          0
+        ],
+        "q008": [
+          1
+        ],
+        "q009": [
+          6
+        ],
+        "q010": [
+          1
+        ],
+        "q011": [
+          4
+        ],
+        "q012": [
+          7
+        ],
+        "q013": [
+          7
+        ],
+        "q014": [
+          7
+        ],
+        "q015": [
+          5
+        ],
+        "q016": [
+          2
+        ],
+        "q017": [
+          1
+        ],
+        "q018": [
+          1
+        ],
+        "q019": [
+          5
+        ],
+        "q020": [
+          1
+        ],
+        "q021": [
+          2
+        ],
+        "q022": [
+          3
+        ],
+        "q023": [
+          7
+        ],
+        "q024": [
+          6
+        ],
+        "q025": [
+          0
+        ],
+        "q026": [
+          7
+        ],
+        "q027": [
+          4
+        ],
+        "q028": [
+          2
+        ],
+        "q029": [
+          4
+        ],
+        "q030": [
+          4
+        ],
+        "q031": [
+          2
+        ],
+        "q032": [
+          0
+        ],
+        "q033": [
+          0
+        ],
+        "q034": [
+          6
+        ],
+        "q035": [
+          6
+        ],
+        "q036": [
+          5
+        ],
+        "q037": [
+          4
+        ],
+        "q038": [
+          4
+        ],
+        "q039": [
+          5
+        ],
+        "q040": [
+          2
+        ],
+        "q041": [
+          7
+        ],
+        "q042": [
+          4
+        ],
+        "q043": [
+          7
+        ],
+        "q044": [
+          5
+        ],
+        "q045": [
+          1
+        ],
+        "q046": [
+          6
+        ],
+        "q047": [
+          3
+        ],
+        "q048": [
+          1
+        ],
+        "q049": [
+          7
+        ],
+        "q050": [
+          0
+        ],
+        "q051": [
+          3
+        ],
+        "q052": [
+          6
+        ],
+        "q053": [
+          4
+        ],
+        "q054": [
+          3
+        ],
+        "q055": [
+          0
+        ],
+        "q056": [
+          5
+        ],
+        "q057": [
+          1
+        ],
+        "q058": [
+          0
+        ],
+        "q059": [
+          1
+        ],
+        "q060": [
+          1
+        ],
+        "q061": [
+          3
+        ],
+        "q062": [
+          3
+        ],
+        "q063": [
+          3
+        ],
+        "q064": [
+          4
+        ],
+        "q065": [
+          1
+        ],
+        "q066": [
+          7
+        ],
+        "q067": [
+          3
+        ],
+        "q068": [
+          3
+        ],
+        "q069": [
+          7
+        ],
+        "q070": [
+          4
+        ],
+        "q071": [
+          5
+        ],
+        "q072": [
+          2
+        ],
+        "q073": [
+          3
+        ],
+        "q074": [
+          2,
+          6,
+          6
+        ],
+        "q075": [
+          2,
+          5,
+          6
+        ],
+        "q076": [
+          4,
+          6,
+          4
+        ],
+        "q077": [
+          3,
+          0,
+          7
+        ],
+        "q080": [
+          7,
+          1,
+          5
+        ],
+        "q081": [
+          5,
+          4,
+          1
+        ],
+        "q084": [
+          4,
+          1,
+          6
+        ],
+        "q085": [
+          5,
+          2,
+          5
+        ],
+        "q086": [
+          4,
+          6,
+          2
+        ],
+        "q087": [
+          5,
+          0,
+          7
+        ],
+        "q078": [
+          1,
+          5
+        ],
+        "q079": [
+          0,
+          0
+        ],
+        "q082": [
+          0,
+          7
+        ],
+        "q083": [
+          5,
+          1
+        ],
+        "q088": [
+          0
+        ],
+        "q089": [
+          2
+        ]
+      },
+      "routing": {
+        "effective_slots": 1.000123143196106,
+        "mean_slot_mass": [
+          2.5327519779239083e-06,
+          4.770798511799512e-08,
+          0.9999910593032837,
+          5.2761561164516024e-06,
+          3.2771859537206183e-07,
+          2.01401761046327e-07,
+          3.089329680960873e-08,
+          5.6466490150342e-07
+        ],
+        "max_slot_mass": 0.9999910593032837,
+        "top_slot_counts": [
+          0,
+          0,
+          114,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "uniform_routing_accuracy": 0.4431818181818182
+    },
+    {
+      "arm": "A",
+      "budget": 300,
+      "seed": 42,
+      "cpu_seconds": 0.9316889999999987,
+      "parameters": 282760,
+      "metrics": {
+        "accuracy": 0.4318181818181818,
+        "outside_knowledge_accuracy": 0.5,
+        "changed_accuracy": 0.09803921568627451,
+        "unchanged_accuracy": 0.6721311475409836,
+        "changed_steps": 51,
+        "unchanged_steps": 61,
+        "counterfactual_both_correct": 0,
+        "composition_all_steps": 0.14285714285714285,
+        "transfer": 0.18181818181818182
+      },
+      "predictions": {
+        "q000": [
+          0
+        ],
+        "q001": [
+          4
+        ],
+        "q002": [
+          0
+        ],
+        "q003": [
+          3
+        ],
+        "q004": [
+          3
+        ],
+        "q005": [
+          4
+        ],
+        "q006": [
+          7
+        ],
+        "q007": [
+          0
+        ],
+        "q008": [
+          1
+        ],
+        "q009": [
+          6
+        ],
+        "q010": [
+          1
+        ],
+        "q011": [
+          4
+        ],
+        "q012": [
+          7
+        ],
+        "q013": [
+          7
+        ],
+        "q014": [
+          7
+        ],
+        "q015": [
+          5
+        ],
+        "q016": [
+          2
+        ],
+        "q017": [
+          1
+        ],
+        "q018": [
+          1
+        ],
+        "q019": [
+          5
+        ],
+        "q020": [
+          1
+        ],
+        "q021": [
+          2
+        ],
+        "q022": [
+          7
+        ],
+        "q023": [
+          7
+        ],
+        "q024": [
+          6
+        ],
+        "q025": [
+          0
+        ],
+        "q026": [
+          7
+        ],
+        "q027": [
+          4
+        ],
+        "q028": [
+          2
+        ],
+        "q029": [
+          4
+        ],
+        "q030": [
+          4
+        ],
+        "q031": [
+          2
+        ],
+        "q032": [
+          0
+        ],
+        "q033": [
+          0
+        ],
+        "q034": [
+          6
+        ],
+        "q035": [
+          6
+        ],
+        "q036": [
+          4
+        ],
+        "q037": [
+          4
+        ],
+        "q038": [
+          4
+        ],
+        "q039": [
+          5
+        ],
+        "q040": [
+          7
+        ],
+        "q041": [
+          3
+        ],
+        "q042": [
+          4
+        ],
+        "q043": [
+          7
+        ],
+        "q044": [
+          5
+        ],
+        "q045": [
+          1
+        ],
+        "q046": [
+          2
+        ],
+        "q047": [
+          7
+        ],
+        "q048": [
+          1
+        ],
+        "q049": [
+          7
+        ],
+        "q050": [
+          0
+        ],
+        "q051": [
+          3
+        ],
+        "q052": [
+          6
+        ],
+        "q053": [
+          4
+        ],
+        "q054": [
+          3
+        ],
+        "q055": [
+          0
+        ],
+        "q056": [
+          5
+        ],
+        "q057": [
+          1
+        ],
+        "q058": [
+          0
+        ],
+        "q059": [
+          1
+        ],
+        "q060": [
+          1
+        ],
+        "q061": [
+          3
+        ],
+        "q062": [
+          3
+        ],
+        "q063": [
+          3
+        ],
+        "q064": [
+          4
+        ],
+        "q065": [
+          1
+        ],
+        "q066": [
+          7
+        ],
+        "q067": [
+          3
+        ],
+        "q068": [
+          3
+        ],
+        "q069": [
+          7
+        ],
+        "q070": [
+          4
+        ],
+        "q071": [
+          5
+        ],
+        "q072": [
+          2
+        ],
+        "q073": [
+          3
+        ],
+        "q074": [
+          2,
+          6,
+          6
+        ],
+        "q075": [
+          2,
+          5,
+          6
+        ],
+        "q076": [
+          4,
+          5,
+          7
+        ],
+        "q077": [
+          3,
+          0,
+          7
+        ],
+        "q080": [
+          7,
+          1,
+          5
+        ],
+        "q081": [
+          5,
+          4,
+          1
+        ],
+        "q084": [
+          4,
+          1,
+          6
+        ],
+        "q085": [
+          5,
+          2,
+          5
+        ],
+        "q086": [
+          4,
+          6,
+          2
+        ],
+        "q087": [
+          5,
+          0,
+          7
+        ],
+        "q078": [
+          1,
+          5
+        ],
+        "q079": [
+          0,
+          0
+        ],
+        "q082": [
+          0,
+          7
+        ],
+        "q083": [
+          5,
+          1
+        ],
+        "q088": [
+          0
+        ],
+        "q089": [
+          0
+        ]
+      },
+      "routing": {
+        "effective_slots": 1.0000922679901123,
+        "mean_slot_mass": [
+          3.476018719084095e-06,
+          5.223314403224322e-08,
+          4.0797965539240977e-07,
+          1.6078113276307704e-06,
+          7.85316913720635e-08,
+          3.303202333881927e-07,
+          5.237359914644912e-07,
+          0.9999935626983643
+        ],
+        "max_slot_mass": 0.9999935626983643,
+        "top_slot_counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          114
+        ]
+      },
+      "uniform_routing_accuracy": 0.4431818181818182
+    },
+    {
+      "arm": "B",
+      "budget": 300,
+      "seed": 11,
+      "cpu_seconds": 1.0480990000000006,
+      "parameters": 282760,
+      "metrics": {
+        "accuracy": 0.4318181818181818,
+        "outside_knowledge_accuracy": 1,
+        "changed_accuracy": 0.29411764705882354,
+        "unchanged_accuracy": 0.45901639344262296,
+        "changed_steps": 51,
+        "unchanged_steps": 61,
+        "counterfactual_both_correct": 0,
+        "composition_all_steps": 0,
+        "transfer": 0.6363636363636364
+      },
+      "predictions": {
+        "q000": [
+          0
+        ],
+        "q001": [
+          6
+        ],
+        "q002": [
+          0
+        ],
+        "q003": [
+          1
+        ],
+        "q004": [
+          1
+        ],
+        "q005": [
+          4
+        ],
+        "q006": [
+          7
+        ],
+        "q007": [
+          3
+        ],
+        "q008": [
+          6
+        ],
+        "q009": [
+          0
+        ],
+        "q010": [
+          1
+        ],
+        "q011": [
+          3
+        ],
+        "q012": [
+          3
+        ],
+        "q013": [
+          2
+        ],
+        "q014": [
+          7
+        ],
+        "q015": [
+          6
+        ],
+        "q016": [
+          7
+        ],
+        "q017": [
+          7
+        ],
+        "q018": [
+          1
+        ],
+        "q019": [
+          7
+        ],
+        "q020": [
+          1
+        ],
+        "q021": [
+          2
+        ],
+        "q022": [
+          6
+        ],
+        "q023": [
+          4
+        ],
+        "q024": [
+          3
+        ],
+        "q025": [
+          1
+        ],
+        "q026": [
+          7
+        ],
+        "q027": [
+          2
+        ],
+        "q028": [
+          2
+        ],
+        "q029": [
+          0
+        ],
+        "q030": [
+          1
+        ],
+        "q031": [
+          4
+        ],
+        "q032": [
+          5
+        ],
+        "q033": [
+          3
+        ],
+        "q034": [
+          6
+        ],
+        "q035": [
+          0
+        ],
+        "q036": [
+          5
+        ],
+        "q037": [
+          2
+        ],
+        "q038": [
+          4
+        ],
+        "q039": [
+          6
+        ],
+        "q040": [
+          1
+        ],
+        "q041": [
+          5
+        ],
+        "q042": [
+          4
+        ],
+        "q043": [
+          7
+        ],
+        "q044": [
+          5
+        ],
+        "q045": [
+          1
+        ],
+        "q046": [
+          6
+        ],
+        "q047": [
+          3
+        ],
+        "q048": [
+          1
+        ],
+        "q049": [
+          7
+        ],
+        "q050": [
+          0
+        ],
+        "q051": [
+          5
+        ],
+        "q052": [
+          6
+        ],
+        "q053": [
+          3
+        ],
+        "q054": [
+          3
+        ],
+        "q055": [
+          0
+        ],
+        "q056": [
+          2
+        ],
+        "q057": [
+          7
+        ],
+        "q058": [
+          2
+        ],
+        "q059": [
+          7
+        ],
+        "q060": [
+          7
+        ],
+        "q061": [
+          0
+        ],
+        "q062": [
+          5
+        ],
+        "q063": [
+          2
+        ],
+        "q064": [
+          5
+        ],
+        "q065": [
+          0
+        ],
+        "q066": [
+          4
+        ],
+        "q067": [
+          4
+        ],
+        "q068": [
+          0
+        ],
+        "q069": [
+          5
+        ],
+        "q070": [
+          5
+        ],
+        "q071": [
+          2
+        ],
+        "q072": [
+          5
+        ],
+        "q073": [
+          4
+        ],
+        "q074": [
+          7,
+          4,
+          4
+        ],
+        "q075": [
+          7,
+          7,
+          6
+        ],
+        "q076": [
+          2,
+          2,
+          3
+        ],
+        "q077": [
+          1,
+          3,
+          1
+        ],
+        "q080": [
+          6,
+          4,
+          1
+        ],
+        "q081": [
+          7,
+          0,
+          6
+        ],
+        "q084": [
+          5,
+          4,
+          5
+        ],
+        "q085": [
+          7,
+          0,
+          1
+        ],
+        "q086": [
+          0,
+          5,
+          5
+        ],
+        "q087": [
+          4,
+          2,
+          4
+        ],
+        "q078": [
+          1,
+          5
+        ],
+        "q079": [
+          3,
+          6
+        ],
+        "q082": [
+          1,
+          2
+        ],
+        "q083": [
+          4,
+          0
+        ],
+        "q088": [
+          0
+        ],
+        "q089": [
+          2
+        ]
+      },
+      "routing": {
+        "effective_slots": 5.470858573913574,
+        "mean_slot_mass": [
+          0.06262599676847458,
+          0.2171935737133026,
+          0.048817895352840424,
+          0.016944408416748047,
+          0.03587501868605614,
+          0.04651835933327675,
+          0.27612224221229553,
+          0.29590246081352234
+        ],
+        "max_slot_mass": 0.29590246081352234,
+        "top_slot_counts": [
+          2,
+          30,
+          3,
+          1,
+          3,
+          6,
+          30,
+          39
+        ]
+      },
+      "uniform_routing_accuracy": 0.4431818181818182
+    },
+    {
+      "arm": "B",
+      "budget": 300,
+      "seed": 22,
+      "cpu_seconds": 1.0334800000000008,
+      "parameters": 282760,
+      "metrics": {
+        "accuracy": 0.4659090909090909,
+        "outside_knowledge_accuracy": 0.5,
+        "changed_accuracy": 0.23529411764705882,
+        "unchanged_accuracy": 0.5409836065573771,
+        "changed_steps": 51,
+        "unchanged_steps": 61,
+        "counterfactual_both_correct": 0,
+        "composition_all_steps": 0.07142857142857142,
+        "transfer": 0.5909090909090909
+      },
+      "predictions": {
+        "q000": [
+          6
+        ],
+        "q001": [
+          7
+        ],
+        "q002": [
+          0
+        ],
+        "q003": [
+          1
+        ],
+        "q004": [
+          1
+        ],
+        "q005": [
+          4
+        ],
+        "q006": [
+          7
+        ],
+        "q007": [
+          3
+        ],
+        "q008": [
+          4
+        ],
+        "q009": [
+          0
+        ],
+        "q010": [
+          6
+        ],
+        "q011": [
+          3
+        ],
+        "q012": [
+          3
+        ],
+        "q013": [
+          2
+        ],
+        "q014": [
+          7
+        ],
+        "q015": [
+          5
+        ],
+        "q016": [
+          7
+        ],
+        "q017": [
+          7
+        ],
+        "q018": [
+          1
+        ],
+        "q019": [
+          5
+        ],
+        "q020": [
+          6
+        ],
+        "q021": [
+          3
+        ],
+        "q022": [
+          6
+        ],
+        "q023": [
+          4
+        ],
+        "q024": [
+          3
+        ],
+        "q025": [
+          1
+        ],
+        "q026": [
+          7
+        ],
+        "q027": [
+          0
+        ],
+        "q028": [
+          6
+        ],
+        "q029": [
+          2
+        ],
+        "q030": [
+          1
+        ],
+        "q031": [
+          5
+        ],
+        "q032": [
+          5
+        ],
+        "q033": [
+          3
+        ],
+        "q034": [
+          6
+        ],
+        "q035": [
+          3
+        ],
+        "q036": [
+          5
+        ],
+        "q037": [
+          2
+        ],
+        "q038": [
+          4
+        ],
+        "q039": [
+          7
+        ],
+        "q040": [
+          1
+        ],
+        "q041": [
+          5
+        ],
+        "q042": [
+          4
+        ],
+        "q043": [
+          7
+        ],
+        "q044": [
+          5
+        ],
+        "q045": [
+          1
+        ],
+        "q046": [
+          6
+        ],
+        "q047": [
+          3
+        ],
+        "q048": [
+          1
+        ],
+        "q049": [
+          7
+        ],
+        "q050": [
+          0
+        ],
+        "q051": [
+          5
+        ],
+        "q052": [
+          6
+        ],
+        "q053": [
+          3
+        ],
+        "q054": [
+          3
+        ],
+        "q055": [
+          7
+        ],
+        "q056": [
+          2
+        ],
+        "q057": [
+          1
+        ],
+        "q058": [
+          2
+        ],
+        "q059": [
+          5
+        ],
+        "q060": [
+          7
+        ],
+        "q061": [
+          5
+        ],
+        "q062": [
+          5
+        ],
+        "q063": [
+          3
+        ],
+        "q064": [
+          2
+        ],
+        "q065": [
+          6
+        ],
+        "q066": [
+          6
+        ],
+        "q067": [
+          4
+        ],
+        "q068": [
+          4
+        ],
+        "q069": [
+          7
+        ],
+        "q070": [
+          5
+        ],
+        "q071": [
+          2
+        ],
+        "q072": [
+          5
+        ],
+        "q073": [
+          4
+        ],
+        "q074": [
+          7,
+          4,
+          1
+        ],
+        "q075": [
+          7,
+          1,
+          7
+        ],
+        "q076": [
+          2,
+          0,
+          3
+        ],
+        "q077": [
+          1,
+          3,
+          1
+        ],
+        "q080": [
+          0,
+          4,
+          1
+        ],
+        "q081": [
+          3,
+          0,
+          6
+        ],
+        "q084": [
+          6,
+          0,
+          4
+        ],
+        "q085": [
+          7,
+          3,
+          6
+        ],
+        "q086": [
+          3,
+          0,
+          0
+        ],
+        "q087": [
+          6,
+          7,
+          4
+        ],
+        "q078": [
+          3,
+          1
+        ],
+        "q079": [
+          2,
+          6
+        ],
+        "q082": [
+          4,
+          1
+        ],
+        "q083": [
+          5,
+          1
+        ],
+        "q088": [
+          2
+        ],
+        "q089": [
+          2
+        ]
+      },
+      "routing": {
+        "effective_slots": 5.788005828857422,
+        "mean_slot_mass": [
+          0.058372098952531815,
+          0.25755617022514343,
+          0.034427717328071594,
+          0.2072640061378479,
+          0.03436827287077904,
+          0.0636533871293068,
+          0.0485878549516201,
+          0.29577046632766724
+        ],
+        "max_slot_mass": 0.29577046632766724,
+        "top_slot_counts": [
+          1,
+          42,
+          3,
+          24,
+          3,
+          1,
+          8,
+          32
+        ]
+      },
+      "uniform_routing_accuracy": 0.4090909090909091
+    },
+    {
+      "arm": "B",
+      "budget": 300,
+      "seed": 42,
+      "cpu_seconds": 1.0359079999999992,
+      "parameters": 282760,
+      "metrics": {
+        "accuracy": 0.4659090909090909,
+        "outside_knowledge_accuracy": 1,
+        "changed_accuracy": 0.3333333333333333,
+        "unchanged_accuracy": 0.4098360655737705,
+        "changed_steps": 51,
+        "unchanged_steps": 61,
+        "counterfactual_both_correct": 0.3333333333333333,
+        "composition_all_steps": 0,
+        "transfer": 0.5909090909090909
+      },
+      "predictions": {
+        "q000": [
+          3
+        ],
+        "q001": [
+          7
+        ],
+        "q002": [
+          0
+        ],
+        "q003": [
+          7
+        ],
+        "q004": [
+          1
+        ],
+        "q005": [
+          2
+        ],
+        "q006": [
+          7
+        ],
+        "q007": [
+          0
+        ],
+        "q008": [
+          6
+        ],
+        "q009": [
+          0
+        ],
+        "q010": [
+          1
+        ],
+        "q011": [
+          4
+        ],
+        "q012": [
+          3
+        ],
+        "q013": [
+          2
+        ],
+        "q014": [
+          7
+        ],
+        "q015": [
+          5
+        ],
+        "q016": [
+          7
+        ],
+        "q017": [
+          7
+        ],
+        "q018": [
+          1
+        ],
+        "q019": [
+          5
+        ],
+        "q020": [
+          6
+        ],
+        "q021": [
+          7
+        ],
+        "q022": [
+          6
+        ],
+        "q023": [
+          6
+        ],
+        "q024": [
+          3
+        ],
+        "q025": [
+          1
+        ],
+        "q026": [
+          7
+        ],
+        "q027": [
+          6
+        ],
+        "q028": [
+          2
+        ],
+        "q029": [
+          7
+        ],
+        "q030": [
+          1
+        ],
+        "q031": [
+          6
+        ],
+        "q032": [
+          5
+        ],
+        "q033": [
+          3
+        ],
+        "q034": [
+          4
+        ],
+        "q035": [
+          5
+        ],
+        "q036": [
+          5
+        ],
+        "q037": [
+          2
+        ],
+        "q038": [
+          4
+        ],
+        "q039": [
+          6
+        ],
+        "q040": [
+          1
+        ],
+        "q041": [
+          5
+        ],
+        "q042": [
+          4
+        ],
+        "q043": [
+          7
+        ],
+        "q044": [
+          7
+        ],
+        "q045": [
+          1
+        ],
+        "q046": [
+          2
+        ],
+        "q047": [
+          3
+        ],
+        "q048": [
+          2
+        ],
+        "q049": [
+          7
+        ],
+        "q050": [
+          7
+        ],
+        "q051": [
+          5
+        ],
+        "q052": [
+          7
+        ],
+        "q053": [
+          7
+        ],
+        "q054": [
+          2
+        ],
+        "q055": [
+          7
+        ],
+        "q056": [
+          7
+        ],
+        "q057": [
+          4
+        ],
+        "q058": [
+          7
+        ],
+        "q059": [
+          4
+        ],
+        "q060": [
+          2
+        ],
+        "q061": [
+          5
+        ],
+        "q062": [
+          2
+        ],
+        "q063": [
+          1
+        ],
+        "q064": [
+          0
+        ],
+        "q065": [
+          1
+        ],
+        "q066": [
+          5
+        ],
+        "q067": [
+          1
+        ],
+        "q068": [
+          0
+        ],
+        "q069": [
+          0
+        ],
+        "q070": [
+          5
+        ],
+        "q071": [
+          0
+        ],
+        "q072": [
+          3
+        ],
+        "q073": [
+          4
+        ],
+        "q074": [
+          7,
+          0,
+          1
+        ],
+        "q075": [
+          6,
+          1,
+          7
+        ],
+        "q076": [
+          5,
+          6,
+          4
+        ],
+        "q077": [
+          6,
+          0,
+          7
+        ],
+        "q080": [
+          1,
+          4,
+          1
+        ],
+        "q081": [
+          5,
+          3,
+          6
+        ],
+        "q084": [
+          6,
+          7,
+          0
+        ],
+        "q085": [
+          4,
+          6,
+          3
+        ],
+        "q086": [
+          0,
+          1,
+          1
+        ],
+        "q087": [
+          6,
+          2,
+          4
+        ],
+        "q078": [
+          3,
+          1
+        ],
+        "q079": [
+          2,
+          6
+        ],
+        "q082": [
+          2,
+          0
+        ],
+        "q083": [
+          6,
+          3
+        ],
+        "q088": [
+          0
+        ],
+        "q089": [
+          2
+        ]
+      },
+      "routing": {
+        "effective_slots": 5.016788005828857,
+        "mean_slot_mass": [
+          0.0422988198697567,
+          0.07598709315061569,
+          0.019194038584828377,
+          0.19392487406730652,
+          0.041039638221263885,
+          0.1775798350572586,
+          0.023377755656838417,
+          0.4265979826450348
+        ],
+        "max_slot_mass": 0.4265979826450348,
+        "top_slot_counts": [
+          4,
+          3,
+          2,
+          34,
+          5,
+          21,
+          0,
+          45
+        ]
+      },
+      "uniform_routing_accuracy": 0.32954545454545453
+    },
+    {
+      "arm": "F",
+      "budget": 300,
+      "seed": 11,
+      "cpu_seconds": 1.288642000000003,
+      "parameters": 315785,
+      "metrics": {
+        "accuracy": 0.5795454545454546,
+        "outside_knowledge_accuracy": 1,
+        "changed_accuracy": 0.17647058823529413,
+        "unchanged_accuracy": 0.8360655737704918,
+        "changed_steps": 51,
+        "unchanged_steps": 61,
+        "counterfactual_both_correct": 0,
+        "composition_all_steps": 0.07142857142857142,
+        "transfer": 0.7727272727272727
+      },
+      "predictions": {
+        "q000": [
+          0
+        ],
+        "q001": [
+          4
+        ],
+        "q002": [
+          0
+        ],
+        "q003": [
+          3
+        ],
+        "q004": [
+          1
+        ],
+        "q005": [
+          4
+        ],
+        "q006": [
+          7
+        ],
+        "q007": [
+          0
+        ],
+        "q008": [
+          4
+        ],
+        "q009": [
+          0
+        ],
+        "q010": [
+          1
+        ],
+        "q011": [
+          4
+        ],
+        "q012": [
+          3
+        ],
+        "q013": [
+          2
+        ],
+        "q014": [
+          7
+        ],
+        "q015": [
+          5
+        ],
+        "q016": [
+          7
+        ],
+        "q017": [
+          7
+        ],
+        "q018": [
+          1
+        ],
+        "q019": [
+          5
+        ],
+        "q020": [
+          6
+        ],
+        "q021": [
+          7
+        ],
+        "q022": [
+          0
+        ],
+        "q023": [
+          4
+        ],
+        "q024": [
+          3
+        ],
+        "q025": [
+          1
+        ],
+        "q026": [
+          7
+        ],
+        "q027": [
+          4
+        ],
+        "q028": [
+          2
+        ],
+        "q029": [
+          0
+        ],
+        "q030": [
+          1
+        ],
+        "q031": [
+          0
+        ],
+        "q032": [
+          0
+        ],
+        "q033": [
+          3
+        ],
+        "q034": [
+          6
+        ],
+        "q035": [
+          6
+        ],
+        "q036": [
+          5
+        ],
+        "q037": [
+          2
+        ],
+        "q038": [
+          4
+        ],
+        "q039": [
+          5
+        ],
+        "q040": [
+          1
+        ],
+        "q041": [
+          5
+        ],
+        "q042": [
+          4
+        ],
+        "q043": [
+          7
+        ],
+        "q044": [
+          5
+        ],
+        "q045": [
+          1
+        ],
+        "q046": [
+          2
+        ],
+        "q047": [
+          7
+        ],
+        "q048": [
+          2
+        ],
+        "q049": [
+          3
+        ],
+        "q050": [
+          5
+        ],
+        "q051": [
+          0
+        ],
+        "q052": [
+          6
+        ],
+        "q053": [
+          4
+        ],
+        "q054": [
+          3
+        ],
+        "q055": [
+          7
+        ],
+        "q056": [
+          2
+        ],
+        "q057": [
+          1
+        ],
+        "q058": [
+          2
+        ],
+        "q059": [
+          1
+        ],
+        "q060": [
+          7
+        ],
+        "q061": [
+          3
+        ],
+        "q062": [
+          3
+        ],
+        "q063": [
+          3
+        ],
+        "q064": [
+          0
+        ],
+        "q065": [
+          1
+        ],
+        "q066": [
+          1
+        ],
+        "q067": [
+          3
+        ],
+        "q068": [
+          4
+        ],
+        "q069": [
+          0
+        ],
+        "q070": [
+          6
+        ],
+        "q071": [
+          7
+        ],
+        "q072": [
+          5
+        ],
+        "q073": [
+          4
+        ],
+        "q074": [
+          3,
+          0,
+          1
+        ],
+        "q075": [
+          2,
+          5,
+          7
+        ],
+        "q076": [
+          4,
+          2,
+          3
+        ],
+        "q077": [
+          3,
+          0,
+          7
+        ],
+        "q080": [
+          7,
+          4,
+          1
+        ],
+        "q081": [
+          5,
+          0,
+          6
+        ],
+        "q084": [
+          4,
+          5,
+          7
+        ],
+        "q085": [
+          5,
+          0,
+          1
+        ],
+        "q086": [
+          3,
+          2,
+          7
+        ],
+        "q087": [
+          3,
+          5,
+          1
+        ],
+        "q078": [
+          3,
+          1
+        ],
+        "q079": [
+          0,
+          0
+        ],
+        "q082": [
+          0,
+          1
+        ],
+        "q083": [
+          5,
+          0
+        ],
+        "q088": [
+          0
+        ],
+        "q089": [
+          2
+        ]
+      },
+      "routing": {
+        "effective_slots": 3.6367321014404297,
+        "mean_slot_mass": [
+          0.22275640070438385,
+          0.005027148872613907,
+          0.0006110379472374916,
+          0.0026426957920193672,
+          0.41495954990386963,
+          0.06633034348487854,
+          0.2867202162742615,
+          0.0009525968343950808
+        ],
+        "max_slot_mass": 0.41495954990386963,
+        "top_slot_counts": [
+          28,
+          0,
+          0,
+          0,
+          48,
+          6,
+          32,
+          0
+        ]
+      },
+      "uniform_routing_accuracy": 0.5340909090909091
+    },
+    {
+      "arm": "F",
+      "budget": 300,
+      "seed": 22,
+      "cpu_seconds": 1.371341000000001,
+      "parameters": 315785,
+      "metrics": {
+        "accuracy": 0.5681818181818182,
+        "outside_knowledge_accuracy": 0.5,
+        "changed_accuracy": 0.21568627450980393,
+        "unchanged_accuracy": 0.8032786885245902,
+        "changed_steps": 51,
+        "unchanged_steps": 61,
+        "counterfactual_both_correct": 0.06666666666666667,
+        "composition_all_steps": 0.07142857142857142,
+        "transfer": 0.6818181818181818
+      },
+      "predictions": {
+        "q000": [
+          0
+        ],
+        "q001": [
+          7
+        ],
+        "q002": [
+          0
+        ],
+        "q003": [
+          3
+        ],
+        "q004": [
+          1
+        ],
+        "q005": [
+          4
+        ],
+        "q006": [
+          7
+        ],
+        "q007": [
+          7
+        ],
+        "q008": [
+          4
+        ],
+        "q009": [
+          0
+        ],
+        "q010": [
+          1
+        ],
+        "q011": [
+          4
+        ],
+        "q012": [
+          7
+        ],
+        "q013": [
+          2
+        ],
+        "q014": [
+          7
+        ],
+        "q015": [
+          5
+        ],
+        "q016": [
+          7
+        ],
+        "q017": [
+          7
+        ],
+        "q018": [
+          1
+        ],
+        "q019": [
+          5
+        ],
+        "q020": [
+          6
+        ],
+        "q021": [
+          7
+        ],
+        "q022": [
+          0
+        ],
+        "q023": [
+          6
+        ],
+        "q024": [
+          3
+        ],
+        "q025": [
+          1
+        ],
+        "q026": [
+          7
+        ],
+        "q027": [
+          4
+        ],
+        "q028": [
+          2
+        ],
+        "q029": [
+          0
+        ],
+        "q030": [
+          1
+        ],
+        "q031": [
+          2
+        ],
+        "q032": [
+          0
+        ],
+        "q033": [
+          0
+        ],
+        "q034": [
+          6
+        ],
+        "q035": [
+          6
+        ],
+        "q036": [
+          5
+        ],
+        "q037": [
+          2
+        ],
+        "q038": [
+          4
+        ],
+        "q039": [
+          0
+        ],
+        "q040": [
+          1
+        ],
+        "q041": [
+          5
+        ],
+        "q042": [
+          4
+        ],
+        "q043": [
+          7
+        ],
+        "q044": [
+          5
+        ],
+        "q045": [
+          1
+        ],
+        "q046": [
+          6
+        ],
+        "q047": [
+          3
+        ],
+        "q048": [
+          1
+        ],
+        "q049": [
+          7
+        ],
+        "q050": [
+          0
+        ],
+        "q051": [
+          5
+        ],
+        "q052": [
+          6
+        ],
+        "q053": [
+          4
+        ],
+        "q054": [
+          3
+        ],
+        "q055": [
+          7
+        ],
+        "q056": [
+          7
+        ],
+        "q057": [
+          1
+        ],
+        "q058": [
+          7
+        ],
+        "q059": [
+          1
+        ],
+        "q060": [
+          2
+        ],
+        "q061": [
+          3
+        ],
+        "q062": [
+          3
+        ],
+        "q063": [
+          3
+        ],
+        "q064": [
+          0
+        ],
+        "q065": [
+          1
+        ],
+        "q066": [
+          7
+        ],
+        "q067": [
+          3
+        ],
+        "q068": [
+          0
+        ],
+        "q069": [
+          0
+        ],
+        "q070": [
+          0
+        ],
+        "q071": [
+          7
+        ],
+        "q072": [
+          5
+        ],
+        "q073": [
+          4
+        ],
+        "q074": [
+          7,
+          4,
+          1
+        ],
+        "q075": [
+          2,
+          5,
+          6
+        ],
+        "q076": [
+          4,
+          7,
+          0
+        ],
+        "q077": [
+          3,
+          0,
+          7
+        ],
+        "q080": [
+          7,
+          6,
+          3
+        ],
+        "q081": [
+          5,
+          3,
+          6
+        ],
+        "q084": [
+          4,
+          7,
+          0
+        ],
+        "q085": [
+          5,
+          4,
+          7
+        ],
+        "q086": [
+          3,
+          5,
+          7
+        ],
+        "q087": [
+          3,
+          2,
+          4
+        ],
+        "q078": [
+          3,
+          1
+        ],
+        "q079": [
+          2,
+          6
+        ],
+        "q082": [
+          0,
+          5
+        ],
+        "q083": [
+          5,
+          7
+        ],
+        "q088": [
+          3
+        ],
+        "q089": [
+          2
+        ]
+      },
+      "routing": {
+        "effective_slots": 3.745896816253662,
+        "mean_slot_mass": [
+          9.542589396005496e-05,
+          0.12038648873567581,
+          0.001749416347593069,
+          0.0702107772231102,
+          0.5296385288238525,
+          0.08933474868535995,
+          3.2976106012938544e-05,
+          0.1885516196489334
+        ],
+        "max_slot_mass": 0.5296385288238525,
+        "top_slot_counts": [
+          0,
+          14,
+          0,
+          8,
+          61,
+          10,
+          0,
+          21
+        ]
+      },
+      "uniform_routing_accuracy": 0.5681818181818182
+    },
+    {
+      "arm": "F",
+      "budget": 300,
+      "seed": 42,
+      "cpu_seconds": 1.327212000000003,
+      "parameters": 315785,
+      "metrics": {
+        "accuracy": 0.5795454545454546,
+        "outside_knowledge_accuracy": 0.5,
+        "changed_accuracy": 0.21568627450980393,
+        "unchanged_accuracy": 0.819672131147541,
+        "changed_steps": 51,
+        "unchanged_steps": 61,
+        "counterfactual_both_correct": 0.26666666666666666,
+        "composition_all_steps": 0.21428571428571427,
+        "transfer": 0.7272727272727273
+      },
+      "predictions": {
+        "q000": [
+          0
+        ],
+        "q001": [
+          4
+        ],
+        "q002": [
+          0
+        ],
+        "q003": [
+          3
+        ],
+        "q004": [
+          1
+        ],
+        "q005": [
+          4
+        ],
+        "q006": [
+          7
+        ],
+        "q007": [
+          0
+        ],
+        "q008": [
+          4
+        ],
+        "q009": [
+          0
+        ],
+        "q010": [
+          1
+        ],
+        "q011": [
+          4
+        ],
+        "q012": [
+          7
+        ],
+        "q013": [
+          7
+        ],
+        "q014": [
+          5
+        ],
+        "q015": [
+          6
+        ],
+        "q016": [
+          7
+        ],
+        "q017": [
+          7
+        ],
+        "q018": [
+          1
+        ],
+        "q019": [
+          5
+        ],
+        "q020": [
+          1
+        ],
+        "q021": [
+          7
+        ],
+        "q022": [
+          0
+        ],
+        "q023": [
+          4
+        ],
+        "q024": [
+          3
+        ],
+        "q025": [
+          1
+        ],
+        "q026": [
+          7
+        ],
+        "q027": [
+          4
+        ],
+        "q028": [
+          2
+        ],
+        "q029": [
+          0
+        ],
+        "q030": [
+          1
+        ],
+        "q031": [
+          2
+        ],
+        "q032": [
+          0
+        ],
+        "q033": [
+          3
+        ],
+        "q034": [
+          6
+        ],
+        "q035": [
+          6
+        ],
+        "q036": [
+          5
+        ],
+        "q037": [
+          2
+        ],
+        "q038": [
+          4
+        ],
+        "q039": [
+          0
+        ],
+        "q040": [
+          1
+        ],
+        "q041": [
+          5
+        ],
+        "q042": [
+          4
+        ],
+        "q043": [
+          7
+        ],
+        "q044": [
+          7
+        ],
+        "q045": [
+          1
+        ],
+        "q046": [
+          2
+        ],
+        "q047": [
+          3
+        ],
+        "q048": [
+          2
+        ],
+        "q049": [
+          7
+        ],
+        "q050": [
+          5
+        ],
+        "q051": [
+          0
+        ],
+        "q052": [
+          6
+        ],
+        "q053": [
+          7
+        ],
+        "q054": [
+          2
+        ],
+        "q055": [
+          7
+        ],
+        "q056": [
+          7
+        ],
+        "q057": [
+          1
+        ],
+        "q058": [
+          7
+        ],
+        "q059": [
+          1
+        ],
+        "q060": [
+          2
+        ],
+        "q061": [
+          3
+        ],
+        "q062": [
+          3
+        ],
+        "q063": [
+          3
+        ],
+        "q064": [
+          4
+        ],
+        "q065": [
+          1
+        ],
+        "q066": [
+          7
+        ],
+        "q067": [
+          3
+        ],
+        "q068": [
+          4
+        ],
+        "q069": [
+          0
+        ],
+        "q070": [
+          5
+        ],
+        "q071": [
+          7
+        ],
+        "q072": [
+          5
+        ],
+        "q073": [
+          4
+        ],
+        "q074": [
+          3,
+          0,
+          1
+        ],
+        "q075": [
+          6,
+          1,
+          7
+        ],
+        "q076": [
+          4,
+          2,
+          3
+        ],
+        "q077": [
+          3,
+          0,
+          7
+        ],
+        "q080": [
+          7,
+          4,
+          1
+        ],
+        "q081": [
+          5,
+          0,
+          6
+        ],
+        "q084": [
+          4,
+          0,
+          5
+        ],
+        "q085": [
+          5,
+          5,
+          6
+        ],
+        "q086": [
+          3,
+          2,
+          7
+        ],
+        "q087": [
+          3,
+          3,
+          1
+        ],
+        "q078": [
+          3,
+          1
+        ],
+        "q079": [
+          2,
+          6
+        ],
+        "q082": [
+          0,
+          3
+        ],
+        "q083": [
+          5,
+          1
+        ],
+        "q088": [
+          1
+        ],
+        "q089": [
+          2
+        ]
+      },
+      "routing": {
+        "effective_slots": 4.44478178024292,
+        "mean_slot_mass": [
+          0.019077220931649208,
+          0.006748743820935488,
+          0.149097740650177,
+          0.0040334006771445274,
+          0.2656056582927704,
+          0.0823202133178711,
+          0.052404582500457764,
+          0.420712411403656
+        ],
+        "max_slot_mass": 0.420712411403656,
+        "top_slot_counts": [
+          0,
+          0,
+          16,
+          0,
+          34,
+          6,
+          6,
+          52
+        ]
+      },
+      "uniform_routing_accuracy": 0.5681818181818182
+    },
+    {
+      "arm": "A",
+      "budget": 1000,
+      "seed": 11,
+      "cpu_seconds": 0.9911220000000007,
+      "parameters": 282760,
+      "metrics": {
+        "accuracy": 0.4659090909090909,
+        "outside_knowledge_accuracy": 0,
+        "changed_accuracy": 0.09803921568627451,
+        "unchanged_accuracy": 0.7213114754098361,
+        "changed_steps": 51,
+        "unchanged_steps": 61,
+        "counterfactual_both_correct": 0,
+        "composition_all_steps": 0.14285714285714285,
+        "transfer": 0.3181818181818182
+      },
+      "predictions": {
+        "q000": [
+          0
+        ],
+        "q001": [
+          4
+        ],
+        "q002": [
+          0
+        ],
+        "q003": [
+          3
+        ],
+        "q004": [
+          2
+        ],
+        "q005": [
+          4
+        ],
+        "q006": [
+          7
+        ],
+        "q007": [
+          0
+        ],
+        "q008": [
+          4
+        ],
+        "q009": [
+          0
+        ],
+        "q010": [
+          1
+        ],
+        "q011": [
+          4
+        ],
+        "q012": [
+          7
+        ],
+        "q013": [
+          7
+        ],
+        "q014": [
+          7
+        ],
+        "q015": [
+          5
+        ],
+        "q016": [
+          7
+        ],
+        "q017": [
+          1
+        ],
+        "q018": [
+          1
+        ],
+        "q019": [
+          5
+        ],
+        "q020": [
+          1
+        ],
+        "q021": [
+          2
+        ],
+        "q022": [
+          3
+        ],
+        "q023": [
+          7
+        ],
+        "q024": [
+          6
+        ],
+        "q025": [
+          0
+        ],
+        "q026": [
+          7
+        ],
+        "q027": [
+          4
+        ],
+        "q028": [
+          2
+        ],
+        "q029": [
+          4
+        ],
+        "q030": [
+          4
+        ],
+        "q031": [
+          2
+        ],
+        "q032": [
+          0
+        ],
+        "q033": [
+          0
+        ],
+        "q034": [
+          6
+        ],
+        "q035": [
+          6
+        ],
+        "q036": [
+          4
+        ],
+        "q037": [
+          4
+        ],
+        "q038": [
+          4
+        ],
+        "q039": [
+          5
+        ],
+        "q040": [
+          2
+        ],
+        "q041": [
+          7
+        ],
+        "q042": [
+          4
+        ],
+        "q043": [
+          7
+        ],
+        "q044": [
+          5
+        ],
+        "q045": [
+          1
+        ],
+        "q046": [
+          6
+        ],
+        "q047": [
+          3
+        ],
+        "q048": [
+          1
+        ],
+        "q049": [
+          7
+        ],
+        "q050": [
+          0
+        ],
+        "q051": [
+          3
+        ],
+        "q052": [
+          6
+        ],
+        "q053": [
+          4
+        ],
+        "q054": [
+          3
+        ],
+        "q055": [
+          0
+        ],
+        "q056": [
+          5
+        ],
+        "q057": [
+          1
+        ],
+        "q058": [
+          0
+        ],
+        "q059": [
+          1
+        ],
+        "q060": [
+          1
+        ],
+        "q061": [
+          3
+        ],
+        "q062": [
+          3
+        ],
+        "q063": [
+          3
+        ],
+        "q064": [
+          4
+        ],
+        "q065": [
+          1
+        ],
+        "q066": [
+          7
+        ],
+        "q067": [
+          3
+        ],
+        "q068": [
+          3
+        ],
+        "q069": [
+          7
+        ],
+        "q070": [
+          4
+        ],
+        "q071": [
+          5
+        ],
+        "q072": [
+          2
+        ],
+        "q073": [
+          3
+        ],
+        "q074": [
+          2,
+          6,
+          6
+        ],
+        "q075": [
+          2,
+          5,
+          6
+        ],
+        "q076": [
+          4,
+          6,
+          4
+        ],
+        "q077": [
+          3,
+          0,
+          7
+        ],
+        "q080": [
+          7,
+          1,
+          5
+        ],
+        "q081": [
+          5,
+          4,
+          1
+        ],
+        "q084": [
+          4,
+          1,
+          6
+        ],
+        "q085": [
+          5,
+          2,
+          5
+        ],
+        "q086": [
+          4,
+          6,
+          2
+        ],
+        "q087": [
+          5,
+          0,
+          7
+        ],
+        "q078": [
+          1,
+          5
+        ],
+        "q079": [
+          0,
+          0
+        ],
+        "q082": [
+          0,
+          7
+        ],
+        "q083": [
+          5,
+          1
+        ],
+        "q088": [
+          2
+        ],
+        "q089": [
+          1
+        ]
+      },
+      "routing": {
+        "effective_slots": 1.00025475025177,
+        "mean_slot_mass": [
+          1.5638549939467339e-06,
+          2.8533565910038305e-06,
+          1.0664358569556498e-06,
+          2.520018369978061e-06,
+          4.889189312962117e-06,
+          4.2097435652976856e-06,
+          0.9999814033508301,
+          1.4715841416546027e-06
+        ],
+        "max_slot_mass": 0.9999814033508301,
+        "top_slot_counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          114,
+          0
+        ]
+      },
+      "uniform_routing_accuracy": 0.4659090909090909
+    },
+    {
+      "arm": "A",
+      "budget": 1000,
+      "seed": 22,
+      "cpu_seconds": 1.0017990000000019,
+      "parameters": 282760,
+      "metrics": {
+        "accuracy": 0.4772727272727273,
+        "outside_knowledge_accuracy": 0,
+        "changed_accuracy": 0.13725490196078433,
+        "unchanged_accuracy": 0.7049180327868853,
+        "changed_steps": 51,
+        "unchanged_steps": 61,
+        "counterfactual_both_correct": 0,
+        "composition_all_steps": 0.14285714285714285,
+        "transfer": 0.2727272727272727
+      },
+      "predictions": {
+        "q000": [
+          0
+        ],
+        "q001": [
+          4
+        ],
+        "q002": [
+          0
+        ],
+        "q003": [
+          3
+        ],
+        "q004": [
+          3
+        ],
+        "q005": [
+          3
+        ],
+        "q006": [
+          7
+        ],
+        "q007": [
+          0
+        ],
+        "q008": [
+          4
+        ],
+        "q009": [
+          0
+        ],
+        "q010": [
+          1
+        ],
+        "q011": [
+          4
+        ],
+        "q012": [
+          7
+        ],
+        "q013": [
+          7
+        ],
+        "q014": [
+          7
+        ],
+        "q015": [
+          5
+        ],
+        "q016": [
+          2
+        ],
+        "q017": [
+          3
+        ],
+        "q018": [
+          1
+        ],
+        "q019": [
+          5
+        ],
+        "q020": [
+          1
+        ],
+        "q021": [
+          2
+        ],
+        "q022": [
+          6
+        ],
+        "q023": [
+          7
+        ],
+        "q024": [
+          6
+        ],
+        "q025": [
+          0
+        ],
+        "q026": [
+          7
+        ],
+        "q027": [
+          4
+        ],
+        "q028": [
+          2
+        ],
+        "q029": [
+          0
+        ],
+        "q030": [
+          1
+        ],
+        "q031": [
+          2
+        ],
+        "q032": [
+          0
+        ],
+        "q033": [
+          0
+        ],
+        "q034": [
+          6
+        ],
+        "q035": [
+          6
+        ],
+        "q036": [
+          4
+        ],
+        "q037": [
+          4
+        ],
+        "q038": [
+          4
+        ],
+        "q039": [
+          5
+        ],
+        "q040": [
+          2
+        ],
+        "q041": [
+          4
+        ],
+        "q042": [
+          4
+        ],
+        "q043": [
+          7
+        ],
+        "q044": [
+          5
+        ],
+        "q045": [
+          1
+        ],
+        "q046": [
+          2
+        ],
+        "q047": [
+          7
+        ],
+        "q048": [
+          1
+        ],
+        "q049": [
+          7
+        ],
+        "q050": [
+          0
+        ],
+        "q051": [
+          3
+        ],
+        "q052": [
+          6
+        ],
+        "q053": [
+          4
+        ],
+        "q054": [
+          3
+        ],
+        "q055": [
+          0
+        ],
+        "q056": [
+          5
+        ],
+        "q057": [
+          1
+        ],
+        "q058": [
+          0
+        ],
+        "q059": [
+          1
+        ],
+        "q060": [
+          1
+        ],
+        "q061": [
+          3
+        ],
+        "q062": [
+          3
+        ],
+        "q063": [
+          3
+        ],
+        "q064": [
+          4
+        ],
+        "q065": [
+          1
+        ],
+        "q066": [
+          7
+        ],
+        "q067": [
+          3
+        ],
+        "q068": [
+          3
+        ],
+        "q069": [
+          7
+        ],
+        "q070": [
+          4
+        ],
+        "q071": [
+          5
+        ],
+        "q072": [
+          2
+        ],
+        "q073": [
+          3
+        ],
+        "q074": [
+          2,
+          6,
+          6
+        ],
+        "q075": [
+          2,
+          5,
+          6
+        ],
+        "q076": [
+          4,
+          6,
+          4
+        ],
+        "q077": [
+          3,
+          0,
+          7
+        ],
+        "q080": [
+          7,
+          1,
+          5
+        ],
+        "q081": [
+          5,
+          4,
+          1
+        ],
+        "q084": [
+          4,
+          1,
+          6
+        ],
+        "q085": [
+          5,
+          2,
+          5
+        ],
+        "q086": [
+          4,
+          6,
+          2
+        ],
+        "q087": [
+          5,
+          0,
+          7
+        ],
+        "q078": [
+          1,
+          5
+        ],
+        "q079": [
+          0,
+          0
+        ],
+        "q082": [
+          0,
+          7
+        ],
+        "q083": [
+          5,
+          1
+        ],
+        "q088": [
+          2
+        ],
+        "q089": [
+          0
+        ]
+      },
+      "routing": {
+        "effective_slots": 1.0000046491622925,
+        "mean_slot_mass": [
+          0.9999997615814209,
+          2.8831709242282955e-10,
+          5.6884676524759925e-08,
+          2.1651193549132586e-07,
+          4.469711267773846e-10,
+          8.658306710485064e-11,
+          2.116367969762223e-09,
+          1.539429694830119e-09
+        ],
+        "max_slot_mass": 0.9999997615814209,
+        "top_slot_counts": [
+          114,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "uniform_routing_accuracy": 0.48863636363636365
+    },
+    {
+      "arm": "A",
+      "budget": 1000,
+      "seed": 42,
+      "cpu_seconds": 0.9663310000000003,
+      "parameters": 282760,
+      "metrics": {
+        "accuracy": 0.4659090909090909,
+        "outside_knowledge_accuracy": 0,
+        "changed_accuracy": 0.13725490196078433,
+        "unchanged_accuracy": 0.6885245901639344,
+        "changed_steps": 51,
+        "unchanged_steps": 61,
+        "counterfactual_both_correct": 0,
+        "composition_all_steps": 0.14285714285714285,
+        "transfer": 0.3181818181818182
+      },
+      "predictions": {
+        "q000": [
+          0
+        ],
+        "q001": [
+          4
+        ],
+        "q002": [
+          0
+        ],
+        "q003": [
+          3
+        ],
+        "q004": [
+          2
+        ],
+        "q005": [
+          2
+        ],
+        "q006": [
+          7
+        ],
+        "q007": [
+          0
+        ],
+        "q008": [
+          4
+        ],
+        "q009": [
+          0
+        ],
+        "q010": [
+          1
+        ],
+        "q011": [
+          4
+        ],
+        "q012": [
+          7
+        ],
+        "q013": [
+          7
+        ],
+        "q014": [
+          7
+        ],
+        "q015": [
+          5
+        ],
+        "q016": [
+          7
+        ],
+        "q017": [
+          1
+        ],
+        "q018": [
+          1
+        ],
+        "q019": [
+          5
+        ],
+        "q020": [
+          1
+        ],
+        "q021": [
+          2
+        ],
+        "q022": [
+          6
+        ],
+        "q023": [
+          7
+        ],
+        "q024": [
+          6
+        ],
+        "q025": [
+          0
+        ],
+        "q026": [
+          7
+        ],
+        "q027": [
+          4
+        ],
+        "q028": [
+          2
+        ],
+        "q029": [
+          0
+        ],
+        "q030": [
+          1
+        ],
+        "q031": [
+          2
+        ],
+        "q032": [
+          0
+        ],
+        "q033": [
+          0
+        ],
+        "q034": [
+          6
+        ],
+        "q035": [
+          6
+        ],
+        "q036": [
+          4
+        ],
+        "q037": [
+          4
+        ],
+        "q038": [
+          4
+        ],
+        "q039": [
+          5
+        ],
+        "q040": [
+          2
+        ],
+        "q041": [
+          4
+        ],
+        "q042": [
+          4
+        ],
+        "q043": [
+          7
+        ],
+        "q044": [
+          5
+        ],
+        "q045": [
+          1
+        ],
+        "q046": [
+          0
+        ],
+        "q047": [
+          5
+        ],
+        "q048": [
+          7
+        ],
+        "q049": [
+          4
+        ],
+        "q050": [
+          0
+        ],
+        "q051": [
+          3
+        ],
+        "q052": [
+          6
+        ],
+        "q053": [
+          4
+        ],
+        "q054": [
+          3
+        ],
+        "q055": [
+          0
+        ],
+        "q056": [
+          5
+        ],
+        "q057": [
+          1
+        ],
+        "q058": [
+          0
+        ],
+        "q059": [
+          1
+        ],
+        "q060": [
+          1
+        ],
+        "q061": [
+          3
+        ],
+        "q062": [
+          3
+        ],
+        "q063": [
+          3
+        ],
+        "q064": [
+          4
+        ],
+        "q065": [
+          1
+        ],
+        "q066": [
+          7
+        ],
+        "q067": [
+          3
+        ],
+        "q068": [
+          3
+        ],
+        "q069": [
+          7
+        ],
+        "q070": [
+          4
+        ],
+        "q071": [
+          5
+        ],
+        "q072": [
+          2
+        ],
+        "q073": [
+          3
+        ],
+        "q074": [
+          2,
+          6,
+          6
+        ],
+        "q075": [
+          2,
+          5,
+          6
+        ],
+        "q076": [
+          4,
+          6,
+          4
+        ],
+        "q077": [
+          3,
+          0,
+          7
+        ],
+        "q080": [
+          7,
+          1,
+          5
+        ],
+        "q081": [
+          5,
+          4,
+          1
+        ],
+        "q084": [
+          4,
+          1,
+          6
+        ],
+        "q085": [
+          5,
+          2,
+          5
+        ],
+        "q086": [
+          4,
+          6,
+          2
+        ],
+        "q087": [
+          5,
+          0,
+          7
+        ],
+        "q078": [
+          1,
+          5
+        ],
+        "q079": [
+          0,
+          0
+        ],
+        "q082": [
+          0,
+          7
+        ],
+        "q083": [
+          5,
+          1
+        ],
+        "q088": [
+          2
+        ],
+        "q089": [
+          0
+        ]
+      },
+      "routing": {
+        "effective_slots": 1.0008368492126465,
+        "mean_slot_mass": [
+          7.336423095694045e-06,
+          8.02238082542317e-06,
+          0.9999313950538635,
+          4.916457783110673e-06,
+          7.402500727948791e-07,
+          1.015869747789111e-05,
+          3.0505942049785517e-05,
+          6.942749223526334e-06
+        ],
+        "max_slot_mass": 0.9999313950538635,
+        "top_slot_counts": [
+          0,
+          0,
+          114,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "uniform_routing_accuracy": 0.45454545454545453
+    },
+    {
+      "arm": "B",
+      "budget": 1000,
+      "seed": 11,
+      "cpu_seconds": 1.0791570000000021,
+      "parameters": 282760,
+      "metrics": {
+        "accuracy": 0.36363636363636365,
+        "outside_knowledge_accuracy": 0.5,
+        "changed_accuracy": 0.23529411764705882,
+        "unchanged_accuracy": 0.4262295081967213,
+        "changed_steps": 51,
+        "unchanged_steps": 61,
+        "counterfactual_both_correct": 0.13333333333333333,
+        "composition_all_steps": 0,
+        "transfer": 0.4090909090909091
+      },
+      "predictions": {
+        "q000": [
+          6
+        ],
+        "q001": [
+          7
+        ],
+        "q002": [
+          5
+        ],
+        "q003": [
+          3
+        ],
+        "q004": [
+          1
+        ],
+        "q005": [
+          4
+        ],
+        "q006": [
+          7
+        ],
+        "q007": [
+          0
+        ],
+        "q008": [
+          6
+        ],
+        "q009": [
+          2
+        ],
+        "q010": [
+          1
+        ],
+        "q011": [
+          4
+        ],
+        "q012": [
+          6
+        ],
+        "q013": [
+          7
+        ],
+        "q014": [
+          7
+        ],
+        "q015": [
+          5
+        ],
+        "q016": [
+          5
+        ],
+        "q017": [
+          3
+        ],
+        "q018": [
+          6
+        ],
+        "q019": [
+          5
+        ],
+        "q020": [
+          3
+        ],
+        "q021": [
+          1
+        ],
+        "q022": [
+          6
+        ],
+        "q023": [
+          0
+        ],
+        "q024": [
+          3
+        ],
+        "q025": [
+          1
+        ],
+        "q026": [
+          7
+        ],
+        "q027": [
+          0
+        ],
+        "q028": [
+          6
+        ],
+        "q029": [
+          2
+        ],
+        "q030": [
+          1
+        ],
+        "q031": [
+          4
+        ],
+        "q032": [
+          5
+        ],
+        "q033": [
+          3
+        ],
+        "q034": [
+          6
+        ],
+        "q035": [
+          3
+        ],
+        "q036": [
+          5
+        ],
+        "q037": [
+          2
+        ],
+        "q038": [
+          4
+        ],
+        "q039": [
+          1
+        ],
+        "q040": [
+          1
+        ],
+        "q041": [
+          5
+        ],
+        "q042": [
+          4
+        ],
+        "q043": [
+          1
+        ],
+        "q044": [
+          5
+        ],
+        "q045": [
+          1
+        ],
+        "q046": [
+          2
+        ],
+        "q047": [
+          3
+        ],
+        "q048": [
+          2
+        ],
+        "q049": [
+          7
+        ],
+        "q050": [
+          7
+        ],
+        "q051": [
+          5
+        ],
+        "q052": [
+          5
+        ],
+        "q053": [
+          3
+        ],
+        "q054": [
+          4
+        ],
+        "q055": [
+          6
+        ],
+        "q056": [
+          6
+        ],
+        "q057": [
+          6
+        ],
+        "q058": [
+          1
+        ],
+        "q059": [
+          5
+        ],
+        "q060": [
+          2
+        ],
+        "q061": [
+          3
+        ],
+        "q062": [
+          0
+        ],
+        "q063": [
+          6
+        ],
+        "q064": [
+          7
+        ],
+        "q065": [
+          6
+        ],
+        "q066": [
+          4
+        ],
+        "q067": [
+          5
+        ],
+        "q068": [
+          6
+        ],
+        "q069": [
+          0
+        ],
+        "q070": [
+          2
+        ],
+        "q071": [
+          2
+        ],
+        "q072": [
+          6
+        ],
+        "q073": [
+          4
+        ],
+        "q074": [
+          7,
+          4,
+          1
+        ],
+        "q075": [
+          7,
+          7,
+          6
+        ],
+        "q076": [
+          2,
+          2,
+          3
+        ],
+        "q077": [
+          3,
+          0,
+          7
+        ],
+        "q080": [
+          0,
+          6,
+          1
+        ],
+        "q081": [
+          6,
+          3,
+          4
+        ],
+        "q084": [
+          1,
+          4,
+          5
+        ],
+        "q085": [
+          2,
+          3,
+          6
+        ],
+        "q086": [
+          3,
+          3,
+          6
+        ],
+        "q087": [
+          3,
+          7,
+          2
+        ],
+        "q078": [
+          5,
+          2
+        ],
+        "q079": [
+          3,
+          2
+        ],
+        "q082": [
+          4,
+          6
+        ],
+        "q083": [
+          4,
+          2
+        ],
+        "q088": [
+          2
+        ],
+        "q089": [
+          2
+        ]
+      },
+      "routing": {
+        "effective_slots": 4.257262229919434,
+        "mean_slot_mass": [
+          0.08132044225931168,
+          0.005624427925795317,
+          0.3230668306350708,
+          1.9028888345928863e-05,
+          0.13795781135559082,
+          1.3806560673401691e-05,
+          0.3674392104148865,
+          0.08455847203731537
+        ],
+        "max_slot_mass": 0.3674392104148865,
+        "top_slot_counts": [
+          10,
+          0,
+          36,
+          0,
+          15,
+          0,
+          42,
+          11
+        ]
+      },
+      "uniform_routing_accuracy": 0.48863636363636365
+    },
+    {
+      "arm": "B",
+      "budget": 1000,
+      "seed": 22,
+      "cpu_seconds": 1.060492999999994,
+      "parameters": 282760,
+      "metrics": {
+        "accuracy": 0.4318181818181818,
+        "outside_knowledge_accuracy": 0.5,
+        "changed_accuracy": 0.17647058823529413,
+        "unchanged_accuracy": 0.5245901639344263,
+        "changed_steps": 51,
+        "unchanged_steps": 61,
+        "counterfactual_both_correct": 0,
+        "composition_all_steps": 0,
+        "transfer": 0.7272727272727273
+      },
+      "predictions": {
+        "q000": [
+          0
+        ],
+        "q001": [
+          4
+        ],
+        "q002": [
+          0
+        ],
+        "q003": [
+          3
+        ],
+        "q004": [
+          1
+        ],
+        "q005": [
+          4
+        ],
+        "q006": [
+          7
+        ],
+        "q007": [
+          0
+        ],
+        "q008": [
+          4
+        ],
+        "q009": [
+          0
+        ],
+        "q010": [
+          1
+        ],
+        "q011": [
+          4
+        ],
+        "q012": [
+          3
+        ],
+        "q013": [
+          2
+        ],
+        "q014": [
+          7
+        ],
+        "q015": [
+          5
+        ],
+        "q016": [
+          7
+        ],
+        "q017": [
+          3
+        ],
+        "q018": [
+          1
+        ],
+        "q019": [
+          5
+        ],
+        "q020": [
+          6
+        ],
+        "q021": [
+          7
+        ],
+        "q022": [
+          6
+        ],
+        "q023": [
+          2
+        ],
+        "q024": [
+          3
+        ],
+        "q025": [
+          1
+        ],
+        "q026": [
+          7
+        ],
+        "q027": [
+          6
+        ],
+        "q028": [
+          2
+        ],
+        "q029": [
+          7
+        ],
+        "q030": [
+          1
+        ],
+        "q031": [
+          2
+        ],
+        "q032": [
+          5
+        ],
+        "q033": [
+          3
+        ],
+        "q034": [
+          6
+        ],
+        "q035": [
+          3
+        ],
+        "q036": [
+          5
+        ],
+        "q037": [
+          2
+        ],
+        "q038": [
+          4
+        ],
+        "q039": [
+          6
+        ],
+        "q040": [
+          1
+        ],
+        "q041": [
+          5
+        ],
+        "q042": [
+          4
+        ],
+        "q043": [
+          0
+        ],
+        "q044": [
+          5
+        ],
+        "q045": [
+          1
+        ],
+        "q046": [
+          6
+        ],
+        "q047": [
+          3
+        ],
+        "q048": [
+          1
+        ],
+        "q049": [
+          7
+        ],
+        "q050": [
+          0
+        ],
+        "q051": [
+          0
+        ],
+        "q052": [
+          6
+        ],
+        "q053": [
+          7
+        ],
+        "q054": [
+          3
+        ],
+        "q055": [
+          7
+        ],
+        "q056": [
+          3
+        ],
+        "q057": [
+          4
+        ],
+        "q058": [
+          3
+        ],
+        "q059": [
+          4
+        ],
+        "q060": [
+          4
+        ],
+        "q061": [
+          5
+        ],
+        "q062": [
+          3
+        ],
+        "q063": [
+          7
+        ],
+        "q064": [
+          4
+        ],
+        "q065": [
+          6
+        ],
+        "q066": [
+          7
+        ],
+        "q067": [
+          5
+        ],
+        "q068": [
+          5
+        ],
+        "q069": [
+          4
+        ],
+        "q070": [
+          5
+        ],
+        "q071": [
+          0
+        ],
+        "q072": [
+          5
+        ],
+        "q073": [
+          2
+        ],
+        "q074": [
+          3,
+          0,
+          2
+        ],
+        "q075": [
+          6,
+          0,
+          1
+        ],
+        "q076": [
+          4,
+          6,
+          4
+        ],
+        "q077": [
+          3,
+          5,
+          1
+        ],
+        "q080": [
+          0,
+          6,
+          2
+        ],
+        "q081": [
+          6,
+          6,
+          5
+        ],
+        "q084": [
+          6,
+          0,
+          4
+        ],
+        "q085": [
+          5,
+          7,
+          4
+        ],
+        "q086": [
+          2,
+          0,
+          0
+        ],
+        "q087": [
+          6,
+          3,
+          5
+        ],
+        "q078": [
+          3,
+          1
+        ],
+        "q079": [
+          5,
+          6
+        ],
+        "q082": [
+          2,
+          3
+        ],
+        "q083": [
+          6,
+          3
+        ],
+        "q088": [
+          2
+        ],
+        "q089": [
+          2
+        ]
+      },
+      "routing": {
+        "effective_slots": 5.544095516204834,
+        "mean_slot_mass": [
+          0.06844552606344223,
+          0.09108563512563705,
+          0.16014575958251953,
+          0.40917661786079407,
+          0.012831933796405792,
+          0.11263631284236908,
+          0.026768656447529793,
+          0.1189095601439476
+        ],
+        "max_slot_mass": 0.40917661786079407,
+        "top_slot_counts": [
+          0,
+          10,
+          16,
+          60,
+          0,
+          14,
+          0,
+          14
+        ]
+      },
+      "uniform_routing_accuracy": 0.48863636363636365
+    },
+    {
+      "arm": "B",
+      "budget": 1000,
+      "seed": 42,
+      "cpu_seconds": 1.0974220000000017,
+      "parameters": 282760,
+      "metrics": {
+        "accuracy": 0.5227272727272727,
+        "outside_knowledge_accuracy": 0.5,
+        "changed_accuracy": 0.39215686274509803,
+        "unchanged_accuracy": 0.5573770491803278,
+        "changed_steps": 51,
+        "unchanged_steps": 61,
+        "counterfactual_both_correct": 0,
+        "composition_all_steps": 0,
+        "transfer": 0.6818181818181818
+      },
+      "predictions": {
+        "q000": [
+          0
+        ],
+        "q001": [
+          6
+        ],
+        "q002": [
+          0
+        ],
+        "q003": [
+          3
+        ],
+        "q004": [
+          1
+        ],
+        "q005": [
+          4
+        ],
+        "q006": [
+          3
+        ],
+        "q007": [
+          0
+        ],
+        "q008": [
+          1
+        ],
+        "q009": [
+          6
+        ],
+        "q010": [
+          1
+        ],
+        "q011": [
+          4
+        ],
+        "q012": [
+          3
+        ],
+        "q013": [
+          6
+        ],
+        "q014": [
+          7
+        ],
+        "q015": [
+          5
+        ],
+        "q016": [
+          7
+        ],
+        "q017": [
+          6
+        ],
+        "q018": [
+          1
+        ],
+        "q019": [
+          5
+        ],
+        "q020": [
+          6
+        ],
+        "q021": [
+          7
+        ],
+        "q022": [
+          6
+        ],
+        "q023": [
+          6
+        ],
+        "q024": [
+          3
+        ],
+        "q025": [
+          1
+        ],
+        "q026": [
+          7
+        ],
+        "q027": [
+          6
+        ],
+        "q028": [
+          2
+        ],
+        "q029": [
+          0
+        ],
+        "q030": [
+          1
+        ],
+        "q031": [
+          0
+        ],
+        "q032": [
+          5
+        ],
+        "q033": [
+          3
+        ],
+        "q034": [
+          6
+        ],
+        "q035": [
+          6
+        ],
+        "q036": [
+          5
+        ],
+        "q037": [
+          2
+        ],
+        "q038": [
+          4
+        ],
+        "q039": [
+          6
+        ],
+        "q040": [
+          1
+        ],
+        "q041": [
+          5
+        ],
+        "q042": [
+          4
+        ],
+        "q043": [
+          7
+        ],
+        "q044": [
+          5
+        ],
+        "q045": [
+          1
+        ],
+        "q046": [
+          6
+        ],
+        "q047": [
+          3
+        ],
+        "q048": [
+          1
+        ],
+        "q049": [
+          7
+        ],
+        "q050": [
+          7
+        ],
+        "q051": [
+          5
+        ],
+        "q052": [
+          6
+        ],
+        "q053": [
+          3
+        ],
+        "q054": [
+          4
+        ],
+        "q055": [
+          6
+        ],
+        "q056": [
+          0
+        ],
+        "q057": [
+          4
+        ],
+        "q058": [
+          7
+        ],
+        "q059": [
+          4
+        ],
+        "q060": [
+          5
+        ],
+        "q061": [
+          5
+        ],
+        "q062": [
+          4
+        ],
+        "q063": [
+          3
+        ],
+        "q064": [
+          0
+        ],
+        "q065": [
+          1
+        ],
+        "q066": [
+          1
+        ],
+        "q067": [
+          3
+        ],
+        "q068": [
+          0
+        ],
+        "q069": [
+          5
+        ],
+        "q070": [
+          5
+        ],
+        "q071": [
+          2
+        ],
+        "q072": [
+          3
+        ],
+        "q073": [
+          2
+        ],
+        "q074": [
+          7,
+          4,
+          4
+        ],
+        "q075": [
+          7,
+          7,
+          4
+        ],
+        "q076": [
+          4,
+          5,
+          4
+        ],
+        "q077": [
+          3,
+          5,
+          7
+        ],
+        "q080": [
+          7,
+          5,
+          3
+        ],
+        "q081": [
+          5,
+          6,
+          0
+        ],
+        "q084": [
+          3,
+          5,
+          7
+        ],
+        "q085": [
+          0,
+          0,
+          1
+        ],
+        "q086": [
+          0,
+          5,
+          7
+        ],
+        "q087": [
+          6,
+          3,
+          4
+        ],
+        "q078": [
+          5,
+          2
+        ],
+        "q079": [
+          3,
+          2
+        ],
+        "q082": [
+          2,
+          2
+        ],
+        "q083": [
+          4,
+          0
+        ],
+        "q088": [
+          2
+        ],
+        "q089": [
+          2
+        ]
+      },
+      "routing": {
+        "effective_slots": 6.530753135681152,
+        "mean_slot_mass": [
+          0.2129114717245102,
+          0.16115523874759674,
+          0.00013139685324858874,
+          0.1756506860256195,
+          0.18926018476486206,
+          0.0873788371682167,
+          0.10922269523143768,
+          0.06428948789834976
+        ],
+        "max_slot_mass": 0.2129114717245102,
+        "top_slot_counts": [
+          24,
+          18,
+          0,
+          20,
+          22,
+          9,
+          14,
+          7
+        ]
+      },
+      "uniform_routing_accuracy": 0.4659090909090909
+    },
+    {
+      "arm": "F",
+      "budget": 1000,
+      "seed": 11,
+      "cpu_seconds": 1.3401429999999976,
+      "parameters": 315785,
+      "metrics": {
+        "accuracy": 0.5909090909090909,
+        "outside_knowledge_accuracy": 0.5,
+        "changed_accuracy": 0.3137254901960784,
+        "unchanged_accuracy": 0.7868852459016393,
+        "changed_steps": 51,
+        "unchanged_steps": 61,
+        "counterfactual_both_correct": 0.2,
+        "composition_all_steps": 0.14285714285714285,
+        "transfer": 0.6818181818181818
+      },
+      "predictions": {
+        "q000": [
+          0
+        ],
+        "q001": [
+          4
+        ],
+        "q002": [
+          0
+        ],
+        "q003": [
+          3
+        ],
+        "q004": [
+          1
+        ],
+        "q005": [
+          4
+        ],
+        "q006": [
+          7
+        ],
+        "q007": [
+          0
+        ],
+        "q008": [
+          4
+        ],
+        "q009": [
+          0
+        ],
+        "q010": [
+          6
+        ],
+        "q011": [
+          4
+        ],
+        "q012": [
+          6
+        ],
+        "q013": [
+          7
+        ],
+        "q014": [
+          7
+        ],
+        "q015": [
+          6
+        ],
+        "q016": [
+          4
+        ],
+        "q017": [
+          6
+        ],
+        "q018": [
+          1
+        ],
+        "q019": [
+          5
+        ],
+        "q020": [
+          6
+        ],
+        "q021": [
+          7
+        ],
+        "q022": [
+          6
+        ],
+        "q023": [
+          2
+        ],
+        "q024": [
+          3
+        ],
+        "q025": [
+          1
+        ],
+        "q026": [
+          7
+        ],
+        "q027": [
+          4
+        ],
+        "q028": [
+          2
+        ],
+        "q029": [
+          0
+        ],
+        "q030": [
+          1
+        ],
+        "q031": [
+          4
+        ],
+        "q032": [
+          0
+        ],
+        "q033": [
+          0
+        ],
+        "q034": [
+          6
+        ],
+        "q035": [
+          6
+        ],
+        "q036": [
+          5
+        ],
+        "q037": [
+          2
+        ],
+        "q038": [
+          4
+        ],
+        "q039": [
+          0
+        ],
+        "q040": [
+          1
+        ],
+        "q041": [
+          5
+        ],
+        "q042": [
+          4
+        ],
+        "q043": [
+          7
+        ],
+        "q044": [
+          7
+        ],
+        "q045": [
+          4
+        ],
+        "q046": [
+          2
+        ],
+        "q047": [
+          7
+        ],
+        "q048": [
+          2
+        ],
+        "q049": [
+          3
+        ],
+        "q050": [
+          7
+        ],
+        "q051": [
+          0
+        ],
+        "q052": [
+          6
+        ],
+        "q053": [
+          7
+        ],
+        "q054": [
+          3
+        ],
+        "q055": [
+          7
+        ],
+        "q056": [
+          5
+        ],
+        "q057": [
+          1
+        ],
+        "q058": [
+          0
+        ],
+        "q059": [
+          1
+        ],
+        "q060": [
+          1
+        ],
+        "q061": [
+          3
+        ],
+        "q062": [
+          5
+        ],
+        "q063": [
+          3
+        ],
+        "q064": [
+          4
+        ],
+        "q065": [
+          1
+        ],
+        "q066": [
+          4
+        ],
+        "q067": [
+          3
+        ],
+        "q068": [
+          0
+        ],
+        "q069": [
+          0
+        ],
+        "q070": [
+          5
+        ],
+        "q071": [
+          7
+        ],
+        "q072": [
+          3
+        ],
+        "q073": [
+          4
+        ],
+        "q074": [
+          3,
+          0,
+          2
+        ],
+        "q075": [
+          6,
+          1,
+          1
+        ],
+        "q076": [
+          4,
+          6,
+          4
+        ],
+        "q077": [
+          3,
+          0,
+          7
+        ],
+        "q080": [
+          7,
+          1,
+          5
+        ],
+        "q081": [
+          5,
+          4,
+          1
+        ],
+        "q084": [
+          3,
+          1,
+          1
+        ],
+        "q085": [
+          7,
+          2,
+          5
+        ],
+        "q086": [
+          3,
+          5,
+          7
+        ],
+        "q087": [
+          3,
+          3,
+          1
+        ],
+        "q078": [
+          3,
+          1
+        ],
+        "q079": [
+          2,
+          6
+        ],
+        "q082": [
+          0,
+          2
+        ],
+        "q083": [
+          5,
+          0
+        ],
+        "q088": [
+          0
+        ],
+        "q089": [
+          3
+        ]
+      },
+      "routing": {
+        "effective_slots": 4.212226390838623,
+        "mean_slot_mass": [
+          0.13317672908306122,
+          0.00013118128117639571,
+          0.04221738502383232,
+          0.0003121622430626303,
+          0.23596379160881042,
+          7.401480979751796e-05,
+          0.3858078420162201,
+          0.20231683552265167
+        ],
+        "max_slot_mass": 0.3858078420162201,
+        "top_slot_counts": [
+          17,
+          0,
+          5,
+          0,
+          25,
+          0,
+          44,
+          23
+        ]
+      },
+      "uniform_routing_accuracy": 0.5
+    },
+    {
+      "arm": "F",
+      "budget": 1000,
+      "seed": 22,
+      "cpu_seconds": 1.3491339999999994,
+      "parameters": 315785,
+      "metrics": {
+        "accuracy": 0.6022727272727273,
+        "outside_knowledge_accuracy": 1,
+        "changed_accuracy": 0.19607843137254902,
+        "unchanged_accuracy": 0.8524590163934426,
+        "changed_steps": 51,
+        "unchanged_steps": 61,
+        "counterfactual_both_correct": 0,
+        "composition_all_steps": 0.07142857142857142,
+        "transfer": 0.8181818181818182
+      },
+      "predictions": {
+        "q000": [
+          0
+        ],
+        "q001": [
+          4
+        ],
+        "q002": [
+          0
+        ],
+        "q003": [
+          3
+        ],
+        "q004": [
+          1
+        ],
+        "q005": [
+          4
+        ],
+        "q006": [
+          7
+        ],
+        "q007": [
+          0
+        ],
+        "q008": [
+          4
+        ],
+        "q009": [
+          0
+        ],
+        "q010": [
+          6
+        ],
+        "q011": [
+          4
+        ],
+        "q012": [
+          3
+        ],
+        "q013": [
+          2
+        ],
+        "q014": [
+          7
+        ],
+        "q015": [
+          6
+        ],
+        "q016": [
+          7
+        ],
+        "q017": [
+          3
+        ],
+        "q018": [
+          1
+        ],
+        "q019": [
+          5
+        ],
+        "q020": [
+          6
+        ],
+        "q021": [
+          7
+        ],
+        "q022": [
+          6
+        ],
+        "q023": [
+          4
+        ],
+        "q024": [
+          3
+        ],
+        "q025": [
+          1
+        ],
+        "q026": [
+          7
+        ],
+        "q027": [
+          4
+        ],
+        "q028": [
+          2
+        ],
+        "q029": [
+          0
+        ],
+        "q030": [
+          1
+        ],
+        "q031": [
+          0
+        ],
+        "q032": [
+          5
+        ],
+        "q033": [
+          3
+        ],
+        "q034": [
+          6
+        ],
+        "q035": [
+          6
+        ],
+        "q036": [
+          7
+        ],
+        "q037": [
+          2
+        ],
+        "q038": [
+          4
+        ],
+        "q039": [
+          4
+        ],
+        "q040": [
+          1
+        ],
+        "q041": [
+          5
+        ],
+        "q042": [
+          4
+        ],
+        "q043": [
+          7
+        ],
+        "q044": [
+          5
+        ],
+        "q045": [
+          1
+        ],
+        "q046": [
+          7
+        ],
+        "q047": [
+          3
+        ],
+        "q048": [
+          1
+        ],
+        "q049": [
+          7
+        ],
+        "q050": [
+          5
+        ],
+        "q051": [
+          0
+        ],
+        "q052": [
+          6
+        ],
+        "q053": [
+          7
+        ],
+        "q054": [
+          2
+        ],
+        "q055": [
+          7
+        ],
+        "q056": [
+          2
+        ],
+        "q057": [
+          1
+        ],
+        "q058": [
+          2
+        ],
+        "q059": [
+          1
+        ],
+        "q060": [
+          7
+        ],
+        "q061": [
+          3
+        ],
+        "q062": [
+          4
+        ],
+        "q063": [
+          3
+        ],
+        "q064": [
+          0
+        ],
+        "q065": [
+          1
+        ],
+        "q066": [
+          1
+        ],
+        "q067": [
+          3
+        ],
+        "q068": [
+          4
+        ],
+        "q069": [
+          0
+        ],
+        "q070": [
+          0
+        ],
+        "q071": [
+          7
+        ],
+        "q072": [
+          5
+        ],
+        "q073": [
+          4
+        ],
+        "q074": [
+          3,
+          0,
+          1
+        ],
+        "q075": [
+          6,
+          1,
+          7
+        ],
+        "q076": [
+          4,
+          6,
+          3
+        ],
+        "q077": [
+          3,
+          0,
+          7
+        ],
+        "q080": [
+          7,
+          4,
+          1
+        ],
+        "q081": [
+          5,
+          0,
+          6
+        ],
+        "q084": [
+          4,
+          7,
+          6
+        ],
+        "q085": [
+          0,
+          2,
+          5
+        ],
+        "q086": [
+          3,
+          2,
+          7
+        ],
+        "q087": [
+          3,
+          2,
+          4
+        ],
+        "q078": [
+          3,
+          1
+        ],
+        "q079": [
+          3,
+          2
+        ],
+        "q082": [
+          0,
+          5
+        ],
+        "q083": [
+          5,
+          1
+        ],
+        "q088": [
+          0
+        ],
+        "q089": [
+          2
+        ]
+      },
+      "routing": {
+        "effective_slots": 2.3765251636505127,
+        "mean_slot_mass": [
+          0.00022828398505225778,
+          0.00033304138923995197,
+          0.6117698550224304,
+          0.0004243772418703884,
+          0.000100324148661457,
+          0.07326916605234146,
+          0.00011351720604579896,
+          0.31376147270202637
+        ],
+        "max_slot_mass": 0.6117698550224304,
+        "top_slot_counts": [
+          0,
+          0,
+          69,
+          0,
+          0,
+          10,
+          0,
+          35
+        ]
+      },
+      "uniform_routing_accuracy": 0.5568181818181818
+    },
+    {
+      "arm": "F",
+      "budget": 1000,
+      "seed": 42,
+      "cpu_seconds": 1.3308159999999987,
+      "parameters": 315785,
+      "metrics": {
+        "accuracy": 0.5681818181818182,
+        "outside_knowledge_accuracy": 1,
+        "changed_accuracy": 0.11764705882352941,
+        "unchanged_accuracy": 0.8688524590163934,
+        "changed_steps": 51,
+        "unchanged_steps": 61,
+        "counterfactual_both_correct": 0,
+        "composition_all_steps": 0.07142857142857142,
+        "transfer": 0.6363636363636364
+      },
+      "predictions": {
+        "q000": [
+          0
+        ],
+        "q001": [
+          4
+        ],
+        "q002": [
+          0
+        ],
+        "q003": [
+          3
+        ],
+        "q004": [
+          1
+        ],
+        "q005": [
+          4
+        ],
+        "q006": [
+          7
+        ],
+        "q007": [
+          0
+        ],
+        "q008": [
+          4
+        ],
+        "q009": [
+          0
+        ],
+        "q010": [
+          6
+        ],
+        "q011": [
+          4
+        ],
+        "q012": [
+          3
+        ],
+        "q013": [
+          7
+        ],
+        "q014": [
+          7
+        ],
+        "q015": [
+          5
+        ],
+        "q016": [
+          4
+        ],
+        "q017": [
+          6
+        ],
+        "q018": [
+          1
+        ],
+        "q019": [
+          5
+        ],
+        "q020": [
+          1
+        ],
+        "q021": [
+          2
+        ],
+        "q022": [
+          0
+        ],
+        "q023": [
+          2
+        ],
+        "q024": [
+          3
+        ],
+        "q025": [
+          1
+        ],
+        "q026": [
+          7
+        ],
+        "q027": [
+          4
+        ],
+        "q028": [
+          2
+        ],
+        "q029": [
+          0
+        ],
+        "q030": [
+          1
+        ],
+        "q031": [
+          2
+        ],
+        "q032": [
+          5
+        ],
+        "q033": [
+          3
+        ],
+        "q034": [
+          6
+        ],
+        "q035": [
+          6
+        ],
+        "q036": [
+          5
+        ],
+        "q037": [
+          2
+        ],
+        "q038": [
+          4
+        ],
+        "q039": [
+          5
+        ],
+        "q040": [
+          1
+        ],
+        "q041": [
+          5
+        ],
+        "q042": [
+          4
+        ],
+        "q043": [
+          7
+        ],
+        "q044": [
+          5
+        ],
+        "q045": [
+          1
+        ],
+        "q046": [
+          6
+        ],
+        "q047": [
+          3
+        ],
+        "q048": [
+          1
+        ],
+        "q049": [
+          7
+        ],
+        "q050": [
+          0
+        ],
+        "q051": [
+          3
+        ],
+        "q052": [
+          6
+        ],
+        "q053": [
+          4
+        ],
+        "q054": [
+          3
+        ],
+        "q055": [
+          0
+        ],
+        "q056": [
+          5
+        ],
+        "q057": [
+          1
+        ],
+        "q058": [
+          0
+        ],
+        "q059": [
+          1
+        ],
+        "q060": [
+          1
+        ],
+        "q061": [
+          3
+        ],
+        "q062": [
+          3
+        ],
+        "q063": [
+          3
+        ],
+        "q064": [
+          4
+        ],
+        "q065": [
+          1
+        ],
+        "q066": [
+          7
+        ],
+        "q067": [
+          3
+        ],
+        "q068": [
+          4
+        ],
+        "q069": [
+          0
+        ],
+        "q070": [
+          6
+        ],
+        "q071": [
+          7
+        ],
+        "q072": [
+          5
+        ],
+        "q073": [
+          4
+        ],
+        "q074": [
+          2,
+          6,
+          4
+        ],
+        "q075": [
+          2,
+          5,
+          6
+        ],
+        "q076": [
+          4,
+          6,
+          4
+        ],
+        "q077": [
+          3,
+          0,
+          7
+        ],
+        "q080": [
+          7,
+          1,
+          0
+        ],
+        "q081": [
+          5,
+          4,
+          3
+        ],
+        "q084": [
+          4,
+          6,
+          1
+        ],
+        "q085": [
+          5,
+          2,
+          0
+        ],
+        "q086": [
+          3,
+          2,
+          4
+        ],
+        "q087": [
+          3,
+          5,
+          1
+        ],
+        "q078": [
+          1,
+          5
+        ],
+        "q079": [
+          0,
+          2
+        ],
+        "q082": [
+          0,
+          7
+        ],
+        "q083": [
+          5,
+          0
+        ],
+        "q088": [
+          0
+        ],
+        "q089": [
+          2
+        ]
+      },
+      "routing": {
+        "effective_slots": 3.7750234603881836,
+        "mean_slot_mass": [
+          0.003570880740880966,
+          0.0659627690911293,
+          0.41483360528945923,
+          0.029713526368141174,
+          0.009128269739449024,
+          0.07563918083906174,
+          0.012279856018722057,
+          0.3888719379901886
+        ],
+        "max_slot_mass": 0.41483360528945923,
+        "top_slot_counts": [
+          0,
+          12,
+          48,
+          2,
+          0,
+          9,
+          0,
+          43
+        ]
+      },
+      "uniform_routing_accuracy": 0.5454545454545454
+    }
+  ]
+}

@@ -22,7 +22,10 @@ def encode_questions(questions, vectors):
     for row in questions:
         if not row.actions or len(row.actions) != len(row.options):
             raise ValueError("Supply candidate outcomes for each action.")
-        grouped[len(row.actions)].append(row)
+        option_counts = {len(options) for options in row.options}
+        if len(option_counts) != 1 or min(option_counts) < 2:
+            raise ValueError("Supply the same number of at least two candidate outcomes for each action.")
+        grouped[len(row.actions), option_counts.pop()].append(row)
     return [
         (
             [row.id for row in rows],

@@ -31,27 +31,37 @@ class Knowledge:
         state = state or {}
         self.evidence: dict[str, dict[str, str]] = state.get("evidence", {})
         self.training: dict[str, dict[str, int]] = state.get("training", {})
+        self._verifications: dict[str, Verification] = {}
 
     def observe(self, claim: str) -> None:
         self.evidence.setdefault(claim, {})
 
     def record(self, claim: str, origin: str, outcome: str) -> Verification:
         self.observe(claim)
-        self.evidence[claim][origin] = outcome
+        if self.evidence[claim].get(origin) != outcome:
+            self.evidence[claim][origin] = outcome
+            self._verifications.pop(claim, None)
         return self.verify(claim)
 
     def verify(self, claim: str) -> Verification:
+        cached = self._verifications.get(claim)
+        if cached is not None:
+            return cached
         votes = Counter(self.evidence.get(claim, {}).values())
         ranked = votes.most_common(2)
         if not ranked:
-            return Verification("pending", None, 0.0, {})
-        candidate, support = ranked[0]
-        rival = ranked[1][1] if len(ranked) > 1 else 0
-        confidence = (support + 1) / (sum(votes.values()) + 2)
-        if support >= MIN_SUPPORT and support > rival:
-            return Verification("verified", candidate, confidence, dict(votes))
-        status = "conflicted" if rival else "pending"
-        return Verification(status, None, confidence, dict(votes))
+            verification = Verification("pending", None, 0.0, {})
+        else:
+            candidate, support = ranked[0]
+            rival = ranked[1][1] if len(ranked) > 1 else 0
+            confidence = (support + 1) / (sum(votes.values()) + 2)
+            if support >= MIN_SUPPORT and support > rival:
+                verification = Verification("verified", candidate, confidence, dict(votes))
+            else:
+                status = "conflicted" if rival else "pending"
+                verification = Verification(status, None, confidence, dict(votes))
+        self._verifications[claim] = verification
+        return verification
 
     def check(self, claim: str, outcome: str) -> tuple[str, Verification]:
         verification = self.verify(claim)

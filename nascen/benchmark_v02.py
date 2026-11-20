@@ -1,7 +1,7 @@
 """Controlled comparisons for embodied observation, questions, and retention."""
 
 import argparse
-from collections.abc import Sequence
+from collections.abc import Callable, Sequence
 from dataclasses import dataclass
 import json
 import platform
@@ -88,9 +88,14 @@ class Trial:
         }
         self.observations = 0
 
-    def learn(self, features: list[float], answer: tuple[int, int]) -> None:
+    def learn(
+        self, features: list[float], answer: tuple[int, int], *, replay_ok: Callable[[int], bool] | None = None,
+    ) -> None:
         fresh = features, list(answer)
         memory = self.labeled[-MEMORY_SIZE:]
+        if replay_ok is not None:
+            start = len(self.labeled) - len(memory)
+            memory = [example for index, example in enumerate(memory, start) if replay_ok(index)]
         # Repeating the newest example preserves a single-example mean gradient.
         # This keeps processed examples and optimizer steps equal across replay arms.
         past = self.rng.choices(memory, k=BATCH_SIZE - 1) if self.replay and memory else [fresh] * (BATCH_SIZE - 1)

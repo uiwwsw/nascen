@@ -6,7 +6,9 @@ from pathlib import Path
 import json
 import sqlite3
 
+from .embodied import MODEL_VERSION, EmbodiedConfig, EmbodiedExperiment
 from .experiment import MEMORY_SIZE, STRATEGIES, Experiment
+from .world import COLORS, SHAPES
 
 HISTORY_SIZE = 80
 MAX_BATCH = 50
@@ -22,7 +24,7 @@ class StaleRun(InvalidRequest):
 
 
 class Store:
-    def __init__(self, path: Path):
+    def __init__(self, path: Path, default_config: EmbodiedConfig | None = None):
         self.path = path
         path.parent.mkdir(parents=True, exist_ok=True)
         with self._connect() as db:
@@ -44,7 +46,7 @@ class Store:
             """)
             db.execute("BEGIN IMMEDIATE")
             if db.execute("SELECT id FROM runs LIMIT 1").fetchone() is None:
-                self._create(db, seed=42, strategy="active", replay=True)
+                self._create(db, seed=42, strategy="active", replay=True, config=default_config)
 
     @contextmanager
     def _connect(self) -> Iterator[sqlite3.Connection]:
@@ -58,8 +60,13 @@ class Store:
             db.close()
 
     @staticmethod
-    def _create(db: sqlite3.Connection, seed: int, strategy: str, replay: bool) -> tuple[int, Experiment]:
-        experiment = Experiment(seed, strategy, replay)
+    def _create(
+        db: sqlite3.Connection, seed: int, strategy: str, replay: bool, config: EmbodiedConfig | None = None,
+    ) -> tuple[int, Experiment]:
+        experiment = (
+            Experiment(seed, strategy, replay) if config is None
+            else EmbodiedExperiment(seed, strategy, replay, config=config)
+        )
         cursor = db.execute(
             "INSERT INTO runs (seed, strategy, replay, checkpoint) VALUES (?, ?, ?, ?)",
             (seed, strategy, replay, json.dumps(experiment.checkpoint())),
@@ -75,11 +82,16 @@ class Store:
             "SELECT payload FROM experiences WHERE run_id = ? ORDER BY step DESC LIMIT ?",
             (run["id"], MEMORY_SIZE),
         ).fetchall()
-        experiment = Experiment(
-            run["seed"], run["strategy"], bool(run["replay"]),
-            state=json.loads(run["checkpoint"]),
-            records=[json.loads(row["payload"]) for row in reversed(recent)],
-        )
+        params = run["seed"], run["strategy"], bool(run["replay"])
+        state = json.loads(run["checkpoint"])
+        records = [json.loads(row["payload"]) for row in reversed(recent)]
+        version = state.get("model_version")
+        if version == MODEL_VERSION:
+            experiment = EmbodiedExperiment(*params, config=EmbodiedConfig(**state["config"]), state=state, records=records)
+        elif version is None:
+            experiment = Experiment(*params, state=state, records=records)
+        else:
+            raise InvalidRequest(f"Unsupported checkpoint model version: {version}.")
         return run["id"], experiment
 
     @staticmethod
@@ -95,7 +107,9 @@ class Store:
             run_id, experiment = self._load(db)
             return public_state(run_id, experiment)
 
-    def start(self, run_id: int, seed: int, strategy: str, replay: bool) -> dict:
+    def start(
+        self, run_id: int, seed: int, strategy: str, replay: bool, config: EmbodiedConfig | None = None,
+    ) -> dict:
         if type(seed) is not int or not 0 <= seed <= MAX_SEED:
             raise InvalidRequest(f"Seed must be an integer from 0 to {MAX_SEED}.")
         if strategy not in STRATEGIES or type(replay) is not bool:
@@ -103,10 +117,13 @@ class Store:
         with self._connect() as db:
             db.execute("BEGIN IMMEDIATE")
             self._load(db, run_id)
-            new_id, experiment = self._create(db, seed, strategy, replay)
+            new_id, experiment = self._create(db, seed, strategy, replay, config)
             return public_state(new_id, experiment)
 
-    def step(self, run_id: int, count: int, teach_id: int | None = None, scene: int | None = None) -> dict:
+    def step(
+        self, run_id: int, count: int, teach_id: int | None = None, scene: int | None = None,
+        lesson: tuple[int, int] | None = None,
+    ) -> dict:
         if type(count) is not int or not 1 <= count <= MAX_BATCH:
             raise InvalidRequest(f"Advance between 1 and {MAX_BATCH} steps.")
         with self._connect() as db:
@@ -117,9 +134,17 @@ class Store:
                     raise InvalidRequest("Choose an object for a single teaching interaction.")
                 if scene != experiment.world.scene + 1:
                     raise StaleRun("The scene changed. Run status and choose an object again.")
+            if lesson is not None and (teach_id is None or not isinstance(experiment, EmbodiedExperiment)):
+                raise InvalidRequest("Operator labels require a visible object in an embodied run.")
 
             for _ in range(count):
-                record = experiment.advance(teach_id)
+                if isinstance(experiment, EmbodiedExperiment):
+                    try:
+                        record = experiment.advance(teach_id, lesson)
+                    except ValueError as error:
+                        raise InvalidRequest(str(error)) from error
+                else:
+                    record = experiment.advance(teach_id)
                 db.execute(
                     "INSERT INTO experiences (run_id, step, payload) VALUES (?, ?, ?)",
                     (run_id, record["step"], json.dumps(record)),
@@ -152,14 +177,16 @@ def public_state(run_id: int, experiment: Experiment) -> dict:
     episode = None
     if latest is not None:
         episode = {key: value for key, value in latest.items() if key not in ("visual", "context", "metrics", "target")}
-        episode["label"] = (
-            f'{latest["object"]["color"]} {latest["object"]["shape"]}' if latest["target"] is not None else None
-        )
+        target = latest["target"]
+        episode["label"] = f"{tuple(COLORS)[target[0]]} {SHAPES[target[1]]}" if target is not None else None
     history = [record["metrics"] for record in records[-HISTORY_SIZE:]]
     if experiment.steps < HISTORY_SIZE:
         history.insert(0, experiment.initial)
-    return {
+    state = {
         "run_id": run_id, "seed": experiment.seed, "strategy": experiment.strategy, "replay": experiment.replay,
         "steps": experiment.steps, "questions": experiment.questions, "rejected": experiment.rejected,
         "world": experiment.public_world(), "latest": episode, "metrics": history[-1], "history": history,
     }
+    if isinstance(experiment, EmbodiedExperiment):
+        state.update(model_version=MODEL_VERSION, config=vars(experiment.config))
+    return state

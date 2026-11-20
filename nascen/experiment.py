@@ -9,7 +9,7 @@ import torch
 from .model import Learner, context_features
 from .world import (
     ACTIONS, AGENT, COLORS, DIRECTIONS, HEIGHT, HELD_OUT, MENTOR, SHAPES, TRAIN_PAIRS,
-    WALLS, WIDTH, Object, World, concept_target, observe,
+    WALLS, WIDTH, Object, World, concept_target, observe, render_sprite,
 )
 
 STRATEGIES = ("active", "random")
@@ -20,13 +20,14 @@ METRIC_WINDOW = 30
 WEIGHTS = {"help": 0.35, "approval": 0.25, "curiosity": 0.25, "cooperation": 0.15}
 
 
-def probe(pairs: tuple[tuple[str, str], ...]) -> tuple[torch.Tensor, torch.Tensor]:
+def probe(pairs: tuple[tuple[str, str], ...], encoder: str = "factored") -> tuple[torch.Tensor, torch.Tensor]:
     objects = [
         Object(0, color, shape, 0, 0, 2_000_000 + variant * 997)
         for color, shape in pairs
         for variant in range(8)
     ]
-    return torch.tensor([observe(obj) for obj in objects]), torch.tensor([concept_target(obj) for obj in objects])
+    pixels = render_sprite if encoder == "shared" else observe
+    return torch.tensor([pixels(obj) for obj in objects]), torch.tensor([concept_target(obj) for obj in objects])
 
 
 HELD_PROBE = probe(HELD_OUT)
@@ -42,23 +43,30 @@ class Experiment:
         self.strategy = strategy
         self.replay = replay
         self.question_budget = question_budget
-        self.learner = Learner(seed)
+        self.learner = self._make_learner()
         self.records = list(records or [])
         if state is None:
             self.steps = 0
             self.questions = 0
             self.rejected = 0
             self.visits: dict[str, int] = {}
-            self.world = World(seed, 0)
+            self.world = self._make_world(0)
             self.initial = self.metrics()
         else:
             self.steps = state["steps"]
             self.questions = state["questions"]
             self.rejected = state["rejected"]
             self.visits = state["visits"]
-            self.world = World(seed, state["scene"], [Object(**obj) for obj in state["objects"]])
+            self.world = self._make_world(state["scene"], state)
             self.learner.restore(state["weights"])
             self.initial = state["initial"]
+
+    def _make_learner(self) -> Learner:
+        return Learner(self.seed)
+
+    def _make_world(self, scene: int, state: dict | None = None) -> World:
+        objects = [Object(**obj) for obj in state["objects"]] if state is not None else None
+        return World(self.seed, scene, objects)
 
     def checkpoint(self) -> dict:
         return {
@@ -76,15 +84,19 @@ class Experiment:
         return correct.float().mean().item()
 
     def metrics(self) -> dict:
+        held, seen = self._probes()
         window = self.records[-METRIC_WINDOW:]
         push_errors = [record["error"] for record in window if record["error"] is not None]
         return {
             "step": self.steps,
-            "accuracy": self.accuracy(HELD_PROBE),
-            "seen_accuracy": self.accuracy(SEEN_PROBE),
+            "accuracy": self.accuracy(held),
+            "seen_accuracy": self.accuracy(seen),
             "prediction_error": sum(push_errors) / len(push_errors) if push_errors else None,
             "mean_reward": sum(record["reward"] for record in window) / len(window) if window else None,
         }
+
+    def _probes(self) -> tuple[tuple[torch.Tensor, torch.Tensor], tuple[torch.Tensor, torch.Tensor]]:
+        return HELD_PROBE, SEEN_PROBE
 
     def _select(self, candidates: list[tuple[Object, str]], rng: Random) -> tuple[Object, str]:
         if self.strategy == "random" or rng.random() < 0.18:
@@ -196,7 +208,7 @@ class Experiment:
         record = self.records[-1]
         record["approval"] = approval
         record["reward_parts"]["approval"] = float(approval)
-        record["reward"] = reward_value(record["reward_parts"])
+        record["reward"] = reward_value(record["reward_parts"]) - record.get("question_cost", 0.0)
         self.learner.train_reward(record["visual"], record["context"], record["action"], record["reward"])
         record["metrics"] = self.metrics()
         return record

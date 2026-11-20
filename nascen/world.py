@@ -17,6 +17,8 @@ COLORS = {
 SHAPES = ("circle", "square", "triangle")
 DIRECTIONS = {"north": (0, -1), "east": (1, 0), "south": (0, 1), "west": (-1, 0)}
 ACTIONS = ("inspect", "ask", *DIRECTIONS)
+WALKS = {f"walk {direction}": direction for direction in DIRECTIONS}
+EMBODIED_ACTIONS = (*ACTIONS, *WALKS, "wait")
 PAIRINGS = tuple((color, shape) for color in COLORS for shape in SHAPES)
 HELD_OUT = tuple((color, SHAPES[index % len(SHAPES)]) for index, color in enumerate(COLORS))
 TRAIN_PAIRS = tuple(pair for pair in PAIRINGS if pair not in HELD_OUT)
@@ -41,6 +43,7 @@ class Object:
 class World:
     def __init__(self, seed: int, scene: int, objects: list[Object] | None = None):
         self.scene = scene
+        self.agent = AGENT
         if objects is None:
             rng = Random(seed * 100_003 + scene * 113 + 739)
             pairings = rng.sample(TRAIN_PAIRS, len(SLOTS))
@@ -56,7 +59,7 @@ class World:
             return "wall"
         if position == MENTOR:
             return "mentor"
-        if position == AGENT:
+        if position == self.agent:
             return "agent"
         if any(obj.position == position for obj in self.objects.values()):
             return "object"
@@ -87,13 +90,12 @@ class World:
         return True
 
 
-def observe(obj: Object) -> tuple[float, ...]:
-    """Generate pixels, then expose a mask and average foreground RGB to the learner."""
+def render_sprite(obj: Object) -> tuple[float, ...]:
+    """Simulator-only rendering; use the same RGB image in both encoder conditions."""
     rng = Random(obj.variant)
     offset_x, offset_y = rng.choice((0, 0, -1, 1)), rng.choice((0, 0, -1, 1))
     scale = rng.choice((0.85, 0.95, 1.05))
-    mask: list[float] = []
-    channels: list[list[float]] = [[], [], []]
+    pixels: list[float] = []
     for y in range(SPRITE_SIZE):
         for x in range(SPRITE_SIZE):
             px, py = (x - 3 - offset_x) / scale, (y - 3 - offset_y) / scale
@@ -106,12 +108,24 @@ def observe(obj: Object) -> tuple[float, ...]:
                     visible = -2.5 <= py <= 2.5 and abs(px) <= (py + 2.6) * 0.54
                 case _:
                     raise ValueError(f"Unknown simulator shape {obj.shape!r}")
-            mask.append(float(visible))
             if visible:
-                for samples, base in zip(channels, COLORS[obj.color], strict=True):
-                    samples.append(base + rng.uniform(-0.06, 0.06))
-    rgb = tuple(sum(samples) / len(samples) for samples in channels)
-    return (*rgb, *mask)
+                pixels.extend(base + rng.uniform(-0.06, 0.06) for base in COLORS[obj.color])
+            else:
+                pixels.extend((0.0, 0.0, 0.0))
+    return tuple(pixels)
+
+
+def factored_pixels(pixels: tuple[float, ...]) -> tuple[float, ...]:
+    channels = iter(pixels)
+    triples = list(zip(channels, channels, channels, strict=True))
+    foreground = [pixel for pixel in triples if any(pixel)]
+    means = [sum(channel) / len(foreground) for channel in zip(*foreground)]
+    return (*(means or [0.0, 0.0, 0.0]), *(float(any(pixel)) for pixel in triples))
+
+
+def observe(obj: Object) -> tuple[float, ...]:
+    """The v0.1 baseline computes average foreground RGB and an occupancy mask."""
+    return factored_pixels(render_sprite(obj))
 
 
 def concept_target(obj: Object) -> tuple[int, int]:

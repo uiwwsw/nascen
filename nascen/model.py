@@ -5,28 +5,45 @@ from collections.abc import Sequence
 import torch
 from torch import nn
 
-from .world import ACTIONS, COLORS, DIRECTIONS, SHAPES, SPRITE_SIZE, TILES
+from .world import ACTIONS, COLORS, DIRECTIONS, SHAPES, SPRITE_SIZE, TILES, factored_pixels
 
 VISUAL_SIZE = 3 + SPRITE_SIZE**2
+PIXEL_SIZE = 3 * SPRITE_SIZE**2
 CONTEXT_SIZE = len(DIRECTIONS) * len(TILES)
+ENCODERS = ("factored", "shared")
 
 
 class Learner(nn.Module):
-    def __init__(self, seed: int):
+    def __init__(self, seed: int, encoder: str = "factored", actions: tuple[str, ...] = ACTIONS):
         super().__init__()
         # Local initialization keeps independent runs reproducible even within a shared process.
         generator = torch.Generator().manual_seed(seed)
-        self.color = nn.Linear(3, len(COLORS))
-        self.shape = nn.Sequential(nn.Linear(SPRITE_SIZE**2, 16), nn.Tanh(), nn.Linear(16, len(SHAPES)))
+        self.encoder = encoder
+        self.actions = actions
+        self.visual_size = VISUAL_SIZE
+        if encoder == "shared":
+            self.visual_size = PIXEL_SIZE
+            self.visual_encoder = nn.Sequential(nn.Linear(PIXEL_SIZE, 24), nn.Tanh())
+            self.color = nn.Linear(24, len(COLORS))
+            self.shape = nn.Linear(24, len(SHAPES))
+        else:
+            self.color = nn.Linear(3, len(COLORS))
+            self.shape = nn.Sequential(nn.Linear(SPRITE_SIZE**2, 16), nn.Tanh(), nn.Linear(16, len(SHAPES)))
         self.physics = nn.Sequential(nn.Linear(CONTEXT_SIZE + len(DIRECTIONS), 16), nn.Tanh(), nn.Linear(16, 1))
-        self.preference = nn.Linear(VISUAL_SIZE + CONTEXT_SIZE, len(ACTIONS))
+        self.preference = nn.Linear(self.visual_size + CONTEXT_SIZE, len(actions))
         for layer in self.modules():
             if isinstance(layer, nn.Linear):
                 nn.init.xavier_uniform_(layer.weight, gain=0.5, generator=generator)
                 nn.init.zeros_(layer.bias)
 
     def concepts(self, inputs: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
+        if self.encoder == "shared":
+            latent = self.visual_encoder(inputs)
+            return self.color(latent), self.shape(latent)
         return self.color(inputs[..., :3]), self.shape(inputs[..., 3:])
+
+    def features(self, pixels: tuple[float, ...]) -> list[float]:
+        return list(pixels if self.encoder == "shared" else factored_pixels(pixels))
 
     def motion(self, context: torch.Tensor, directions: torch.Tensor) -> torch.Tensor:
         encoded = nn.functional.one_hot(directions, len(DIRECTIONS)).float()
@@ -46,7 +63,10 @@ class Learner(nn.Module):
         targets = torch.tensor([target for _, target in labeled])
         colors, shapes = self.concepts(inputs)
         loss = nn.functional.cross_entropy(colors, targets[:, 0]) + nn.functional.cross_entropy(shapes, targets[:, 1])
-        _learn(loss, [*self.color.parameters(), *self.shape.parameters()], rate=0.32)
+        parameters = [*self.color.parameters(), *self.shape.parameters()]
+        if self.encoder == "shared":
+            parameters.extend(self.visual_encoder.parameters())
+        _learn(loss, parameters, rate=0.32)
 
     def train_motion(self, transitions: Sequence[tuple[list[float], int, bool]]) -> None:
         context = torch.tensor([features for features, _, _ in transitions])
@@ -56,7 +76,7 @@ class Learner(nn.Module):
         _learn(loss, self.physics.parameters(), rate=0.23)
 
     def train_reward(self, visual: list, context: list, action: str, reward: float) -> None:
-        predicted = self.rewards(torch.tensor(visual), torch.tensor(context))[ACTIONS.index(action)]
+        predicted = self.rewards(torch.tensor(visual), torch.tensor(context))[self.actions.index(action)]
         loss = nn.functional.smooth_l1_loss(predicted, predicted.new_tensor(reward))
         _learn(loss, self.preference.parameters(), rate=0.025)
 

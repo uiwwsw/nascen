@@ -50,19 +50,21 @@ python -m nascen status
 python -m nascen train --steps 50
 ```
 
-`status`에서 물체 번호와 에이전트의 추측을 확인할 수 있습니다. 물체 하나를 직접 가르쳐 보고, 그 경험에 평가를 한 번 남길 수 있습니다.
+새 데이터베이스에서는 에이전트가 실제로 이동하는 실험이 시작됩니다. `status`에서 에이전트의 위치와 시야에 들어온 물체의 번호 및 추측을 확인할 수 있습니다. 기존 v0.1 실험은 저장한 가중치와 기존 세계 규칙으로 이어집니다.
 
 ```sh
-python -m nascen teach 1
+# 새 시드 42 실행에서 시작 위치에 보이는 물체
+python -m nascen reset --seed 42 --question-budget 10
+python -m nascen teach 2
 python -m nascen feedback +1
 python -m nascen --json status
 
-# 같은 시드로 무작위 탐색을 실행
-python -m nascen reset --seed 42 --strategy random
+# v0.1 기준 실험을 같은 시드에서 재현
+python -m nascen reset --world legacy --seed 42 --strategy random
 python -m nascen train --steps 50
 ```
 
-`--db PATH`를 명령 앞에 두면 별도 SQLite 파일을 사용합니다. 기본 경로는 `.nascen/lab.sqlite3`입니다. `reset`에 `--no-replay`를 더하면 새 경험만으로 모델을 갱신합니다.
+`--db PATH`를 명령 앞에 두면 별도 SQLite 파일을 사용합니다. 기본 경로는 `.nascen/lab.sqlite3`입니다. `reset`에 `--no-replay`를 더하면 새 경험만으로 모델을 갱신합니다. 이동 실험에서 `--encoder factored`는 기존 시각 모델을 사용하며, `--questions`로 질문 전략을 고릅니다.
 
 ## 첫 측정 결과
 

@@ -1,0 +1,177 @@
+{
+  "dataset": "lending-principle-v1",
+  "model": "Qwen/Qwen3-4B-GGUF@bc640142c66e1fdd12af0bd68f40445458f3869b Q4_K_M; llama.cpp b12556",
+  "seed": 42,
+  "requests": 1,
+  "usage": {
+    "completion_tokens": 466,
+    "prompt_tokens": 879,
+    "total_tokens": 1345,
+    "prompt_tokens_details": {
+      "cached_tokens": 241
+    }
+  },
+  "teacher_seconds": 14.466625375003787,
+  "prompt_sha256": "0f9fcbb5ebb016caf4ac202a850cfaa3ec6c3c7d973790ede4a72daccc863a15",
+  "teaching": {
+    "explanation": "This policy determines whether to allow or decline a use based on the owner's status and the context of the request. If the owner has given explicit consent, the use is allowed. If the owner has explicitly refused, the use is declined. If the owner can be asked and there is no imminent serious harm, we ask for clarification. If there is an equally effective authorized alternative, we decline and use the safer option. If the use goes beyond the immediate need, it is declined as over scope. Otherwise, it is allowed as an urgent exception.",
+    "rules": [
+      {
+        "when": {
+          "owner": "agreed",
+          "urgent": "any",
+          "alternative": "any",
+          "limited": "any"
+        },
+        "decision": "allow",
+        "principle": "permission"
+      },
+      {
+        "when": {
+          "owner": "refused",
+          "urgent": "any",
+          "alternative": "any",
+          "limited": "any"
+        },
+        "decision": "decline",
+        "principle": "refusal"
+      },
+      {
+        "when": {
+          "owner": "reachable",
+          "urgent": "any",
+          "alternative": "any",
+          "limited": "any"
+        },
+        "decision": "ask",
+        "principle": "ask_owner"
+      },
+      {
+        "when": {
+          "owner": "unavailable",
+          "urgent": "any",
+          "alternative": "any",
+          "limited": "any"
+        },
+        "decision": "decline",
+        "principle": "safer_option"
+      },
+      {
+        "when": {
+          "owner": "any",
+          "urgent": "yes",
+          "alternative": "any",
+          "limited": "any"
+        },
+        "decision": "decline",
+        "principle": "over_scope"
+      },
+      {
+        "when": {
+          "owner": "any",
+          "urgent": "any",
+          "alternative": "any",
+          "limited": "yes"
+        },
+        "decision": "allow",
+        "principle": "urgent_exception"
+      }
+    ]
+  },
+  "revision": {
+    "first_attempt": {
+      "explanation": "This policy determines whether to allow or decline a use based on the owner's status and the context of the request. If the owner has given explicit consent, the use is allowed. If the owner has explicitly refused, the use is declined. If the owner can be asked and there is no imminent serious harm, we ask for clarification. If there is an equally effective authorized alternative, we decline and use the safer option. If the use goes beyond the immediate need, it is declined as over scope. Otherwise, it is allowed as an urgent exception.",
+      "rules": [
+        {
+          "when": {
+            "owner": "agreed",
+            "urgent": "any",
+            "alternative": "any",
+            "limited": "any"
+          },
+          "decision": "allow",
+          "principle": "permission"
+        },
+        {
+          "when": {
+            "owner": "refused",
+            "urgent": "any",
+            "alternative": "any",
+            "limited": "any"
+          },
+          "decision": "decline",
+          "principle": "refusal"
+        },
+        {
+          "when": {
+            "owner": "reachable",
+            "urgent": "any",
+            "alternative": "any",
+            "limited": "any"
+          },
+          "decision": "ask",
+          "principle": "ask_owner"
+        },
+        {
+          "when": {
+            "owner": "unavailable",
+            "urgent": "any",
+            "alternative": "any",
+            "limited": "any"
+          },
+          "decision": "decline",
+          "principle": "safer_option"
+        },
+        {
+          "when": {
+            "owner": "any",
+            "urgent": "yes",
+            "alternative": "any",
+            "limited": "any"
+          },
+          "decision": "decline",
+          "principle": "over_scope"
+        },
+        {
+          "when": {
+            "owner": "any",
+            "urgent": "any",
+            "alternative": "any",
+            "limited": "yes"
+          },
+          "decision": "allow",
+          "principle": "urgent_exception"
+        }
+      ]
+    },
+    "counterexamples": [
+      {
+        "setting": "workshop",
+        "owner": "unavailable",
+        "urgent": false,
+        "alternative": false,
+        "limited": false,
+        "decision": "ask",
+        "principle": "ask_owner"
+      },
+      {
+        "setting": "workshop",
+        "owner": "unavailable",
+        "urgent": true,
+        "alternative": false,
+        "limited": false,
+        "decision": "decline",
+        "principle": "over_scope"
+      },
+      {
+        "setting": "workshop",
+        "owner": "unavailable",
+        "urgent": true,
+        "alternative": false,
+        "limited": true,
+        "decision": "allow",
+        "principle": "urgent_exception"
+      }
+    ]
+  }
+}

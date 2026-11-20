@@ -68,11 +68,19 @@ def lesson_schema(ids: list[str]) -> dict:
 
 
 def local_lessons(questions: list[Question], port: int, seed: int) -> list[Lesson]:
-    ids = [question.id for question in questions]
+    return request_lessons(
+        [question.id for question in questions],
+        TEACHING_RULES,
+        [{"id": question.id, "question": question.text} for question in questions],
+        port, seed,
+    )
+
+
+def request_lessons(ids: list[str], instructions: str, examples: list[dict], port: int, seed: int) -> list[Lesson]:
     request = {
         "messages": [
-            {"role": "system", "content": TEACHING_RULES},
-            {"role": "user", "content": json.dumps([{"id": q.id, "question": q.text} for q in questions])},
+            {"role": "system", "content": instructions},
+            {"role": "user", "content": json.dumps(examples)},
         ],
         "response_format": {"type": "json_schema", "schema": lesson_schema(ids)},
         "chat_template_kwargs": {"enable_thinking": False},
@@ -88,7 +96,7 @@ def local_lessons(questions: list[Question], port: int, seed: int) -> list[Lesso
     if choice.get("finish_reason") == "length":
         raise ValueError("The teacher did not finish its response.")
     lessons = [Lesson(**row) for row in json.loads(choice["message"]["content"])["lessons"]]
-    if len(lessons) != len(questions) or {lesson.id for lesson in lessons} != set(ids):
+    if len(lessons) != len(ids) or {lesson.id for lesson in lessons} != set(ids):
         raise ValueError("The teacher response omitted or repeated a training ID.")
     by_id = {lesson.id: lesson for lesson in lessons}
     return [by_id[identifier] for identifier in ids]

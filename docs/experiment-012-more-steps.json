@@ -1,0 +1,876 @@
+{
+  "upstream_commit": "a3bf1bc7fcea498f3edc5dcc5b812b537a2b6a10",
+  "environment": {
+    "python": "3.14.3",
+    "torch": "2.12.0",
+    "machine": "arm64",
+    "threads": 1
+  },
+  "steps": 5000,
+  "seeds": [
+    11,
+    22,
+    42
+  ],
+  "training_programs": [
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      1,
+      2
+    ]
+  ],
+  "held_programs": {
+    "new_composition": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "longer": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        1,
+        0,
+        2
+      ]
+    ]
+  },
+  "training_pairs": 270,
+  "train_start_states": 54,
+  "held_start_states": 27,
+  "exam_hashes": {
+    "seen_program": "3dc3fc7fdd8145b37f2c41dd7bc9f9e3f2ded4dbd24a827682f763932a081972",
+    "new_composition": "c3643f384950daf3d0674eb610e972c151c342db45cb0626530766e46b3e0267",
+    "longer": "73fb6ae79788963e6fe6335ccc540fb8f7926841cd0030e34affa4c2ac315a7f"
+  },
+  "trials": [
+    {
+      "seed": 11,
+      "training_max_length": 1,
+      "scores": {
+        "seen_program": {
+          "support": 504,
+          "transfer": 156,
+          "both": 156,
+          "examples": 504,
+          "by_program": {
+            "(0,)": {
+              "examples": 108,
+              "support": 108,
+              "transfer": 32
+            },
+            "(1,)": {
+              "examples": 72,
+              "support": 72,
+              "transfer": 15
+            },
+            "(2,)": {
+              "examples": 108,
+              "support": 108,
+              "transfer": 48
+            },
+            "(0, 2)": {
+              "examples": 108,
+              "support": 108,
+              "transfer": 30
+            },
+            "(1, 2)": {
+              "examples": 108,
+              "support": 108,
+              "transfer": 31
+            }
+          },
+          "lengths": {
+            "1": 504
+          },
+          "codes_used": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "new_composition": {
+          "support": 72,
+          "transfer": 23,
+          "both": 5,
+          "examples": 216,
+          "by_program": {
+            "(0, 1)": {
+              "examples": 108,
+              "support": 36,
+              "transfer": 9
+            },
+            "(1, 0)": {
+              "examples": 108,
+              "support": 36,
+              "transfer": 14
+            }
+          },
+          "lengths": {
+            "1": 216
+          },
+          "codes_used": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "longer": {
+          "support": 72,
+          "transfer": 23,
+          "both": 5,
+          "examples": 216,
+          "by_program": {
+            "(0, 1, 2)": {
+              "examples": 108,
+              "support": 36,
+              "transfer": 9
+            },
+            "(1, 0, 2)": {
+              "examples": 108,
+              "support": 36,
+              "transfer": 14
+            }
+          },
+          "lengths": {
+            "1": 216
+          },
+          "codes_used": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      },
+      "single_operation_probe": [
+        {
+          "operation": 0,
+          "code": 2,
+          "train_correct": 24,
+          "train_examples": 54,
+          "held_correct": 12,
+          "held_examples": 27
+        },
+        {
+          "operation": 1,
+          "code": 3,
+          "train_correct": 20,
+          "train_examples": 54,
+          "held_correct": 10,
+          "held_examples": 27
+        },
+        {
+          "operation": 2,
+          "code": 1,
+          "train_correct": 28,
+          "train_examples": 54,
+          "held_correct": 14,
+          "held_examples": 27
+        }
+      ]
+    },
+    {
+      "seed": 11,
+      "training_max_length": 2,
+      "scores": {
+        "seen_program": {
+          "support": 480,
+          "transfer": 135,
+          "both": 134,
+          "examples": 504,
+          "by_program": {
+            "(0,)": {
+              "examples": 108,
+              "support": 108,
+              "transfer": 33
+            },
+            "(1,)": {
+              "examples": 72,
+              "support": 60,
+              "transfer": 11
+            },
+            "(2,)": {
+              "examples": 108,
+              "support": 108,
+              "transfer": 36
+            },
+            "(0, 2)": {
+              "examples": 108,
+              "support": 108,
+              "transfer": 28
+            },
+            "(1, 2)": {
+              "examples": 108,
+              "support": 96,
+              "transfer": 27
+            }
+          },
+          "lengths": {
+            "1": 420,
+            "2": 84
+          },
+          "codes_used": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "new_composition": {
+          "support": 132,
+          "transfer": 18,
+          "both": 14,
+          "examples": 216,
+          "by_program": {
+            "(0, 1)": {
+              "examples": 108,
+              "support": 48,
+              "transfer": 5
+            },
+            "(1, 0)": {
+              "examples": 108,
+              "support": 84,
+              "transfer": 13
+            }
+          },
+          "lengths": {
+            "1": 156,
+            "2": 60
+          },
+          "codes_used": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "longer": {
+          "support": 132,
+          "transfer": 8,
+          "both": 6,
+          "examples": 216,
+          "by_program": {
+            "(0, 1, 2)": {
+              "examples": 108,
+              "support": 48,
+              "transfer": 2
+            },
+            "(1, 0, 2)": {
+              "examples": 108,
+              "support": 84,
+              "transfer": 6
+            }
+          },
+          "lengths": {
+            "1": 132,
+            "2": 84
+          },
+          "codes_used": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      },
+      "single_operation_probe": [
+        {
+          "operation": 0,
+          "code": 2,
+          "train_correct": 20,
+          "train_examples": 54,
+          "held_correct": 10,
+          "held_examples": 27
+        },
+        {
+          "operation": 1,
+          "code": 0,
+          "train_correct": 16,
+          "train_examples": 54,
+          "held_correct": 8,
+          "held_examples": 27
+        },
+        {
+          "operation": 2,
+          "code": 3,
+          "train_correct": 20,
+          "train_examples": 54,
+          "held_correct": 10,
+          "held_examples": 27
+        }
+      ]
+    },
+    {
+      "seed": 22,
+      "training_max_length": 1,
+      "scores": {
+        "seen_program": {
+          "support": 504,
+          "transfer": 211,
+          "both": 211,
+          "examples": 504,
+          "by_program": {
+            "(0,)": {
+              "examples": 108,
+              "support": 108,
+              "transfer": 33
+            },
+            "(1,)": {
+              "examples": 72,
+              "support": 72,
+              "transfer": 26
+            },
+            "(2,)": {
+              "examples": 108,
+              "support": 108,
+              "transfer": 83
+            },
+            "(0, 2)": {
+              "examples": 108,
+              "support": 108,
+              "transfer": 33
+            },
+            "(1, 2)": {
+              "examples": 108,
+              "support": 108,
+              "transfer": 36
+            }
+          },
+          "lengths": {
+            "1": 504
+          },
+          "codes_used": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "new_composition": {
+          "support": 72,
+          "transfer": 18,
+          "both": 6,
+          "examples": 216,
+          "by_program": {
+            "(0, 1)": {
+              "examples": 108,
+              "support": 36,
+              "transfer": 8
+            },
+            "(1, 0)": {
+              "examples": 108,
+              "support": 36,
+              "transfer": 10
+            }
+          },
+          "lengths": {
+            "1": 216
+          },
+          "codes_used": [
+            0,
+            1,
+            2,
+            3,
+            5
+          ]
+        },
+        "longer": {
+          "support": 72,
+          "transfer": 17,
+          "both": 6,
+          "examples": 216,
+          "by_program": {
+            "(0, 1, 2)": {
+              "examples": 108,
+              "support": 36,
+              "transfer": 6
+            },
+            "(1, 0, 2)": {
+              "examples": 108,
+              "support": 36,
+              "transfer": 11
+            }
+          },
+          "lengths": {
+            "1": 216
+          },
+          "codes_used": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      },
+      "single_operation_probe": [
+        {
+          "operation": 0,
+          "code": 5,
+          "train_correct": 20,
+          "train_examples": 54,
+          "held_correct": 10,
+          "held_examples": 27
+        },
+        {
+          "operation": 1,
+          "code": 0,
+          "train_correct": 20,
+          "train_examples": 54,
+          "held_correct": 10,
+          "held_examples": 27
+        },
+        {
+          "operation": 2,
+          "code": 2,
+          "train_correct": 54,
+          "train_examples": 54,
+          "held_correct": 27,
+          "held_examples": 27
+        }
+      ]
+    },
+    {
+      "seed": 22,
+      "training_max_length": 2,
+      "scores": {
+        "seen_program": {
+          "support": 472,
+          "transfer": 166,
+          "both": 163,
+          "examples": 504,
+          "by_program": {
+            "(0,)": {
+              "examples": 108,
+              "support": 108,
+              "transfer": 39
+            },
+            "(1,)": {
+              "examples": 72,
+              "support": 60,
+              "transfer": 19
+            },
+            "(2,)": {
+              "examples": 108,
+              "support": 104,
+              "transfer": 61
+            },
+            "(0, 2)": {
+              "examples": 108,
+              "support": 108,
+              "transfer": 32
+            },
+            "(1, 2)": {
+              "examples": 108,
+              "support": 92,
+              "transfer": 15
+            }
+          },
+          "lengths": {
+            "1": 346,
+            "2": 158
+          },
+          "codes_used": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "new_composition": {
+          "support": 126,
+          "transfer": 25,
+          "both": 18,
+          "examples": 216,
+          "by_program": {
+            "(0, 1)": {
+              "examples": 108,
+              "support": 54,
+              "transfer": 10
+            },
+            "(1, 0)": {
+              "examples": 108,
+              "support": 72,
+              "transfer": 15
+            }
+          },
+          "lengths": {
+            "1": 150,
+            "2": 66
+          },
+          "codes_used": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "longer": {
+          "support": 126,
+          "transfer": 9,
+          "both": 8,
+          "examples": 216,
+          "by_program": {
+            "(0, 1, 2)": {
+              "examples": 108,
+              "support": 52,
+              "transfer": 3
+            },
+            "(1, 0, 2)": {
+              "examples": 108,
+              "support": 74,
+              "transfer": 6
+            }
+          },
+          "lengths": {
+            "1": 84,
+            "2": 90,
+            "3": 42
+          },
+          "codes_used": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      },
+      "single_operation_probe": [
+        {
+          "operation": 0,
+          "code": 5,
+          "train_correct": 20,
+          "train_examples": 54,
+          "held_correct": 10,
+          "held_examples": 27
+        },
+        {
+          "operation": 1,
+          "code": 4,
+          "train_correct": 24,
+          "train_examples": 54,
+          "held_correct": 12,
+          "held_examples": 27
+        },
+        {
+          "operation": 2,
+          "code": 0,
+          "train_correct": 30,
+          "train_examples": 54,
+          "held_correct": 15,
+          "held_examples": 27
+        }
+      ]
+    },
+    {
+      "seed": 42,
+      "training_max_length": 1,
+      "scores": {
+        "seen_program": {
+          "support": 504,
+          "transfer": 205,
+          "both": 205,
+          "examples": 504,
+          "by_program": {
+            "(0,)": {
+              "examples": 108,
+              "support": 108,
+              "transfer": 51
+            },
+            "(1,)": {
+              "examples": 72,
+              "support": 72,
+              "transfer": 29
+            },
+            "(2,)": {
+              "examples": 108,
+              "support": 108,
+              "transfer": 38
+            },
+            "(0, 2)": {
+              "examples": 108,
+              "support": 108,
+              "transfer": 45
+            },
+            "(1, 2)": {
+              "examples": 108,
+              "support": 108,
+              "transfer": 42
+            }
+          },
+          "lengths": {
+            "1": 504
+          },
+          "codes_used": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "new_composition": {
+          "support": 72,
+          "transfer": 41,
+          "both": 15,
+          "examples": 216,
+          "by_program": {
+            "(0, 1)": {
+              "examples": 108,
+              "support": 36,
+              "transfer": 14
+            },
+            "(1, 0)": {
+              "examples": 108,
+              "support": 36,
+              "transfer": 27
+            }
+          },
+          "lengths": {
+            "1": 216
+          },
+          "codes_used": [
+            0,
+            2,
+            4
+          ]
+        },
+        "longer": {
+          "support": 72,
+          "transfer": 41,
+          "both": 15,
+          "examples": 216,
+          "by_program": {
+            "(0, 1, 2)": {
+              "examples": 108,
+              "support": 36,
+              "transfer": 14
+            },
+            "(1, 0, 2)": {
+              "examples": 108,
+              "support": 36,
+              "transfer": 27
+            }
+          },
+          "lengths": {
+            "1": 216
+          },
+          "codes_used": [
+            1,
+            3,
+            5
+          ]
+        }
+      },
+      "single_operation_probe": [
+        {
+          "operation": 0,
+          "code": 4,
+          "train_correct": 30,
+          "train_examples": 54,
+          "held_correct": 15,
+          "held_examples": 27
+        },
+        {
+          "operation": 1,
+          "code": 2,
+          "train_correct": 26,
+          "train_examples": 54,
+          "held_correct": 13,
+          "held_examples": 27
+        },
+        {
+          "operation": 2,
+          "code": 1,
+          "train_correct": 18,
+          "train_examples": 54,
+          "held_correct": 9,
+          "held_examples": 27
+        }
+      ]
+    },
+    {
+      "seed": 42,
+      "training_max_length": 2,
+      "scores": {
+        "seen_program": {
+          "support": 502,
+          "transfer": 118,
+          "both": 118,
+          "examples": 504,
+          "by_program": {
+            "(0,)": {
+              "examples": 108,
+              "support": 108,
+              "transfer": 32
+            },
+            "(1,)": {
+              "examples": 72,
+              "support": 72,
+              "transfer": 20
+            },
+            "(2,)": {
+              "examples": 108,
+              "support": 108,
+              "transfer": 31
+            },
+            "(0, 2)": {
+              "examples": 108,
+              "support": 108,
+              "transfer": 16
+            },
+            "(1, 2)": {
+              "examples": 108,
+              "support": 106,
+              "transfer": 19
+            }
+          },
+          "lengths": {
+            "1": 412,
+            "2": 92
+          },
+          "codes_used": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "new_composition": {
+          "support": 90,
+          "transfer": 24,
+          "both": 5,
+          "examples": 216,
+          "by_program": {
+            "(0, 1)": {
+              "examples": 108,
+              "support": 36,
+              "transfer": 11
+            },
+            "(1, 0)": {
+              "examples": 108,
+              "support": 54,
+              "transfer": 13
+            }
+          },
+          "lengths": {
+            "1": 178,
+            "2": 38
+          },
+          "codes_used": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "longer": {
+          "support": 90,
+          "transfer": 7,
+          "both": 1,
+          "examples": 216,
+          "by_program": {
+            "(0, 1, 2)": {
+              "examples": 108,
+              "support": 36,
+              "transfer": 3
+            },
+            "(1, 0, 2)": {
+              "examples": 108,
+              "support": 54,
+              "transfer": 4
+            }
+          },
+          "lengths": {
+            "1": 132,
+            "2": 62,
+            "3": 22
+          },
+          "codes_used": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      },
+      "single_operation_probe": [
+        {
+          "operation": 0,
+          "code": 5,
+          "train_correct": 22,
+          "train_examples": 54,
+          "held_correct": 11,
+          "held_examples": 27
+        },
+        {
+          "operation": 1,
+          "code": 3,
+          "train_correct": 18,
+          "train_examples": 54,
+          "held_correct": 9,
+          "held_examples": 27
+        },
+        {
+          "operation": 2,
+          "code": 1,
+          "train_correct": 20,
+          "train_examples": 54,
+          "held_correct": 10,
+          "held_examples": 27
+        }
+      ]
+    }
+  ]
+}

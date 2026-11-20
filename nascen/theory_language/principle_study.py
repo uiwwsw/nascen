@@ -15,11 +15,12 @@ import torch
 from .dataset import digest, read_json, write_json
 from .encoder import MultilingualE5, encode_partition
 from .principle_data import (
-    BUDGETS, OUTCOMES, STATES, Lesson, active, held_rules, observed_facts, outcome, reference, split_states,
-    study_manifest, training_rules,
+    BUDGETS, DOMAINS, LAMP_DOMAIN, OUTCOMES, STATES, TRACK_OUTCOMES, Lesson, active, held_rules, observed_facts,
+    outcome, reference, split_states, study_manifest, training_rules,
 )
 from .principle_model import PrincipleLearner, fit_curriculum, predict, study
 from .principle_teacher import collect, load_lessons, revise
+from .principle_update import Evidence, evidence_vectors, read_evidence, validate_facts, verified_study
 from .revision import DEFAULT_ENCODER
 
 LESSONS = Path("docs/experiment-011-lessons.json")
@@ -29,14 +30,14 @@ ARMS = ("experience", "relevant", "irrelevant")
 TARGET_BALANCED_ACCURACY = 0.80
 
 
-def prepare_curriculum(encoder):
+def prepare_curriculum(encoder, domain=LAMP_DOMAIN):
     rows = []
-    for rule_index, rule in enumerate(training_rules()):
+    for rule_index, rule in enumerate(training_rules(domain)):
         indexes = rule.structure
         for state_index, state in enumerate(STATES):
             for style in (0, 1):
-                phrases, order = observed_facts(state, style, f"train-{rule_index}-{state_index}-{style}")
-                lesson = reference(rule, 1 - style).phrases()
+                phrases, order = observed_facts(state, style, f"train-{rule_index}-{state_index}-{style}", domain=domain)
+                lesson = reference(rule, 1 - style, domain=domain).phrases()
                 rows.append((phrases, lesson, outcome(rule, state), tuple(order.index(i) for i in indexes),
                              tuple(state[i] == value for i, value in zip(indexes, rule.values, strict=True))))
     vectors, cost = encode_partition(encoder, (text for row in rows for text in (*row[0], *row[1])))
@@ -55,40 +56,37 @@ def lesson_vector(encoder, lesson):
     return torch.stack([sentences[text] for text in lesson.phrases()])
 
 
-def evidence_vectors(encoder, rows):
-    if not rows:
-        return None
-    vectors, _ = encode_partition(encoder, chain.from_iterable(rows))
-    return torch.stack([torch.stack([vectors[text] for text in row]) for row in rows])
-
-
-def validate_facts(facts):
-    if (not isinstance(facts, (tuple, list)) or len(facts) != 4
-            or any(not isinstance(text, str) or not text.strip() for text in facts)):
-        raise ValueError("Supply four nonempty Korean fact sentences.")
-
-
-def save(path, model, encoder, *, adapter=None, metadata):
+def save(path, model, encoder, *, adapter=None, metadata, domain=LAMP_DOMAIN, evidence=()):
+    bundle = {"schema": "principle-study-v1", "encoder": encoder.identity, "width": model.width,
+              "weights": model.state_dict(), "adapter": adapter, "metadata": metadata}
+    if domain != LAMP_DOMAIN:
+        bundle["domain"] = domain
+    if evidence:
+        bundle["verified_evidence"] = [{"key": row.key, "facts": row.facts, "lit": row.lit} for row in evidence]
     path.parent.mkdir(parents=True, exist_ok=True)
     with NamedTemporaryFile(dir=path.parent, delete=False) as stream:
         temporary = Path(stream.name)
         try:
-            torch.save({"schema": "principle-study-v1", "encoder": encoder.identity, "width": model.width,
-                        "weights": model.state_dict(), "adapter": adapter, "metadata": metadata}, stream)
+            torch.save(bundle, stream)
             stream.close()
             temporary.replace(path)
         finally:
             temporary.unlink(missing_ok=True)
 
 
-def load(path, encoder):
+def load_bundle(path, encoder):
     bundle = torch.load(path, weights_only=True, map_location="cpu")
     if (bundle["schema"] != "principle-study-v1" or bundle["encoder"] != encoder.identity
-            or bundle["width"] != encoder.width):
+            or bundle["width"] != encoder.width or bundle.get("domain", LAMP_DOMAIN) not in DOMAINS):
         raise ValueError("The principle checkpoint and sentence encoder must match.")
     model = PrincipleLearner(bundle["width"], 0)
     model.load_state_dict(bundle["weights"])
-    return model.eval().requires_grad_(False), bundle["adapter"]
+    return model.eval().requires_grad_(False), bundle
+
+
+def load(path, encoder):
+    model, bundle = load_bundle(path, encoder)
+    return model, bundle["adapter"]
 
 
 def balanced(guesses, truth):
@@ -206,10 +204,12 @@ def main():
     train.add_argument("--output", type=Path, required=True)
     train.add_argument("--seed", type=int, default=11)
     train.add_argument("--steps", type=int, default=480)
+    train.add_argument("--domain", choices=DOMAINS, default=LAMP_DOMAIN)
     learn = commands.add_parser("study")
     learn.add_argument("--base", type=Path, required=True)
     learn.add_argument("--lesson", type=Path)
     learn.add_argument("--observations", type=Path)
+    learn.add_argument("--verify", type=Path, help="independent, labeled observations to preserve during an update")
     learn.add_argument("--output", type=Path, required=True)
     inference = commands.add_parser("predict")
     inference.add_argument("--checkpoint", type=Path, required=True)
@@ -237,37 +237,44 @@ def main():
             if args.command in ("train", "benchmark") and args.steps < 1:
                 raise ValueError("Choose a positive number of curriculum steps.")
             if args.command == "train":
-                data, provenance = prepare_curriculum(encoder)
+                data, provenance = prepare_curriculum(encoder, args.domain)
                 model = fit_curriculum(data, encoder.width, args.seed, args.steps)
-                save(args.output, model, encoder, metadata={"seed": args.seed, "curriculum": provenance})
-                result = {"checkpoint": str(args.output), "curriculum": provenance}
+                save(args.output, model, encoder, metadata={"seed": args.seed, "curriculum": provenance},
+                     domain=args.domain)
+                result = {"checkpoint": str(args.output), "domain": args.domain, "curriculum": provenance}
             elif args.command == "study":
-                input_paths = (args.base, args.lesson, args.observations)
+                input_paths = (args.base, args.lesson, args.observations, args.verify)
                 if any(path is not None and args.output.resolve() == path.resolve() for path in input_paths):
                     raise ValueError("Write the adapted student to a separate file.")
-                model, prior = load(args.base, encoder)
+                model, bundle = load_bundle(args.base, encoder)
                 lesson = Lesson(**read_json(args.lesson)) if args.lesson else None
-                rows = read_json(args.observations) if args.observations else []
-                if not isinstance(rows, list):
-                    raise ValueError("Observations must be a JSON list of fact and outcome records.")
-                for row in rows:
-                    validate_facts(row["facts"])
-                    if type(row["lit"]) is not bool:
-                        raise ValueError("Each observation needs a Boolean lit outcome.")
-                facts = evidence_vectors(encoder, [row["facts"] for row in rows])
-                labels = torch.tensor([row["lit"] for row in rows], dtype=torch.float32)
-                adapter = study(model, lesson_vector(encoder, lesson), facts, labels, previous=prior)
-                save(args.output, model, encoder, adapter=adapter,
-                     metadata={"observations_added": len(rows), "new_lesson": lesson is not None,
-                               "continued_study": prior is not None and lesson is None})
-                result = {"checkpoint": str(args.output), "observations": len(rows)}
+                observations = read_evidence(args.observations, encoder)
+                verified = verified_study(
+                    model, lesson_vector(encoder, lesson), observations, previous=bundle["adapter"],
+                    recorded=tuple(Evidence(**row) for row in bundle.get("verified_evidence", ())),
+                    verification=read_evidence(args.verify, encoder),
+                )
+                result = {"checkpoint": str(args.output), "observations": len(observations),
+                          "status": verified.status, "conflicts": verified.conflicts, "reason": verified.reason,
+                          "verified_observations": len(verified.evidence)}
+                prior_keys = {row["key"] for row in bundle.get("verified_evidence", ())}
+                observation_keys = {row.key for row in observations}
+                metadata = result | {
+                    "observations_added": sum(row.key in observation_keys - prior_keys for row in verified.evidence),
+                    "new_lesson": lesson is not None and verified.status != "rejected",
+                    "continued_study": bundle["adapter"] is not None and lesson is None,
+                }
+                save(args.output, model, encoder, adapter=verified.adapter, metadata=metadata,
+                     domain=bundle.get("domain", LAMP_DOMAIN), evidence=verified.evidence)
             elif args.command == "predict":
-                model, adapter = load(args.checkpoint, encoder)
+                model, bundle = load_bundle(args.checkpoint, encoder)
+                adapter = bundle["adapter"]
                 if adapter is None:
                     raise ValueError("Load a checkpoint produced by study.")
                 validate_facts(args.facts)
                 probability = float(predict(model, adapter, evidence_vectors(encoder, [args.facts]))[0])
-                result = {"outcome": OUTCOMES[probability >= 0.5], "score": probability}
+                outcomes = OUTCOMES if bundle.get("domain", LAMP_DOMAIN) == LAMP_DOMAIN else TRACK_OUTCOMES
+                result = {"outcome": outcomes[probability >= 0.5], "score": probability}
             else:
                 if len(set(args.seeds)) != len(args.seeds):
                     raise ValueError("Use distinct seeds.")

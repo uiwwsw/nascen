@@ -16,6 +16,7 @@ from .observation_benchmark import evaluate_observations
 from .observation_encoding import encode_model_questions
 from .observation_model import ObservationLearner, predict_observations
 from .observation_training import encode_training, fit_observations
+from .principle_transition import predict_track
 from .teacher import collect, load_reviewed
 from .trainer import (
     MODES, EncodedEpisodes, LossWeights, episode_texts, fit, lesson_texts, load_checkpoint, save_checkpoint,
@@ -89,7 +90,10 @@ def arguments():
     infer = commands.add_parser("predict")
     infer.add_argument("--encoder", type=Path, default=DEFAULT_ENCODER)
     infer.add_argument("--checkpoint", type=Path, help="defaults to a trained robust student, then the legacy checkpoint")
-    infer.add_argument("--before", required=True)
+    initial = infer.add_mutually_exclusive_group(required=True)
+    initial.add_argument("--before")
+    initial.add_argument("--state-facts", nargs=3, help="three Korean state sentences for a motion principle")
+    infer.add_argument("--principle-checkpoint", type=Path, help="apply a studied track-motion principle")
     infer.add_argument("--action", action="append", required=True)
     infer.add_argument("--option", action="append", nargs="+", required=True)
     return parser, parser.parse_args()
@@ -199,9 +203,21 @@ def main():
                     checkpoint = (DEFAULT_OBSERVATION_CHECKPOINT if DEFAULT_OBSERVATION_CHECKPOINT.exists()
                                   else DEFAULT_CHECKPOINT)
                 model, _ = load_checkpoint(checkpoint, encoder)
-                question = Question("query", args.before, args.action, args.option)
+                if args.principle_checkpoint and (
+                    not isinstance(model, ObservationLearner) or not args.state_facts or len(args.action) != 1
+                ):
+                    raise ValueError("Use an observation checkpoint, --state-facts, and one --action with a principle.")
+                if args.state_facts and any(not fact.strip() for fact in args.state_facts):
+                    raise ValueError("Supply three nonempty state sentences.")
+                before = args.before if args.state_facts is None else " ".join(args.state_facts)
+                question = Question("query", before, args.action, args.option)
                 encoded, _ = encode_model_questions(encoder, [question], clauses=isinstance(model, ObservationLearner))
-                if isinstance(model, ObservationLearner):
+                principle = None
+                if args.principle_checkpoint:
+                    index, principle = predict_track(model, encoded, encoder, args.principle_checkpoint,
+                                                     (*args.state_facts, args.action[0]))
+                    choices = {"query": [index]}
+                elif isinstance(model, ObservationLearner):
                     choices = predict_observations(model, encoded)
                 else:
                     choices, _, _ = predict(model, encoded)
@@ -210,6 +226,8 @@ def main():
                 ]}
                 if isinstance(model, ObservationLearner):
                     result["checkpoint"] = str(checkpoint)
+                if principle is not None:
+                    result["principle"] = principle
     except (OSError, ValueError, TypeError, KeyError, RuntimeError) as error:
         parser.exit(1, f"Nascen theory language: {error}\n")
     print(json.dumps(result, ensure_ascii=False, indent=2, allow_nan=False))

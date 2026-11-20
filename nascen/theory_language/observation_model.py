@@ -68,9 +68,11 @@ class ObservationLearner(nn.Module):
         return torch.stack(predictions, dim=1)
 
     def score_steps(self, before, actions, candidates):
-        predicted = F.log_softmax(self(before, actions), dim=-1).unsqueeze(-2)
+        return self.score_candidates(F.log_softmax(self(before, actions), dim=-1), candidates)
+
+    def score_candidates(self, state_log_probs, candidates):
         meanings = F.log_softmax(self.state_logits(candidates), dim=-1)
-        return (predicted + meanings).logsumexp(-1)
+        return (state_log_probs.unsqueeze(-2) + meanings).logsumexp(-1)
 
 
 @torch.no_grad()

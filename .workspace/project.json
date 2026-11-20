@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "runtime": "python-research",
+  "execution": "none",
+  "requireCleanGit": true,
+  "verify": [
+    "python3.14 -m venv .venv",
+    ".venv/bin/python -m pip install -r requirements.txt",
+    ".venv/bin/python -m unittest discover -s tests"
+  ],
+  "deploy": [],
+  "healthchecks": []
+}

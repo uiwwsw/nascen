@@ -1,0 +1,3 @@
+#!/bin/bash
+set -euo pipefail
+exec /Users/uiwwsw/Developer/workspace/bin/devctl exec -- "$@"

@@ -50,7 +50,7 @@ class Key:
     answers: tuple[int, ...]
 
 
-def training_windows(size: int, seed: int = 42) -> tuple[tuple[Episode, ...], ...]:
+def training_specs(size: int, seed: int = 42):
     if size < 2 or size % 2:
         raise ValueError("Use a positive, even number of training windows.")
     rng = Random(seed)
@@ -67,9 +67,12 @@ def training_windows(size: int, seed: int = 42) -> tuple[tuple[Episode, ...], ..
         if size // 2 > len(pool):
             raise ValueError("Training budget exceeds the available distinct windows.")
         setup.append([(world, *row) for row in rng.sample(pool, size // 2)])
+    return tuple((*row, rng.randrange(2)) for pair in zip(*setup, strict=True) for row in pair)
+
+
+def training_windows(size: int, seed: int = 42) -> tuple[tuple[Episode, ...], ...]:
     windows = []
-    for index, (world, item, state, order) in enumerate(row for pair in zip(*setup, strict=True) for row in pair):
-        style = rng.randrange(2)
+    for index, (world, item, state, order, style) in enumerate(training_specs(size, seed)):
         episodes = []
         for step, action in enumerate(order):
             result = transition(state, action)
@@ -85,11 +88,11 @@ def training_windows(size: int, seed: int = 42) -> tuple[tuple[Episode, ...], ..
     return tuple(windows)
 
 
-def held_out_exam() -> tuple[tuple[Question, ...], tuple[Key, ...]]:
+def held_out_exam(items=TEST_ITEMS) -> tuple[tuple[Question, ...], tuple[Key, ...]]:
     questions, keys = [], []
     for skill, recipes in (("one_step", ONE_STEP), ("order", HELD_ORDERS)):
         for index, (world, initial, first, second) in enumerate(recipes):
-            for item_index, item in enumerate(TEST_ITEMS[world]):
+            for item_index, item in enumerate(items[world]):
                 group = f"{skill}-{index}-{item_index}"
                 shuffled = []
                 for step in range(len(first)):
